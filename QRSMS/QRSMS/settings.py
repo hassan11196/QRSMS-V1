@@ -25,7 +25,7 @@ SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com']
 
 
 # Application definition
