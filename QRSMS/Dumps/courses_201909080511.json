@@ -1,0 +1,387 @@
+{
+"courses": [
+	{
+		"id" : 1,
+		"course_name" : "applied physics",
+		"course_short" : "AP",
+		"course_code" : "NS101",
+		"sections" : 0,
+		"students_reg" : 3
+	},
+	{
+		"id" : 2,
+		"course_name" : "calculus and analytical geometry",
+		"course_short" : "Cal",
+		"course_code" : "MT119",
+		"sections" : 0,
+		"students_reg" : 2
+	},
+	{
+		"id" : 3,
+		"course_name" : "english composition and comprehension",
+		"course_short" : "Eng",
+		"course_code" : "SS150",
+		"sections" : 0,
+		"students_reg" : 2
+	},
+	{
+		"id" : 4,
+		"course_name" : "english composition and comprehension - lab",
+		"course_short" : "Eng-Lab",
+		"course_code" : "SL150",
+		"sections" : 0,
+		"students_reg" : 2
+	},
+	{
+		"id" : 5,
+		"course_name" : "introduction to information and communication technologies",
+		"course_short" : "ICT-Lab",
+		"course_code" : "CS117",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 6,
+		"course_name" : "islamic and religious studies",
+		"course_short" : "IRS",
+		"course_code" : "SS111",
+		"sections" : 0,
+		"students_reg" : 3
+	},
+	{
+		"id" : 7,
+		"course_name" : "professional ethics (for non-muslims)",
+		"course_short" : "Ethics",
+		"course_code" : "SS203",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 8,
+		"course_name" : "programming fundamentals",
+		"course_short" : "PF",
+		"course_code" : "CS118",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 9,
+		"course_name" : "programming fundamentals lab",
+		"course_short" : "PF-Lab",
+		"course_code" : "CL118",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 10,
+		"course_name" : "calculus-ii",
+		"course_short" : "Cal-||",
+		"course_code" : "MT115",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 11,
+		"course_name" : "comp. organization & assembly language lab",
+		"course_short" : "COAL Lab",
+		"course_code" : "EL213",
+		"sections" : 0,
+		"students_reg" : 3
+	},
+	{
+		"id" : 12,
+		"course_name" : "comp. organization & assembly language.",
+		"course_short" : "COAL",
+		"course_code" : "EE213",
+		"sections" : 0,
+		"students_reg" : 3
+	},
+	{
+		"id" : 13,
+		"course_name" : "computer programming",
+		"course_short" : "CP",
+		"course_code" : "CS103",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 14,
+		"course_name" : "computer programming lab",
+		"course_short" : "CP Lab",
+		"course_code" : "CL103",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 15,
+		"course_name" : "data structures",
+		"course_short" : "DS",
+		"course_code" : "CS201",
+		"sections" : 0,
+		"students_reg" : 5
+	},
+	{
+		"id" : 16,
+		"course_name" : "data structures lab",
+		"course_short" : "DS Lab",
+		"course_code" : "CL201",
+		"sections" : 0,
+		"students_reg" : 5
+	},
+	{
+		"id" : 17,
+		"course_name" : "digital logic design",
+		"course_short" : "DLD",
+		"course_code" : "EE227",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 18,
+		"course_name" : "digital logic design lab",
+		"course_short" : "DLD Lab",
+		"course_code" : "EL227",
+		"sections" : 0,
+		"students_reg" : 1
+	},
+	{
+		"id" : 19,
+		"course_name" : "discrete structures",
+		"course_short" : "Discrete",
+		"course_code" : "CS211",
+		"sections" : 0,
+		"students_reg" : 4
+	},
+	{
+		"id" : 20,
+		"course_name" : "english composition",
+		"course_short" : "Eng comp",
+		"course_code" : "SS122",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 21,
+		"course_name" : "finance and accounting",
+		"course_short" : "FA",
+		"course_code" : "MG103",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 22,
+		"course_name" : "linear algebra",
+		"course_short" : "LA",
+		"course_code" : "MT104",
+		"sections" : 0,
+		"students_reg" : 5
+	},
+	{
+		"id" : 23,
+		"course_name" : "marketing management",
+		"course_short" : "MM",
+		"course_code" : "MG220",
+		"sections" : 0,
+		"students_reg" : 5
+	},
+	{
+		"id" : 24,
+		"course_name" : "psychology",
+		"course_short" : "Psych",
+		"course_code" : "SS118",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 25,
+		"course_name" : "communication for managers",
+		"course_short" : "CM",
+		"course_code" : "MG335",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 26,
+		"course_name" : "computer architecture",
+		"course_short" : "CA",
+		"course_code" : "EE204",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 27,
+		"course_name" : "database systems",
+		"course_short" : "DB",
+		"course_code" : "CS203",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 28,
+		"course_name" : "database systems lab",
+		"course_short" : "DB-Lab",
+		"course_code" : "CL203",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 29,
+		"course_name" : "design & analysis of algorithms",
+		"course_short" : "Algo",
+		"course_code" : "CS302",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 30,
+		"course_name" : "directed reading economics",
+		"course_short" : "DRE",
+		"course_code" : "MG315",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 31,
+		"course_name" : "fundamentals of management",
+		"course_short" : "FM",
+		"course_code" : "MG223",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 32,
+		"course_name" : "object oriented analysis & design",
+		"course_short" : "OOAD",
+		"course_code" : "CS309",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 33,
+		"course_name" : "object oriented analysis & design lab",
+		"course_short" : "OOAD-Lab",
+		"course_code" : "CL309",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 34,
+		"course_name" : "operating systems",
+		"course_short" : "OS",
+		"course_code" : "CS205",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 35,
+		"course_name" : "operating systems lab",
+		"course_short" : "OS Lab",
+		"course_code" : "CL205",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 36,
+		"course_name" : "operations research",
+		"course_short" : "OR",
+		"course_code" : "MT303",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 37,
+		"course_name" : "probability & statistics",
+		"course_short" : "Prob",
+		"course_code" : "MT206",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 38,
+		"course_name" : "theory of automata",
+		"course_short" : "TOA",
+		"course_code" : "CS301",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 39,
+		"course_name" : "computer networks",
+		"course_short" : "CN",
+		"course_code" : "CS307",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 40,
+		"course_name" : "computer networks lab",
+		"course_short" : "CN-Gr1 Lab",
+		"course_code" : "CL307",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 41,
+		"course_name" : "data sciences",
+		"course_short" : "DSci",
+		"course_code" : "CS481",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 42,
+		"course_name" : "human computer interaction",
+		"course_short" : "HCI",
+		"course_code" : "CS422",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 43,
+		"course_name" : "information processing techniques",
+		"course_short" : "IPT",
+		"course_code" : "CS423",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 44,
+		"course_name" : "information security",
+		"course_short" : "IS",
+		"course_code" : "CS446",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 45,
+		"course_name" : "introduction to software project management",
+		"course_short" : "ISPM",
+		"course_code" : "CS450",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 46,
+		"course_name" : "introdution to cloud computing",
+		"course_short" : "ICC",
+		"course_code" : "CS499",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 47,
+		"course_name" : "professional issues in it",
+		"course_short" : "PIT",
+		"course_code" : "CS449",
+		"sections" : 0,
+		"students_reg" : 0
+	},
+	{
+		"id" : 48,
+		"course_name" : "software engineering",
+		"course_short" : "SE",
+		"course_code" : "CS303",
+		"sections" : 0,
+		"students_reg" : 0
+	}
+]}
