@@ -25,7 +25,7 @@ SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com']
+ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'initial',
-    'rest_framework'
+    'rest_framework',
+    'webpack_loader',
 
 ]
 
@@ -129,5 +130,19 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE' : 10
+    'PAGE_SIZE' : 10,
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ]
 }
+
+
+WEBPACK_LOADER = { 
+        
+          'DEFAULT': { 
+                   'BUNDLE_DIR_NAME': 'bundles/', 
+                   'STATS_FILE': os.path.join(BASE_DIR, '..','initial_frontend/', 'webpack-stats.json'), 
+                      }
+                  } 
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static'), ]

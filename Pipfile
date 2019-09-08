@@ -10,6 +10,7 @@ pylint = "*"
 django = "*"
 django-rest-framework = "*"
 djangorestframework = "*"
+django-webpack-loader = "*"
 
 [requires]
 python_version = "3.7"
