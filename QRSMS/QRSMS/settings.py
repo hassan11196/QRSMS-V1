@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -137,6 +137,7 @@ REST_FRAMEWORK = {
 }
 
 
+# Webpack Settings
 WEBPACK_LOADER = { 
         
           'DEFAULT': { 
@@ -146,3 +147,5 @@ WEBPACK_LOADER = {
                   } 
 
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static'), ]
+
+AUTH_USER_MODEL = 'initial.User'

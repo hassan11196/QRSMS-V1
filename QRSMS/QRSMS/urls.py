@@ -24,11 +24,14 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'course_info',views.CourseViewSet)
-
+# router.register(r'students_num', views.StudentViewSet)
+router.register(r'teachers', views.TeacherViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('initial.urls')),
     path('',include(router.urls)),
-    path('api-auth/', include('rest_framework.urls',namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
 ]
