@@ -5,12 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 django = "*"
 django-rest-framework = "*"
 djangorestframework = "*"
 django-webpack-loader = "*"
+django-restful-admin = "*"
 
 [requires]
 python_version = "3.7"
