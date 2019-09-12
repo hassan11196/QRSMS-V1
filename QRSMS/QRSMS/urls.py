@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-
+import django_restful_admin
 from initial import views
 
 
@@ -33,5 +33,6 @@ urlpatterns = [
     path('',include(router.urls)),
     path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path(r'rest_admin/', django_restful_admin.site.urls)
 
 ]

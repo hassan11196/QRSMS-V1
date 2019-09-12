@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'initial',
     'rest_framework',
     'webpack_loader',
+    'django_restful_admin',
 
 ]
 

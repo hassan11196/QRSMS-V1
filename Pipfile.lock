@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9c3e9ed2041623e816621d275261e6f6ef2eb32dcfe8174917a19cdd050f749f"
+            "sha256": "505c6f5574332c7bf9ee652b07b3d512e58f6e1c50a531231f4fc07bcea0520f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,13 @@
             ],
             "index": "pypi",
             "version": "==0.1.0"
+        },
+        "django-restful-admin": {
+            "hashes": [
+                "sha256:d6fd7f96068c0a498886d0d0219c74257853dff848e981e9264873848e2af041"
+            ],
+            "index": "pypi",
+            "version": "==1.0.3"
         },
         "django-webpack-loader": {
             "hashes": [
@@ -69,6 +76,13 @@
                 "sha256:b65db1bbaac9f9f4d190199bb8680af6f6f84fd3769a5ea883df8a91fe68b4c4"
             ],
             "version": "==2.2.5"
+        },
+        "autopep8": {
+            "hashes": [
+                "sha256:4d8eec30cc81bc5617dbf1218201d770dc35629363547f17577c61683ccfb3ee"
+            ],
+            "index": "pypi",
+            "version": "==1.4.4"
         },
         "colorama": {
             "hashes": [
@@ -114,6 +128,13 @@
                 "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
             ],
             "version": "==0.6.1"
+        },
+        "pycodestyle": {
+            "hashes": [
+                "sha256:95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56",
+                "sha256:e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"
+            ],
+            "version": "==2.5.0"
         },
         "pylint": {
             "hashes": [
