@@ -5,6 +5,7 @@
 Some changes have been made to `UserAdmin` to allow us to interact with new attributes of `User` in Django Admin.  
 Added Django-Restful-admin. This will allow for admin access and manipulation to our React App Using Axios.
 New Endpoint for this is as follows:
+
 [*/rest_admin*](http://qrsms-v1.herokuapp.com/rest_admin)
 
 This will branch into different models that are registered in admin.py file.
@@ -12,10 +13,15 @@ This will branch into different models that are registered in admin.py file.
 **links:**
 Ahsan can ignore these.
 [https://pypi.org/project/django-restful-admin/](https://pypi.org/project/django-restful-admin/)
+
 [https://medium.com/agatha-codes/options-objects-customizing-the-django-user-model-6d42b3e971a4](https://medium.com/agatha-codes/options-objects-customizing-the-django-user-model-6d42b3e971a4)
+
 [https://stackoverflow.com/questions/15012235/using-django-auth-useradmin-for-a-custom-user-model](https://stackoverflow.com/questions/15012235/using-django-auth-useradmin-for-a-custom-user-model)
+
 [https://docs.djangoproject.com/en/2.2/ref/contrib/admin/actions/](https://docs.djangoproject.com/en/2.2/ref/contrib/admin/actions/)
+
 [https://docs.djangoproject.com/en/2.2/ref/contrib/admin](https://docs.djangoproject.com/en/2.2/ref/contrib/admin)
+
 [https://docs.djangoproject.com/en/2.2/topics/auth/customizing/](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/)
 
 
