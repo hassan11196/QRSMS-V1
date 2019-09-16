@@ -8,10 +8,15 @@ Included Ahsans Login Page to code base.
 
 **links**:
 [making-react-and-django-play-well-together-single-page-app-model](https://fractalideas.com/blog/making-react-and-django-play-well-together-single-page-app-model/)
+
 [session-handling-in-react-with-redux-express-session-and-apollo-18j8](https://dev.to/tmns/session-handling-in-react-with-redux-express-session-and-apollo-18j8)
+
 [local-storage-react](https://www.robinwieruch.de/local-storage-react)
+
 [https://stackoverflow.com/questions/42420531/what-is-the-best-way-to-manage-a-users-session-in-react](https://stackoverflow.com/questions/42420531/what-is-the-best-way-to-manage-a-users-session-in-react)
+
 [https://ltslashgt.com/2007/07/08/one-model-many-db-tables/](https://ltslashgt.com/2007/07/08/one-model-many-db-tables/)
+
 [https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables](https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables)
 
 
