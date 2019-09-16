@@ -28,6 +28,7 @@ class NewUserAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
         ('Additional Info', {
             'fields': (
+                ('gender',),
                 ('CNIC',),
                 ('is_student',),
                 ('is_teacher',),
