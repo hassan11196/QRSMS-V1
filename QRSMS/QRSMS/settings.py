@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'initial',
+    'institution',
     'rest_framework',
     'webpack_loader',
     'django_restful_admin',

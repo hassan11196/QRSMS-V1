@@ -1,15 +1,33 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
+from institution.models import University, Campus, Degree, UNIVERISTY_ID_REGEX
+
+
+CNIC_REGEX = RegexValidator(
+    "[0-9]{5}-[0-9]{7}-[0-9]{1}", message="Invalid CNIC")
 
 
 class User(AbstractUser):
-    is_teacher = models.BooleanField(default=False, help_text='True if the User is a Teacher.')
-    is_student = models.BooleanField(default=False , help_text='True if the User is a Student.')
-    is_faculty = models.BooleanField(default=False, help_text='True if the User is a Faculty Member.')
-    is_maintainer = models.BooleanField(default=False, help_text='True if the User is a Mainatiner or Project Developer.')
-    CNIC = models.CharField(max_length=15, validators=[RegexValidator(
-        "[0-9]{5}-[0-9]{7}-[0-9]{1}", message="Invalid CNIC")], name="CNIC")
+    GENDERS = [
+        ('M', 'MALE'),
+        ('F', 'FEMALE'),
+        ('U', 'UNDEFINED'),
+        ('O', 'OTHER')
+    ]
+    gender = models.CharField(
+        "Gender", name="gender", max_length=50, choices=GENDERS)
+
+    is_teacher = models.BooleanField(
+        default=False, help_text='True if the User is a Teacher.')
+    is_student = models.BooleanField(
+        default=False, help_text='True if the User is a Student.')
+    is_faculty = models.BooleanField(
+        default=False, help_text='True if the User is a Faculty Member.')
+    is_maintainer = models.BooleanField(
+        default=False, help_text='True if the User is a Mainatiner or Project Developer.')
+    CNIC = models.CharField(max_length=15, validators=[
+                            CNIC_REGEX], name="CNIC")
 
 # Create your models here.
 
@@ -45,6 +63,10 @@ class Faculty(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    arn = models.PositiveIntegerField(
+        "Admission Registration Number", name='arn')
+    uid = models.CharField("Student ID", default="00K-0000", name="uid", primary_key=True,
+                           max_length=8, validators=[UNIVERISTY_ID_REGEX], help_text="University Student Roll Number")
 
     def __str__(self):
         return self.user.username

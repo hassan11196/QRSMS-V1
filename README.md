@@ -1,5 +1,20 @@
 
 
+# QRSMS-V1.4
+Separated University, Campus, Department, Degree Classed to 'institution' app. 
+CSRF Authentication ready to be implemented.
+Session management needs to be worked on.
+Included Ahsans Login Page to code base.
+
+**links**:
+[making-react-and-django-play-well-together-single-page-app-model](https://fractalideas.com/blog/making-react-and-django-play-well-together-single-page-app-model/)
+[session-handling-in-react-with-redux-express-session-and-apollo-18j8](https://dev.to/tmns/session-handling-in-react-with-redux-express-session-and-apollo-18j8)
+[local-storage-react](https://www.robinwieruch.de/local-storage-react)
+[https://stackoverflow.com/questions/42420531/what-is-the-best-way-to-manage-a-users-session-in-react](https://stackoverflow.com/questions/42420531/what-is-the-best-way-to-manage-a-users-session-in-react)
+[https://ltslashgt.com/2007/07/08/one-model-many-db-tables/](https://ltslashgt.com/2007/07/08/one-model-many-db-tables/)
+[https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables](https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables)
+
+
 # QRSMS-V1.3
 
 Some changes have been made to `UserAdmin` to allow us to interact with new attributes of `User` in Django Admin.  
@@ -267,4 +282,3 @@ npx webpack --config .webpack.config.js
 [React bundling with Django using Webpack
 
 ](https://medium.com/labcodes/configuring-django-with-react-4c599d1eae63) [React Bootstrap Documentation](https://react-bootstrap.github.io/components/buttons/)  [Django Rest Framework Tutorial](https://medium.com/backticks-tildes/lets-build-an-api-with-django-rest-framework-32fcf40231e5)
-
