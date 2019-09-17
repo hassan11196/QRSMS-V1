@@ -1,7 +1,7 @@
 
 
 # QRSMS-V1.4
-Separated University, Campus, Department, Degree Classed to 'institution' app. 
+Separated University, Campus, Department, Degree Classes to 'institution' app. 
 CSRF Authentication ready to be implemented.
 Session management needs to be worked on.
 Included Ahsans Login Page to code base.
