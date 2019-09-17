@@ -5,6 +5,15 @@ from .models import User, Course, Teacher
 from django.shortcuts import render, HttpResponse
 
 # Create your views here.
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
+
+def csrf(request):
+    return JsonResponse({'csrfToken': get_token(request)})
+
+def ping(request):
+    return JsonResponse({'result': 'OK'})
+
 
 
 def index(request):

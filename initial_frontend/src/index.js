@@ -6,15 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import Login from './login.js';
 
 
-// if(document.body.contains(document.getElementById('DApp'))){
-//     ReactDOM.render(<App />, document.getElementById('DApp'));
-// }
-// else{
-//     ReactDOM.render(<App />, document.getElementById('root'));
-//     console.log("In Local Environment");
-// }
-// 
-ReactDOM.render(<Login/>, document.getElementById('root'));
+if(document.body.contains(document.getElementById('DApp'))){
+    ReactDOM.render(<Login/>, document.getElementById('DApp'));
+}
+else{
+    ReactDOM.render(<Login/>, document.getElementById('root'));
+    console.log("In Local Environment");
+}
+
+// ReactDOM.render(<Login/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -5,18 +5,18 @@ var BundleTracker = require('webpack-bundle-tracker');
 module.exports = {
   context: __dirname,
 
-  entry:{
- WEBPACT_initial: './src/index.js'
+  entry: {
+    WEBPACT_initial: './src/index.js'
 
-},
+  },
 
-output: {
-      path: path.resolve('./webpack_output/static/bundles/'),
-      filename: "[name]-[hash].js",
+  output: {
+    path: path.resolve('./webpack_output/static/bundles/'),
+    filename: "[name]-[hash].js",
   },
 
   plugins: [
-    new BundleTracker({filename: './webpack-stats.json'}),
+    new BundleTracker({ filename: './webpack-stats.json' }),
   ],
   module: {
     rules: [
@@ -27,12 +27,18 @@ output: {
       },
       {
         test: /\.css$/,
-        use: [{ loader: "style-loader" }, 
+        use: [{ loader: "style-loader" },
         { loader: "css-loader" },
-       
-       ],
+
+        ],
       },
-      { test: /\.svg$/, loader: 'svg-inline-loader' }
+      { test: /\.svg$/, loader: 'svg-inline-loader' },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|png)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ]
   },
   resolve: {
