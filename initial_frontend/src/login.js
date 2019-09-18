@@ -43,12 +43,10 @@ class Login extends Component {
   componentDidMount() {
     this.get_csrf_token();
     // console.log(this.state.csrf_token);
-
   }
   on_login_click = () => {
     // console.log(this.state.csrf_token);
     // console.log(this.state);
-
     var formd = new FormData();
     formd.set('username', String( this.state.username_admin));
     formd.set('password', String(this.state.password_admin));
