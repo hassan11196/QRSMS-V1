@@ -1,3 +1,21 @@
+# QRSMS-V1.41
+fixed webpack fonts issue. implemented a preliminary version of ahsans sign in page. 
+**links:**
+[https://github.com/owais/django-webpack-loader](https://github.com/owais/django-webpack-loader)
+
+[https://www.sitepoint.com/beginners-guide-webpack-module-bundling/](https://www.sitepoint.com/beginners-guide-webpack-module-bundling/)
+
+[http://www.cdrf.co/](http://www.cdrf.co/)
+
+[https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/](https://wsvincent.com/django-user-authentication-tutorial-login-and-logout/)
+
+[https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
+
+[https://medium.com/backticks-tildes/lets-build-an-api-with-django-rest-framework-part-2-cfb87e2c8a6c](https://medium.com/backticks-tildes/lets-build-an-api-with-django-rest-framework-part-2-cfb87e2c8a6c)
+
+[https://wsvincent.com/django-rest-framework-authentication-tutorial/](https://wsvincent.com/django-rest-framework-authentication-tutorial/)
+
+[https://medium.com/capital-one-tech/how-to-work-with-forms-inputs-and-events-in-react-c337171b923b](https://medium.com/capital-one-tech/how-to-work-with-forms-inputs-and-events-in-react-c337171b923b)
 
 
 # QRSMS-V1.4

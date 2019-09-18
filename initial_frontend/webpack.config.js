@@ -41,7 +41,9 @@ module.exports = {
         // ],
         loader: 'file-loader',
         options: {
-         name: './font/[hash].[ext]',
+         name: '[hash].[ext]',
+         outputPath:'fonts',
+         publicPath:'static/bundles/fonts',
         }
       },
       {
@@ -50,7 +52,10 @@ module.exports = {
           {
             loader: 'ttf-loader',
             options: {
-              name: './font/[hash].[ext]',
+              name: '[hash].[ext]',
+              outputPath:'fonts',
+              publicPath:'static/bundles/fonts',
+
             },
           },
         ]
