@@ -135,7 +135,11 @@ REST_FRAMEWORK = {
     'PAGE_SIZE' : 10,
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAdminUser',
-    ]
+    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'rest_framework.authentication.BasicAuthentication',
+    #     'rest_framework.authentication.SessionAuthentication',
+    # ]
 }
 
 
@@ -148,6 +152,6 @@ WEBPACK_LOADER = {
                       }
                   } 
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static'), ]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static')]
 
 AUTH_USER_MODEL = 'initial.User'
