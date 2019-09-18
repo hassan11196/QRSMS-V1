@@ -17,6 +17,7 @@ module.exports = {
 
   plugins: [
     new BundleTracker({ filename: './webpack-stats.json' }),
+
   ],
   module: {
     rules: [
@@ -34,9 +35,24 @@ module.exports = {
       },
       { test: /\.svg$/, loader: 'svg-inline-loader' },
       {
-        test: /\.(woff|woff2|eot|ttf|otf|png)$/,
+        test: /\.(woff|woff2|eot|otf|png)$/,
+        // use: [
+        //   'file-loader'
+        // ],
+        loader: 'file-loader',
+        options: {
+         name: './font/[hash].[ext]',
+        }
+      },
+      {
+        test: /\.ttf$/,
         use: [
-          'file-loader'
+          {
+            loader: 'ttf-loader',
+            options: {
+              name: './font/[hash].[ext]',
+            },
+          },
         ]
       }
     ]
