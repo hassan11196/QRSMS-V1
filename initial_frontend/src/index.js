@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Login from './login.js';
+import Qrsms from './Qrsms'
 
 
 if(document.body.contains(document.getElementById('DApp'))){
-    ReactDOM.render(<Login/>, document.getElementById('DApp'));
+    ReactDOM.render(<Qrsms/>, document.getElementById('DApp'));
+    console.log("In Django Environment");
 }
 else{
-    ReactDOM.render(<Login/>, document.getElementById('root'));
+    ReactDOM.render(<Qrsms/>, document.getElementById('root'));
     console.log("In Local Environment");
 }
 
