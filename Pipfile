@@ -13,6 +13,7 @@ django-rest-framework = "*"
 djangorestframework = "*"
 django-webpack-loader = "*"
 django-restful-admin = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

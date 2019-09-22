@@ -10,9 +10,22 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } 
 import axios from "axios";
 import credential from './credentials.js';
 import Cookies from 'js-cookie';
+import { Redirect } from 'react-router-dom';
+
 
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+
+
+class Home extends Component{
+  render(){
+    return (
+      <h1>
+        Home
+      </h1>
+    );
+  }
+}
 
 class Login extends Component {
 
@@ -54,34 +67,42 @@ class Login extends Component {
     // console.log(this.state.csrf_token);
   }
   on_login_click = () => {
+    console.log(this.state);
     // console.log(this.state.csrf_token);
     // console.log(this.state);
     var formd = new FormData();
+    formd.set('csrfmiddlewaretoken',this.state.csrf_token);
     formd.set('username', String(this.state.username_admin));
     formd.set('password', String(this.state.password_admin));
     formd.set('hello', 'hell');
     // console.log(formd);
-    axios.post("/api-auth/login/", {
-      username: this.state.username_admin,
-      password: this.state.password_admin,
+    axios.post("/api-auth/login/",formd, {
+      // username: this.state.username_admin,
+      // password: this.state.password_admin,
       headers: {
         // 'X-CSRFTOKEN': this.state.csrf_token,
       },
-      data: formd,
-      auth: {
-        username: this.state.username_admin,
-        password: this.state.password_admin,
-      },
+      // auth: {
+      //   username: this.state.username_admin,
+      //   password: this.state.password_admin,
+      // },
       params:{
-        next:'/admin/'
-      }
+        next:'http://localhost:8000/admin/'
+      },
 
 
     }
     )
       .then((response) => {
-        // console.log(response)
+        console.log(response)
+        // Some things feel so wrong, yet work so well. This is one of those things.
+        if (response.status == 200){
+          window.location = 'http://localhost:8000/admin/';
+          
+        }
       });
+
+      
 
   }
 
@@ -101,7 +122,7 @@ class Login extends Component {
             <MDBCard className="card text-center">
               <MDBCardBody>
     
-                <form method="post" action="/api-auth/login/?next=/admin/">
+                <form method="post" action="/api-auth/login/?next=http://localhost:8000/admin">
                   <p className="h4 text-center py-4">Sign In</p>
                   <div className="text-center">
                     <input type="hidden" name="csrfmiddlewaretoken" value={this.state.csrf_token}></input>

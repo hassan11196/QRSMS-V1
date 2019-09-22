@@ -1,3 +1,30 @@
+# QRSMS-V1.42
+minor changes to Front HomePage.
+
+
+**links**:
+Ahsan please check these out.
+--React Forms, 
+[https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html](https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html)
+
+[https://www.freecodecamp.org/news/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6/](https://www.freecodecamp.org/news/learning-react-roadmap-from-scratch-to-advanced-bff7735531b6/)
+
+[https://dev.to/amanhimself/using-react-router-to-optimize-single-page-applications-4mim](https://dev.to/amanhimself/using-react-router-to-optimize-single-page-applications-4mim)
+
+[https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/](https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/)
+
+[https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1](https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1)
+
+[https://medium.com/@zoltankohalmy/react-redux-router-authentication-e8a77107db46](https://medium.com/@zoltankohalmy/react-redux-router-authentication-e8a77107db46)
+
+[https://www.freecodecamp.org/news/hitchhikers-guide-to-react-router-v4-4b12e369d10/](https://www.freecodecamp.org/news/hitchhikers-guide-to-react-router-v4-4b12e369d10/)
+
+[https://dev.to/amanhimself/using-react-router-to-optimize-single-page-applications-4mim](https://dev.to/amanhimself/using-react-router-to-optimize-single-page-applications-4mim)
+
+[https://stackoverflow.com/questions/44232828/folder-structure-for-react-and-django-rest](https://stackoverflow.com/questions/44232828/folder-structure-for-react-and-django-rest)
+
+[https://hackernoon.com/serving-react-and-django-together-2089645046e4](https://hackernoon.com/serving-react-and-django-together-2089645046e4)
+
 # QRSMS-V1.41
 fixed webpack fonts issue. implemented a preliminary version of ahsans sign in page. 
 **links:**

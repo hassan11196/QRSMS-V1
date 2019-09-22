@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'webpack_loader',
     'django_restful_admin',
+    'corsheaders',
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -155,3 +157,7 @@ WEBPACK_LOADER = {
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static')]
 
 AUTH_USER_MODEL = 'initial.User'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
