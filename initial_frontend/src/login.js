@@ -6,7 +6,7 @@ import './App.css';
 import 'mdbreact/dist/css/mdb.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaCoffee } from '@fortawesome/free-solid-svg-icons';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBAlert } from 'mdbreact';
 import axios from "axios";
 import credential from './credentials.js';
 import Cookies from 'js-cookie';
@@ -32,11 +32,27 @@ class Login extends Component {
 
   constructor(props) {
     super(props);
+    console.log(process.env);
+    // /api-auth/login/?next=http://localhost:8000/admin
+
+    if(props.user === "student"){
+    }
+    else if(props.user === "teacher"){
+
+    }
+    else if(props.user === "faculty"){
+
+    }
+    else if(props.user === "admin"){
+
+    }
     this.state = {
       csrf_token: 0,
       username_admin: credential.REACT_APP_ADMIN_USERNAME,
-      password_admin: credential.REACT_APP_ADMIN_PASSWORD
-    }
+      password_admin: credential.REACT_APP_ADMIN_PASSWORD,
+      login_type_name : props.user === undefined ? "Undefined User Login" : props.user,
+      form_action_location: "/test_student_login?" + props.user,
+      }
   }
 
   get_csrf_token() {
@@ -76,19 +92,17 @@ class Login extends Component {
     formd.set('password', String(this.state.password_admin));
     formd.set('hello', 'hell');
     // console.log(formd);
-    axios.post("/api-auth/login/",formd, {
+    axios.post("/test_student_login/",formd, {
       // username: this.state.username_admin,
       // password: this.state.password_admin,
-      headers: {
-        // 'X-CSRFTOKEN': this.state.csrf_token,
-      },
-      // auth: {
-      //   username: this.state.username_admin,
-      //   password: this.state.password_admin,
+      // headers: {
+      //   // 'X-CSRFTOKEN': this.state.csrf_token,
       // },
-      params:{
-        next:'http://localhost:8000/admin/'
+      auth: {
+        username: this.state.username_admin,
+        password: this.state.password_admin,
       },
+      
 
 
     }
@@ -96,10 +110,10 @@ class Login extends Component {
       .then((response) => {
         console.log(response)
         // Some things feel so wrong, yet work so well. This is one of those things.
-        if (response.status == 200){
-          window.location = 'http://localhost:8000/admin/';
+        // if (response.status == 200){
+        //   window.location = 'http://localhost:8000/admin/';
           
-        }
+        // }
       });
 
       
@@ -110,9 +124,12 @@ class Login extends Component {
   render() {
     //console.log("Render");
     return (
+     
       <MDBContainer>
         <MDBRow>
-          <p>     </p>
+           
+           
+
         </MDBRow>
         <br /><br /><br />
         <MDBRow>
@@ -121,8 +138,10 @@ class Login extends Component {
           <MDBCol md="4">
             <MDBCard className="card text-center">
               <MDBCardBody>
-    
-                <form method="post" action="/api-auth/login/?next=http://localhost:8000/admin">
+              <h1>
+           {this.state.login_type_name}
+           </h1>
+                <form method="post" action={this.state.form_action_location}>
                   <p className="h4 text-center py-4">Sign In</p>
                   <div className="text-center">
                     <input type="hidden" name="csrfmiddlewaretoken" value={this.state.csrf_token}></input>

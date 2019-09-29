@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include, re_path
 from rest_framework import routers
 import django_restful_admin
 from initial import views
@@ -24,7 +24,7 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'course_info',views.CourseViewSet)
-# router.register(r'students_num', views.StudentViewSet)
+router.register(r'students', views.StudentViewSet)
 router.register(r'teachers', views.TeacherViewSet)
 
 urlpatterns = [
@@ -33,6 +33,7 @@ urlpatterns = [
     path('',include(router.urls)),
     path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path(r'rest_admin/', django_restful_admin.site.urls)
+    path(r'rest_admin/', django_restful_admin.site.urls),
+    re_path(r'^(?:.*)/?$', views.index), # URL Fallback to react router
 
 ]
