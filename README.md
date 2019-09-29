@@ -1,3 +1,24 @@
+# QRSMS-V1.43
+
+    login_type:props.user_type  ==  undefined  ?  "Undefined User Login"  :  props.user_type,
+
+four user types:
+admin : 0, faculty : 1, teacher : 2, student : 3
+
+**links:**
+
+
+[https://learnwithparam.com/blog/how-to-pass-props-in-react-router/](https://learnwithparam.com/blog/how-to-pass-props-in-react-router/)
+
+[https://blog.pshrmn.com/simple-react-router-v4-tutorial/](https://blog.pshrmn.com/simple-react-router-v4-tutorial/)
+
+[https://codeburst.io/getting-started-with-react-router-5c978f70df91](https://codeburst.io/getting-started-with-react-router-5c978f70df91)
+
+[https://www.freecodecamp.org/news/beginner-s-guide-to-react-router-53094349669/](https://www.freecodecamp.org/news/beginner-s-guide-to-react-router-53094349669/)
+
+
+
+
 # QRSMS-V1.42
 minor changes to Front HomePage.
 

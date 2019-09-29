@@ -1,14 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator,ValidationError
 from institution.models import University, Campus, Degree, UNIVERISTY_ID_REGEX
+
 
 
 CNIC_REGEX = RegexValidator(
     "[0-9]{5}-[0-9]{7}-[0-9]{1}", message="Invalid CNIC")
+BATCH_YEAR_REGEX = RegexValidator(
+    "[0-9]{4}",message="Invalid Batch Year")
+
 
 
 class User(AbstractUser):
+    username = models.CharField("username", max_length=50,unique=True,null=False)
     GENDERS = [
         ('M', 'MALE'),
         ('F', 'FEMALE'),
@@ -61,16 +66,45 @@ class Faculty(models.Model):
         verbose_name_plural = "Faculty Supervisors"
 
 
+
+
+
 class Student(models.Model):
+    @classmethod
+    def create(cls, first_name,last_name,email,password, *args, **kwargs):
+        print(first_name + last_name+ email+ password)
+        user_created = User(first_name = first_name, last_name = last_name, password = password, email=email, is_student=True)
+        user_created.save()
+        last_student = Student.objects.all().order_by('arn').last()
+        
+        if not last_student:
+            print("last studnet is empty")
+            last_arn_number =  ((17%100)*1000000)+1
+        else:
+            last_arn_number = last_student.arn + 1
+            
+        
+        student_created = cls(user=user_created,arn=last_arn_number)
+        
+        print("Returning created student")
+        print(student_created )
+
+        return student_created
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    batch = models.PositiveSmallIntegerField("batch year", validators=[BATCH_YEAR_REGEX])
     arn = models.PositiveIntegerField(
-        "Admission Registration Number", name='arn')
-    uid = models.CharField("Student ID", default="00K-0000", name="uid", primary_key=True,
+        "Admission Registration Number", name='arn',primary_key=True)
+    
+    uid = models.CharField("Student ID", default="00K-0000", name="uid",
                            max_length=8, validators=[UNIVERISTY_ID_REGEX], help_text="University Student Roll Number")
 
     def __str__(self):
         return self.user.username
 
+   
+
+      
 
 class Semester(models.Model):
     offered_courses = models.ManyToManyField(
