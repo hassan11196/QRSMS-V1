@@ -14,6 +14,7 @@ djangorestframework = "*"
 django-webpack-loader = "*"
 django-restful-admin = "*"
 django-cors-headers = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.7"

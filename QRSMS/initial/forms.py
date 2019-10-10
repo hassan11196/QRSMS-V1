@@ -1,5 +1,5 @@
 from django import forms
-from .models import User, Student, BATCH_YEAR_REGEX, UNIVERISTY_ID_REGEX
+from .models import User, Student, BATCH_YEAR_REGEX, UNIVERISTY_ID_REGEX, Course, Teacher, Faculty, Semester
 
 
 def arn_helper(batch):
@@ -15,7 +15,7 @@ def student_id_helper(uid):
     return int(uid[4:])
 
 
-class StudentForm(forms.Form):
+class StudentFormValidate(forms.Form):
     first_name = forms.CharField(label='first name', max_length=30)
     last_name = forms.CharField(label='last name', max_length=150)
     email = forms.EmailField(label='email address')
@@ -58,3 +58,34 @@ class StudentForm(forms.Form):
         # created_student = Student(user=created_user,uid=created_user.username,arn=1700006,batch=2017)
         created_student.save()
         return created_student
+
+
+
+class CourseForm(forms.ModelForm):
+    class Meta:
+        model = Course
+        fields = ['course_name', 'course_code']
+
+
+class TeacherForm(forms.ModelForm):
+    class Meta:
+        model = Teacher
+        fields = ['department', 'nu_email', 'user']
+
+
+class FacultyForm(forms.ModelForm):
+    class Meta:
+        model = Faculty
+        fields = ['user']
+
+
+
+class SemesterForm(forms.ModelForm):
+    class Meta:
+        model = Semester
+        fields = [ 'teachers_available']
+
+class StudentForm(forms.ModelForm):
+    class Meta:
+        model = Student
+        fields = ['batch', 'arn', 'uid', 'degree_name_enrolled', 'degree_short_enrolled', 'department_name_enrolled', 'uni_mail', 'user']

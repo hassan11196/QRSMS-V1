@@ -1,3 +1,35 @@
+# QRSMS-V1.44
+Dummy Data inserted for students, Management Commands setup to quickly run scripts relating to Django data and debug. 
+Crispy Forms inserted that provide quick and simple manipulation(Though we wont use it fully). It allows us to write basic HTML forms that are then beautified using Bootstrap.
+ Student Table has been extended with several attributes. 
+No work could be done on Front-end React Components. 
+
+**Links:** 
+
+https://rogerdudler.github.io/git-guide/
+
+https://www.mockaroo.com/schemas/192990
+
+Nouman Bhai specially check this:
+
+https://mmcardle.github.io/django_builder/#!/home
+
+Redux Reading Material :
+
+[https://blog.bitsrc.io/react-communication-between-components-c0cfccfa996a](https://blog.bitsrc.io/react-communication-between-components-c0cfccfa996a)  
+  
+[https://towardsdatascience.com/passing-data-between-react-components-parent-children-siblings-a64f89e24ecf](https://towardsdatascience.com/passing-data-between-react-components-parent-children-siblings-a64f89e24ecf)  
+  
+[https://medium.com/tkssharma/react-js-new-context-api-for-data-passing-fa4bb952862f](https://medium.com/tkssharma/react-js-new-context-api-for-data-passing-fa4bb952862f)  
+  
+[https://dev.to/email2vimalraj/react-hooks-lift-up--pass-down-state-using-usecontext-and-usereducer-5ai0](https://dev.to/email2vimalraj/react-hooks-lift-up--pass-down-state-using-usecontext-and-usereducer-5ai0)  
+  
+[https://medium.com/javascript-in-plain-english/the-only-introduction-to-redux-and-react-redux-youll-ever-need-8ce5da9e53c6](https://medium.com/javascript-in-plain-english/the-only-introduction-to-redux-and-react-redux-youll-ever-need-8ce5da9e53c6)  
+  
+[https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)  
+  
+[https://jaketrent.com/post/remove-array-element-without-mutating/](https://jaketrent.com/post/remove-array-element-without-mutating/)
+
 # QRSMS-V1.43
 
     login_type:props.user_type  ==  undefined  ?  "Undefined User Login"  :  props.user_type,

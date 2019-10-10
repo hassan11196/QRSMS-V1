@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'django_restful_admin',
     'corsheaders',
+    'crispy_forms',
 
 ]
 
@@ -161,3 +162,5 @@ AUTH_USER_MODEL = 'initial.User'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

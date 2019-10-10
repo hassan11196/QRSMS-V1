@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'initial_course_list' %}">Course Listing</a></p>
+<table class="table">
+<tr><td>course_name</td><td>{{ object.course_name }}</td></tr>
+<tr><td>course_code</td><td>{{ object.course_code }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Course</a>
+
+{% endblock %}

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator,ValidationError
 from institution.models import University, Campus, Degree, UNIVERISTY_ID_REGEX
-
+from django.urls import reverse
 
 
 CNIC_REGEX = RegexValidator(
@@ -34,6 +34,24 @@ class User(AbstractUser):
     CNIC = models.CharField(max_length=15, validators=[
                             CNIC_REGEX], name="CNIC")
 
+    permanent_address = models.TextField(null=True)
+    permanent_home_phone = models.PositiveIntegerField(null=True)
+    permanent_postal_code = models.PositiveIntegerField(null=True)
+    permanent_city = models.TextField(max_length=100,null=True)
+    permanent_country = models.TextField(max_length=100,null=True)
+    current_address = models.TextField(null=True)
+    current_home_phone = models.PositiveIntegerField(null=True)
+    current_postal_code = models.PositiveIntegerField(null=True)
+    current_city = models.TextField(max_length=100,null=True)
+    current_country = models.TextField(max_length=100,null=True)
+
+    
+    DOB = models.DateField(verbose_name='Date of Birth',null=True)
+    nationality = models.CharField(verbose_name='Nationality', max_length=100,null=True)
+    mobile_contact = models.PositiveIntegerField(verbose_name='Mobile Contact',null=True)
+    emergency_contact = models.PositiveIntegerField(verbose_name='Emergency Contact',null=True)
+
+
 # Create your models here.
 
 
@@ -46,6 +64,18 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+    class Meta:
+        ordering = ('-pk',)
+
+    def __unicode__(self):
+        return u'%s' % self.pk
+
+    def get_absolute_url(self):
+        return reverse('initial_course_detail', args=(self.pk,))
+
+
+    def get_update_url(self):
+        return reverse('initial_course_update', args=(self.pk,))
 
 # class Student(models.Model):
 #     student_id = models.CharField(max_length=8,primary_key=True, validators = [RegexValidator("^[A-Z][0-9]{2}-[0-9]{4}$", message = "Invalid Student ID")], name="student_id_n")
@@ -57,14 +87,36 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.user.username
+        
+    class Meta:
+        ordering = ('-pk',)
 
+    def __unicode__(self):
+        return u'%s' % self.pk
+
+    def get_absolute_url(self):
+        return reverse('initial_teacher_detail', args=(self.pk,))
+
+
+    def get_update_url(self):
+        return reverse('initial_teacher_update', args=(self.pk,))
 
 class Faculty(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
+        ordering = ('-pk',)
         verbose_name_plural = "Faculty Supervisors"
 
+    def __unicode__(self):
+        return u'%s' % self.pk
+
+    def get_absolute_url(self):
+        return reverse('initial_faculty_detail', args=(self.pk,))
+
+
+    def get_update_url(self):
+        return reverse('initial_faculty_update', args=(self.pk,))
 
 
 
@@ -99,14 +151,37 @@ class Student(models.Model):
     uid = models.CharField("Student ID", default="00K-0000", name="uid",
                            max_length=8, validators=[UNIVERISTY_ID_REGEX], help_text="University Student Roll Number")
 
+    degree_name_enrolled = models.CharField(max_length=255 ,null=True)
+    degree_short_enrolled = models.CharField(max_length=30, null=True)
+    department_name_enrolled = models.CharField(max_length=255, null=True)
+    uni_mail = models.EmailField(name='uni_mail',null=True)
+    
+
+
+
     def __str__(self):
         return self.user.username
+
+
+    class Meta:
+        ordering = ('-pk',)
+
+    def __unicode__(self):
+        return u'%s' % self.pk
+
+    def get_absolute_url(self):
+        return reverse('initial_student_detail', args=(self.pk,))
+
+
+    def get_update_url(self):
+        return reverse('initial_student_update', args=(self.pk,))
 
    
 
       
 
 class Semester(models.Model):
+    semester_code = models.CharField(max_length=255, primary_key=True , default='TEST2000')
     offered_courses = models.ManyToManyField(
         Course, related_name="semester_offered")
     SEMSESTER_CHOICES = (
@@ -123,3 +198,16 @@ class Semester(models.Model):
         Teacher, related_name="teachers_available")
     students_registered = models.ManyToManyField(
         Student, related_name="students_registered")
+
+    class Meta:
+        ordering = ('-pk',)
+
+    def __unicode__(self):
+        return u'%s' % self.pk
+
+    def get_absolute_url(self):
+        return reverse('initial_semester_detail', args=(self.pk,))
+
+
+    def get_update_url(self):
+        return reverse('initial_semester_update', args=(self.pk,))

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'initial_course_list' %}">Course Listing</a></p>
+<table class="table">
+<tr>
+<td>ID</td><td>Link</td>
+    <td>course_name</td>
+    <td>course_code</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.course_name }}</td>
+    <td>{{ object.course_code }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'initial_course_create' %}">Create new Course</a>
+{% endblock %}

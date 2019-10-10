@@ -11,12 +11,15 @@ from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
 
-from .models import Course, Teacher, User,Student
+from django.views.generic import DetailView, ListView, UpdateView, CreateView
+
+
 from .serializers import (
     CourseSerializer, GroupSerializer, TeacherSerializer, UserSerializer, StudentSerializer)
 
-from .forms import StudentForm
 
+from .forms import CourseForm, TeacherForm, FacultyForm, StudentForm, SemesterForm, StudentFormValidate
+from .models import Course, Teacher, User,Student, Semester, Faculty
 def temp_login(request):
     print(request)
     return HttpResponse("USer" + str(request.user))
@@ -35,7 +38,7 @@ def index(request):
 
 class StudentSignupView(View):
     def post(self, request):
-        form = StudentForm(request.POST)
+        form = StudentFormValidate(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
             form.save()
@@ -92,3 +95,94 @@ class StudentViewSet(viewsets.ModelViewSet):
 class TeacherViewSet(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
+
+
+class CourseListView(ListView):
+    model = Course
+
+
+class CourseCreateView(CreateView):
+    model = Course
+    form_class = CourseForm
+
+
+class CourseDetailView(DetailView):
+    model = Course
+
+
+class CourseUpdateView(UpdateView):
+    model = Course
+    form_class = CourseForm
+
+
+class TeacherListView(ListView):
+    model = Teacher
+
+
+class TeacherCreateView(CreateView):
+    model = Teacher
+    form_class = TeacherForm
+
+
+class TeacherDetailView(DetailView):
+    model = Teacher
+
+
+class TeacherUpdateView(UpdateView):
+    model = Teacher
+    form_class = TeacherForm
+
+
+class FacultyListView(ListView):
+    model = Faculty
+
+
+class FacultyCreateView(CreateView):
+    model = Faculty
+    form_class = FacultyForm
+
+
+class FacultyDetailView(DetailView):
+    model = Faculty
+
+
+class FacultyUpdateView(UpdateView):
+    model = Faculty
+    form_class = FacultyForm
+
+
+class StudentListView(ListView):
+    model = Student
+
+
+class StudentCreateView(CreateView):
+    model = Student
+    form_class = StudentForm
+
+
+class StudentDetailView(DetailView):
+    model = Student
+
+
+class StudentUpdateView(UpdateView):
+    model = Student
+    form_class = StudentForm
+
+
+class SemesterListView(ListView):
+    model = Semester
+
+
+class SemesterCreateView(CreateView):
+    model = Semester
+    form_class = SemesterForm
+
+
+class SemesterDetailView(DetailView):
+    model = Semester
+
+
+class SemesterUpdateView(UpdateView):
+    model = Semester
+    form_class = SemesterForm
+

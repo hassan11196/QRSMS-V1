@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'initial_semester_list' %}">Semester Listing</a></p>
+<table class="table">
+<tr><td>semester_year</td><td>{{ object.semester_year }}</td></tr>
+<tr><td>start_date</td><td>{{ object.start_date }}</td></tr>
+<tr><td>end_date</td><td>{{ object.end_date }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Semester</a>
+
+{% endblock %}

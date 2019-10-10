@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'initial_student_list' %}">Student Listing</a></p>
+<table class="table">
+<tr><td>batch</td><td>{{ object.batch }}</td></tr>
+<tr><td>arn</td><td>{{ object.arn }}</td></tr>
+<tr><td>uid</td><td>{{ object.uid }}</td></tr>
+<tr><td>degree_name_enrolled</td><td>{{ object.degree_name_enrolled }}</td></tr>
+<tr><td>degree_short_enrolled</td><td>{{ object.degree_short_enrolled }}</td></tr>
+<tr><td>department_name_enrolled</td><td>{{ object.department_name_enrolled }}</td></tr>
+<tr><td>uni_mail</td><td>{{ object.uni_mail }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Student</a>
+
+{% endblock %}
