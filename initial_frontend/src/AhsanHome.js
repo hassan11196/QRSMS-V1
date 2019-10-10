@@ -8,7 +8,16 @@ import { FaCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { Card } from 'react-bootstrap';
 import { CardBody } from 'react-bootstrap/Card';
+
+var data = {
+    name:"Muhammad"
+};
+
+
+
 class AhsanHome extends Component {
+
+
     render() {
         return (
 
@@ -23,7 +32,7 @@ class AhsanHome extends Component {
                                 <Card.Text style={{ textAlign: "left" }}>
                                     <MDBRow>
                                         <MDBCol md="4">
-                                            <span style={{ fontWeight: "bold" }}>Name: </span><span>Muhammad Ahsan Siddiq</span>
+                                            <span style={{ fontWeight: "bold" }}>Name: </span><span>{data.name}</span>
                                         </MDBCol>
                                         <MDBCol md="4">
                                             <span style={{ fontWeight: "bold" }}>Father Name: </span><span>Muhammad Ali</span>

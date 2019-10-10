@@ -1,0 +1,10487 @@
+[
+	{
+		"Department": "BBA",
+		"uid": "14K-2712",
+		"name": "Pirkash"
+	},
+	{
+		"Department": "BBA",
+		"uid": "15K-2717",
+		"name": "Vinesh Kumar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2709",
+		"name": "Syed Taimoor Bin Naseem"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2723",
+		"name": "Sehar Ali"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2736",
+		"name": "Muhammad Bilal"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2741",
+		"name": "Muhammad Irfan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2750",
+		"name": "Syeda Aiman Fatima"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2757",
+		"name": "Rahat Himmat Ali"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0005",
+		"name": "Muhammad Owais Siddiq"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0011",
+		"name": "Sanya"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0023",
+		"name": "Sadaqat Murtaza"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0001",
+		"name": "Abdul Hameed"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0007",
+		"name": "Saeed Sarwar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0013",
+		"name": "Dania Suhail"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0020",
+		"name": "Adeeba Salman Ahmed"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0028",
+		"name": "Ghulam Mujtaba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "12K-2152",
+		"name": "Wasif Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2178",
+		"name": "Deedag Baloch"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2028",
+		"name": "Muhammad Muteeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2128",
+		"name": "Muhammad Azeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2213",
+		"name": "Mubeen Alam Usmani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2279",
+		"name": "Muhammad Talha Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2838",
+		"name": "Muhammad Ali Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2108",
+		"name": "Mustafa hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2170",
+		"name": "Rija farooqi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2196",
+		"name": "Afaq Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2254",
+		"name": "Arsalan Iqbal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2268",
+		"name": "Mukees Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2304",
+		"name": "Syed Muhammad Owais Kalimi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2342",
+		"name": "Syed Muhammad Jamil Uddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2486",
+		"name": "Nabeel Akhtar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2806",
+		"name": "Muhammad Zawwar Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2844",
+		"name": "Ali Shah Quddus"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3608",
+		"name": "Muhammad Safiullah Jawaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3635",
+		"name": "Syed Meesam Ali Masood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-2488",
+		"name": "Umer Zaman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3606",
+		"name": "Noman Faisal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3614",
+		"name": "Muhammad Yasir Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3620",
+		"name": "Abdul Mannan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3627",
+		"name": "Muhammad Nabeel Farooqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3633",
+		"name": "Syed Hassaan Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3639",
+		"name": "Muhammad Soman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3644",
+		"name": "Syed Aymen Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3650",
+		"name": "Hussain Raza Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3657",
+		"name": "Minhaj Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3663",
+		"name": "Varisha Jabbar Surtee"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3669",
+		"name": "Syed Mohammad Ammar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3677",
+		"name": "Neha Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3683",
+		"name": "Mansab Ali Abro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3688",
+		"name": "Aiman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3693",
+		"name": "Syed Ali Sharjeel Kazmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3700",
+		"name": "Abdullah Mujeeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3707",
+		"name": "Dawar Hasnain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3715",
+		"name": "Huzaifa Ashraf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3721",
+		"name": "Shiza Azam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3726",
+		"name": "Syed Ashar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3734",
+		"name": "Shahzaib Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3742",
+		"name": "Muhammad Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3750",
+		"name": "Muhammad Shaharyar Ayaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3759",
+		"name": "Haris Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3764",
+		"name": "Ahsun Asim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3773",
+		"name": "Waseem Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3779",
+		"name": "Sanghar Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3788",
+		"name": "Krinza Momin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3798",
+		"name": "Farhan Ahmed Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3805",
+		"name": "Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3812",
+		"name": "Huzaifa Irfan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3817",
+		"name": "Waris Ghaffar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3824",
+		"name": "Haris Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3829",
+		"name": "Abdul Aziz Akmal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3835",
+		"name": "Ossaid Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3840",
+		"name": "Shahrukh Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3846",
+		"name": "Nimra Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3852",
+		"name": "Puran Lakhani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3859",
+		"name": "Syed Moiz Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3864",
+		"name": "Mina Syed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3875",
+		"name": "Shamama Shoaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3884",
+		"name": "Muhammad Usama Saeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3893",
+		"name": "Syed Umer Hasan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3898",
+		"name": "Salman Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3906",
+		"name": "Muhammad Yousuf Jusani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3911",
+		"name": "Muhammad Bilal Un Nabi Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3920",
+		"name": "Osama Ejaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3927",
+		"name": "Bisma Jamal Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3934",
+		"name": "Fareeha Sattar Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3941",
+		"name": "Sheheryar Pirzada"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3946",
+		"name": "Muhammad Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3952",
+		"name": "Daniyal Raza Khuwaja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3960",
+		"name": "Shahnihal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3965",
+		"name": "Pawan Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3974",
+		"name": "Sohail Zia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3987",
+		"name": "Muhammad Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3996",
+		"name": "Syed Aziz Haider Abidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4001",
+		"name": "Mirza Sawleh Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4011",
+		"name": "Haziq Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4020",
+		"name": "Aroon Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4026",
+		"name": "Okesh Kumar Harjani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4035",
+		"name": "Nageena Kanwal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4042",
+		"name": "Muhammad Umer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4050",
+		"name": "Muhammad Imran"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4055",
+		"name": "Shahrukh Bashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4061",
+		"name": "Bilal Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4068",
+		"name": "Abeer Zehra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4074",
+		"name": "Mohammad Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4079",
+		"name": "Syed Emaz Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2372",
+		"name": "Siddahant Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2398",
+		"name": "Shaikh Ijlal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3605",
+		"name": "Syed Mushail Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3610",
+		"name": "Daniyal Mujtaba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3616",
+		"name": "Mohammad Hammad Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3622",
+		"name": "Syed Nabi Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3628",
+		"name": "Neha Alam Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3634",
+		"name": "Mohsin Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3639",
+		"name": "Fatima Ibrahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3647",
+		"name": "Vishesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3652",
+		"name": "Noman Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3657",
+		"name": "Rameez Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3662",
+		"name": "Daniyal Ahmed Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3667",
+		"name": "Syed Unaiz Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3674",
+		"name": "Shaikh Usama Yaseen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3680",
+		"name": "Masood Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3685",
+		"name": "Muhammad Faraz Quadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3693",
+		"name": "Hassan Saeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3699",
+		"name": "Manish"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3705",
+		"name": "Neeraj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3712",
+		"name": "Muhammad Shan Amin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3719",
+		"name": "Syed Bilal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3724",
+		"name": "Satish Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3732",
+		"name": "Muhammad Hassaan Azhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3739",
+		"name": "Abdul Moiz Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3744",
+		"name": "Shayan Noor Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3751",
+		"name": "Doua Qazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3757",
+		"name": "Alishan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3762",
+		"name": "Kaamla Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3767",
+		"name": "Syed Shameer Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3775",
+		"name": "Azhan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3782",
+		"name": "Anas Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3790",
+		"name": "Alizain Rahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3796",
+		"name": "Syed Arham Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3807",
+		"name": "Huzaifa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3814",
+		"name": "Muneeb Ur Rehman Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3824",
+		"name": "Deepak Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3832",
+		"name": "Abdul Muntaqeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3841",
+		"name": "Muhammad Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3848",
+		"name": "Obaid Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3856",
+		"name": "Muhammad Abubakr"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3863",
+		"name": "Nael Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3868",
+		"name": "Sameen Jawaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3874",
+		"name": "Syed Irfan Ali Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3879",
+		"name": "Ayesha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3885",
+		"name": "Muhammad Naveed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3893",
+		"name": "Saif Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3899",
+		"name": "Muhammad Jibran Jafry"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3905",
+		"name": "Noman Abdul Muqeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3910",
+		"name": "Muhammad Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3915",
+		"name": "Muhammad Bilal Rizwan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3922",
+		"name": "Syed Muhammad Abdullah Qadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3930",
+		"name": "Abdur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3937",
+		"name": "Anas Zafar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3942",
+		"name": "Muhammad Abdullah Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3948",
+		"name": "Hashir Kaleem Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0121",
+		"name": "Aafeen Asif Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0126",
+		"name": "Muhammad Jahanzeb Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0131",
+		"name": "Muhammad Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0139",
+		"name": "Syed Usman Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0144",
+		"name": "Nabia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0149",
+		"name": "Umer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0154",
+		"name": "Muhammad Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0159",
+		"name": "Muhammad Usman Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0166",
+		"name": "Zaeem Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0171",
+		"name": "Affan Muhammad Ghazali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0177",
+		"name": "Minhaj Uddin Meraj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0182",
+		"name": "Rakia Shafique"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0190",
+		"name": "Sheikh Mahmood Ahmed Iraqi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0196",
+		"name": "Mustaali Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0201",
+		"name": "Muhammad Faizan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0208",
+		"name": "Muhammad Hassan Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0213",
+		"name": "Burhanuddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0219",
+		"name": "Kashish Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0225",
+		"name": "Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0230",
+		"name": "Imsa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0235",
+		"name": "Muhammad Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0240",
+		"name": "Shaikh Hamza Yaseen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0246",
+		"name": "Hasnain Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0251",
+		"name": "Jaideep Jagani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0256",
+		"name": "Muhammad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0263",
+		"name": "Ramsha Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0268",
+		"name": "Arisha Aziz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0274",
+		"name": "Abdul Basit Imam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0279",
+		"name": "Ahmed Saqib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0285",
+		"name": "Syed Anas Waseem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0290",
+		"name": "Yougesh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0295",
+		"name": "Ishaq Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0301",
+		"name": "Taha Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0306",
+		"name": "Amanullah Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0312",
+		"name": "Talha Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0321",
+		"name": "Syed Muhammad Hassan Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0328",
+		"name": "S M Syed Usajideen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0334",
+		"name": "Osama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0339",
+		"name": "Fakhiha Mirza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0345",
+		"name": "Mahad Sheikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0350",
+		"name": "Ibrahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0355",
+		"name": "Sajjad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0362",
+		"name": "Areesha Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0367",
+		"name": "Asad Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0395",
+		"name": "Syed Bilal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0429",
+		"name": "Syed Areeb Amjed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1038",
+		"name": "Muhammad Talha Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1045",
+		"name": "Ali Arman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1053",
+		"name": "Muhammad Mubassher Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1059",
+		"name": "Muhammad Hasan Aasim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1065",
+		"name": "Muhammad Maaz Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1071",
+		"name": "Hassan Tariq Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1076",
+		"name": "Muhammad Umar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1083",
+		"name": "Govind Raj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1091",
+		"name": "Ali Aman Charolia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1099",
+		"name": "Ruba Waqar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1105",
+		"name": "Haiqa Azeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1117",
+		"name": "Syed Muhammad Abdurraffay"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1124",
+		"name": "Abdul Haseeb Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1130",
+		"name": "Muhammad Jawwad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1135",
+		"name": "Syeda Khadija"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1140",
+		"name": "Muhammad Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1147",
+		"name": "Abdul Sami Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1152",
+		"name": "Mohammad Ozair Rana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1157",
+		"name": "Muhammad Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1162",
+		"name": "Syed Haris Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1169",
+		"name": "Muhammad Tahir Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1176",
+		"name": "Hunain Saeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1182",
+		"name": "Muhammad Faraz Sarwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1187",
+		"name": "Laiba Rais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1195",
+		"name": "Shoaib Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1252",
+		"name": "Love Amrat"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1258",
+		"name": "Wali Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1264",
+		"name": "Zarwali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1270",
+		"name": "Muhammad Taha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1282",
+		"name": "Fiza Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1290",
+		"name": "Abdul Aziz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1297",
+		"name": "Rumaisa Sheikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1355",
+		"name": "Rohit Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1361",
+		"name": "Hiba Zubair"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1366",
+		"name": "Muhammad Haris"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1371",
+		"name": "Shaharyar Amjad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0125",
+		"name": "Muhammad Affan Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0132",
+		"name": "Mirza Haider Ali Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0137",
+		"name": "Syeda Aamna Ozair"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0143",
+		"name": "Jitesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0148",
+		"name": "Mohammad Maaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0153",
+		"name": "Sarim Sohail Soomro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0159",
+		"name": "Ahmed Saeed Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0164",
+		"name": "Syed Muhammad Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0169",
+		"name": "Sonu Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0174",
+		"name": "Muhammad Mohsin Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0179",
+		"name": "Syed Shayan Abid Fazli"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0184",
+		"name": "Huzaifa Mehmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0189",
+		"name": "Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0194",
+		"name": "Huzaifa Khalil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0199",
+		"name": "Ritik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0205",
+		"name": "Ammad Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0210",
+		"name": "Manahil Jawed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0216",
+		"name": "Sandeep Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0221",
+		"name": "Syed Basit Khurshid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0226",
+		"name": "Midhat Karim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0233",
+		"name": "Shaheer Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0238",
+		"name": "Muhammad Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0244",
+		"name": "Affan Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0249",
+		"name": "Haris Aqeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0254",
+		"name": "Anjiya Saleem Pirani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0259",
+		"name": "Ibadullah Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0264",
+		"name": "Abdul Bari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0269",
+		"name": "Farooq Ali Jan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0274",
+		"name": "Muhammad Talha Rana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0279",
+		"name": "Muhammad Umer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0285",
+		"name": "Mohammad Naqi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0290",
+		"name": "Haider Ali Mohsin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0295",
+		"name": "Sheheryar Azam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0301",
+		"name": "Ali Nayab Nathani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0306",
+		"name": "Syed Muhammad Mubashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0311",
+		"name": "Sammam Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0316",
+		"name": "Rabees Waheed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0321",
+		"name": "Syed Shayan Pasha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0327",
+		"name": "Mudasir Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0334",
+		"name": "Muhammad Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0339",
+		"name": "Muhammad Umar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0345",
+		"name": "Muhammad Maaz Akhter"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0350",
+		"name": "Saad Salam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0355",
+		"name": "Jeevan Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0360",
+		"name": "Muhammad Areeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0365",
+		"name": "Ali Panjwani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1251",
+		"name": "Muhammad Huzaifa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1257",
+		"name": "Syed Umer Rashid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1262",
+		"name": "Waqar Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1270",
+		"name": "Geetesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1275",
+		"name": "Muhammad Huzaifa Azeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1280",
+		"name": "Syed Muhammad Faizan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1287",
+		"name": "Sharjeel Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1292",
+		"name": "Hassan Jamil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1298",
+		"name": "Fayaz Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1303",
+		"name": "Syed Muhammad Usman Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1308",
+		"name": "Mohsin Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1313",
+		"name": "Tatheer Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1319",
+		"name": "Abdul Rafay Mubeen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1325",
+		"name": "Maaz Bin Asad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1330",
+		"name": "Rajendar Singh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1336",
+		"name": "Abdul Moiz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1342",
+		"name": "Syeda Jawairiya Kazmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1347",
+		"name": "Sumair Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1353",
+		"name": "Syed Ahmed Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1360",
+		"name": "Hassan Raza Attari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1365",
+		"name": "Hamza Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1370",
+		"name": "Muhammad Haris Ghani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1375",
+		"name": "Muhammad Shayan Malick"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1380",
+		"name": "Subhan Farid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1386",
+		"name": "Om Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1391",
+		"name": "Zulfiqar Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1397",
+		"name": "Aneela Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1403",
+		"name": "Hissan Waseem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1408",
+		"name": "Muhammad Mawiz Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1413",
+		"name": "Siadat Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1418",
+		"name": "Jawad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1423",
+		"name": "Ali Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1430",
+		"name": "Sundar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1436",
+		"name": "Muhammad Naim Majeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1441",
+		"name": "Muhammad Iqbal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1447",
+		"name": "Taha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1452",
+		"name": "Syed Muhammad Haroon Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1457",
+		"name": "Muhammad Nasar Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1463",
+		"name": "Jahanzaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1469",
+		"name": "Zoha Mobin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1475",
+		"name": "Syed Ahsan Akhtar Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1481",
+		"name": "Khuzaima Altaf Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1486",
+		"name": "Jazib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1491",
+		"name": "Aman Soofi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1497",
+		"name": "Muskan Kumari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1503",
+		"name": "Shahmir Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1509",
+		"name": "Danish Amir Ali Virani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1516",
+		"name": "Syed Ovais Ashraf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1522",
+		"name": "Tahreem Rizwan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1528",
+		"name": "Nisha Waseem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2363",
+		"name": "Umar Mahmood"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2435",
+		"name": "Saif Ali Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2498",
+		"name": "Taj Muhammad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2357",
+		"name": "Muhammad Hamza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2412",
+		"name": "Hamza Tariq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2430",
+		"name": "Muhammad Goher Shaheryar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2450",
+		"name": "Syed Saad Azim"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2509",
+		"name": "Ubaidullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2353",
+		"name": "Rimsha Nayyar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2362",
+		"name": "Syed Muhammad Asad Raza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2374",
+		"name": "Abdul Mueed Ansari"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2382",
+		"name": "Syed Muhammad Shamique Nizam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2388",
+		"name": "Nirmal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2397",
+		"name": "Usman Qasim Riaz"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2406",
+		"name": "Muhammad Saad Majeed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2417",
+		"name": "Ebbadullah Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2428",
+		"name": "Usama"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2437",
+		"name": "Nasarullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2445",
+		"name": "Yasir Ahmed Usmani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2450",
+		"name": "Khan Yousif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2462",
+		"name": "Mohammad Hasnain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2470",
+		"name": "Muhammad Rafey Khursheed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2485",
+		"name": "Rashid Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2355",
+		"name": "Syed Umer Naeem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2368",
+		"name": "Syed Allay Haider"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2381",
+		"name": "Jalal Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2388",
+		"name": "Tariq Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2402",
+		"name": "Shahzad Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2420",
+		"name": "Shoaib Bhatti"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2426",
+		"name": "Ahmedraza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2448",
+		"name": "Syed Usman Ibrahim"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0359",
+		"name": "Syed Ahmer Raza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0380",
+		"name": "Abdul Sami"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0387",
+		"name": "Hafiz Subghatullah Khuwaja"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0392",
+		"name": "Mohtashim Ahmed Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0402",
+		"name": "Abu Hurera"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0412",
+		"name": "Tooba Ejaz Ch"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0418",
+		"name": "Muhammad Marij"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0430",
+		"name": "Hamza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0436",
+		"name": "Abdul Basit Karim"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0442",
+		"name": "Wasay Naeem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0448",
+		"name": "Abdullah Ahsan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0457",
+		"name": "Varishah Mahmood"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0462",
+		"name": "Moeez Mustafa"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0470",
+		"name": "Muhammad Zakaria"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0480",
+		"name": "Muhammad Hamza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-1087",
+		"name": "Anas Arif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0372",
+		"name": "Nofil Mustafa"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0379",
+		"name": "Muhammad Izaan Ahmad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0384",
+		"name": "Agha Muhammad Taqi Mirza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0389",
+		"name": "Syed Khurram Ali Hashmi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0395",
+		"name": "Khadija Imran Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0401",
+		"name": "Aakash"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0407",
+		"name": "Parvez Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0412",
+		"name": "Ss Hamza Shamim"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0417",
+		"name": "Huzaifa Minhaj"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0423",
+		"name": "Muhammad Kabeer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0429",
+		"name": "Nawal Junaid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0435",
+		"name": "Ebaadullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0441",
+		"name": "Orangzeb"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0448",
+		"name": "Abdul Mughni"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0455",
+		"name": "Muhammad Ali Ammar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0460",
+		"name": "Sagar Laghari"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0465",
+		"name": "Saud Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0471",
+		"name": "Fatima Badshahzadi"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1031",
+		"name": "Zaryab Ansari"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1036",
+		"name": "Syed Hamza Raza"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1042",
+		"name": "Abdullah Abid Ansari"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1048",
+		"name": "Muhammad Amman Soomro"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1055",
+		"name": "Mohsin Raza"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1060",
+		"name": "Wasif Khan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1065",
+		"name": "Muhammad"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1070",
+		"name": "Syed Mohtashim Wajid Ali"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1075",
+		"name": "Muhammad Talha"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1080",
+		"name": "Muhammad Abdullah Dawood"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1085",
+		"name": "Sarfraz Ahmed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1090",
+		"name": "Mashood Nadeem"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1095",
+		"name": "Maarij Abdul Qadir"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1102",
+		"name": "Sadeemsattar"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1107",
+		"name": "Fatima Jamal"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1112",
+		"name": "Umair Dawood"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1117",
+		"name": "Muhammad Usama Tariq"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1122",
+		"name": "Mohammad Huzaifa"
+	},
+	{
+		"Department": "BBA",
+		"uid": "14K-2713",
+		"name": "Om Pirkash"
+	},
+	{
+		"Department": "BBA",
+		"uid": "15K-2722",
+		"name": "Muhammad Ahsaan Sheikh"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2711",
+		"name": "Muhammad Asad Bajwa"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2725",
+		"name": "Erum"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2737",
+		"name": "Anees Ali Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2742",
+		"name": "Mariba Saeed"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2751",
+		"name": "Syeda Saman Fatima"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2759",
+		"name": "Zahida"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0006",
+		"name": "Mah Noor"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0014",
+		"name": "Abdul Hannan Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0416",
+		"name": "Muhammad Ahmed Haseeb Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0002",
+		"name": "Muahammad Aqil"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0008",
+		"name": "Irfan Ali"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0014",
+		"name": "Burhan Ul Haq"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0021",
+		"name": "Shahroze Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0030",
+		"name": "Hamza Masroor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "12K-2167",
+		"name": "Muhammad Sufyan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2232",
+		"name": "Syed Muneeb Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2035",
+		"name": "Muhammad Hassam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2150",
+		"name": "Syed Shahyan Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2248",
+		"name": "Osama Bin Nasir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2291",
+		"name": "Nisar Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2851",
+		"name": "Shahzaib Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2148",
+		"name": "Syed Atif Hussain Zaidy"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2171",
+		"name": "Tariq Parvez"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2197",
+		"name": "Hassan Masood Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2258",
+		"name": "Syed Adil Hussain Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2275",
+		"name": "Vivek Talreja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2313",
+		"name": "Irfan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2411",
+		"name": "Marium Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2523",
+		"name": "Hashim Saeed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2812",
+		"name": "Zain Ud Din"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2846",
+		"name": "Muhammad Hasan Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3612",
+		"name": "Syed Junaid Mazhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3638",
+		"name": "Syed Muhammad Zeeshan Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3601",
+		"name": "Syeda Narmeen Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3607",
+		"name": "Muhammad Inam Gul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3616",
+		"name": "Syed Muhammad Taseen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3621",
+		"name": "Muhammad Musawir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3628",
+		"name": "Muaaz Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3634",
+		"name": "Ali Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3640",
+		"name": "Hira Kamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3645",
+		"name": "Radheem Bin Razi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3651",
+		"name": "Syed Muhammad Waqas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3658",
+		"name": "Shiza Najeeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3665",
+		"name": "Saira Sohail Anwari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3670",
+		"name": "Nazneen Uz Zahra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3678",
+		"name": "Urooj Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3684",
+		"name": "Wania Syed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3689",
+		"name": "Syed Hassan Ikram"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3694",
+		"name": "Talha Malik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3702",
+		"name": "Syeda Yameena Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3710",
+		"name": "Hamza Ashfaq Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3716",
+		"name": "Asad Ullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3722",
+		"name": "Sarah Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3728",
+		"name": "Osama Abid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3735",
+		"name": "Ashish Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3743",
+		"name": "Abdul Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3751",
+		"name": "Saad Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3760",
+		"name": "Muhammad Fahad Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3765",
+		"name": "Muhammad Moiz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3775",
+		"name": "Furqan Polani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3782",
+		"name": "Syed Muhammad Talha Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3791",
+		"name": "Uzair Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3799",
+		"name": "Mussadiq Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3807",
+		"name": "Shehmeer Adil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3813",
+		"name": "Muhammad Ubaidullah Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3819",
+		"name": "Mohammad Samran Elahi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3825",
+		"name": "Muhammad Asad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3831",
+		"name": "Ariba Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3836",
+		"name": "Ramchand"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3841",
+		"name": "Mustafa Inayat"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3847",
+		"name": "Muhammad Ateeb Akhtar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3853",
+		"name": "Muhammad Ushay"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3860",
+		"name": "Syed Taloot Munim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3865",
+		"name": "Muhammad Ahmed Gul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3878",
+		"name": "Junaid Mazhar Muhammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3886",
+		"name": "Mustafa Irfan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3894",
+		"name": "Asim Iqbal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3902",
+		"name": "Oun Muhammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3907",
+		"name": "Syed Alley Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3912",
+		"name": "Rao Usama Bin Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3921",
+		"name": "Sauban Bin Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3928",
+		"name": "Syeda Kisa Fatima Abidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3936",
+		"name": "Fahad Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3942",
+		"name": "Rabiya Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3947",
+		"name": "Feroz Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3953",
+		"name": "Mohammad Safwan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3961",
+		"name": "Anas Maqsood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3966",
+		"name": "Sanif Ali Momin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3977",
+		"name": "Abdul Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3989",
+		"name": "Safeer Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3997",
+		"name": "Suneel Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4003",
+		"name": "Fatima Jamali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4012",
+		"name": "Syed Junaid Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4021",
+		"name": "Shumail Steve"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4029",
+		"name": "Hasnain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4037",
+		"name": "Ubaid Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4043",
+		"name": "Muhammad Shakeeb Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4051",
+		"name": "Sarfaraz Ali Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4057",
+		"name": "Syed Muhammad Hassan Berry"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4063",
+		"name": "Usama Sheikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4070",
+		"name": "Muhammad Zain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4075",
+		"name": "Minhaj Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4081",
+		"name": "Rameez Khawaja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2375",
+		"name": "Syed Muhammad Ammar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3601",
+		"name": "Rumaisa Mansoor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3606",
+		"name": "Muhammad Bilal Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3612",
+		"name": "Ali Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3617",
+		"name": "Haris Mahmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3623",
+		"name": "Muhammad Rafay Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3630",
+		"name": "Zain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3635",
+		"name": "Manesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3640",
+		"name": "Sidhant Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3648",
+		"name": "Syed Muhammad Hasan Gilani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3653",
+		"name": "Mostajab Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3658",
+		"name": "Maham Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3663",
+		"name": "Mubashir Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3669",
+		"name": "Muhammad Bilal Akmal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3676",
+		"name": "Nittesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3681",
+		"name": "Hamza Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3688",
+		"name": "Safdar Abbas Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3694",
+		"name": "Mohammad Faraz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3700",
+		"name": "Abdul Sami Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3706",
+		"name": "Muhammad Zuhair Waheed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3713",
+		"name": "Ali Ammar Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3720",
+		"name": "Danish Abdullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3726",
+		"name": "Umair Shahab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3733",
+		"name": "Hassan Hasan Qadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3740",
+		"name": "Mohammad Bangee"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3745",
+		"name": "Muhammad Samiullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3753",
+		"name": "Taha Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3758",
+		"name": "Muhammad Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3763",
+		"name": "Khaleeq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3769",
+		"name": "Shahzad Hussain Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3776",
+		"name": "Aaniq Tejani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3783",
+		"name": "Muhammad Shahzaib Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3791",
+		"name": "Ali Faisal Aslam Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3798",
+		"name": "Rohit"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3808",
+		"name": "Ali Rehman Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3817",
+		"name": "Usama Bashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3825",
+		"name": "Ajay Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3834",
+		"name": "Syed Haseem Zafeer Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3842",
+		"name": "Ahmad Taha Farooqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3850",
+		"name": "Muhammad Saad Amin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3857",
+		"name": "Hassan Shakeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3864",
+		"name": "Shahid Akbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3869",
+		"name": "Muhammad Afnan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3875",
+		"name": "Sheheryar Vohra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3880",
+		"name": "Urwa Sultana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3886",
+		"name": "Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3894",
+		"name": "Aafia Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3900",
+		"name": "Hussain Muhammad Ghazali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3906",
+		"name": "Fahad Lodhi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3911",
+		"name": "Aisar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3918",
+		"name": "Avinash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3924",
+		"name": "Saad Kamran"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3931",
+		"name": "Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3938",
+		"name": "Marium Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3944",
+		"name": "Sufiyan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17L-4201",
+		"name": "Farjad Suhail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0122",
+		"name": "Rahim Muhammad Syed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0127",
+		"name": "Hafiz Saroosh Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0132",
+		"name": "Abdul Hanan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0140",
+		"name": "Gul Nawaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0145",
+		"name": "Muhammad Ibrahim Dar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0150",
+		"name": "Muhammad Irham Rahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0155",
+		"name": "Rahul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0161",
+		"name": "Maria Aliasghar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0167",
+		"name": "Zulfiqar Ahmed Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0172",
+		"name": "Kanwar Ram"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0178",
+		"name": "Furqan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0183",
+		"name": "Muhammad Hassan Shah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0191",
+		"name": "Syeda Aqsa Batool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0197",
+		"name": "Sakina Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0202",
+		"name": "Mohammad Jahanzeb Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0209",
+		"name": "Saad Muhammad Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0214",
+		"name": "Ammarah Abid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0220",
+		"name": "Hareem Farrukh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0226",
+		"name": "Syed Hassan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0231",
+		"name": "Muhammad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0236",
+		"name": "Muhammad Saad Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0241",
+		"name": "Unais Yousha Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0247",
+		"name": "Muhammad Arsalan Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0252",
+		"name": "Abdul Haseeb Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0257",
+		"name": "Abbas Hunaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0264",
+		"name": "Mudassir Saeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0269",
+		"name": "Asfar Jawaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0275",
+		"name": "Qaisar Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0280",
+		"name": "Mushahid Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0286",
+		"name": "Muhammad Fahad Tahir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0291",
+		"name": "Yumna Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0296",
+		"name": "Mugheera Bin Sadiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0302",
+		"name": "Muhammad Mussab Zafar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0307",
+		"name": "Saif Ul Islam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0313",
+		"name": "Alishbah Iqbal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0323",
+		"name": "Hafiz Sameed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0329",
+		"name": "Naqeeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0335",
+		"name": "Muhammad Hamza Edhi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0340",
+		"name": "Payal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0346",
+		"name": "Muhammad Owais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0351",
+		"name": "Muhammad Mashood Mirza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0356",
+		"name": "Pershotam Das"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0363",
+		"name": "Wajahat Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0368",
+		"name": "Faraz Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0396",
+		"name": "Fatima Riaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1031",
+		"name": "Moiz Uddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1040",
+		"name": "Ammar Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1046",
+		"name": "Abdul Wahab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1054",
+		"name": "Muhammad Aqil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1061",
+		"name": "Syed Muhammad Sharjeel Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1066",
+		"name": "Ritesh Bhatia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1072",
+		"name": "Mohammad Ibrahim Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1077",
+		"name": "Muhammad Ali Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1084",
+		"name": "Arhum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1094",
+		"name": "Shamsa Shakir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1100",
+		"name": "Syed Ahmed Hashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1106",
+		"name": "Saad Saif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1118",
+		"name": "Sawera Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1125",
+		"name": "Umaima Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1131",
+		"name": "Muhammad Mustafa Ali Usmani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1136",
+		"name": "Ajay Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1142",
+		"name": "Arham Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1148",
+		"name": "Mirza Muhammad Uzair Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1153",
+		"name": "Ritika Thorani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1158",
+		"name": "Muhammad Sabir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1163",
+		"name": "Muneeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1171",
+		"name": "Alqama Rao"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1177",
+		"name": "Muhammad Owais Mushtaq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1183",
+		"name": "Rabil Maknojia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1190",
+		"name": "Muhammad Haris Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1196",
+		"name": "Shakir Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1253",
+		"name": "Marium Zafar Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1259",
+		"name": "Syed Shamikh Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1265",
+		"name": "Sheryar Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1274",
+		"name": "Huzaifa Tajuddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1283",
+		"name": "Muhammad Faizan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1292",
+		"name": "Muhammad Umair Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1298",
+		"name": "Muhammad Qasim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1356",
+		"name": "Dheeraj Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1362",
+		"name": "Muhammad Yasir Obaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1367",
+		"name": "Emmad Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0121",
+		"name": "Hadiqa Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0126",
+		"name": "Ubaid Ali Bahadur"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0133",
+		"name": "Mir Saad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0138",
+		"name": "Syed Faaiz Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0144",
+		"name": "Muhammad Faisal Malik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0149",
+		"name": "Saad Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0154",
+		"name": "Muhammad Hamza Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0160",
+		"name": "Sana Kamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0165",
+		"name": "Muhammad Hassan Azeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0170",
+		"name": "Laiba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0175",
+		"name": "Abdul Waris Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0180",
+		"name": "Banti Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0185",
+		"name": "Muhammad Abdullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0190",
+		"name": "Sheikh Jawwad Mateen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0195",
+		"name": "Muhammad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0200",
+		"name": "Muhammad Asad Summair"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0206",
+		"name": "Sheikh Muhammad Taha Tasleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0212",
+		"name": "Muhammad Hammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0217",
+		"name": "Syed Muhammad Hamza Najmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0222",
+		"name": "Rameen Rizwan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0227",
+		"name": "Hasan Askari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0234",
+		"name": "Umair Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0239",
+		"name": "Mubashira Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0245",
+		"name": "Raja Inam Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0250",
+		"name": "Pawan Kukreja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0255",
+		"name": "Sana Warsi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0260",
+		"name": "Noor Ul Ain Munir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0265",
+		"name": "Syeda Farah Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0270",
+		"name": "Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0275",
+		"name": "Ahmed Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0280",
+		"name": "Muhammed Mateen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0286",
+		"name": "Maryam Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0291",
+		"name": "Muzamil Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0297",
+		"name": "Muhammad Bilal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0302",
+		"name": "Sheroze"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0307",
+		"name": "Naqi Abbas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0312",
+		"name": "Ahmed Ibrahim Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0317",
+		"name": "Muhammad Rooman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0323",
+		"name": "Muhammad Ismail Ahmed Chaudhry"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0329",
+		"name": "Munkushai Owais Rahman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0335",
+		"name": "Mohammad Mobeen Zaheer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0340",
+		"name": "Sohaib Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0346",
+		"name": "Muhammad Faizan Sadiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0351",
+		"name": "Faisal Ahmed Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0356",
+		"name": "Muhammad Zayaan Amjad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0361",
+		"name": "Muhammad Yaseen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0366",
+		"name": "Paras Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1252",
+		"name": "Muhammad Mustafa Bawani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1258",
+		"name": "Syed Mohammad Asad Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1263",
+		"name": "Zainab Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1271",
+		"name": "Usama Bin Khalid Bughio"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1276",
+		"name": "Muhammad Mubeen Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1281",
+		"name": "Sarfaraz Ali Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1288",
+		"name": "Muhammad Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1293",
+		"name": "Mohammad Asad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1299",
+		"name": "Syed Muhammad Danish"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1304",
+		"name": "Emad Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1309",
+		"name": "Darpan Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1314",
+		"name": "Hanzala Noor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1320",
+		"name": "Vinay Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1326",
+		"name": "Muhammad Jahanzeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1331",
+		"name": "Ali Hasnain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1337",
+		"name": "Muhammad Shamueel Hassan Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1343",
+		"name": "Awais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1348",
+		"name": "Ammar Ahmed Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1354",
+		"name": "Anas Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1361",
+		"name": "Sheikh Abdul Basit"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1366",
+		"name": "Muhammad Taha Tanveer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1371",
+		"name": "Syeda Momina Rashid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1376",
+		"name": "Abdul Basit Akhtar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1381",
+		"name": "Syed Muhammad Bilal Bin Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1387",
+		"name": "Umair Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1392",
+		"name": "Muhammad Aqeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1399",
+		"name": "Zain Zafar Mithani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1404",
+		"name": "Ali Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1409",
+		"name": "Shaheer Adil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1414",
+		"name": "Ahmed Arif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1419",
+		"name": "Muhammad Hasan Mumtaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1424",
+		"name": "Vinesh Juriasinghani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1432",
+		"name": "Noman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1437",
+		"name": "Arun Jai"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1443",
+		"name": "Ibrahim Aliasghar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1448",
+		"name": "Razia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1453",
+		"name": "Mohammad Ehtisham Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1458",
+		"name": "Muhammad Usama Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1465",
+		"name": "Muhammad Anas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1470",
+		"name": "Mohammad Saif Haider Malik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1476",
+		"name": "Obaidullah Baloch"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1482",
+		"name": "Rafay Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1487",
+		"name": "Kiran"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1492",
+		"name": "Faizan Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1498",
+		"name": "Adil Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1504",
+		"name": "Muhammad Wahaj Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1510",
+		"name": "Musbah Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1517",
+		"name": "Hermain Qadir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1523",
+		"name": "Waqar Haider"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2383",
+		"name": "Muhammad Umar Farooq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2444",
+		"name": "Kashif Saeed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2522",
+		"name": "Muhammad Waleed Ghauri"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2367",
+		"name": "Khalil Jibran"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2414",
+		"name": "Awais"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2441",
+		"name": "Hammad Ashraf"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2455",
+		"name": "Mustafa Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2521",
+		"name": "Qazi Furqan Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2354",
+		"name": "Aqib Majeed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2369",
+		"name": "Aisha Najam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2375",
+		"name": "Syed Daniyal Najam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2383",
+		"name": "Hassnain Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2389",
+		"name": "Nouman Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2398",
+		"name": "Zainab Malik"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2409",
+		"name": "Awais Aftab"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2418",
+		"name": "Osama Asghar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2430",
+		"name": "Ali Nawaz Rind"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2438",
+		"name": "Junaid Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2446",
+		"name": "Abdul Wajid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2454",
+		"name": "Muhammad Furqan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2464",
+		"name": "Muhammed Waqar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2473",
+		"name": "Murtaza Hyder"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2490",
+		"name": "Syed Ijlal Hashmi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2357",
+		"name": "Muhammad Hasnat Rehman Mandra"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2369",
+		"name": "Muhammad Talha Alam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2383",
+		"name": "Moizuddin"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2390",
+		"name": "Ahmed Aslam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2411",
+		"name": "Allah Jurio"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2421",
+		"name": "Muhammad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2432",
+		"name": "Syed Basit Ali Rizvi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0001",
+		"name": "Muhammad Usman Rafiq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0373",
+		"name": "Syeda Sajjal Zehra"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0382",
+		"name": "Muhammad Junaid Habib"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0388",
+		"name": "Usama Sharif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0393",
+		"name": "Ahsan Mirza"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0403",
+		"name": "Ahad Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0413",
+		"name": "Saad Ali Khanzada"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0422",
+		"name": "Husnain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0432",
+		"name": "Mir Yahya Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0438",
+		"name": "Syed Anas Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0443",
+		"name": "Hamza Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0449",
+		"name": "Syed Zohaib Qamar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0458",
+		"name": "Tabraiz Qadir"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0463",
+		"name": "Muhammad Hamza Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0473",
+		"name": "Shahab UDdin"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0482",
+		"name": "Umair Abbas Arbani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-1164",
+		"name": "Ahtesham Ul Haq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0375",
+		"name": "Javairia Ilyas"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0380",
+		"name": "Muhammad Ibrahim Khalil"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0385",
+		"name": "Hamza Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0390",
+		"name": "Muhammad Hassan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0396",
+		"name": "Sufyan Anis"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0402",
+		"name": "Mohammad Uzair Anwer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0408",
+		"name": "Rajender Kumar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0413",
+		"name": "Saood Abdullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0418",
+		"name": "Osama Bin Asghar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0424",
+		"name": "Siraj"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0430",
+		"name": "Faizan Nadeem Mufti"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0436",
+		"name": "Gian Chand"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0442",
+		"name": "Abdul Moiz Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0450",
+		"name": "Sameer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0456",
+		"name": "Eisha"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0461",
+		"name": "Syed Ali Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0467",
+		"name": "Meesum Abbas"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1032",
+		"name": "Saad Ullah Khan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1037",
+		"name": "Siraj Ul Haq"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1043",
+		"name": "Salman Ahmed Khan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1049",
+		"name": "Arun"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1056",
+		"name": "Anish Rajput"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1061",
+		"name": "Furqan Tariq"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1066",
+		"name": "Ali Khafulwara"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1071",
+		"name": "Abdul Manan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1076",
+		"name": "Aisha Anwar"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1081",
+		"name": "Huzaifa Rafique"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1086",
+		"name": "Mariam Neaz"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1091",
+		"name": "Muhammad Anas"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1096",
+		"name": "Malik Mustafa"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1103",
+		"name": "Abdullah Tilal Khan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1108",
+		"name": "Noman"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1113",
+		"name": "Hafsa Umar"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1118",
+		"name": "Naba Zehra"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1123",
+		"name": "Faizan Ahmed Soomro"
+	},
+	{
+		"Department": "BBA",
+		"uid": "14K-2714",
+		"name": "Deepak Kumar Sharma"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16F-8751",
+		"name": "Hashim Zafar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2714",
+		"name": "Shafique Ahmed Memon"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2733",
+		"name": "Nisha Kanwal"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2738",
+		"name": "Kashaf Ibrar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2743",
+		"name": "Maryam Nazir"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2752",
+		"name": "Syed Mubashir Ali Bukhari"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2760",
+		"name": "Hamad Anjum"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0008",
+		"name": "Irtaza Ali Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0015",
+		"name": "Mahwish Sohail"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0426",
+		"name": "Fahad Ahmed"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0003",
+		"name": "Syed Hamza Umar Hashmi"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0010",
+		"name": "Mustafa Amjad"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0015",
+		"name": "Rameel Bushra Jafri"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0022",
+		"name": "Hasham Ahmed Siddiqui"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0031",
+		"name": "Syed Muhammad Awn Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2021",
+		"name": "Junaid Ahmed Junejo"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2330",
+		"name": "Amjad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2046",
+		"name": "Muhammad Burhan Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2157",
+		"name": "Ali Asadullah Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2254",
+		"name": "Muhammad Anas Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2317",
+		"name": "Muhammad Saad Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2852",
+		"name": "Faizan Ahmed Quadir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2150",
+		"name": "Shayan Abid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2175",
+		"name": "Sarmad Shameer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2217",
+		"name": "Abdul Qadir Ghaffar Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2262",
+		"name": "Akber Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2291",
+		"name": "Muhammad Adnan Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2318",
+		"name": "Musawwir Maqsood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2413",
+		"name": "Anas Abid Akhtar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2532",
+		"name": "Muhammad Amanullah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2813",
+		"name": "Nighat Zehra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2895",
+		"name": "Dawar Kazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3613",
+		"name": "Syed Hunain Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3640",
+		"name": "Syed Anas Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3602",
+		"name": "Amin Amir Ali Bhimani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3609",
+		"name": "Ali Akbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3617",
+		"name": "Muhammad Hassan Bin Zia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3622",
+		"name": "Syed Muhammad Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3629",
+		"name": "Syed Ammar Mahmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3635",
+		"name": "Mohammad Muzammil Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3641",
+		"name": "Amir Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3646",
+		"name": "Mir Arslan Ahmad Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3653",
+		"name": "Haamiz Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3659",
+		"name": "Hera Ata Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3666",
+		"name": "Farrukh Mubashir Ullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3671",
+		"name": "Alina Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3680",
+		"name": "Rehmat Gul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3685",
+		"name": "Aqrab Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3690",
+		"name": "Hassan Afzal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3695",
+		"name": "Mubariz Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3703",
+		"name": "Aqib Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3711",
+		"name": "Abdul Rehman Yaqoob"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3717",
+		"name": "Furqan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3723",
+		"name": "Nabeel Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3729",
+		"name": "Syeda Rubab Zehra Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3736",
+		"name": "Shanzaib Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3744",
+		"name": "Jahania Shah Bukhari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3755",
+		"name": "Minha Ameen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3761",
+		"name": "Munir Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3767",
+		"name": "Malik Obaid Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3776",
+		"name": "Alishan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3783",
+		"name": "Saad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3792",
+		"name": "Raja Anesh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3801",
+		"name": "Muhammad Anas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3808",
+		"name": "Muhammad Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3814",
+		"name": "Zeeshan Jalil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3820",
+		"name": "Yusra Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3826",
+		"name": "Syed Sabeeh Ahmed Fatmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3832",
+		"name": "Syed Ibrahim Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3837",
+		"name": "Syed Gylmaan Nasar Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3842",
+		"name": "Mehwesh Syed Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3848",
+		"name": "Muhammad Umer Ehsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3855",
+		"name": "Syed Abdul Muqeet Mansoor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3861",
+		"name": "Syed Hasher Ahmed Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3868",
+		"name": "Moazzam Maqsood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3879",
+		"name": "Amin Sadiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3889",
+		"name": "Muhammad Hamza Azhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3895",
+		"name": "Mohammad Talha Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3903",
+		"name": "Ali Hussam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3908",
+		"name": "Fahad Sultan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3915",
+		"name": "Wasay Masood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3923",
+		"name": "Nida Zehra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3930",
+		"name": "Syed Muhammad Ghazanfar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3937",
+		"name": "Taban Shaukat"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3943",
+		"name": "Ahsan Mansoor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3949",
+		"name": "Sara Shakil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3955",
+		"name": "Osama Fahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3962",
+		"name": "Huzefa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3969",
+		"name": "Syed Shaheryar Ali Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3981",
+		"name": "Huzaifa Mughal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3990",
+		"name": "Saad Idrees"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3998",
+		"name": "Awais Ahmed Nizamani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4006",
+		"name": "Farooq Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4014",
+		"name": "Hassan Bin Zia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4023",
+		"name": "Muhammad Anas Azhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4030",
+		"name": "Shameer Ahmad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4038",
+		"name": "Qurat Ul Ain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4044",
+		"name": "Adnan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4052",
+		"name": "Saif Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4058",
+		"name": "Maria Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4064",
+		"name": "Anas Bin Faisal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4071",
+		"name": "Areeba Imam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4076",
+		"name": "Saad Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4083",
+		"name": "Muhammad Usama Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2376",
+		"name": "Zubair Aslam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3602",
+		"name": "Muhammad Asher Mirza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3607",
+		"name": "Hassan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3613",
+		"name": "Sameer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3618",
+		"name": "Rahim Samnani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3624",
+		"name": "Rohit Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3631",
+		"name": "Ifrah Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3636",
+		"name": "Vimal Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3641",
+		"name": "Nakash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3649",
+		"name": "Babar Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3654",
+		"name": "Muhammad Hassan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3659",
+		"name": "Sabita Sadiq Shahabuddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3664",
+		"name": "Shaarif Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3670",
+		"name": "Muhammad Bilal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3677",
+		"name": "Adarsh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3682",
+		"name": "Sarwan Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3689",
+		"name": "Faiza Fatah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3696",
+		"name": "Armughan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3701",
+		"name": "Syed Muhammad Aqeel Abbas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3707",
+		"name": "Wajeeha Abdul Basit"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3716",
+		"name": "Syed Osama Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3721",
+		"name": "Talha Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3729",
+		"name": "Zunairah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3735",
+		"name": "Osama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3741",
+		"name": "Jan Mohammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3746",
+		"name": "Muhammad Rafay Bin Marif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3754",
+		"name": "Danyal Aftab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3759",
+		"name": "Umar Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3764",
+		"name": "Haseebullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3770",
+		"name": "Ahmed Budhi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3777",
+		"name": "Rashid Ali Panhwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3784",
+		"name": "Wazeer Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3792",
+		"name": "Rahul Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3799",
+		"name": "Umar Suhail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3810",
+		"name": "Aiman Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3818",
+		"name": "Aisha Nisar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3826",
+		"name": "Fizza Jawed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3836",
+		"name": "Muhammad Furqan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3843",
+		"name": "Fatima Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3851",
+		"name": "Shayan Shahid Afzal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3858",
+		"name": "Syed Muhammad Owais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3865",
+		"name": "Syed Saadullah Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3870",
+		"name": "Haya Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3876",
+		"name": "Syed Danish Jawwad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3881",
+		"name": "Saba Pervez"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3888",
+		"name": "Syed Owais Tahir Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3895",
+		"name": "Muhammad Junaid Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3901",
+		"name": "Aashesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3907",
+		"name": "Mohammad Shaheryar Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3912",
+		"name": "Amjad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3919",
+		"name": "Sarosh Amin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3925",
+		"name": "Muhammad Fahad Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3932",
+		"name": "Abdullah Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3939",
+		"name": "Syed Saim Ali Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3945",
+		"name": "Muhammad Farhan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18F-0337",
+		"name": "Muhammad Bilal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0123",
+		"name": "Adil Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0128",
+		"name": "Shaheer Mehmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0135",
+		"name": "Laksh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0141",
+		"name": "Muhammad Daniyal Azam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0146",
+		"name": "Muhammad Suleman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0151",
+		"name": "Erum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0156",
+		"name": "Hamdan Uddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0162",
+		"name": "Izaan Sohail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0168",
+		"name": "Maham Shakir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0173",
+		"name": "Muhammad Hassan Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0179",
+		"name": "Uzair Ahmed Mughal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0184",
+		"name": "Wajahat Ullah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0192",
+		"name": "Neha Jamali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0198",
+		"name": "Anas Bin Waqar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0204",
+		"name": "Saad Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0210",
+		"name": "Syed Mehdi Raza Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0215",
+		"name": "Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0222",
+		"name": "Abdul Rafay Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0227",
+		"name": "Hassan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0232",
+		"name": "Syed Uzair Hamid Zahidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0237",
+		"name": "Syed Muhammad Hammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0242",
+		"name": "Rethek Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0248",
+		"name": "Syed Azmat Ali Abedi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0253",
+		"name": "Abdur Rafay"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0258",
+		"name": "Muhammad Moeiz Adil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0265",
+		"name": "Sufiyan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0270",
+		"name": "Raja Zafar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0276",
+		"name": "Noman Ghaffar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0281",
+		"name": "Sohaib Safdar Chachar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0287",
+		"name": "Amna Munawar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0292",
+		"name": "Muhammad Usman Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0297",
+		"name": "Syed Irtiza Abid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0303",
+		"name": "Owais Sultan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0308",
+		"name": "Muhammad Mustafa Sajjad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0314",
+		"name": "Arham Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0325",
+		"name": "Areeb Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0330",
+		"name": "Sham Lalwani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0336",
+		"name": "Nisha Kewalramani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0341",
+		"name": "Muhammad Taha Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0347",
+		"name": "Dheeraj Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0352",
+		"name": "Efshal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0357",
+		"name": "Ali Azlan Aziz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0364",
+		"name": "Om"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0369",
+		"name": "Muhammad Ammar Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0398",
+		"name": "Muhammad Sharjeel Ghauri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1032",
+		"name": "Muhammad Abubakar Kaleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1042",
+		"name": "Muhammad Mudassir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1048",
+		"name": "Muhammad Usman Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1055",
+		"name": "Daniyal Abdul Bari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1062",
+		"name": "Mohammad Areeb Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1068",
+		"name": "Hamza Iqbal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1073",
+		"name": "Bilal Asim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1078",
+		"name": "Oneeba Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1086",
+		"name": "Syed Hasan Mustafa Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1096",
+		"name": "Mohammad Mustujab Uddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1101",
+		"name": "Hasan Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1111",
+		"name": "Syed Ashhad Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1121",
+		"name": "Ahadullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1126",
+		"name": "Abdullah Abro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1132",
+		"name": "Mustafa Siddique"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1137",
+		"name": "Hiba Razzaq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1143",
+		"name": "Omaid Irfan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1149",
+		"name": "Nimra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1154",
+		"name": "Syed Shaheer Aamir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1159",
+		"name": "Ebad Ur Rehman Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1166",
+		"name": "Uqba Shoukat Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1172",
+		"name": "Azhar Mughal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1179",
+		"name": "Ali Hassan Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1184",
+		"name": "Muhammad Anas Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1191",
+		"name": "Fizza Surahio"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1197",
+		"name": "Syed Zeerak Ibrahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1254",
+		"name": "Syed Hamza Bin Maqsood Ali Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1261",
+		"name": "Syed Mohammed Hubab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1267",
+		"name": "Ali Mohammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1277",
+		"name": "Taimoor Hayder"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1285",
+		"name": "Minza Marium Mushtaq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1293",
+		"name": "Sajjad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1351",
+		"name": "Haris Bin Khurrum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1357",
+		"name": "Waleem Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1363",
+		"name": "Avinash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1368",
+		"name": "Muhammad Ahmed Haseeb Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0122",
+		"name": "Abdeali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0127",
+		"name": "Rooman Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0134",
+		"name": "Muhammad Ahmed Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0139",
+		"name": "Muhammad Fasih Mamji"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0145",
+		"name": "Muhammad Haroon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0150",
+		"name": "Affan Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0155",
+		"name": "Syed Ammar Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0161",
+		"name": "Shah Tanzeel Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0166",
+		"name": "Abdul Rehman Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0171",
+		"name": "Sumeet Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0176",
+		"name": "Azan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0181",
+		"name": "Umer Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0186",
+		"name": "Imad Mehmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0191",
+		"name": "Zalqarnain Ahsen Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0196",
+		"name": "Salman Sajid Maskar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0201",
+		"name": "Abdul Hanan Bin Saeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0207",
+		"name": "Sara Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0213",
+		"name": "Muhammad Owais Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0218",
+		"name": "Saad Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0223",
+		"name": "Yasir Hussain Zardari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0228",
+		"name": "Zohaib Rasool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0235",
+		"name": "Merub Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0240",
+		"name": "Ghulam Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0246",
+		"name": "Ibad Ur Rehman Ahmed Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0251",
+		"name": "Mukesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0256",
+		"name": "Syed Mohammed Shabatul Hammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0261",
+		"name": "Muhammad Hunzalah Shakeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0266",
+		"name": "Syed Faraz Aftab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0271",
+		"name": "Ayesha Saif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0276",
+		"name": "Syed Sarim Bin Ahmer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0281",
+		"name": "Anusha Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0287",
+		"name": "Abdul Ghaffar Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0292",
+		"name": "Muhammad Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0298",
+		"name": "Muhammad Eahtesham"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0303",
+		"name": "Mohammad Shafay Joyo"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0308",
+		"name": "Muskan Barket Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0313",
+		"name": "Naeem Ullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0318",
+		"name": "Hassan Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0324",
+		"name": "Ali Muhammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0330",
+		"name": "Ziyaan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0336",
+		"name": "Anas Bin Imran"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0341",
+		"name": "Humna Waqar Awan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0347",
+		"name": "Muhammad Adeel Siddique"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0352",
+		"name": "Hassan Kirmani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0357",
+		"name": "Muhammad Farjad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0362",
+		"name": "Areez Arsalan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0367",
+		"name": "Shayan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1253",
+		"name": "Waseeq Ahmed Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1259",
+		"name": "Masab Bakhtiar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1264",
+		"name": "Mahnoor Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1272",
+		"name": "Sarah Tanveer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1277",
+		"name": "Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1282",
+		"name": "Muhammad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1289",
+		"name": "Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1294",
+		"name": "Ramiz Zaheer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1300",
+		"name": "Shubair Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1305",
+		"name": "Muhammad Zohaib Ur Rehman Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1310",
+		"name": "Mir Mubashir Ali Baqri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1315",
+		"name": "Fatima Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1321",
+		"name": "Shaheer Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1327",
+		"name": "Jai Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1333",
+		"name": "Prerna Aliyas Piya Kirplani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1338",
+		"name": "Hafiz Syed Jari Sajjad Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1344",
+		"name": "Mustafain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1349",
+		"name": "Umer Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1356",
+		"name": "Sajida Tabssum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1362",
+		"name": "Aisha Naoman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1367",
+		"name": "Hammad Jabbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1372",
+		"name": "Muhammad Haris Altaf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1377",
+		"name": "Muhammad Abdullah Usmani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1383",
+		"name": "Mohammad Abrar Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1388",
+		"name": "Syed Zain Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1393",
+		"name": "Tayyaba Tabassum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1400",
+		"name": "Sarang Aswani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1405",
+		"name": "Mohammad Nasar Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1410",
+		"name": "Muhammad Wahaj Ameen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1415",
+		"name": "Ali Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1420",
+		"name": "Mohammad Ebad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1425",
+		"name": "Muhammad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1433",
+		"name": "Abdul Saboor Sheikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1438",
+		"name": "Syed Basit Abbas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1444",
+		"name": "Abdul Sattar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1449",
+		"name": "Fawad Javed Fateh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1454",
+		"name": "Noman Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1459",
+		"name": "Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1466",
+		"name": "Muhammad Hammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1471",
+		"name": "Muhammad Muzammil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1477",
+		"name": "Uzair Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1483",
+		"name": "Muhammad Zohaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1488",
+		"name": "Irtisam Ul Haque"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1493",
+		"name": "Agha Bilal Jan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1499",
+		"name": "Muhammad Anus"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1505",
+		"name": "Shamil Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1511",
+		"name": "Muhammad Shahzaib Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1518",
+		"name": "Syed Muhammad Abdullah Saifi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1525",
+		"name": "Sobia Naz"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2418",
+		"name": "Syed Waleed Uddin Razi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2473",
+		"name": "Muhammad Adeel Ashraf"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2526",
+		"name": "Alishan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2368",
+		"name": "Taymoor Rathore"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2416",
+		"name": "Rohit Raj Solanki"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2445",
+		"name": "Raheela"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2460",
+		"name": "Mohsin haider"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2525",
+		"name": "Waleed bin Kaleem Siddiqui"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2359",
+		"name": "Sadia Hassan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2370",
+		"name": "Anwar Ahmad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2377",
+		"name": "Irfan Azeem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2384",
+		"name": "Junaid Akhtar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2390",
+		"name": "Samiullah Durrani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2402",
+		"name": "Armaghan Sajjad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2412",
+		"name": "Unaib Chohan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2423",
+		"name": "Shaheer Ahsan Butt"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2431",
+		"name": "Waqar Ali Kathio"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2439",
+		"name": "Aanis"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2447",
+		"name": "Farooq Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2455",
+		"name": "Hassan Ahmed Rana"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2467",
+		"name": "Usman Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2476",
+		"name": "Sadam Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2351",
+		"name": "Syed Muhammad Hussain Jafri"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2358",
+		"name": "Mohammad Azeem Jumani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2371",
+		"name": "Usama Bin Umar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2384",
+		"name": "Ihsan Ullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2392",
+		"name": "Shayan Ul Haq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2414",
+		"name": "Arshman Rehman"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2422",
+		"name": "Zohaib Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2435",
+		"name": "Afzal Ali Solangi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0016",
+		"name": "Muhammad Yasir Obaid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0375",
+		"name": "Muhammad Hamza Shaikh"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0383",
+		"name": "Agha Muhammad Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0389",
+		"name": "Amal Ather"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0397",
+		"name": "Shaharyar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0404",
+		"name": "Syeda Shehzadi Fatima"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0414",
+		"name": "Ali Hasnain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0424",
+		"name": "Syed Daniyal Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0433",
+		"name": "Hiba Zubair"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0439",
+		"name": "Muhammad Afnan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0444",
+		"name": "Sibtain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0452",
+		"name": "Murtaza Hakeemuddin"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0459",
+		"name": "Ali Zain Ghulam Abbas"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0467",
+		"name": "Syed Danish Ali Abidi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0476",
+		"name": "Muhammad Tanzeel Ur Raheem Siddiqui"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0483",
+		"name": "Syed Omair Tahir Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-1178",
+		"name": "Hammad Arif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0376",
+		"name": "Haseeb Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0381",
+		"name": "Hafiz Muhammad Omar Noor"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0386",
+		"name": "Abdul Wadood"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0391",
+		"name": "Hamza Haq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0397",
+		"name": "Safia"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0403",
+		"name": "Ahmed Daniyal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0409",
+		"name": "Ahmed Bin Abdullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0414",
+		"name": "Taimoor Zaman"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0419",
+		"name": "Arsalan Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0425",
+		"name": "Ahmed Shehzad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0432",
+		"name": "Shehryar Shaikh"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0437",
+		"name": "Muhammad Usama Mughal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0445",
+		"name": "Naeemullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0452",
+		"name": "Syed Samad Iqbal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0457",
+		"name": "Muzammil Babar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0462",
+		"name": "Muhammad Nouman Hanif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0468",
+		"name": "Ahmed Ali"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1033",
+		"name": "Syed Baqar Ali Zaidi"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1038",
+		"name": "Muhammad Haider Ali Khadim"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1044",
+		"name": "Syed Farrukh Abbas Zaidi"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1050",
+		"name": "Khubaib Alam"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1057",
+		"name": "Muhammad Khizer Jilani"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1062",
+		"name": "Syed Mohammed Abdul Rehman"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1067",
+		"name": "Jawaria Sheikh"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1072",
+		"name": "Saqib Shah"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1077",
+		"name": "Noor Mobin"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1082",
+		"name": "Aadesh"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1087",
+		"name": "Abdul Kabeer"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1092",
+		"name": "Rao Saqib"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1097",
+		"name": "Shayan Ahmed Khan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1104",
+		"name": "Abdul Moiz"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1109",
+		"name": "Muhammad Yousuf Amanullah"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1114",
+		"name": "Muhammad Mansoor Butt"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1119",
+		"name": "Ahsan Shah"
+	},
+	{
+		"Department": "BBA",
+		"uid": "15K-2705",
+		"name": "Ahmed Razzak"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16I-0720",
+		"name": "Ayesha Iqbal Janjua"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2716",
+		"name": "Yumna Fatima Abidi"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2734",
+		"name": "Suleman"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2739",
+		"name": "Aqsa"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2744",
+		"name": "Sarfraz Ali"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2755",
+		"name": "Mehran"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0003",
+		"name": "Aneeba Naqvi"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0009",
+		"name": "Atta Mohammad"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0017",
+		"name": "Alisa Urooj Gul"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0428",
+		"name": "Momin Iftekhar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0004",
+		"name": "Salwa Suleman"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0011",
+		"name": "Syed Muhammad Habib Zia"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0016",
+		"name": "Jahanzaib"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0023",
+		"name": "Umair Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2125",
+		"name": "Ahmed Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2343",
+		"name": "Muhammad Umar Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2053",
+		"name": "Muhammad Noor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2181",
+		"name": "Ali Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2273",
+		"name": "Syed Mustafa Imam Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2332",
+		"name": "Muhammad Rayyan Hasan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2105",
+		"name": "Muhammad Faizan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2160",
+		"name": "Zulqarnain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2177",
+		"name": "Abdullah Waseem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2220",
+		"name": "Ijlal Monawwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2265",
+		"name": "Inseya Batool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2295",
+		"name": "Talha Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2324",
+		"name": "Syed Muhammad Haider Abbas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2431",
+		"name": "Ramiz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2804",
+		"name": "Ammar Muhammad Ghazali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2814",
+		"name": "Syed Muhammad Arsal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2896",
+		"name": "Syed Sohaib Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3628",
+		"name": "Syed Hamza Liaquat"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16I-0262",
+		"name": "Muhammad Bilal Hyder"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3603",
+		"name": "Shaheer Anjum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3611",
+		"name": "Gulsher"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3618",
+		"name": "Murtaza Multanwala"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3623",
+		"name": "Kiran Tanweer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3631",
+		"name": "Ubaid Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3636",
+		"name": "Muhammad Bilal Ashfaq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3642",
+		"name": "Luksh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3647",
+		"name": "Maheen Ghori"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3654",
+		"name": "Syed Issam Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3660",
+		"name": "Moonis Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3667",
+		"name": "Saad Samdani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3672",
+		"name": "Muhammad Osama Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3681",
+		"name": "Ubaid Ullah Khanzada"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3686",
+		"name": "Sajid Saleem Mamdani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3691",
+		"name": "Om Parkash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3696",
+		"name": "Jawad Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3705",
+		"name": "Doulat Singh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3713",
+		"name": "Aliakber"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3718",
+		"name": "Sooraj Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3724",
+		"name": "Fasih Zafar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3731",
+		"name": "Khizer Mehmood Farooqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3740",
+		"name": "Muzamil Akhtar Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3745",
+		"name": "Taha Bin Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3756",
+		"name": "Osama Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3762",
+		"name": "Basit Ali Khatri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3768",
+		"name": "Anusha Morani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3777",
+		"name": "Taha Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3784",
+		"name": "Muhammad Umer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3795",
+		"name": "Muhammad Hammad Mobin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3803",
+		"name": "Hani Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3810",
+		"name": "Muhammad Shahzaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3815",
+		"name": "Vishal Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3822",
+		"name": "Anas Bin Yasin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3827",
+		"name": "Muhammad Ammar Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3833",
+		"name": "Anosha Rehan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3838",
+		"name": "Abdul Wahab Kalhoro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3844",
+		"name": "Muhammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3849",
+		"name": "Sinan Aslam Lakhani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3857",
+		"name": "Murtaza Fakhruddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3862",
+		"name": "Muhammad Ammar Rizwan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3870",
+		"name": "Hanzala Jamash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3880",
+		"name": "Muhammad Huzaifa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3890",
+		"name": "Muhammad Raza Vasnani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3896",
+		"name": "Sabih Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3904",
+		"name": "Mehdi Raza Rajani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3909",
+		"name": "Zayan Tharani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3916",
+		"name": "Usman Sajjad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3924",
+		"name": "Hafiz Muhammad Huzaifah Punjani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3931",
+		"name": "Abdul Samad Bhundi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3938",
+		"name": "Mustafa Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3944",
+		"name": "Hamza Akbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3950",
+		"name": "Shehryar Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3957",
+		"name": "Mohammed Salman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3963",
+		"name": "Ahsan Ali Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3971",
+		"name": "Hafiz Muhammad Bilal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3984",
+		"name": "Salar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3993",
+		"name": "Rehan Arif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3999",
+		"name": "Maira"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4008",
+		"name": "Nareender Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4017",
+		"name": "Irfan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4024",
+		"name": "Abdul Moiz Bin Yamin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4031",
+		"name": "Sanif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4040",
+		"name": "Naqib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4047",
+		"name": "Syed Kumail Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4053",
+		"name": "Mohsin Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4059",
+		"name": "Syed Hamza Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4065",
+		"name": "Abdullah Waseem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4072",
+		"name": "Muhammad Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4077",
+		"name": "Ghulam Muhammad Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4084",
+		"name": "Mansoor Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2387",
+		"name": "Kashif Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3603",
+		"name": "Abdul Hannan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3608",
+		"name": "Syed Sarim Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3614",
+		"name": "Heeranand"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3620",
+		"name": "Sheikh Sheryar Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3625",
+		"name": "Ghulam Mustafa Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3632",
+		"name": "Fahad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3637",
+		"name": "Amar Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3642",
+		"name": "Ahmed Bin Shakeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3650",
+		"name": "Muhammad Ahsan Siddiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3655",
+		"name": "Syed Muhammad Maaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3660",
+		"name": "Preetam Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3665",
+		"name": "Shaheer Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3672",
+		"name": "Hassan Ubaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3678",
+		"name": "Laksh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3683",
+		"name": "Manish Kumar Kataria"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3691",
+		"name": "Aqib Javaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3697",
+		"name": "Mahnoor Imtiaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3702",
+		"name": "Muhammad Shahryar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3709",
+		"name": "Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3717",
+		"name": "M Muneeb Ul Hasan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3722",
+		"name": "Murad Popattia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3730",
+		"name": "Eisha Tir Raazia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3737",
+		"name": "Safiullah Kharadi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3742",
+		"name": "Muhammad Soomro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3748",
+		"name": "Hafiz Zakir Muhammad Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3755",
+		"name": "Noman Anjum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3760",
+		"name": "Fawaz Riaz Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3765",
+		"name": "Hayyan Niamatullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3771",
+		"name": "Aneesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3780",
+		"name": "Taneem Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3785",
+		"name": "Intikhab Mehdi Khuwaja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3794",
+		"name": "Huzaifa Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3803",
+		"name": "Faraz Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3811",
+		"name": "Zainab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3820",
+		"name": "Maaz Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3827",
+		"name": "Essam Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3838",
+		"name": "Zain Ul Abideen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3845",
+		"name": "Arbaz Sohail Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3853",
+		"name": "Abbad Jamil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3860",
+		"name": "Syed Usama Kazmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3866",
+		"name": "Ajaz Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3871",
+		"name": "Ali Akbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3877",
+		"name": "Talha Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3883",
+		"name": "Abdul Rehman Adil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3891",
+		"name": "Mudassar Akhtar Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3896",
+		"name": "Zoha Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3903",
+		"name": "Syeda Quratulain Zehra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3908",
+		"name": "Muhammad Hassan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3913",
+		"name": "Areeka Aijaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3920",
+		"name": "Syeda Sumayya Bukhari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3927",
+		"name": "Muhammad Aslam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3933",
+		"name": "Zeeshan Abdul Qadeer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3940",
+		"name": "Muhammad Owais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3946",
+		"name": "M. Wajih Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18I-0623",
+		"name": "Muhammad Mujtaba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0124",
+		"name": "Muhammad Amir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0129",
+		"name": "Wajahat Ullah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0136",
+		"name": "Vikash Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0142",
+		"name": "Tashik Moin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0147",
+		"name": "Muhammad Taha Mir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0152",
+		"name": "Ghulam Asghar Dahri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0157",
+		"name": "Ramsha Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0163",
+		"name": "Ghulam Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0169",
+		"name": "Syed Abdullah Muzaffar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0175",
+		"name": "Saneh Dhingana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0180",
+		"name": "Anfaal Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0185",
+		"name": "Abdul Musawwir Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0193",
+		"name": "Hamza Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0199",
+		"name": "Muhammad Haider Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0205",
+		"name": "Syeda Sarah Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0211",
+		"name": "Yassa Fareed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0216",
+		"name": "Muhammad Sualeh Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0223",
+		"name": "Aftab Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0228",
+		"name": "Syed Saad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0233",
+		"name": "Mubbashir Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0238",
+		"name": "Ahsan Iftikhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0243",
+		"name": "Usama Bin Ejaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0249",
+		"name": "Maaz Mustafa Khurshed Qazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0254",
+		"name": "Touqeer Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0260",
+		"name": "Muhammad Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0266",
+		"name": "Sharyar Shafi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0272",
+		"name": "Muhammad Shahzaib Khan Bhutto"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0277",
+		"name": "Humna Faisal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0282",
+		"name": "Muhammad Ashar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0288",
+		"name": "Shahwaiz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0293",
+		"name": "Faizan E Ali Qazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0298",
+		"name": "Anashrah Aman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0304",
+		"name": "Abeer Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0309",
+		"name": "Mustafa Mirza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0318",
+		"name": "Nimrah Bano"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0326",
+		"name": "Nabihah Chaudhry"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0331",
+		"name": "Zain Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0337",
+		"name": "Muhammad Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0342",
+		"name": "Ibrar Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0348",
+		"name": "Maria Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0353",
+		"name": "Waqar Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0360",
+		"name": "Moosa Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0365",
+		"name": "Akshay Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0376",
+		"name": "Muhammad Hasaan Malik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0410",
+		"name": "Muhammad Burhan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1033",
+		"name": "Sajid Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1043",
+		"name": "Umer Mehmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1050",
+		"name": "Aebad Ul Quadir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1056",
+		"name": "Hammad Ghaffar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1063",
+		"name": "Muhammad Zohair"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1069",
+		"name": "Muhammad Usman Umar Aijaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1074",
+		"name": "Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1079",
+		"name": "Ali Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1089",
+		"name": "Saja Nasir Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1097",
+		"name": "Irza Kamran"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1103",
+		"name": "Muhammad Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1113",
+		"name": "Saad Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1122",
+		"name": "Muhammad Atif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1128",
+		"name": "Muhammad Faseeh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1133",
+		"name": "Syed Bilal Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1138",
+		"name": "Ahad Ur Rehman Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1144",
+		"name": "Bilal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1150",
+		"name": "Hassan Rauf Butt"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1155",
+		"name": "Muhammad Awatif Ansari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1160",
+		"name": "Mohit Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1167",
+		"name": "Muhammad Muzammil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1174",
+		"name": "Muhammad Taha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1180",
+		"name": "Shehroz Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1185",
+		"name": "Tooba Nazim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1193",
+		"name": "Muskan Fahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1198",
+		"name": "Mubeen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1256",
+		"name": "Areej Sultana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1262",
+		"name": "Muhammad Musharraf Naseem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1268",
+		"name": "Hasan Shafiq Khurshid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1278",
+		"name": "Gul Noureen"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1286",
+		"name": "Syed Zain Ali Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1294",
+		"name": "Jaafar Bin Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1352",
+		"name": "Hassan Aftab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1358",
+		"name": "Syed Adil Hussain Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1364",
+		"name": "Khawaja Daniyal Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1369",
+		"name": "Muhammad Owais Siddiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0123",
+		"name": "Parshant Babu Haryani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0128",
+		"name": "Abdul Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0135",
+		"name": "Mohammad Zain Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0141",
+		"name": "Mustafa Abdur Rafay Kashif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0146",
+		"name": "Hamza Usmani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0151",
+		"name": "Syed Salman Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0157",
+		"name": "Muhammad Umair Ullah Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0162",
+		"name": "Rutba Asghari"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0167",
+		"name": "Nawshrvan Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0172",
+		"name": "Ali Farooq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0177",
+		"name": "Abdul Rehman Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0182",
+		"name": "Muhammad Zayyan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0187",
+		"name": "Sharyar Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0192",
+		"name": "Syed Muhammad Abid Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0197",
+		"name": "Abdullah Bakht Khan Mohammed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0202",
+		"name": "Isbah Imtiaz Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0208",
+		"name": "Syed Mujtaba Hasan Kazmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0214",
+		"name": "Muhammad Ahmed Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0219",
+		"name": "Ammar Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0224",
+		"name": "Noor Us Sahar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0229",
+		"name": "Saud A Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0236",
+		"name": "Abdul Rahim Mughal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0241",
+		"name": "Muhammad Ali Kodvavi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0247",
+		"name": "Mohammad Faiz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0252",
+		"name": "Ariba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0257",
+		"name": "Tuaha Ajaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0262",
+		"name": "Moazzam Waqar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0267",
+		"name": "Muhammad Fareed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0272",
+		"name": "Muhammad Hassaan Ahsan Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0277",
+		"name": "Syed Khizar Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0282",
+		"name": "Azain Adam Talpur"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0288",
+		"name": "Khizar Mohammad Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0293",
+		"name": "Aliasghar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0299",
+		"name": "Hunain Arif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0304",
+		"name": "Umer Zaidi Syed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0309",
+		"name": "Maha Zamir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0314",
+		"name": "Muhammad Aashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0319",
+		"name": "Abu Dujana"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0325",
+		"name": "Subhan Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0331",
+		"name": "Muhammad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0337",
+		"name": "Shahzaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0342",
+		"name": "Muzammil Arif Zuberi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0348",
+		"name": "Faizan Bayounus"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0353",
+		"name": "Deepak Sadh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0358",
+		"name": "Umair Sikandar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0363",
+		"name": "Iqra Irshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0368",
+		"name": "Syed Wyle Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1255",
+		"name": "Sara Sameer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1260",
+		"name": "Ali Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1266",
+		"name": "Syed Askari Hassan Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1273",
+		"name": "Muhammad Mustafa Bawany"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1278",
+		"name": "Bakhtawar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1283",
+		"name": "Syed Muhammad Mahad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1290",
+		"name": "Mirza Aneeb Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1295",
+		"name": "Mariium Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1301",
+		"name": "Aman Parkash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1306",
+		"name": "Abdul Saboor Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1311",
+		"name": "Muhammad Ibrahim Quaim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1316",
+		"name": "Abdul Rafay Syed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1322",
+		"name": "Obaid Ullah Shahab Ghouri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1328",
+		"name": "Muhammad Taaha Iqbal Sorathia"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1334",
+		"name": "Ahmed Aqil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1339",
+		"name": "Muhammad Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1345",
+		"name": "Muhammad Fouzan Asif Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1351",
+		"name": "Shazim Abbas"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1357",
+		"name": "Abdul Wasee"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1363",
+		"name": "Syed Taimoor Salim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1368",
+		"name": "Azan Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1373",
+		"name": "Abdul Shakoor"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1378",
+		"name": "Syed Muhammad Saad Berry"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1384",
+		"name": "Gul Muneer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1389",
+		"name": "Ramis Majeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1395",
+		"name": "Muhammad Ahsan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1401",
+		"name": "Sakina Batool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1406",
+		"name": "Muhammad Owais Danish"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1411",
+		"name": "M Sajjad Aziz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1416",
+		"name": "Muhammad Owais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1421",
+		"name": "Syed Muhammad Ali Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1426",
+		"name": "Abdur Rafey Safder Sayeed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1434",
+		"name": "Syed Muhammad Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1439",
+		"name": "Huzaifa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1445",
+		"name": "Syed Hamza Shafiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1450",
+		"name": "Muhammad Asad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1455",
+		"name": "Syed Shayan Hasan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1460",
+		"name": "Syed Muhammad Rafay Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1467",
+		"name": "Bushra Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1472",
+		"name": "Aftab Uddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1478",
+		"name": "Sachal Raja"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1484",
+		"name": "Muhammad Sameer Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1489",
+		"name": "Sonia Soofi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1495",
+		"name": "Muhammad Abdullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1501",
+		"name": "Aizaz Hyder"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1507",
+		"name": "Iqra Latif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1512",
+		"name": "Zaid Bin Shahab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1520",
+		"name": "Abdur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1526",
+		"name": "Muhammad Sameer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2425",
+		"name": "Sadam Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2493",
+		"name": "Muhammad Muzzammil Shahid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2527",
+		"name": "Khudaija Afsar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2393",
+		"name": "Muhammad Abdullah Iftikhar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2423",
+		"name": "Waleed Ahmed Siddiqui"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2446",
+		"name": "Aijaz Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2464",
+		"name": "Muhammad Saad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2531",
+		"name": "Shahzaib Gul"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2360",
+		"name": "Saad Aqeel"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2371",
+		"name": "Aqib Shoukat"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2379",
+		"name": "Muhammad Talha"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2386",
+		"name": "Muhammad Talal Anwar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2392",
+		"name": "Syed Noman Nadeem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2404",
+		"name": "Nauraiz Subhan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2414",
+		"name": "Mustafa Iqbal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2424",
+		"name": "Hunaina Faheem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2434",
+		"name": "Muhammad Qasim"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2440",
+		"name": "Muhammad Junaid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2448",
+		"name": "Hafiz Ghazanfar Omer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2456",
+		"name": "Aquib Asad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2468",
+		"name": "Rabia Fatima"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2481",
+		"name": "Azaan Mahmood"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2353",
+		"name": "Ghulam Qadir Bhurgari"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2363",
+		"name": "Zuhoor Ali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2374",
+		"name": "Syeda Ariba Ehtesham"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2385",
+		"name": "Muhammad Asjad Raza Molani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2393",
+		"name": "Fatima"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2415",
+		"name": "Muhammad Azam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2423",
+		"name": "Talha Islam"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2440",
+		"name": "Muhammad Abdullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0189",
+		"name": "Syed Muhammad Taqi Ur Rehman"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0377",
+		"name": "Muhammad Taha Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0385",
+		"name": "Huzaifa Minhaj"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0390",
+		"name": "Syeda Rabiya Hasan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0399",
+		"name": "Shahoud Mustafa"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0408",
+		"name": "Salman Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0415",
+		"name": "Maria Naeem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0425",
+		"name": "Muhammad Ahrar Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0434",
+		"name": "Muhammad Adnan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0440",
+		"name": "Jameel Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0446",
+		"name": "Mohammad Zain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0455",
+		"name": "Faizan Shahid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0460",
+		"name": "Asha Baig"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0468",
+		"name": "Hammad Wahab"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0477",
+		"name": "Muhammad Zain Aleem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0485",
+		"name": "Ahmed Faraz"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-1281",
+		"name": "Muhammad Taneer"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0377",
+		"name": "Muneeb Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0382",
+		"name": "Shahzaib"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0387",
+		"name": "Sonila Imran"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0393",
+		"name": "Muhammad Ataa Ul Haq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0398",
+		"name": "Saad Samad Gill"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0404",
+		"name": "Nabia Kamran"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0410",
+		"name": "Ahmed Abdullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0415",
+		"name": "Daniyal Qureshi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0420",
+		"name": "Muhammad Yasir Farooki"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0426",
+		"name": "Muhammad Abubakar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0433",
+		"name": "Zain Shabir"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0438",
+		"name": "Hassan Alam Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0446",
+		"name": "Sharjeel Jameel"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0453",
+		"name": "Tehreem Gilani"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0458",
+		"name": "Humais Anwar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0463",
+		"name": "Meer Muhammad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0469",
+		"name": "Abdul Rafay Saeed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1034",
+		"name": "Muhammad Zain Ul Abidin"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1040",
+		"name": "Maria Mehmood"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1045",
+		"name": "Syed Hammad Ali"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1051",
+		"name": "Syed Muhammad Mohtashim Ahsan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1058",
+		"name": "Neeraj"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1063",
+		"name": "Muhammad Sheharyar Zeb"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1068",
+		"name": "Hiba Niaz Ahmed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1073",
+		"name": "Muhammad Safeer Rizvi"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1078",
+		"name": "Safiullah"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1083",
+		"name": "Mibsam"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1088",
+		"name": "Mohammad Taha"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1093",
+		"name": "Huzaifa Nadeem"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1098",
+		"name": "Muhammad Awais"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1105",
+		"name": "Talal Nasir"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1110",
+		"name": "Maaz Asim Taimuri"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1115",
+		"name": "Muhammad Shehryar Ahmed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1120",
+		"name": "Muhammad Rohaan Khan"
+	},
+	{
+		"Department": "BBA",
+		"uid": "15K-2707",
+		"name": "Mujtaba Khursheed"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2707",
+		"name": "Shaheer Haider"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2718",
+		"name": "Aliza Rind"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2735",
+		"name": "Sadia Nazir"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2740",
+		"name": "Muhammad Ishtiaq"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2748",
+		"name": "Sharia Memon"
+	},
+	{
+		"Department": "BBA",
+		"uid": "16K-2756",
+		"name": "Stephen"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0004",
+		"name": "Muhammad Usman"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0010",
+		"name": "Laiba Sarwar"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0021",
+		"name": "Syed Mukkarram Hussain"
+	},
+	{
+		"Department": "BBA",
+		"uid": "18K-0437",
+		"name": "Rana Muhammad Kashif Latif"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0006",
+		"name": "Aown Ali Hussain"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0012",
+		"name": "Zulfiqar Ali Soho"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0017",
+		"name": "Iqra Urooj"
+	},
+	{
+		"Department": "BBA",
+		"uid": "19K-0024",
+		"name": "Nawal Idrees"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2141",
+		"name": "Shakeel Mazhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "13K-2358",
+		"name": "Ghulam Mohiuddin"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2087",
+		"name": "Muhammed Ahsan Hameed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2197",
+		"name": "Muhammad Haris"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2276",
+		"name": "Syed Mehdi Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "14K-2829",
+		"name": "Zubair Riaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2107",
+		"name": "Syed Hamza Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2168",
+		"name": "Muhammad Faizan Omer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2188",
+		"name": "Bilal Ahmed Bin Aqeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2251",
+		"name": "Sanjay Babu"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2266",
+		"name": "Abdullah Tariq Abbasi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2300",
+		"name": "Zee Waqar Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2332",
+		"name": "Nabeel Bilal Shams"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2444",
+		"name": "Muhammad Anas Imtiaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2805",
+		"name": "Mohammad Shahzar Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2830",
+		"name": "Hamza Shams"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-2899",
+		"name": "Muhammad Ameen Darwan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "15K-3629",
+		"name": "Syed Jaffar Kazmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-2487",
+		"name": "Saad Bin Umar Qureshi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3604",
+		"name": "Muhammad Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3612",
+		"name": "Imtiaz Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3619",
+		"name": "Muhammad Haris Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3626",
+		"name": "Muteeb Matloob"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3632",
+		"name": "Hamza Younus"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3637",
+		"name": "Ali Bin Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3643",
+		"name": "Syed Anwar Afroz Pasha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3648",
+		"name": "Syed Mohammad Jamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3655",
+		"name": "Mohammad Ashhar Usman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3661",
+		"name": "Talha Qazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3668",
+		"name": "Muhammad Umer Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3674",
+		"name": "Muhammad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3682",
+		"name": "Syed Hassan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3687",
+		"name": "Anjiya Ali Nawaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3692",
+		"name": "Mahesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3699",
+		"name": "Asadullah Choudhary"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3706",
+		"name": "Murtaza Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3714",
+		"name": "Madni Ali Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3719",
+		"name": "Ammad Rasool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3725",
+		"name": "Muhammad Jahanzeb Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3733",
+		"name": "Muhammad Usman Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3741",
+		"name": "Syed Mustufa Qadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3747",
+		"name": "Muhammad Junaid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3757",
+		"name": "Muhammad Shan Ahmad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3763",
+		"name": "Mohammad Taha Wahab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3769",
+		"name": "Muzammil Asrar Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3778",
+		"name": "Muhammad Bilal Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3787",
+		"name": "Aakash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3796",
+		"name": "Ahsan Ali Khokhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3804",
+		"name": "Muhammad Abdullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3811",
+		"name": "Muhammad Mudassir Latif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3816",
+		"name": "Bhawishraj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3823",
+		"name": "Muhammad Ammar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3828",
+		"name": "Hammad Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3834",
+		"name": "Adil Ayub"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3839",
+		"name": "Syed Muhammad Jahangeer Aslam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3845",
+		"name": "Sohaib Zafar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3850",
+		"name": "Muhammad Anas Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3858",
+		"name": "Syed Umair Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3863",
+		"name": "Muhammad Mujtaba"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3874",
+		"name": "Saqib Arsalan Ijaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3881",
+		"name": "Rida Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3891",
+		"name": "Syed Ghazanfer Anwar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3897",
+		"name": "Muhammad Nafees"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3905",
+		"name": "Tahir Raza Hemani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3910",
+		"name": "Sateesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3919",
+		"name": "Ammar Adeel Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3925",
+		"name": "Muhammad Arsalan Humayun"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3933",
+		"name": "Faseeh Gul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3940",
+		"name": "Mohammad Hamza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3945",
+		"name": "Manish Kumar Jewlani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3951",
+		"name": "Mahnoor Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3958",
+		"name": "Syed Arsal Javed Jafri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3964",
+		"name": "Syed Muhammad Zuqan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3973",
+		"name": "Maham Shoaib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3986",
+		"name": "Ahmed Raza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-3994",
+		"name": "Akshay Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4000",
+		"name": "Subash Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4009",
+		"name": "Jaipal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4018",
+		"name": "Waseem Ullah Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4025",
+		"name": "Muhammad Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4033",
+		"name": "Akif Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4041",
+		"name": "Syed Muhammad Raheem Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4048",
+		"name": "Usama Iftikhar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4054",
+		"name": "Faraz Murtaza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4060",
+		"name": "Saad Ismail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4066",
+		"name": "Muhammad Muneeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4073",
+		"name": "Syed Khubaib Ali Quadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "16K-4078",
+		"name": "Khawaja Muhammad Taha Saif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17I-0210",
+		"name": "Syed Abdullah Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-2394",
+		"name": "Mubashir Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3604",
+		"name": "Huzaifa Hassan Kaka"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3609",
+		"name": "Hubaib Mahmood"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3615",
+		"name": "Adnan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3621",
+		"name": "Abdullah Wali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3626",
+		"name": "Hatim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3633",
+		"name": "Saad Ayaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3638",
+		"name": "Yahya Zuberi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3646",
+		"name": "Ghulam Mohammad Soomro"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3651",
+		"name": "Ali Ahmed Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3656",
+		"name": "Muhammad Taha Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3661",
+		"name": "Hassan Rasool"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3666",
+		"name": "Syed Muhammad Shahmeer Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3673",
+		"name": "Wajeeh Misbah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3679",
+		"name": "Hafiza Amna Sadiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3684",
+		"name": "Hamza Bin Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3692",
+		"name": "Miran Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3698",
+		"name": "Syeda Hafsah Awais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3703",
+		"name": "Muhammad Hamza Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3711",
+		"name": "Aymen Irum"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3718",
+		"name": "Vishal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3723",
+		"name": "Kamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3731",
+		"name": "Tooba Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3738",
+		"name": "Owais Ul Haq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3743",
+		"name": "Syed Ramish Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3750",
+		"name": "Faria Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3756",
+		"name": "Satish Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3761",
+		"name": "Syed Muhammad Usman Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3766",
+		"name": "Samana Moosa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3772",
+		"name": "Ahmed Ali Munsif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3781",
+		"name": "Hammad Ismail"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3786",
+		"name": "Syed Muhammad Hamza Zaidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3795",
+		"name": "Muhammad Mustafa Manga"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3805",
+		"name": "Mayur"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3812",
+		"name": "Hamza Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3822",
+		"name": "Saadiah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3830",
+		"name": "Alyan Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3839",
+		"name": "Rida Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3846",
+		"name": "Mohammad Osama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3854",
+		"name": "Muhammad Talha Habib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3862",
+		"name": "Hina Waheed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3867",
+		"name": "Ayesha Ausaf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3872",
+		"name": "Muhammad Bilal Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3878",
+		"name": "Muhammad Shehroz Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3884",
+		"name": "Mutiba Akbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3892",
+		"name": "Avinash"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3897",
+		"name": "Sineha Aneel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3904",
+		"name": "Syed Rayyan Adil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3909",
+		"name": "Tabinda Qavi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3914",
+		"name": "Umair Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3921",
+		"name": "Muhammad Bilal Zubairi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3929",
+		"name": "Shaikh Muhammad Shirjeel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3934",
+		"name": "Moosa Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3941",
+		"name": "Mohammad Wajeeh Zahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "17K-3947",
+		"name": "Usman Aslam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18I-0909",
+		"name": "Maha Ahsan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0125",
+		"name": "Shahzaib Ahmed Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0130",
+		"name": "Ritik"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0137",
+		"name": "Ovaiz Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0143",
+		"name": "Mariam Munaf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0148",
+		"name": "Ali Muhammad Jaffer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0153",
+		"name": "Annus Hashmi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0158",
+		"name": "Muhammad Sameer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0164",
+		"name": "Sheikh Muhammad Umer Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0170",
+		"name": "Abdullah Raheel"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0176",
+		"name": "Hammad Tahseen Mughal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0181",
+		"name": "Syed Muhammad Owais"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0187",
+		"name": "Mahad Khalid Tarar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0194",
+		"name": "Azeem Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0200",
+		"name": "Muhammad Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0206",
+		"name": "Muhammad Hasan Aamir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0212",
+		"name": "Abdul Qadir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0217",
+		"name": "Omama Irshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0224",
+		"name": "Muhammad Talha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0229",
+		"name": "Mohammad Tariq Shahzad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0234",
+		"name": "Karim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0239",
+		"name": "Syed Daniyal Hassan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0244",
+		"name": "Tuba Khan Ghory"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0250",
+		"name": "Kanwal Gul"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0255",
+		"name": "Syed Sheheryar Ali Shah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0261",
+		"name": "Ali Muhammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0267",
+		"name": "Muhammad Musa Bashir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0273",
+		"name": "Kazim Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0278",
+		"name": "Muhammad Hasan Burney"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0283",
+		"name": "Muhammad Daniyal Shafiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0289",
+		"name": "Muneeza Mirza"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0294",
+		"name": "Muhammad Hasan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0300",
+		"name": "Saud Hassan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0305",
+		"name": "Muhammad Saad Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0311",
+		"name": "Laiba Zaheer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0319",
+		"name": "Saad Ali Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0327",
+		"name": "Saad Rasheed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0332",
+		"name": "Muhammad Ahsan Khalid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0338",
+		"name": "Anas Arshad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0344",
+		"name": "Deepak Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0349",
+		"name": "Farzeel Ahmad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0354",
+		"name": "Santosh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0361",
+		"name": "Muzammil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0366",
+		"name": "Sayed Mushahid Raza Quadri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0384",
+		"name": "Usman Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-0419",
+		"name": "Hashan Alam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1037",
+		"name": "Muhammad Ammar Bin Nasir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1044",
+		"name": "Muhammad Arsalan Jamali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1052",
+		"name": "Zain Haider"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1057",
+		"name": "Muhammad Muzammil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1064",
+		"name": "Tehreem Ahmed Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1070",
+		"name": "Muhammad Haseeb"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1075",
+		"name": "Neha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1080",
+		"name": "Syed Muhammad Asghar Rizvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1090",
+		"name": "Muhammad Anas Aziz Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1098",
+		"name": "Mehran Kamal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1104",
+		"name": "Muhammad Hammad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1114",
+		"name": "Sadiqa Seemab"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1123",
+		"name": "Mariam Khatri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1129",
+		"name": "Aneeb Asif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1134",
+		"name": "Saad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1139",
+		"name": "Muhammad Istabraq Shaheer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1145",
+		"name": "Adrash Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1151",
+		"name": "Hizber Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1156",
+		"name": "Muhammad Arif Channa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1161",
+		"name": "Muhammad Sufyan Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1168",
+		"name": "Rimsha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1175",
+		"name": "Abdul Jabbar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1181",
+		"name": "Muhammad Asad Shahmir Ghouri"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1186",
+		"name": "Easha Kumari Oad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1194",
+		"name": "Faiq Nadeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1251",
+		"name": "Muhammad Talal Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1257",
+		"name": "Shoukat Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1263",
+		"name": "Wastullah Nizamani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1269",
+		"name": "Yashal Bin Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1280",
+		"name": "Muhammad Anas Mallick"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1289",
+		"name": "Yusha Arif"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1295",
+		"name": "Muhammad Abdullah Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1354",
+		"name": "Risha Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1360",
+		"name": "Ahsan Jamil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1365",
+		"name": "Muhammad Taha Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "18K-1370",
+		"name": "Aneeba Naqvi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0124",
+		"name": "Muhammad Rohaan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0130",
+		"name": "Hinesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0136",
+		"name": "Arzaan Ul Mairaj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0142",
+		"name": "Muhammad Ossama Shibli"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0147",
+		"name": "Taha Aslam"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0152",
+		"name": "Muhammad Bassam Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0158",
+		"name": "Abdul Samad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0163",
+		"name": "Vinesh Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0168",
+		"name": "Muhammad Abdullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0173",
+		"name": "Mustansir Muzaffar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0178",
+		"name": "Muhammad Zain Shakir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0183",
+		"name": "Mubashir Hayat Maan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0188",
+		"name": "Syed Uzair Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0193",
+		"name": "Zaima Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0198",
+		"name": "Bilal Ahmer"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0204",
+		"name": "Hasnain Somani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0209",
+		"name": "Syed Muhammad Saad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0215",
+		"name": "Muazz Amir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0220",
+		"name": "Muhammad Ibad Saleem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0225",
+		"name": "Jawad Shahid"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0232",
+		"name": "Humza Rahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0237",
+		"name": "Musaib Ahmed Razzaqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0242",
+		"name": "Muhammad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0248",
+		"name": "Usama"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0253",
+		"name": "Muhammad Aziz Tahir"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0258",
+		"name": "Zubair Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0263",
+		"name": "Arman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0268",
+		"name": "Hamna Fatima"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0273",
+		"name": "Shahzaib Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0278",
+		"name": "Muhammad Shaheer Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0284",
+		"name": "Zafeerhasnain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0289",
+		"name": "Ibrahim Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0294",
+		"name": "Shahriyar Ahmed Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0300",
+		"name": "Muhammad Rasan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0305",
+		"name": "Ashmal Anis"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0310",
+		"name": "Mohib Tariq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0315",
+		"name": "Ruhal"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0320",
+		"name": "Muhammad Abdul Rafay Siddiqui"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0326",
+		"name": "Om Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0333",
+		"name": "Muhammad Areeb Baig"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0338",
+		"name": "Naveed Hakim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0344",
+		"name": "Syed Hassan Mustafa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0349",
+		"name": "Sumair Salam Memon"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0354",
+		"name": "Saman Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0359",
+		"name": "Khizir Farrukh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0364",
+		"name": "Syed Muhammad Murtaza Abidi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-0369",
+		"name": "Ahsan Ullah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1256",
+		"name": "Naz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1261",
+		"name": "Hamza Ayub"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1268",
+		"name": "Muhammad Ahsan Mangi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1274",
+		"name": "Muhammad Zeshan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1279",
+		"name": "Mohammad Ali Bin Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1285",
+		"name": "Muhammad Subhan Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1291",
+		"name": "Muhammad Owais Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1296",
+		"name": "Muhammad Khizer Riaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1302",
+		"name": "Alkesh Raj"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1307",
+		"name": "Rahim"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1312",
+		"name": "Illahi Bux Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1317",
+		"name": "Salman Arain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1324",
+		"name": "Muhammad Jawwad Habib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1329",
+		"name": "Abdul Hannan Shaikh"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1335",
+		"name": "Muhammad Hassaan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1340",
+		"name": "Syeda Mahnoor Javed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1346",
+		"name": "Ahmed Naeem"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1352",
+		"name": "Taha Yousuf"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1358",
+		"name": "Moonis Rasheed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1364",
+		"name": "Mohib Ur Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1369",
+		"name": "Sumrah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1374",
+		"name": "Abdul Rehman"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1379",
+		"name": "Muhammad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1385",
+		"name": "Mohammad Saad Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1390",
+		"name": "Mohit Kumar"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1396",
+		"name": "Abdul Samad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1402",
+		"name": "Aliya Tharwani"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1407",
+		"name": "Muhammad Huzaifa Asif Paracha"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1412",
+		"name": "Alyshah"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1417",
+		"name": "Aymon Habib"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1422",
+		"name": "Sufyan Sadiq"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1429",
+		"name": "Kashif Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1435",
+		"name": "Ammar Ullah Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1440",
+		"name": "Ajar Sarmad"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1446",
+		"name": "Shah Hussain"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1451",
+		"name": "Adnan Qazi"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1456",
+		"name": "Shahnawaz"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1462",
+		"name": "Muhammad Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1468",
+		"name": "Muhammad Wali Butt"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1473",
+		"name": "Muhammad Huzaifa"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1479",
+		"name": "Muhammad Ahmed Ali"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1485",
+		"name": "Syed Talal Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1490",
+		"name": "Rafay Akram"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1496",
+		"name": "Muhammad Saad Shakil"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1502",
+		"name": "Mahad Ahmed"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1508",
+		"name": "Sidra Ahmed Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1513",
+		"name": "Muhammad Osama Ali Khan"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1521",
+		"name": "Zehra"
+	},
+	{
+		"Department": "BS(CS)",
+		"uid": "19K-1527",
+		"name": "Sawera"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2433",
+		"name": "Abdul Fatah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2494",
+		"name": "Danish Raheem"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "14K-2536",
+		"name": "Majid Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2404",
+		"name": "Sufyan Arif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2428",
+		"name": "Usman Latif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2448",
+		"name": "Sanaullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "15K-2472",
+		"name": "Ayesha Imran"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2352",
+		"name": "Muhammad Usman"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2361",
+		"name": "Daniyal Sohail Sulehri"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2372",
+		"name": "Anas Iqbal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2380",
+		"name": "Syed Ajlil Waqas"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2387",
+		"name": "Huzaifa Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2393",
+		"name": "Sher Afzal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2405",
+		"name": "Muhammad Atif"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2416",
+		"name": "Muhammad Raza Rafi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2425",
+		"name": "Moiz Uddin"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2436",
+		"name": "Danish Waheed Almuazi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2444",
+		"name": "Syed Wajahat Abbas Jaffri"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2449",
+		"name": "Shahzeb Abbas"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2458",
+		"name": "Muhammad Ahsan Tariq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2469",
+		"name": "Mohsin Abbasi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "16K-2484",
+		"name": "Iqra Sabayo"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2354",
+		"name": "Zafar Ullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2366",
+		"name": "Abdul Wali"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2378",
+		"name": "Muhammad Misbah Haider Malik"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2386",
+		"name": "Muhammad Younas"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2397",
+		"name": "Mahnoor Gabol"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2416",
+		"name": "Hasan Abdullah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2425",
+		"name": "Muhib Ali Sheikh"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "17K-2442",
+		"name": "Waleed Aijaz Shaikh"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0315",
+		"name": "Muhammad Mahad Mehtab"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0379",
+		"name": "Nabeha Maryam Siddique"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0386",
+		"name": "Aleena Jawaid"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0391",
+		"name": "Syed Areeb Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0400",
+		"name": "Hassaan Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0411",
+		"name": "Dua Zafar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0417",
+		"name": "Fiza Iqbal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0427",
+		"name": "Sheheryar Farooq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0435",
+		"name": "Aneel Kumar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0441",
+		"name": "Muhammad Arham"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0447",
+		"name": "Khawaja Daniyal Siddiqui"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0456",
+		"name": "Syed Abdulhaque"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0461",
+		"name": "Syed Muhammad Raqim Ali Shah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0469",
+		"name": "Muhammad Raheel Goher"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0478",
+		"name": "Iqra"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "18K-0486",
+		"name": "Shaheryar Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0371",
+		"name": "Muhammad Armughan Yaqoob"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0378",
+		"name": "Syed Ahmed Ali Shah"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0383",
+		"name": "Zakir Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0388",
+		"name": "Taj Muhammad"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0394",
+		"name": "Adeel Ahmed"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0399",
+		"name": "Meezan Iqbal"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0406",
+		"name": "Muhammad Shafi"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0411",
+		"name": "Sahar Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0416",
+		"name": "Maaz Akhter"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0421",
+		"name": "Sajjad Hussain"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0427",
+		"name": "Wasif Maqsood"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0434",
+		"name": "Usama Yousuf Khan"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0439",
+		"name": "Saeed Ahmed Khero"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0447",
+		"name": "Muhammad Ud Din"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0454",
+		"name": "Muhammad Bilal Pasta"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0459",
+		"name": "Umer Atiq"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0464",
+		"name": "Hasnain Qaisar"
+	},
+	{
+		"Department": "BS(EE)",
+		"uid": "19K-0470",
+		"name": "Muhammad Raheel Goher"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1035",
+		"name": "Azaz Mir"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1041",
+		"name": "Muhammad Talha Altaf"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1046",
+		"name": "Ahmed Fayaz Yousuf"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1052",
+		"name": "Sanjay Kumar"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1059",
+		"name": "Husnain Abbas"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1064",
+		"name": "Shaheer Ahmed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1069",
+		"name": "Syed Abeer Hussain"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1074",
+		"name": "Syed Mubarak Shah"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1079",
+		"name": "Muhammad Ahsan"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1084",
+		"name": "Abdul Rehman"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1089",
+		"name": "Rohma Shaikh"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1094",
+		"name": "Maha Tanweer"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1100",
+		"name": "Hammad Ahmed"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1106",
+		"name": "Fizza Zakir"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1111",
+		"name": "M Aamir Hassan Malik"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1116",
+		"name": "Sarmad"
+	},
+	{
+		"Department": "BS(SE)",
+		"uid": "19K-1121",
+		"name": "Syed Muhammad Wahaj Kazmi"
+	}
+]
