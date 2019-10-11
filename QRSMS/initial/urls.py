@@ -63,6 +63,6 @@ urlpatterns += [
     path('test_student_login',views.StudentLoginView.as_view(), name="test_student_login"),
     path('test_student_login/<str:value>',views.StudentLoginView.as_view(), name="test_student_login2"),
     path('test_student_signup',views.StudentSignupView.as_view(), name="test_student_signup"),
-
+    path('home_json',views.Home_json.as_view(), name='home_json')
  
 ]

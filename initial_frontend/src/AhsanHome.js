@@ -8,6 +8,9 @@ import { FaCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import { Card } from 'react-bootstrap';
 import { CardBody } from 'react-bootstrap/Card';
+import axios from "axios";
+
+
 
 var data = {
     name:"Muhammad"
@@ -17,6 +20,23 @@ var data = {
 
 class AhsanHome extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            user : {}
+        };
+    }
+
+    componentDidMount() {
+        axios.get('home_json').then(response => {
+            console.log(response.data[0]);
+            this.setState({user : response.data[0]});
+        });
+
+
+        this.render();
+        
+      }
 
     render() {
         return (

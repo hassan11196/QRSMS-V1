@@ -10,7 +10,7 @@ from rest_framework import generics, viewsets
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
-
+from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
 
@@ -35,6 +35,18 @@ def ping(request):
 
 def index(request):
     return render(request, 'initial/index.html')
+
+
+class Home_json(View):
+    permission_classes = [IsAuthenticated]
+    def get(self, request):
+        print(type(request.user))
+        data_dict = model_to_dict(Student.objects.filter(uid = request.user).first())
+        user_data = model_to_dict(request.user)
+
+        dat = {**data_dict,**user_data}
+        
+        return JsonResponse(dat)
 
 class StudentSignupView(View):
     def post(self, request):
@@ -61,14 +73,11 @@ class StudentLoginView(View):
 
         if user is not None:
             login(request, user)
-            print(kwargs)
-            print(args)
-            print(request.build_absolute_uri())
-            return HttpResponse('success', status=200)
+            return HttpResponseRedirect('/shome')
         else:
             return HttpResponse("Invalid Username of Password.", status = 403)
         
-        return HttpResponse("success" + str(user))
+        return HttpResponseRedirect('/home')
 
 
 class UserViewSet(viewsets.ModelViewSet):

@@ -28,7 +28,7 @@ class Command(BaseCommand):
                 city_short = d['uid'][2]
             
                 batch_short = d['uid'][0:2]
-                roll = d['uid'][4:7]
+                roll = d['uid'][4:8]
                 
                 temp_name = d['name'].split(" ")
                 d['first_name'] = temp_name[0]
