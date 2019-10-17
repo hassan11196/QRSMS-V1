@@ -83,7 +83,7 @@ class FacultyForm(forms.ModelForm):
 class SemesterForm(forms.ModelForm):
     class Meta:
         model = Semester
-        fields = [ 'teachers_available']
+        fields = [ 'teachers_available','semester_year', 'start_date', 'end_date']
 
 class StudentForm(forms.ModelForm):
     class Meta:

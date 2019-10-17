@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, NavLink, Link, Switch } from 'react-router-dom'
+import {Button} from 'react-bootstrap';
+import {createStore} from 'redux';
 
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBNav } from 'mdbreact';
-import 'mdbreact/dist/css/mdb.css';
-
-import Login from './login';
-import AhsanHome from './AhsanHome';
-import SignUp from './signup';
+import Login from './Student/login';
+import Home from './Student/Home';
+import SignUp from './Student/Signup';
+import CourseView from './CourseView';
+import NavBar from './Student/NavBar';
 
 class Qrsms extends Component {
     render() {
@@ -16,11 +17,12 @@ class Qrsms extends Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={StudentHome} />
-                        <Route path='/shome' component={AhsanHome} />
+                        <Route path='/home' component={Home} />
                         <Route exact path='/login' component={() => <Login user="Admin" />} />
-                        <Route path='/login/student' component={() => <Login user="Student" />}></Route>
+                        <Route path='/login' component={() => <Login user="Student" />}></Route>
                         <Route path='/signup' component={SignUp}></Route>
                         {/* <Route path='/admin'component={() => {window.location.href = 'proxy://admin'}} ></Route> */}
+                        <Route path='/course' component={CourseView}></Route>
                         <Route component={PageNotFound}></Route>
                     </Switch>
 
@@ -47,22 +49,22 @@ class StudentHome extends Component {
                 <h1>Student Portal - Debugging Buttons</h1>
                 <nav>
                     <NavLink to='/signup' >
-                        <MDBBtn color="white">
+                        <Button color="white">
                             Signup
-                        </MDBBtn>
+                        </Button>
                     </NavLink>
                     <NavLink to='/login/student' >
-                        <MDBBtn color="white">
+                        <Button color="white">
                             Login
-                        </MDBBtn>
+                        </Button>
                     </NavLink>
 
                     <br></br>
 
                     <NavLink to='/shome'>
-                        <MDBBtn color="white">
+                        <Button color="white">
                             Ahsans Home
-                        </MDBBtn>
+                        </Button>
                     </NavLink>
                 </nav>
             </div>

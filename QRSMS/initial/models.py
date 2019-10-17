@@ -9,7 +9,17 @@ CNIC_REGEX = RegexValidator(
     "[0-9]{5}-[0-9]{7}-[0-9]{1}", message="Invalid CNIC")
 BATCH_YEAR_REGEX = RegexValidator(
     "[0-9]{4}",message="Invalid Batch Year")
-
+SEMSESTER_CHOICES = (
+        (1, "FALL"),
+        (2, "SPRING"),
+        (3, "SUMMER")
+    )
+STUDENT_YEAR_CHOICE = (
+        (1, "FRESHMEN"),
+        (2, "SOPHOMORE"),
+        (3, "JUNIOR"),
+        (4 ,"SENIOR"),
+    )
 
 
 class User(AbstractUser):
@@ -56,10 +66,18 @@ class User(AbstractUser):
 
 
 class Course(models.Model):
+    COURSE_TYPE_CHOICES = (
+        (1,'Core'),
+        (2,'Elective'),
+        (3,'Elective (X)')
+    )
     course_name = models.CharField(max_length=50, name="course_name")
     course_code = models.CharField(
         max_length=20, primary_key=True, name="course_code")
     course_short = models.CharField(max_length=50)
+    credit_hour = models.PositiveSmallIntegerField(name='credit_hour', null=True)
+    pre_requisites = models.ManyToManyField("initial.Course",name='pre_requisites', verbose_name="Prerequisite Courses")
+    course_type = models.PositiveIntegerField(name='course_type', help_text = "Core or Elective", choices=COURSE_TYPE_CHOICES)
 
     def __str__(self):
         return self.course_name
@@ -68,14 +86,14 @@ class Course(models.Model):
         ordering = ('-pk',)
 
     def __unicode__(self):
-        return u'%s' % self.pk
+        return self.course_code
 
     def get_absolute_url(self):
-        return reverse('initial_course_detail', args=(self.pk,))
+        return reverse('initial_course_detail', args=(self.course_code,))
 
 
     def get_update_url(self):
-        return reverse('initial_course_update', args=(self.pk,))
+        return reverse('initial_course_update', args=(self.course_code,))
 
 # class Student(models.Model):
 #     student_id = models.CharField(max_length=8,primary_key=True, validators = [RegexValidator("^[A-Z][0-9]{2}-[0-9]{4}$", message = "Invalid Student ID")], name="student_id_n")
@@ -130,7 +148,7 @@ class Student(models.Model):
         last_student = Student.objects.all().order_by('arn').last()
         
         if not last_student:
-            print("last studnet is empty")
+            print("last student is empty")
             last_arn_number =  ((17%100)*1000000)+1
         else:
             last_arn_number = last_student.arn + 1
@@ -155,8 +173,9 @@ class Student(models.Model):
     degree_short_enrolled = models.CharField(max_length=30, null=True)
     department_name_enrolled = models.CharField(max_length=255, null=True)
     uni_mail = models.EmailField(name='uni_mail',null=True)
-    
-
+    current_semester = models.PositiveSmallIntegerField(name = 'current_semester', null=True)
+    warning_count = models.PositiveSmallIntegerField(name='warning_count', null=True)
+    attending_semester = models.BooleanField(name='attending_semester', null= True)
 
 
     def __str__(self):
@@ -191,9 +210,9 @@ class Semester(models.Model):
     )
     semester_time = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
-    semester_year = models.DateField(name="Semester Year")
-    start_date = models.DateField(name="Semester Start Date")
-    end_date = models.DateField(name="Semester End Date")
+    semester_year = models.DateField(name="semester_year")
+    start_date = models.DateField(name="start_date")
+    end_date = models.DateField(name="end_date")
     teachers_available = models.ManyToManyField(
         Teacher, related_name="teachers_available")
     students_registered = models.ManyToManyField(
@@ -211,3 +230,15 @@ class Semester(models.Model):
 
     def get_update_url(self):
         return reverse('initial_semester_update', args=(self.pk,))
+
+class RegularCoreCourseLoad(models.Model):
+    semester_season = models.SmallIntegerField(
+        choices=SEMSESTER_CHOICES, name="semester_season")
+    courses = models.ManyToManyField(Course)
+    degree = models.ForeignKey(Degree, on_delete=models.SET_NULL, null=True)
+    credit_hour_limit = models.PositiveSmallIntegerField(name='credit_hour_limit', default=19)
+    student_year = models.SmallIntegerField(choices=STUDENT_YEAR_CHOICE, name='student_year', null=True)    
+
+    def __str__(self):
+        return SEMSESTER_CHOICES[self.semester_season - 1][1]+"-"+STUDENT_YEAR_CHOICE[self.student_year-1][1]
+    

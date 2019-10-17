@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 import 'mdbreact/dist/css/mdb.css';
 import { Form } from 'react-bootstrap';
 import axios from "axios";
-import credential from './credentials.js';
+import credential from '../credentials.js';
 import Cookies from 'js-cookie';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBSelect, MDBSelectInput, MDBSelectOptions } from 'mdbreact';
 

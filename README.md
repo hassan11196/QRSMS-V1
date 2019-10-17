@@ -1,3 +1,25 @@
+# QRSMS-V1.45
+Added RegularCoreCourseload, Updated several Mangagement Functions. Added courses with thier credit hours and option to add pre-Requisities.
+
+Ahsan can login using
+    /test_student_login
+Signup using
+    /test_signup_view
+and see student details using
+    /home_json
+
+**links:**
+
+https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/
+
+https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
+
+https://docs.djangoproject.com/en/2.2/topics/db/sql/
+
+
+
+
+
 # QRSMS-V1.44
 Dummy Data inserted for students, Management Commands setup to quickly run scripts relating to Django data and debug. 
 Crispy Forms inserted that provide quick and simple manipulation(Though we wont use it fully). It allows us to write basic HTML forms that are then beautified using Bootstrap.

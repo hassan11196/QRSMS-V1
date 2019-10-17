@@ -29,15 +29,15 @@ class CourseSerializer(serializers.ModelSerializer):
 
 
 
-class CourseSerializer(serializers.ModelSerializer):
+# class CourseSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = models.Course
-        fields = (
-            'pk', 
-            'course_name', 
-            'course_code', 
-        )
+#     class Meta:
+#         model = models.Course
+#         fields = (
+#             'pk', 
+#             'course_name', 
+#             'course_code', 
+#         )
 
 
 class TeacherSerializer(serializers.ModelSerializer):
@@ -80,12 +80,12 @@ class SemesterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Semester
-        fields = (
+        fields = [
             'pk', 
-            'semester_year', 
-            'start_date', 
-            'end_date', 
-        )
+            # 'semester_year', 
+            # 'start_date', 
+            # 'end_date', 
+        ]
 
 
 

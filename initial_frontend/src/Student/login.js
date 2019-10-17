@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Fabeer } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import './App.css';
+import '../App.css';
 import 'mdbreact/dist/css/mdb.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody, MDBAlert } from 'mdbreact';
 import axios from "axios";
-import credential from './credentials.js';
+import credential from '../credentials.js';
 import Cookies from 'js-cookie';
 import { Redirect } from 'react-router-dom';
 

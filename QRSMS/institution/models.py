@@ -66,7 +66,16 @@ class Department(models.Model):
 
 
 class Degree(models.Model):
+    minimium_years_education = models.PositiveSmallIntegerField(null=True,name='minimium_years_education', help_text = 'minimium years of education required for admission in Degree')
+    completion_year = models.PositiveSmallIntegerField(null=True,name='completion_year', help_text = 'Years of Education after completion of degree')
+    duration = models.PositiveSmallIntegerField(null=True,name = 'duration', help_text = 'Duration of Degree Program')
     education_level = models.CharField(
-        "Education Level", max_length=255, help_text="Education Level E.g: Bachelors, Masters, PhD")
+        "Education Level",null=True, max_length=255, help_text="Education Level E.g: Bachelors, Masters, PhD")
     degree_name = models.CharField(
-        "Degree Name", max_length=255, help_text="Name Of Degree E.g: Computer Science(CS)")
+        "Degree Name", max_length=255,null=True, help_text="Name Of Degree E.g: Computer Science(CS)")
+    degree_short = models.CharField(
+        name = 'degree_short', max_length=255, help_text="Short name Of Degree E.g : CS, BBA", primary_key=True, default='DND')
+
+    def __str__(self):
+        return self.degree_name + " " + self.degree_short
+    
