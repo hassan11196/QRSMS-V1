@@ -25,7 +25,7 @@ SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'actor',
+    'student_portal',
+    'teacher_portal',
+    'faculty_portal',
     'initial',
     'institution',
     'rest_framework',
@@ -157,7 +161,7 @@ WEBPACK_LOADER = {
 
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static')]
 
-AUTH_USER_MODEL = 'initial.User'
+AUTH_USER_MODEL = 'actor.User'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'

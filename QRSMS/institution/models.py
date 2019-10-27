@@ -1,25 +1,7 @@
 from django.db import models
-from django.core.validators import RegexValidator
+
 
 # Create your models here.
-
-UNIVERSITY_NAME = "FAST NUCES"
-UNIVERSITY_FULL_NAME = "National University Of Computing And Emerging Sciences"
-FOUNDATION_NAME = "Foundation for Advancement of Science And Technology"
-
-CAMPUSES_CHOICES = (
-    ('Karachi', 'K'),
-    ('Lahore', 'L'),
-    ('Faisalabad', 'F'),
-    ('Islamabad', 'I'),
-    ('Chiniot', 'C'),
-    ('Peshawar', 'P')
-)
-
-CAMPUS_CHOICES_REGEX_STRING = "".join(map(lambda c: c[1], CAMPUSES_CHOICES))
-UNIVERISTY_ID_REGEX = RegexValidator(
-    "[0-9]{2}[" + CAMPUS_CHOICES_REGEX_STRING + "]-[0-9]{4}", message="INVALID ROLL NUMBER FORMAT")
-
 
 class University(models.Model):
     class Meta:
@@ -55,7 +37,7 @@ class Campus(models.Model):
 
 class Department(models.Model):
     campus = models.ForeignKey(
-        Campus, on_delete=models.CASCADE, related_name="Campuses_Department")
+        'institution.Campus', on_delete=models.CASCADE, related_name="Campuses_Department")
     department_id = models.PositiveIntegerField(
         "Department ID", help_text="Department ID" ,primary_key = True)
     department_name = models.CharField("Department Name", max_length=255, help_text="Name of Department of Campus")

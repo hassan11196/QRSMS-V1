@@ -14,16 +14,11 @@ from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 
 
-from .serializers import (
-    CourseSerializer, GroupSerializer, TeacherSerializer, UserSerializer, StudentSerializer)
+from .serializers import (CourseSerializer)
 
 
-from .forms import CourseForm, TeacherForm, FacultyForm, StudentForm, SemesterForm, StudentFormValidate
-from .models import Course, Teacher, User,Student, Semester, Faculty
-def temp_login(request):
-    print(request)
-    return HttpResponse("USer" + str(request.user))
-
+from .forms import CourseForm, SemesterForm
+from .models import Course, Semester
 
 def csrf(request):
     return JsonResponse({'csrfToken': get_token(request)})
@@ -37,73 +32,9 @@ def index(request):
     return render(request, 'initial/index.html')
 
 
-class Home_json(View):
-    permission_classes = [IsAuthenticated]
-    def get(self, request):
-        print(type(request.user))
-        data_dict = model_to_dict(Student.objects.filter(uid = request.user).first())
-        user_data = model_to_dict(request.user)
-
-        dat = {**data_dict,**user_data}
-        
-        return JsonResponse(dat)
-
-class StudentSignupView(View):
-    def post(self, request):
-        form = StudentFormValidate(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
-            form.save()
-            return JsonResponse({'status':"Success"})
-        else:
-            return JsonResponse(form.errors.get_json_data())
-
-class StudentLoginView(View):
-
-    def get(self, request,*args, **kwargs):
-        return HttpResponse("PLease Login" + str(kwargs))
-
-    def post(self, request,*args,**kwargs):
-        username = request.POST['username']
-        password = request.POST['password']
-        if username is "" or password is "":
-            return HttpResponse(content="Empty Usename or Password Field.", status=400)
-
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            return HttpResponseRedirect('/shome')
-        else:
-            return HttpResponse("Invalid Username of Password.", status = 403)
-        
-        return HttpResponseRedirect('/home')
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticated]
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-
-
-class GroupViewSet(viewsets.ModelViewSet):
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-
-
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
-
-class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-
-
-class TeacherViewSet(viewsets.ModelViewSet):
-    queryset = Teacher.objects.all()
-    serializer_class = TeacherSerializer
 
 
 class CourseListView(ListView):
@@ -122,60 +53,6 @@ class CourseDetailView(DetailView):
 class CourseUpdateView(UpdateView):
     model = Course
     form_class = CourseForm
-
-
-class TeacherListView(ListView):
-    model = Teacher
-
-
-class TeacherCreateView(CreateView):
-    model = Teacher
-    form_class = TeacherForm
-
-
-class TeacherDetailView(DetailView):
-    model = Teacher
-
-
-class TeacherUpdateView(UpdateView):
-    model = Teacher
-    form_class = TeacherForm
-
-
-class FacultyListView(ListView):
-    model = Faculty
-
-
-class FacultyCreateView(CreateView):
-    model = Faculty
-    form_class = FacultyForm
-
-
-class FacultyDetailView(DetailView):
-    model = Faculty
-
-
-class FacultyUpdateView(UpdateView):
-    model = Faculty
-    form_class = FacultyForm
-
-
-class StudentListView(ListView):
-    model = Student
-
-
-class StudentCreateView(CreateView):
-    model = Student
-    form_class = StudentForm
-
-
-class StudentDetailView(DetailView):
-    model = Student
-
-
-class StudentUpdateView(UpdateView):
-    model = Student
-    form_class = StudentForm
 
 
 class SemesterListView(ListView):
