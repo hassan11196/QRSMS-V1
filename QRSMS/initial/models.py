@@ -2,7 +2,8 @@ from django.db import models
 
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
-from institution.models import University, Campus, Degree, UNIVERISTY_ID_REGEX
+from institution.models import University, Campus, Degree
+from institution.constants import UNIVERISTY_ID_REGEX
 from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR_CHOICE
 from student_portal.models import Student
 from teacher_portal.models import Teacher

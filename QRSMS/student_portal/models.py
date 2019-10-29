@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
-from actor.models import BATCH_YEAR_REGEX, UNIVERISTY_ID_REGEX, STUDENT_YEAR_CHOICE, User
+from actor.models import BATCH_YEAR_REGEX, STUDENT_YEAR_CHOICE, User
+from institution.constants import UNIVERISTY_ID_REGEX
 # Create your models here.
 
 class Student(models.Model):

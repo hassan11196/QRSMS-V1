@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 
-from institution.models import UNIVERISTY_ID_REGEX
+from institution.constants import UNIVERISTY_ID_REGEX
 
 # from initial.models import Semester, BATCH_YEAR_REGEX, STUDENT_YEAR_CHOICE, SEMSESTER_CHOICES, ACADEMIC_YEAR
 # Create your models here.
