@@ -12,7 +12,7 @@ from rest_framework.authentication import (BasicAuthentication,
 from rest_framework.permissions import IsAuthenticated
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
-
+from django.utils.decorators import method_decorator
 
 
 from .serializers import StudentSerializer
@@ -22,16 +22,23 @@ from .forms import StudentForm, StudentFormValidate
 from .models import Student
 # Create your views here.
 
+
 class Home_json(View):
-    permission_classes = [IsAuthenticated]
+        
     def get(self, request):
-        print(type(request.user))
+        print(dir(request))
         data_dict = model_to_dict(Student.objects.filter(uid = request.user).first())
         user_data = model_to_dict(request.user)
-
+        print(data_dict)
+        print(user_data)
         dat = {**data_dict,**user_data}
         
         return JsonResponse(dat)
+    
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+        
 
 class StudentSignupView(View):
     def post(self, request):

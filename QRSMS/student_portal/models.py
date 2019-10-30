@@ -30,10 +30,10 @@ class Student(models.Model):
     user = models.OneToOneField('actor.User', on_delete=models.CASCADE)
     batch = models.PositiveSmallIntegerField("batch year", validators=[BATCH_YEAR_REGEX])
     arn = models.PositiveIntegerField(
-        "Admission Registration Number", name='arn',primary_key=True)
+        "Admission Registration Number", name='arn')
     
     uid = models.CharField("Student ID", default="00K-0000", name="uid",
-                           max_length=8, validators=[UNIVERISTY_ID_REGEX], help_text="University Student Roll Number")
+                           max_length=8, validators=[UNIVERISTY_ID_REGEX], help_text="University Student Roll Number", primary_key=True)
 
     degree_name_enrolled = models.CharField(max_length=255 ,null=True)
     degree_short_enrolled = models.CharField(max_length=30, null=True)

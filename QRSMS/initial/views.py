@@ -9,10 +9,11 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from rest_framework import generics, viewsets
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
-
+from django.contrib.auth.decorators import user_passes_test
+from django.utils.decorators import method_decorator
 
 from .serializers import (CourseSerializer)
 
@@ -31,6 +32,57 @@ def ping(request):
 def index(request):
     return render(request, 'initial/index.html')
 
+def check_if_admin(user):
+    return True if user.is_staff else False
+
+class UserNotLogged(View):
+
+    def get(self, request):
+        return JsonResponse({'Status':'Not Authenticated'})
+
+class Add_students(View):
+     permission_classes = [IsAdminUser]
+     def post(self, request):
+        print('Inserting Students')
+        from .root_commands import insert_students
+        
+        data = model_to_dict(insert_students())
+        return JsonResponse({'status':'success', **data})
+
+
+class Add_semesterCore(View):
+    @method_decorator(user_passes_test(check_if_admin,login_url='/user_not_logged/'))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+
+
+    def post(self, request):
+        print('Inserting Semester')
+        from .root_commands import add_semesterCore
+        data = model_to_dict(add_semesterCore())
+        return JsonResponse({'status':'success', **data})     
+    
+    
+    
+    
+        
+class Add_university(View):
+    def post(self, request):
+        print('Inserting University')
+        from .root_commands import add_university
+        data = model_to_dict(add_university())
+        return JsonResponse({'status':'success', **data})    
+
+class Add_superuser(View):
+    def post(self, request):
+        print('Inserting Superusers')
+        from .root_commands import create_super_users
+        data = model_to_dict(create_super_users())
+        return JsonResponse({'status':'success', **data})    
+
+
+        
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()

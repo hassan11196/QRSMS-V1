@@ -57,7 +57,7 @@ class Semester(models.Model):
     )
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
-    semester_year = models.DateField(name="semester_year")
+    semester_year = models.IntegerField(name="semester_year")
     start_date = models.DateField(name="start_date")
     end_date = models.DateField(name="end_date")
     teachers_available = models.ManyToManyField(

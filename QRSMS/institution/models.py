@@ -9,7 +9,7 @@ class University(models.Model):
     uni_id = models.AutoField(
         primary_key=True, name="uni_id", verbose_name="University Registration ID")
     name = models.CharField(
-        max_length=255, help_text="Name of Univeristy")
+        max_length=255, help_text="Name of University")
 
     def __str__(self):
         return self.name

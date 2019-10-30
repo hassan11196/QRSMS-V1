@@ -35,11 +35,11 @@ router.register(r'teachers', teacher_views.TeacherViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('initial.urls')),
-    path('', include('actor.urls')),
-    path('student/',include('student_portal.urls')),
+    path('actor/', include('actor.urls')),
+    path(r'student/',include('student_portal.urls')),
     path('teacher/',include('teacher_portal.urls')),
     path('faculty/',include('faculty_portal.urls')),
-    path('', include(router.urls)),
+    path('rest/', include(router.urls)),
     
 
 

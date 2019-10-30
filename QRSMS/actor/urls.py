@@ -11,7 +11,7 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     # urls for Django Rest Framework API
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
 ]
 
 urlpatterns += [

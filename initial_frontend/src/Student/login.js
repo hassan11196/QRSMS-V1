@@ -51,7 +51,7 @@ class Login extends Component {
       username_admin: credential.REACT_APP_ADMIN_USERNAME,
       password_admin: credential.REACT_APP_ADMIN_PASSWORD,
       login_type_name : props.user === undefined ? "Undefined User Login" : props.user,
-      form_action_location: "/test_student_login?" + props.user,
+      form_action_location: "/student/login/",
       }
   }
 
@@ -92,7 +92,7 @@ class Login extends Component {
     formd.set('password', String(this.state.password_admin));
     formd.set('hello', 'hell');
     // console.log(formd);
-    axios.post("/test_student_login/",formd, {
+    axios.post("/student/login/",formd, {
       // username: this.state.username_admin,
       // password: this.state.password_admin,
       // headers: {
