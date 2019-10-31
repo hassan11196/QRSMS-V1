@@ -21,6 +21,7 @@ class Shome extends Component{
         }
     }
     componentDidMount() {
+
         Axios.get('/student/home_json/').then(
             (response) => {
                 this.setState({

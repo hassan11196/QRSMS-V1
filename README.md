@@ -1,3 +1,54 @@
+# QRSMS-V1.46
+User and Account management logic will be confined to Actor App.
+Three new apps also have been constructed,
+
+ - student_portal
+ -  teacher_portal
+ -  faculty_portal
+
+For interaction with these apps respective Apis are:
+
+    /student
+    /teacher
+    /faculty
+
+On requesting any view that the client does not have permission for a JSON Object will be returned currently of the following structure.
+
+    {'message':'Not Authenticated'}
+   
+  Sending valid status codes is responsibility of back-end devs, Frontend Dev needs to check status messages.
+  Http-middleware-proxy dependency is added to initial_frontend. Helps in various issues of proxying requests. 
+
+**links:**
+React Patterns:
+[https://reactpatterns.com/](https://reactpatterns.com/)
+
+
+for changing axios base url:
+[https://alligator.io/react/axios-react/](https://alligator.io/react/axios-react/)
+
+setting env variables in js
+
+[https://stackoverflow.com/questions/4870328/read-environment-variables-in-node-js](https://stackoverflow.com/questions/4870328/read-environment-variables-in-node-js)
+
+http proxy middleware
+[https://medium.com/@Pavan_/set-up-proxy-to-work-with-multiple-apis-in-create-react-app-be595a713eb2](https://medium.com/@Pavan_/set-up-proxy-to-work-with-multiple-apis-in-create-react-app-be595a713eb2)
+
+noman bhai check this:
+[https://docs.djangoproject.com/en/2.2/topics/conditional-view-processing/](https://docs.djangoproject.com/en/2.2/topics/conditional-view-processing/)
+
+[https://stackoverflow.com/questions/4597401/django-user-permissions-to-certain-views](https://stackoverflow.com/questions/4597401/django-user-permissions-to-certain-views)
+
+react, django ,cors
+[https://medium.com/@zoltankohalmy/react-and-django-57f949b0f012](https://medium.com/@zoltankohalmy/react-and-django-57f949b0f012)
+
+if all else fails
+[https://medium.com/@praveen.beatle/avoiding-pre-flight-options-calls-on-cors-requests-baba9692c21a](https://medium.com/@praveen.beatle/avoiding-pre-flight-options-calls-on-cors-requests-baba9692c21a)
+
+
+
+
+
 # QRSMS-V1.45
 Added RegularCoreCourseload, Updated several Mangagement Functions. Added courses with thier credit hours and option to add pre-Requisities.
 

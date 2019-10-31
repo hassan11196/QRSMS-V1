@@ -162,9 +162,9 @@ WEBPACK_LOADER = {
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'initial_frontend/webpack_output/static')]
 
 AUTH_USER_MODEL = 'actor.User'
-
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
-
+CORS_ALLOW_CREDENTIALS = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

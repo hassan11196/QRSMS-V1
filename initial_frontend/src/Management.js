@@ -4,10 +4,14 @@ import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Card, Spinner, Modal, Col, Table} from 'react-bootstrap';
 import Cookies from 'js-cookie'
-
-
+import OApi from './AxiosProxy';
+// axios.defaults.baseURL = 'http://127.0.0.1:8000';
+// axios.defaults.baseURL = 'https://qrsms-v1.herokuapp.com/';
+// axios.defaults.withCredentials = true;
 axios.defaults.xsrfCookieName = 'csrftoken'
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+// axios.defaults.withCredentials = true;
+
 
 export default class Management extends React.Component{
     
@@ -21,10 +25,12 @@ export default class Management extends React.Component{
         }
     }
     get_csrf_token() {
-        axios.get('/get_csrf');
-        this.setState(oldState => ({
-          csrf_token : Cookies.get('csrftoken')
-        }));
+        axios.get('/management/get_csrf').then(
+            (response)=>{
+                  Cookies.set('csrftoken',response.data.csrfToken);
+            }
+        );
+
         this.setState({csrf_token : Cookies.get('csrftoken')});
       }
 

@@ -30,9 +30,9 @@ urlpatterns = [
 # )
 urlpatterns += [
     path('', views.index, name='index'),
-    path('get_csrf',views.csrf,name="csrf_get"),
-    path('ping_csrf', views.ping, name="csrf_ping"),
-    path('user_not_logged/', views.UserNotLogged.as_view(), name = 'user_not_loggged'),
+    path('management/get_csrf',views.csrf,name="csrf_get"),
+    path('management/ping_csrf', views.ping, name="csrf_ping"),
+    path('management/user_not_logged/', views.UserNotLogged.as_view(), name = 'user_not_loggged'),
     path('management/add_students/', views.Add_students.as_view(), name='manage_add_students'),
     path('management/add_semestercore/', views.Add_semesterCore.as_view(), name='manage_add_semsterCore'),
     path('management/add_university/', views.Add_university.as_view(), name = 'manage_add_university'),

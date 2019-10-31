@@ -38,7 +38,7 @@ def check_if_admin(user):
 class UserNotLogged(View):
 
     def get(self, request):
-        return JsonResponse({'Status':'Not Authenticated'})
+        return JsonResponse({'message':'Not Authenticated'}, status=401)
 
 class Add_students(View):
      permission_classes = [IsAdminUser]
@@ -51,7 +51,7 @@ class Add_students(View):
 
 
 class Add_semesterCore(View):
-    @method_decorator(user_passes_test(check_if_admin,login_url='/user_not_logged/'))
+    @method_decorator(user_passes_test(check_if_admin,login_url='/management/user_not_logged/'))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
