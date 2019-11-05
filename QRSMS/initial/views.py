@@ -55,7 +55,9 @@ class Add_semesterCore(View):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
-
+    
+    def get(self, request):
+        return JsonResponse({'message':'Invalid Request'}, status = 405)
 
     def post(self, request):
         print('Inserting Semester')
