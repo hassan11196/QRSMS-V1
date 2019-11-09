@@ -19,29 +19,38 @@ class Campus(models.Model):
 
     class Meta:
         verbose_name_plural = "Campuses"
-    
-    def __str__(self):
-        return self.campus_name
+        unique_together = ('campus_name','campus_city',)
     
     campus_id = models.AutoField(
         primary_key=True, name="campus_id", verbose_name="Campus ID")
     uni_name = models.ForeignKey("institution.University", on_delete=models.CASCADE,
                                  verbose_name="Universities Campus", help_text="A university can have many campuses")
     address = models.CharField(
-        max_length=255, help_text="Address of Campus", name="Address")
+        max_length=255, help_text="Address of Campus", name="campus_address")
     campus_name = models.CharField(
-        max_length=255, help_text="Name of Campus of University")
+        max_length=255, help_text="Name of Campus of University", name='campus_name')
     campus_city = models.CharField(
-        max_length=255, help_text="City Name of Campus")
+        max_length=255, help_text="City Name of Campus", name='campus_city')
+    contact_no = models.IntegerField(help_text='Contact Number of Campus', null=True, name='contact_no')
+    contact_email = models.EmailField(help_text='Email of Campus', null=True, name = 'contact_email')
 
+    campus_country = models.CharField(
+        max_length=255, help_text="Country Name of Campus", null=True, name = 'campus_country')
+
+    def __str__(self):
+        return self.campus_name + " " + self.campus_city
+    
 
 class Department(models.Model):
     campus = models.ForeignKey(
         'institution.Campus', on_delete=models.CASCADE, related_name="Campuses_Department")
     department_id = models.PositiveIntegerField(
         "Department ID", help_text="Department ID" ,primary_key = True)
-    department_name = models.CharField("Department Name", max_length=255, help_text="Name of Department of Campus")
+    department_name = models.CharField("Department Name", max_length=255, help_text="Name of Department of Campus", unique=True)
 
+    department_hod = models.ForeignKey("actor.User", help_text="Current HOD of Department", name='department_hod', on_delete=models.SET_NULL, null=True)
+    department_teachers = models.ManyToManyField("teacher_portal.Teacher")
+    department_students = models.ManyToManyField("student_portal.Student")
     def __str__(self):
         return self.department_name + "(" + self.campus.campus_name + ")"
     

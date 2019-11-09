@@ -1,3 +1,16 @@
+# QRSMS-V1.47
+Folder Hierarchy is First Git Clone the QRSMS-v1(Backend). Open it and inside it Git Clone the QRSMS-Front(Frontend). This is ensures proper working of webpack.
+
+A User Education History Model Needs to be designed (Relegated to Version - 2). That will hold student/teachers Educational Background such as marks in Matric, FSC, Certificates and Publications.
+
+Details of Changes are relegated to v1.50.
+
+**links:**
+
+[https://github.com/Nifled/drf-cheat-sheet](https://github.com/Nifled/drf-cheat-sheet)
+
+
+
 # QRSMS-V1.46
 User and Account management logic will be confined to Actor App.
 Three new apps also have been constructed,
@@ -20,6 +33,7 @@ On requesting any view that the client does not have permission for a JSON Objec
   Http-middleware-proxy dependency is added to initial_frontend. Helps in various issues of proxying requests. 
 
 **links:**
+
 React Patterns:
 [https://reactpatterns.com/](https://reactpatterns.com/)
 

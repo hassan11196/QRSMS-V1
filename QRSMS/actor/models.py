@@ -68,10 +68,12 @@ class User(AbstractUser):
     mobile_contact = models.PositiveIntegerField(verbose_name='Mobile Contact',null=True)
     emergency_contact = models.PositiveIntegerField(verbose_name='Emergency Contact',null=True)
 
+    educational_history = models.OneToOneField("actor.EducationalHistory", verbose_name="Educational Histories", on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.username
     
-
+class EducationalHistory(models.Model):
+    pass
 
 

@@ -8,7 +8,7 @@ from django.contrib.auth.models import Permission
 from actor.models import User
 from initial.models import (ACADEMIC_YEAR, STUDENT_YEAR_CHOICE, Course,
                             RegularCoreCourseLoad, Semester)
-from institution.models import Degree, University
+from institution.models import Degree, University, Campus
 from student_portal.models import Student
 
 CURRENT_SEMESTER = 'Fall' #, 0 , (1,'Fall')
@@ -100,7 +100,7 @@ def create_super_users():
     nu.save()
     return nu
 
-def insert_course_loads():
+def insert_core_course_loads():
     cloads = ["CL101 CS101 MT101 SS111 SS101 SL101 EE182",
         "SS113 CS103 EE227 EL227 MT115 CL103 SS122",
         "EE213 MT104 CS211 EL213 CS201",
@@ -151,7 +151,7 @@ def insert_degrees():
     )
     nd.save()
 
-def insert_students():
+def add_students():
     # u = User(first_name = "saya",last_name = "dapra",email= "wohra@hotmail.com",password = 'redragon')
     # u.save()
     # print(u)
@@ -173,7 +173,7 @@ def insert_students():
         DEFAULT_PASSWORD = 'hassan'
         data = json.load(json_file)
         # pprint(data)
-        for d in data:
+        for d in data[500:520]:
             #pprint(d)
             city_short = d['uid'][2]
         
@@ -276,6 +276,25 @@ def add_university():
     )
     u.save()
     return u
+def add_campuses():
+    campus = Campus(
+        uni_name = University.objects.get(uni_id = 101101),
+        campus_address = 'St-4 Sector 17-D On National Highway Karachi , Pakistan',
+        campus_name = 'MAIN CAMPUS',
+        campus_city = 'Karachi',
+        contact_no = 9221341005416,
+        contact_email = 'info@nu.edu.pk',
+        campus_country = 'Pakistan'
+    )
+     
+    campus.save()
+
+    return campus
+def add_departments():
+    department = Department(
+
+    )
+    return department
 
 def add_semesterCore():
     Semester.objects.all().delete()
@@ -291,7 +310,7 @@ def add_semesterCore():
     s.save()
     return s
 
-def insert_courses_csv():
+def add_courses():
     Course.objects.all().delete()
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     course_dict = [
@@ -302,7 +321,7 @@ def insert_courses_csv():
     ]
     courses = []
 
-    with open(os.path.join(BASE_DIR,'..','..','Dumps\course.csv'), 'r') as csv_file:
+    with open(os.path.join(BASE_DIR,'Dumps\course.csv'), 'r') as csv_file:
         next(csv_file) # Skip first row
         for d in csv_file:
             temp = d.split(',')
@@ -319,3 +338,4 @@ def insert_courses_csv():
 
             nc = Course(course_code = temp[0], course_name=temp[1], credit_hour=temp[2], course_type=ctype)
             nc.save()
+    return courses

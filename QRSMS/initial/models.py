@@ -47,6 +47,7 @@ class Course(models.Model):
 
 class Semester(models.Model):
 
+    department = models.ForeignKey('institution.Department', on_delete = models.SET_NULL, null=True)
     semester_code = models.CharField(max_length=255, primary_key=True , default='TEST2000')
     offered_courses = models.ManyToManyField(
         Course, related_name="semester_offered")
@@ -65,6 +66,9 @@ class Semester(models.Model):
     students_registered = models.ManyToManyField(
         Student, related_name="students_registered")
 
+    regualar_course_load = models.ManyToManyField('initial.RegularCoreCourseLoad')
+    elective_course_load = models.ManyToManyField('initial.RegularElectiveCourseLoad')
+
     class Meta:
         unique_together = ('semester_season', 'semester_year')
 
@@ -76,6 +80,34 @@ class Semester(models.Model):
     def get_update_url(self):
         return reverse('initial_semester_update', args=(self.pk,))
 
+class CourseSection(models.Model):
+    students = models.ManyToManyField('student_portal.Student')
+    attendance = models.ManyToManyField('initial.Attendance')
+    teacher = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null =True)
+    
+
+class CourseClass(models.Model):
+    course_code = models.ForeignKey('initial.Course', on_delete=models.SET_NULL, null = True)
+    sections = models.ManyToManyField('initial.CourseSection')
+    teachers = models.ManyToManyField('teacher_portal.Teacher')
+    course_coordinator = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null=True, related_name='course_coordinator_CourseClass')
+
+class Attendance(models.Model):
+    ATTENDANCE_STATES = (
+        ('NR', 'Not Registered'),
+        ('P', 'Present'),
+        ('A', 'Absent'),
+        ('L', 'Late'), # late
+        ('LV', 'Leave')
+    )
+    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+    class_date = models.DateField()
+    state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
+    attendance_time = models.TimeField()
+    duration = models.SmallIntegerField(default=1)
+
+
+
 class RegularCoreCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
@@ -86,4 +118,14 @@ class RegularCoreCourseLoad(models.Model):
 
     def __str__(self):
         return SEMSESTER_CHOICES[self.semester_season - 1][1]+"-"+STUDENT_YEAR_CHOICE[self.student_year-1][1]
+
+class RegularElectiveCourseLoad(models.Model):
+    semester_season = models.SmallIntegerField(
+        choices=SEMSESTER_CHOICES, name="semester_season")
+    courses = models.ManyToManyField(Course)
     
+class RepeatCourseLoad(models.Model):
+    semester_season = models.SmallIntegerField(
+        choices=SEMSESTER_CHOICES, name="semester_season")
+    core_coursess = models.ManyToManyField('initial.RegularCoreCourseLoad')
+    elective_courses = models.ManyToManyField('initial.RegularElectiveCourseLoad')

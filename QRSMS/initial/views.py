@@ -14,6 +14,7 @@ from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.contrib.auth.decorators import user_passes_test
 from django.utils.decorators import method_decorator
+from django.db.utils import IntegrityError
 
 from .serializers import (CourseSerializer)
 
@@ -44,9 +45,10 @@ class Add_students(View):
      permission_classes = [IsAdminUser]
      def post(self, request):
         print('Inserting Students')
-        from .root_commands import insert_students
-        
-        data = model_to_dict(insert_students())
+        from .root_commands import add_students
+        students = add_students()
+        data = {'List':[x.uid + "," for x in students]}
+
         return JsonResponse({'status':'success', **data})
 
 
@@ -83,8 +85,24 @@ class Add_superuser(View):
         data = model_to_dict(create_super_users())
         return JsonResponse({'status':'success', **data})    
 
-
+class Add_courses(View):
+    def post(self, request):
+        print('Inserting Courses')
+        from .root_commands import add_courses
+        courses = add_courses()
+        data = {'List':[x[1] + "," for x in courses]}
+        return JsonResponse({'status':'success', **data})
         
+class AddCampuses(View):
+    def post(self, request):
+        from .root_commands import add_campuses
+    
+        try:    
+            data = model_to_dict(add_campuses())
+        except IntegrityError as e:
+            print(e)
+            return JsonResponse({'status':'success', 'error' : 'Campus Already Exists'})
+        return JsonResponse({'status':'success', **data})
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()

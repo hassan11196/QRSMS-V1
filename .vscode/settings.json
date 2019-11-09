@@ -7,4 +7,13 @@
         "--load-plugins=pylint_django",
     ],
     "python.formatting.provider": "black",
+    "bracket-pair-colorizer-2.colors": [
+        
+        "LightSkyBlue",
+        "#74B3CE",
+        "#086375",
+        "#4e758f",
+        "#508991",
+        "#86BAA1"
+    ]
 }
