@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 # Create your views here.
@@ -31,7 +31,7 @@ class Home_json(View):
         user_data = model_to_dict(request.user)
         print(data_dict)
         print(user_data)
-        dat = {**data_dict,**user_data}
+        dat = {'status':'success',**data_dict,**user_data}
         
         return JsonResponse(dat)
     
@@ -46,7 +46,7 @@ class StudentSignupView(View):
         if form.is_valid():
             print(form.cleaned_data)
             form.save()
-            return JsonResponse({'status':"Success"})
+            return JsonResponse({'status':"Success", 'message':'Student Sign Up Successful.'})
         else:
             return JsonResponse(form.errors.get_json_data())
 
@@ -65,11 +65,16 @@ class StudentLoginView(View):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/shome')
+            return JsonResponse({'status':'success','message' : 'User Logged In', **user})
         else:
-            return HttpResponse("Invalid Username of Password.", status = 403)
+            return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
         
         return HttpResponseRedirect('/home')
+
+class StudentLogoutView(View):
+    def post(self, request):
+        logout(request)
+        return JsonResponse({'status':'success','message' : 'User Logged Out'})
 
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()

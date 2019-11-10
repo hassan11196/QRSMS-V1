@@ -1,3 +1,39 @@
+# QRSMS-V1.48
+Added Endpoints for Login and Logout. Student Also has a Signup Endpoint.
+
+Endpoint Structures are as follows 
+**Student:**
+
+    POST(username, password) -> /student/login/ -> RESPONSE-Success -> {'status':'success','message'  :  'User Logged In',  **user}
+    
+    POST -> /student/logout/ -> RESPONSE-Success ->
+    {'status':'success','message'  :  'User Logged Out'}
+    
+    GET -> /student/home_json/ -> RESPONSE-Success ->
+    {'status':'success',**data_dict,**user_data}
+
+**Teacher:**
+
+    POST(username, password) -> /teacher/login/ -> RESPONSE-Success -> {'status':'success','message'  :  'User Logged In',  **user}
+    
+    POST -> /teacher/logout/ -> RESPONSE-Success ->
+    {'status':'success','message'  :  'User Logged Out'}
+    
+    GET -> /teacher/home_json/ -> RESPONSE-Success ->
+    {'status':'success',**data_dict,**user_data}
+
+**Faculty:**
+
+    POST(username, password) -> /faculty/login/ -> RESPONSE-Success -> {'status':'success','message'  :  'User Logged In',  **user}
+    
+    POST -> /faculty/logout/ -> RESPONSE-Success ->
+    {'status':'success','message'  :  'User Logged Out'}
+    
+    GET -> /faculty/home_json/ -> RESPONSE-Success ->
+    {'status':'success',**data_dict,**user_data}
+
+
+
 # QRSMS-V1.47
 Folder Hierarchy is First Git Clone the QRSMS-v1(Backend). Open it and inside it Git Clone the QRSMS-Front(Frontend). This is ensures proper working of webpack.
 
