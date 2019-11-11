@@ -257,8 +257,8 @@ def add_students():
                                     uni_mail = d.get('uni_mail'),
                                     student_year = d.get('student_year'),
                                     attending_semester = d.get('attending_semester'),
-                                    warning_count = d.get('warning_count'),
-                                    current_semester = Semester.objects.get(semester_season = d.get('current_semester'))
+                                    warning_count = d.get('warning_count')
+                                    # current_semester = Semester.objects.get(semester_season = d.get('current_semester'))
                                     )
             #pprint(d)
             created_student.save()

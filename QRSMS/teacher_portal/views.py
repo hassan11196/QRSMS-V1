@@ -62,6 +62,7 @@ class TeacherLoginView(View):
 
         if user is not None:
             login(request, user)
+            dict_user = model_to_dict(user)
             return JsonResponse({'status':'success','message' : 'User Logged In', **user})
         else:
             return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
