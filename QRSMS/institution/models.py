@@ -50,7 +50,7 @@ class Department(models.Model):
 
     department_hod = models.ForeignKey("actor.User", help_text="Current HOD of Department", name='department_hod', on_delete=models.SET_NULL, null=True)
     department_teachers = models.ManyToManyField("teacher_portal.Teacher")
-    department_students = models.ManyToManyField("student_portal.Student")
+    department_students = models.ManyToManyField("student_portal.Student", related_name='students_in_department')
     def __str__(self):
         return self.department_name + "(" + self.campus.campus_name + ")"
     

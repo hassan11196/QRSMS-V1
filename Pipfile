@@ -16,6 +16,10 @@ django-restful-admin = "*"
 django-cors-headers = "*"
 django-crispy-forms = "*"
 pylint-django = "*"
+django-rest-swagger = "*"
+sentry-sdk = "==0.13.2"
+django-extensions = "*"
+
 
 [requires]
 python_version = "3.7"

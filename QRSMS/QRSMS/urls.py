@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include, re_path
 from rest_framework import routers
 import django_restful_admin
+from rest_framework_swagger.views import get_swagger_view
 from actor import views as actor_views
 from student_portal import views as student_views
 from teacher_portal import views as teacher_views
@@ -32,14 +33,19 @@ router.register(r'course_info',views.CourseViewSet)
 router.register(r'students', student_views.StudentViewSet)
 router.register(r'teachers', teacher_views.TeacherViewSet)
 
+schema_view = get_swagger_view(title = 'QRSMS')
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('swagger/', schema_view),
     path('', include('initial.urls')),
     path('actor/', include('actor.urls')),
     path(r'student/',include('student_portal.urls')),
     path('teacher/',include('teacher_portal.urls')),
     path('faculty/',include('faculty_portal.urls')),
     path('rest/', include(router.urls)),
+    
     
 
 

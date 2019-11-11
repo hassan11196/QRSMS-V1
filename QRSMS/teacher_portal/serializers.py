@@ -5,4 +5,4 @@ from . import models
 class TeacherSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Teacher
-        fields = ['user', 'nu_email', 'department']
+        fields = ['user', 'nu_email']

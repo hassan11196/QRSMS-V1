@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django_restful_admin',
     'corsheaders',
     'crispy_forms',
+    'rest_framework_swagger',
+    'django_extensions',
 
 ]
 
@@ -147,6 +149,7 @@ REST_FRAMEWORK = {
     #     'rest_framework.authentication.BasicAuthentication',
     #     'rest_framework.authentication.SessionAuthentication',
     # ]
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
 
@@ -168,3 +171,12 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://668ce2775d094f2e90662ac3a554b7da@sentry.io/1815682",
+    integrations=[DjangoIntegration()]
+)
