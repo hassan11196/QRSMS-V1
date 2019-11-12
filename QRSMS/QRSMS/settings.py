@@ -158,11 +158,11 @@ WEBPACK_LOADER = {
         
           'DEFAULT': { 
                    'BUNDLE_DIR_NAME': 'bundles/', 
-                   'STATS_FILE': os.path.join(BASE_DIR, '..','QRSMS-Front/', 'webpack-stats.json'), 
+                   'STATS_FILE': os.path.join(BASE_DIR, '..','webpack_output/', 'webpack-stats.json'), 
                       }
                   } 
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'QRSMS-Front/webpack_output/static')]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'webpack_output/static')]
 
 AUTH_USER_MODEL = 'actor.User'
 CORS_ORIGIN_ALLOW_ALL = False
