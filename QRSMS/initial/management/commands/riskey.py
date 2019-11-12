@@ -54,6 +54,11 @@ class Command(BaseCommand):
             action='store_true',
             help = 'Drop all Students'
         )
+        parser.add_argument(
+            '--setup_university',
+            action='store_true',
+            help = 'Setup University Structure'
+        )
     
     def handle(self, **options):
 
@@ -84,6 +89,9 @@ class Command(BaseCommand):
             insert_students()
         if options['dropstudent']:
             drop_all_students()
+
+        if options['setup_university']:
+            setup_university()
 
         # for operation in options['operations']:
         #     if operation == 'superuser':

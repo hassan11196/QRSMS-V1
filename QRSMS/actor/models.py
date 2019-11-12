@@ -29,6 +29,8 @@ STUDENT_YEAR_CHOICE = (
         (5,"VETERAN")
     )
 
+
+
 class User(AbstractUser):
     username = models.CharField("username", max_length=50,unique=True,null=False)
     GENDERS = [
@@ -48,6 +50,12 @@ class User(AbstractUser):
         default=False, help_text='True if the User is a Faculty Member.')
     is_maintainer = models.BooleanField(
         default=False, help_text='True if the User is a Mainatiner or Project Developer.')
+    
+    is_employee = models.BooleanField(
+        default=False, help_text='True if the User is a Employee of Institution')
+    
+    employee = models.OneToOneField('actor.Employee', null=True, on_delete=models.SET_NULL)
+
     CNIC = models.CharField(max_length=15, validators=[
                             CNIC_REGEX], name="CNIC")
 
@@ -76,4 +84,12 @@ class User(AbstractUser):
 class EducationalHistory(models.Model):
     pass
 
+class EmployeeDesignation(models.Model):
+    designation_id = models.IntegerField(primary_key=True)
+    designation_name = models.CharField(max_length= 256, null=True)
 
+class Employee(models.Model):
+    employee_id = models.PositiveIntegerField(primary_key = True)
+    employee_designation = models.ManyToManyField('actor.EmployeeDesignation')
+    hire_date = models.DateField(null = True)
+    salary = models.PositiveIntegerField(null = True)

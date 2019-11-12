@@ -40,8 +40,8 @@ class Student(models.Model):
     department_name_enrolled = models.CharField(max_length=255, null=True)
 
     uni_mail = models.EmailField(name='uni_mail',null=True)
-    # current_semester = models.PositiveSmallIntegerField(name = 'current_semester', null=True, help_text ='Number of semester the student is Attending.')
-    current_semester = models.ForeignKey('initial.Semester', on_delete = models.SET_NULL, null = True)
+    current_semester = models.PositiveSmallIntegerField(name = 'current_semester', null=True, help_text ='Number of semester the student is Attending.')
+    # current_semester = models.ForeignKey('initial.Semester', on_delete = models.SET_NULL, null = True)
     warning_count = models.PositiveSmallIntegerField(name='warning_count', null=True)
     attending_semester = models.BooleanField(name='attending_semester', null= True, help_text = 'If the student is currently attending classes') # If the student is currently attending classes
     student_year = models.SmallIntegerField(choices=STUDENT_YEAR_CHOICE, name='student_year', null=True)

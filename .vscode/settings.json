@@ -6,7 +6,7 @@
         "--disable=C0111", // missing docstring
         "--load-plugins=pylint_django",
     ],
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "autopep8",
     "bracket-pair-colorizer-2.colors": [
         
         "LightSkyBlue",

@@ -57,6 +57,8 @@ class Department(models.Model):
 
 
 class Degree(models.Model):
+
+    offering_department = models.ForeignKey('institution.Department', on_delete=models.SET_NULL, null=True)
     minimium_years_education = models.PositiveSmallIntegerField(null=True,name='minimium_years_education', help_text = 'minimium years of education required for admission in Degree')
     completion_year = models.PositiveSmallIntegerField(null=True,name='completion_year', help_text = 'Years of Education after completion of degree')
     duration = models.PositiveSmallIntegerField(null=True,name = 'duration', help_text = 'Duration of Degree Program')
