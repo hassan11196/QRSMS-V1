@@ -45,7 +45,7 @@ class Student(models.Model):
     warning_count = models.PositiveSmallIntegerField(name='warning_count', null=True)
     attending_semester = models.BooleanField(name='attending_semester', null= True, help_text = 'If the student is currently attending classes') # If the student is currently attending classes
     student_year = models.SmallIntegerField(choices=STUDENT_YEAR_CHOICE, name='student_year', null=True)
-    
+    admission_section = models.CharField(max_length=256,null=True)
     def __str__(self):
         return self.user.username
 

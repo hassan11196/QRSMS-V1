@@ -59,6 +59,17 @@ class Command(BaseCommand):
             action='store_true',
             help = 'Setup University Structure'
         )
+        parser.add_argument(
+            '--add_student_in_dep',
+            action='store_true',
+            help = 'add students in department'
+        )
+        parser.add_argument(
+            '--random_func',
+            action='store_true',
+            help = 'Used To Run Random Functions For Debugging'
+        )
+    
     
     def handle(self, **options):
 
@@ -86,13 +97,16 @@ class Command(BaseCommand):
             add_semesterCore()
         
         if options['student']:
-            insert_students()
+            add_students('Dumps/students2.json',5)
         if options['dropstudent']:
             drop_all_students()
 
         if options['setup_university']:
             setup_university()
-
+        if options['add_student_in_dep']:
+            add_students_in_department()
+        if options['random_func']:
+            random_func()
         # for operation in options['operations']:
         #     if operation == 'superuser':
         #     #1 Add super users

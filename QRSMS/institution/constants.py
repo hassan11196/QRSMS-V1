@@ -3,7 +3,7 @@ from django.core.validators import RegexValidator
 UNIVERSITY_NAME = "FAST NUCES"
 UNIVERSITY_FULL_NAME = "National University Of Computing And Emerging Sciences"
 FOUNDATION_NAME = "Foundation for Advancement of Science And Technology"
-
+DEFAULT_PASSWORD = 'hassan'
 CAMPUSES_CHOICES = (
     ('Karachi', 'K'),
     ('Lahore', 'L'),

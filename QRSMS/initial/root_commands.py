@@ -10,20 +10,29 @@ from initial.models import (ACADEMIC_YEAR, STUDENT_YEAR_CHOICE, Course,
                             RegularCoreCourseLoad, Semester)
 from institution.models import Degree, University, Campus, Department
 from student_portal.models import Student
+from teacher_portal.models import Teacher
+from institution.constants import DEFAULT_PASSWORD
 
 CURRENT_SEMESTER = 'Fall'  # , 0 , (1,'Fall')
 
+def random_func():
+    add_teachers()
+
 
 def setup_university():
-
-    add_students()
-
-
-
+    add_students('Dumps/students2.json',5)
     add_university()
     add_campuses()
     add_departments()
     add_degrees()
+
+def add_students_in_department():
+    dep = Department.objects.get(department_id = 1)
+    for stud in Student.objects.all():
+        dep.department_students.add(stud)
+    dep.save()
+def add_teachers_in_department():
+    pass
 
 def add_users_in_group():
     for user in User.objects.all():
@@ -40,6 +49,13 @@ def add_users_in_group():
             user.groups.add(Group.objects.get(name='faculty_group'))
             print('Added ' + str(user) + ' in ' + 'faculty_group')
 
+def add_teachers():
+    
+    teachers =["Zulfiqar.Ali.Memon","Anum.Qureshi","Tania.Irum","Ammara.Yaseen","Mohammad.Faheem","Abdul.Rehman","Javeria.Farooq","Syeda.Rubab.Jaffar","M.Nadeem","Hamza.Ahmed","Atif.Tahir","Zeshan.Khan","M.Waqas","Hasina.Khatoon","Hassan.Jamil.Syed"]
+
+    for teacher in teachers:
+        t = Teacher.create(nu_email= teacher+'nu.edu.pk',username = teacher,password = DEFAULT_PASSWORD)
+        print(t)
 
 def delete_groups():
     status = Group.objects.all().delete()
@@ -63,7 +79,7 @@ def create_groups():
             try:
 
                 model_add_perm = Permission.objects.get(name=perm_name)
-            except PermissionError:
+            except PermissionError as e:
                 print('Error ' + e)
                 continue
             new_group.permissions.add(model_add_perm)
@@ -80,7 +96,7 @@ def create_groups():
             try:
 
                 model_add_perm = Permission.objects.get(name=perm_name)
-            except PermissionError:
+            except PermissionError as e:
                 print('Error ' + e)
                 continue
             new_group.permissions.add(model_add_perm)
@@ -168,7 +184,7 @@ def insert_degrees():
     nd.save()
 
 
-def add_students():
+def add_students(file_name = 'Dumps\Students.json', count = 20):
     # u = User(first_name = "saya",last_name = "dapra",email= "wohra@hotmail.com",password = 'redragon')
     # u.save()
     # print(u)
@@ -182,14 +198,14 @@ def add_students():
 
     drop_all_students()
 
-    with open(os.path.join(BASE_DIR, 'Dumps\Students.json'), 'r') as json_file:
+    with open(os.path.join(BASE_DIR, file_name), 'r') as json_file:
 
         students_object_list = []
         uni_domain = "nu.edu.pk"
         DEFAULT_PASSWORD = 'hassan'
         data = json.load(json_file)
         # pprint(data)
-        for d in data[:40]:
+        for d in data[:count]:
             # pprint(d)
             city_short = d['uid'][2]
 
@@ -206,7 +222,7 @@ def add_students():
 
             d['is_student'] = True
             d['batch'] = "20" + d['uid'][0:2]
-            d['arn'] = d['uid'][0:2] + d['arn']
+            d['arn'] = str(d['uid'][0:2]) + str(d['arn'])
 
             if d['Department'] == 'BBA':
                 d['degree_name'] = "Bachelors of Business Administration"
@@ -237,7 +253,7 @@ def add_students():
             d['uni_mail'] = city_short + batch_short + roll + '@' + uni_domain
             d['attending_semester'] = True
             d['current_semester'] = 1  # Hardcode to Fall Semester
-            created_user = User(first_name=d.get('first_name'),
+            created_user = User.create(first_name=d.get('first_name'),
                                 last_name=d.get('last_name'),
                                 email=d.get('registration_mail'),
                                 username=d.get('uid'),
@@ -257,10 +273,11 @@ def add_students():
                                 nationality='Pakistani',
                                 DOB=d.get('DOB'),
                                 mobile_contact=d.get('mobile_contact'),
-                                emergency_contact=d.get('emergency_contact')
+                                emergency_contact=d.get('emergency_contact'),
+                                password = DEFAULT_PASSWORD
                                 )
-            created_user.set_password(DEFAULT_PASSWORD)
-            created_user.save()
+            # created_user.set_password(DEFAULT_PASSWORD)
+            # created_user.save()
             # pprint(d)
             created_student = Student(user=created_user,
                                       uid=d.get('uid'),
@@ -276,9 +293,11 @@ def add_students():
                                       student_year=d.get('student_year'),
                                       attending_semester=d.get(
                                           'attending_semester'),
-                                      warning_count=d.get('warning_count'), 
+                                      warning_count=d.get('warning_count'),
+                                      admission_section = d.get('Section')
                                       # current_semester = Semester.objects.get(semester_season = d.get('current_semester'))
                                       )
+            
             # pprint(d)
             created_student.save()
             students_object_list.append(created_student)

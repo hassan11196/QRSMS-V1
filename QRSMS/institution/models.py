@@ -49,8 +49,9 @@ class Department(models.Model):
     department_name = models.CharField("Department Name", max_length=255, help_text="Name of Department of Campus", unique=True)
 
     department_hod = models.ForeignKey("actor.User", help_text="Current HOD of Department", name='department_hod', on_delete=models.SET_NULL, null=True)
-    department_teachers = models.ManyToManyField("teacher_portal.Teacher")
+    department_teachers = models.ManyToManyField("teacher_portal.Teacher", related_name='teachers_in_department')
     department_students = models.ManyToManyField("student_portal.Student", related_name='students_in_department')
+    department_faculty = models.ManyToManyField("faculty_portal.Faculty", related_name='faculty_in_department')
     def __str__(self):
         return self.department_name + "(" + self.campus.campus_name + ")"
     

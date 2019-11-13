@@ -1,10 +1,9 @@
 
 
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
-
 from institution.constants import UNIVERISTY_ID_REGEX
 
 # from initial.models import Semester, BATCH_YEAR_REGEX, STUDENT_YEAR_CHOICE, SEMSESTER_CHOICES, ACADEMIC_YEAR
@@ -54,7 +53,7 @@ class User(AbstractUser):
     is_employee = models.BooleanField(
         default=False, help_text='True if the User is a Employee of Institution')
     
-    employee = models.OneToOneField('actor.Employee', null=True, on_delete=models.SET_NULL)
+    employee = models.OneToOneField('actor.Employee', null=True, on_delete=models.CASCADE)
 
     CNIC = models.CharField(max_length=15, validators=[
                             CNIC_REGEX], name="CNIC")
@@ -80,7 +79,34 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
-    
+
+    def __init__(self, *args, **kwargs):
+        super(User, self).__init__(*args,**kwargs)
+        
+    @classmethod
+    def create(cls, username, password, is_teacher = False, is_maintainer = False, is_student = False, is_employee = False, is_faculty = False,employee = None, *args, **kwargs):
+        if is_faculty or is_teacher:
+            is_employee = True
+            if employee is None:
+                e = Employee.create()
+                employee = e
+        user = cls( username = username, is_teacher = is_teacher, is_maintainer = is_maintainer, is_student = is_student, is_employee = is_employee, is_faculty = is_faculty,employee = employee, *args, **kwargs)
+        user.set_password('hassan')
+        user.save()
+        if user.is_maintainer or user.is_staff:
+            user.groups.add(Group.objects.get(name='maintainer_group'))
+            print('Added ' + str(user) + ' in ' + 'maintainer_group')
+        if user.is_student:
+            user.groups.add(Group.objects.get(name='student_group'))
+            print('Added ' + str(user) + ' in ' + 'student_group')
+        if user.is_teacher:
+            user.groups.add(Group.objects.get(name='teacher_group'))
+            print('Added ' + str(user) + ' in ' + 'teacher_group')
+        if user.is_faculty:
+            user.groups.add(Group.objects.get(name='faculty_group'))
+            print('Added ' + str(user) + ' in ' + 'faculty_group')
+
+        return user
 class EducationalHistory(models.Model):
     pass
 
@@ -88,8 +114,34 @@ class EmployeeDesignation(models.Model):
     designation_id = models.IntegerField(primary_key=True)
     designation_name = models.CharField(max_length= 256, null=True)
 
+    @classmethod
+    def create(cls, **kwargs):
+        e = cls(**kwargs)
+        e.save()
+        return e
+    @classmethod
+    def create_or_get_teacher(cls):
+        te, created = cls.objects.get_or_create(designation_name = 'Teacher')
+        
+        return te
+    def __str__(self):
+        return self.designation_name
+    
+                    
 class Employee(models.Model):
-    employee_id = models.PositiveIntegerField(primary_key = True)
+    employee_id = models.AutoField(primary_key = True)
     employee_designation = models.ManyToManyField('actor.EmployeeDesignation')
     hire_date = models.DateField(null = True)
     salary = models.PositiveIntegerField(null = True)
+
+    @classmethod
+    def create(cls,**kwargs):
+        e = cls(**kwargs)
+        e.save()
+        ed = EmployeeDesignation.create_or_get_teacher()
+        e.employee_designation.add(ed)
+        
+        return e
+    def __str__(self):
+        return  "  ENo: " + str(self.employee_id)+ ", Designations :" + ",".join([str(designations) for designations in self.employee_designation.all()])
+    

@@ -49,8 +49,8 @@ class Semester(models.Model):
 
     department = models.ForeignKey('institution.Department', on_delete = models.SET_NULL, null=True)
     semester_code = models.CharField(max_length=255, primary_key=True , default='TEST2000')
-    offered_courses = models.ManyToManyField(
-        Course, related_name="semester_offered")
+    # offered_courses = models.ManyToManyField(
+    #     Course, related_name="semester_offered")
     SEMSESTER_CHOICES = (
         (1, "FALL"),
         (2, "SPRING"),
@@ -71,6 +71,10 @@ class Semester(models.Model):
 
     class Meta:
         unique_together = ('semester_season', 'semester_year')
+    
+    def __str__(self):
+        return self.semester_code
+    
 
 
     def get_absolute_url(self):
@@ -124,6 +128,12 @@ class RegularElectiveCourseLoad(models.Model):
         choices=SEMSESTER_CHOICES, name="semester_season")
     courses = models.ManyToManyField(Course)
     
+
+    def __str__(self):
+        return 'Electives : ' + SEMSESTER_CHOICES[self.semester_season - 1][1]
+    
+
+# Relegated to Later Versions
 class RepeatCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
