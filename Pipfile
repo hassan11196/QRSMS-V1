@@ -21,5 +21,6 @@ sentry-sdk = "==0.13.2"
 django-extensions = "*"
 ipython = "*"
 
+
 [requires]
 python_version = "3.7"

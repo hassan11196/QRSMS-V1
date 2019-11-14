@@ -73,3 +73,16 @@ class Degree(models.Model):
     def __str__(self):
         return self.degree_name + " " + self.degree_short
     
+
+class BatchSection(models.Model):
+    sec_batch = models.CharField(max_length=25, blank=True, null=True)
+    batch = models.CharField(max_length = 256)
+    section = models.CharField(max_length = 10, help_text='Section Name Etc A,B,C etc')
+    students = models.ManyToManyField('student_portal.Student')
+
+    def save(self, *args, **kwargs):
+        if not self.batch + "-" + self.section == self.sec_batch:
+            self.sec_batch = self.batch + "-" + self.section
+        super(BatchSection, self).save(*args, **kwargs)
+    class Meta:
+        unique_together = ('batch','section')
