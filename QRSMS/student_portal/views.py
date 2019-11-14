@@ -29,6 +29,8 @@ class Home_json(View):
         print(dir(request))
         data_dict = model_to_dict(Student.objects.filter(uid = request.user).first())
         user_data = model_to_dict(request.user)
+        user_data.pop('groups',None)
+        user_data.pop('password', None)
         print(data_dict)
         print(user_data)
         dat = {'status':'success',**data_dict,**user_data}
@@ -66,6 +68,8 @@ class StudentLoginView(View):
         if user is not None:
             login(request, user)
             dict_user = model_to_dict(user)
+            dict_user.pop('groups',None)
+            dict_user.pop('password', None)
             return JsonResponse({'status':'success','message' : 'User Logged In', **dict_user})
         else:
             return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
