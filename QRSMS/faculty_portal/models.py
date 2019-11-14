@@ -28,6 +28,9 @@ class Faculty(models.Model):
     class Meta:
         ordering = ('-pk',)
         verbose_name_plural = "Faculty Supervisors"
+    def __str__(self):
+        return self.user.username
+    
 
     def get_absolute_url(self):
         return reverse('initial_faculty_detail', args=(self.pk,))

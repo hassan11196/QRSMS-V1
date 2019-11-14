@@ -69,7 +69,11 @@ ROOT_URLCONF = 'QRSMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            '/faculty_portal',
+            '/teacher_portal',
+            '/student_portal'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'initial_student_list' %}">Student Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'student_portal_student_list' %}">Student Listing</a></p>
 <table class="table">
 <tr><td>batch</td><td>{{ object.batch }}</td></tr>
 <tr><td>arn</td><td>{{ object.arn }}</td></tr>

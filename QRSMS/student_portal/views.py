@@ -13,6 +13,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import user_passes_test
 
 
 from .serializers import StudentSerializer
@@ -21,7 +22,12 @@ from .serializers import StudentSerializer
 from .forms import StudentForm, StudentFormValidate
 from .models import Student
 # Create your views here.
+class UserNotLogged(View):
+    def get(self, request):
+        return JsonResponse({'message':'Not Authenticated'}, status=401)
 
+def check_if_student(user):
+    return True if user.is_student else False
 
 class Home_json(View):
         
@@ -42,6 +48,36 @@ class Home_json(View):
         return super().dispatch(request, *args, **kwargs)
         
 
+class BaseStudentLoginView(View):
+    @method_decorator(login_required)
+    @method_decorator(user_passes_test(check_if_student))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+        
+class RegistrationCheck(BaseStudentLoginView):
+    def get(self, request):
+        print(request.user)
+        from institution.models import Department, Degree
+        try:
+            s = Student.objects.get(uid = request.user)
+            dep = Department.objects.get(department_students = s)
+            deg = Degree.objects.get(degree_short = s.degree_short_enrolled, offering_department = dep)
+
+
+        except Degree.DoesNotExist as e:
+            return JsonResponse({'message':'Invalid Student. Degree Does not Exist','condition':True, 'error_raised':True}, status=401)
+
+        except Department.DoesNotExist as e:
+            return JsonResponse({'message':'Invalid Student. Department Does not Exist','condition':True, 'error_raised':True}, status=401)
+
+        if dep is None or deg is None:
+            return JsonResponse({'message':'Invalid Student','condition':True}, status=401)
+
+        if(deg.registrations_open == True):
+            return JsonResponse({'message' : 'Regisrations are Active', 'condition':True},status=200)    
+        else:
+            return JsonResponse({'message' : 'Regisrations are NOT Active', 'condition':False},status=200)  
+        
 class StudentSignupView(View):
     def post(self, request):
         form = StudentFormValidate(request.POST)
