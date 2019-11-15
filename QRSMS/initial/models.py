@@ -68,13 +68,24 @@ class Semester(models.Model):
 
     regualar_course_load = models.ManyToManyField('initial.RegularCoreCourseLoad')
     elective_course_load = models.ManyToManyField('initial.RegularElectiveCourseLoad')
-
+    degree_short = models.CharField(max_length=30, null=True, blank = True)
     class Meta:
         unique_together = ('semester_season', 'semester_year')
     
     def __str__(self):
         return self.semester_code
     
+    def save(self, *args, **kwargs):
+        try:
+            deg = Degree.objects.get(degree_short = self.degree_short) 
+            if deg:
+                deg.registrations_open = True
+                deg.registration_semester = self
+                deg.save()
+        except Degree.DoesNotExist as e:
+            print(e)
+            raise ValueError("Semester Not Created")
+        super(Semester, self).save(*args, **kwargs) # Call the real save() method
 
 
     def get_absolute_url(self):

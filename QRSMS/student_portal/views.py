@@ -77,7 +77,10 @@ class RegistrationCheck(BaseStudentLoginView):
             return JsonResponse({'message' : 'Regisrations are Active', 'condition':True},status=200)    
         else:
             return JsonResponse({'message' : 'Regisrations are NOT Active', 'condition':False},status=200)  
-        
+
+class RegistrationCourses(BaseStudentLoginView):
+    def get(self, request):
+        pass
 class StudentSignupView(View):
     def post(self, request):
         form = StudentFormValidate(request.POST)
