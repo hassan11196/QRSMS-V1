@@ -1,3 +1,14 @@
+# QRSMS-V1.49
+Actor.models holds CURRENT_SEMESTER and CURRENT_SEMESTER_CODE, necessary for registration into started semester. Will be updated to a Singleton Class.
+
+**Links:**
+
+[https://blog.bam.tech/developer-news/redux-persist-how-it-works-and-how-to-change-the-structure-of-your-persisted-store](https://blog.bam.tech/developer-news/redux-persist-how-it-works-and-how-to-change-the-structure-of-your-persisted-store)
+
+[https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables](https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables)  
+[http://chris.photobooks.com/json/](http://chris.photobooks.com/json/)
+
+
 # QRSMS-V1.48
 Added Endpoints for Login and Logout. Student Also has a Signup Endpoint.
 
