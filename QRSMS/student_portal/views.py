@@ -91,9 +91,11 @@ class RegistrationCourses(BaseStudentLoginView):
             rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
             el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
             from initial.serializers import RegularCoreCourseLoadSerializer, RegularElectiveCourseLoadSerializer
-            rg = ordered_to_dict(RegularCoreCourseLoadSerializer(rg_courses,many=True))
-            el = ordered_to_dict(RegularElectiveCourseLoadSerializer(el_courses,many=True))
-
+            rg = ordered_to_dict(RegularCoreCourseLoadSerializer([rg_courses],many=True, read_only=True).data)
+            el = ordered_to_dict(RegularElectiveCourseLoadSerializer([el_courses],many=True,read_only=True).data)
+            from pprint import pprint
+            pprint(rg)
+            
         except Semester.DoesNotExist as e:
             return JsonResponse({'message':'Invalid Semester. Contact Adminstration.','condition':False, 'error_raised':True}, status=401)
 
