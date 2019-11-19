@@ -8,7 +8,11 @@ from institution.constants import UNIVERISTY_ID_REGEX
 
 # from initial.models import Semester, BATCH_YEAR_REGEX, STUDENT_YEAR_CHOICE, SEMSESTER_CHOICES, ACADEMIC_YEAR
 # Create your models here.
+from json import loads, dumps
+from collections import OrderedDict
 
+def ordered_to_dict(input_ordered_dict):
+    return loads(dumps(input_ordered_dict))
 BATCH_YEAR_REGEX = RegexValidator(
     "[0-9]{4}", message="Invalid Batch Year")
 
@@ -27,6 +31,8 @@ STUDENT_YEAR_CHOICE = (
         (4 ,"SENIOR"),
         (5,"VETERAN")
     )
+CURRENT_SEMESTER = 1 # FALL 
+CURRENT_SEMESTER_CODE = 'FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi'
 
 
 

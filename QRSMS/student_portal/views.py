@@ -15,7 +15,7 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
 
-
+from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
 from .serializers import StudentSerializer
 
 
@@ -84,27 +84,27 @@ class RegistrationCourses(BaseStudentLoginView):
         from institution.models import Department, Degree
         try:
             s = Student.objects.get(uid = request.user)
+            if s.warning_count > 0:
+                return JsonResponse({'message':'Student in Warning. Conatact Academic Office.','condition':False}, status=200)
             from initial.models import Semester
-            sem = Semester.objects.get(semester_code='FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi')
+            sem = Semester.objects.get(semester_code=CURRENT_SEMESTER_CODE)
+            rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
+            el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
+            from initial.serializers import RegularCoreCourseLoadSerializer, RegularElectiveCourseLoadSerializer
+            rg = ordered_to_dict(RegularCoreCourseLoadSerializer(rg_courses,many=True))
+            el = ordered_to_dict(RegularElectiveCourseLoadSerializer(el_courses,many=True))
 
-            dep = Department.objects.get(department_students = s)
-            deg = Degree.objects.get(degree_short = s.degree_short_enrolled, offering_department = dep)
-           
-
-        except Degree.DoesNotExist as e:
-            return JsonResponse({'message':'Invalid Student. Degree Does not Exist','condition':True, 'error_raised':True}, status=401)
+        except Semester.DoesNotExist as e:
+            return JsonResponse({'message':'Invalid Semester. Contact Adminstration.','condition':False, 'error_raised':True}, status=401)
 
         except Department.DoesNotExist as e:
-            return JsonResponse({'message':'Invalid Student. Department Does not Exist','condition':True, 'error_raised':True}, status=401)
+            return JsonResponse({'message':'Invalid Student. Department Does not Exist','condition':False, 'error_raised':True}, status=401)
 
-        if dep is None or deg is None:
-            return JsonResponse({'message':'Invalid Student','condition':True}, status=401)
+        if rg is None or el is None:
+            return JsonResponse({'message':'No Available Courses','condition':False}, status=401)
 
-
-        if(deg.registrations_open == True):
-            return JsonResponse({'message' : 'Regisrations are Active', 'condition':True},status=200)    
-        else:
-            return JsonResponse({'message' : 'Regisrations are NOT Active', 'condition':False},status=200)  
+        return JsonResponse({'message':'Available Courses','condition':True, 'regular_courses':rg,'elective_courses':el}, status=200)
+        
 
 class StudentSignupView(View):
     def post(self, request):

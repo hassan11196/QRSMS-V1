@@ -1,5 +1,5 @@
 
-from .models import Course
+from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad
 from rest_framework import serializers
 from . import models
 
@@ -8,8 +8,19 @@ from . import models
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ['course_name', 'course_code', 'course_short']
+        fields = '__all__'
 
+class RegularCoreCourseLoadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= RegularCoreCourseLoad
+        fields = '__all__'
+        depth = 3
+
+class RegularElectiveCourseLoadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= RegularElectiveCourseLoad
+        fields = '__all__'
+        depth = 3
 # class StudentSerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:
 #         model = Student

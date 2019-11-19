@@ -23,7 +23,9 @@ urlpatterns += [
     path('home_json/',views.Home_json.as_view(), name='home_json'),
     # path('login/<str:value>',views.StudentLoginView.as_view(), name="test_student_login2"),
     path('signup/',views.StudentSignupView.as_view(), name="test_student_signup"),
-    path('registration_period_active/',views.RegistrationCheck.as_view(),name='stduent_registration_open')
+    path('registration/period_active/',views.RegistrationCheck.as_view(),name='stduent_registration_open'),
+    path('registration/available_courses/',views.RegistrationCourses.as_view(),name='registration_available_courses'),
+    
     # path('create', views.StudentCreateView.as_view(), name='initial_student_create'),
     # path('detail/<int:pk>/', views.StudentDetailView.as_view(), name='initial_student_detail'),
     # path('update/<int:pk>/', views.StudentUpdateView.as_view(), name='initial_student_update'),

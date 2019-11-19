@@ -66,7 +66,7 @@ class Semester(models.Model):
     students_registered = models.ManyToManyField(
         Student, related_name="students_registered")
 
-    regualar_course_load = models.ManyToManyField('initial.RegularCoreCourseLoad')
+    regular_course_load = models.ManyToManyField('initial.RegularCoreCourseLoad')
     elective_course_load = models.ManyToManyField('initial.RegularElectiveCourseLoad')
     degree_short = models.CharField(max_length=30, null=True, blank = True)
     class Meta:
@@ -153,6 +153,12 @@ class AttendanceSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
     SDDC = models.CharField(max_length=256, name='sddc', null=True)
     attendance = models.ManyToManyField('initial.Attendance')
+
+
+def get_attendance_table(table_name):
+    class ClassAttendanceSheet(models.Model):
+        class Meta:
+            db_table = table_name
 
 class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
