@@ -70,9 +70,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            '/templates',
             '/faculty_portal',
             '/teacher_portal',
-            '/student_portal'
+            '/student_portal',
+            
         ],
         'APP_DIRS': True,
         'OPTIONS': {

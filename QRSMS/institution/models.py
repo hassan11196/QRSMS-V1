@@ -71,7 +71,7 @@ class Degree(models.Model):
         name = 'degree_short', max_length=255, help_text="Short name Of Degree E.g : CS, BBA", primary_key=True, default='DND')
 
     registrations_open = models.BooleanField(help_text = 'True if Course Registrations are Open, else False',default=False, blank=True, null=True)
-
+    registration_semester = models.ForeignKey('initial.Semester',on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.degree_name + " " + self.degree_short
     
@@ -80,6 +80,8 @@ class BatchSection(models.Model):
     batch = models.CharField(max_length = 256)
     section = models.CharField(max_length = 10, help_text='Section Name Etc A,B,C etc')
     students = models.ManyToManyField('student_portal.Student')
+    limit = models.SmallIntegerField(default=40, blank=True, null=True)
+
 
     def save(self, *args, **kwargs):
         print(self.batch, self.section, self.sec_batch)
