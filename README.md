@@ -8,6 +8,8 @@ Actor.models holds CURRENT_SEMESTER and CURRENT_SEMESTER_CODE, necessary for reg
 [https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables](https://stackoverflow.com/questions/5036357/single-django-model-multiple-tables)  
 [http://chris.photobooks.com/json/](http://chris.photobooks.com/json/)
 
+https://stackoverflow.com/questions/33795000/subclass-django-modelbase-metaclass-for-django-models
+
 
 # QRSMS-V1.48
 Added Endpoints for Login and Logout. Student Also has a Signup Endpoint.
