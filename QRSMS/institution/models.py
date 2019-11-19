@@ -80,6 +80,8 @@ class BatchSection(models.Model):
     batch = models.CharField(max_length = 256)
     section = models.CharField(max_length = 10, help_text='Section Name Etc A,B,C etc')
     students = models.ManyToManyField('student_portal.Student')
+    limit = models.SmallIntegerField(default=40, blank=True, null=True)
+
 
     def save(self, *args, **kwargs):
         print(self.batch, self.section, self.sec_batch)

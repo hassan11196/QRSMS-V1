@@ -34,7 +34,9 @@ router.register(r'students', student_views.StudentViewSet)
 router.register(r'teachers', teacher_views.TeacherViewSet)
 
 schema_view = get_swagger_view(title = 'QRSMS')
-
+admin.site.site_header = 'QRSMS Admin Portal'
+admin.site.site_title = "QRSMS"
+admin.site.index_title = "Welcome to QRSMS Admin Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

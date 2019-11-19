@@ -60,6 +60,7 @@ class RegistrationCheck(BaseStudentLoginView):
         from institution.models import Department, Degree
         try:
             s = Student.objects.get(uid = request.user)
+            
             dep = Department.objects.get(department_students = s)
             deg = Degree.objects.get(degree_short = s.degree_short_enrolled, offering_department = dep)
 
@@ -80,7 +81,31 @@ class RegistrationCheck(BaseStudentLoginView):
 
 class RegistrationCourses(BaseStudentLoginView):
     def get(self, request):
-        pass
+        from institution.models import Department, Degree
+        try:
+            s = Student.objects.get(uid = request.user)
+            from initial.models import Semester
+            sem = Semester.objects.get(semester_code='FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi')
+
+            dep = Department.objects.get(department_students = s)
+            deg = Degree.objects.get(degree_short = s.degree_short_enrolled, offering_department = dep)
+           
+
+        except Degree.DoesNotExist as e:
+            return JsonResponse({'message':'Invalid Student. Degree Does not Exist','condition':True, 'error_raised':True}, status=401)
+
+        except Department.DoesNotExist as e:
+            return JsonResponse({'message':'Invalid Student. Department Does not Exist','condition':True, 'error_raised':True}, status=401)
+
+        if dep is None or deg is None:
+            return JsonResponse({'message':'Invalid Student','condition':True}, status=401)
+
+
+        if(deg.registrations_open == True):
+            return JsonResponse({'message' : 'Regisrations are Active', 'condition':True},status=200)    
+        else:
+            return JsonResponse({'message' : 'Regisrations are NOT Active', 'condition':False},status=200)  
+
 class StudentSignupView(View):
     def post(self, request):
         form = StudentFormValidate(request.POST)

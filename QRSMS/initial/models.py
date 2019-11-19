@@ -88,6 +88,7 @@ class Semester(models.Model):
         super(Semester, self).save(*args, **kwargs) # Call the real save() method
 
 
+
     def get_absolute_url(self):
         return reverse('initial_semester_detail', args=(self.pk,))
 
@@ -97,15 +98,26 @@ class Semester(models.Model):
 
 class CourseSection(models.Model):
     students = models.ManyToManyField('student_portal.Student')
-    attendance = models.ManyToManyField('initial.Attendance')
+    attendance_sheet = models.ManyToManyField('initial.AttendanceSheet')
+    mark_sheet = models.ManyToManyField('initial.MarkSheet')
     teacher = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null =True)
     
+    average = models.PositiveIntegerField(blank=True, null=True)
+    standard_devition = models.PositiveIntegerField(blank=True, null=True)
+    minimum = models.PositiveIntegerField(blank=True, null=True)
+    maximum = models.PositiveIntegerField(blank=True, null=True)
+
+    def calculate_class_marks(self):
+        pass
+    
+
 
 class CourseClass(models.Model):
     course_code = models.ForeignKey('initial.Course', on_delete=models.SET_NULL, null = True)
     sections = models.ManyToManyField('initial.CourseSection')
     teachers = models.ManyToManyField('teacher_portal.Teacher')
     course_coordinator = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null=True, related_name='course_coordinator_CourseClass')
+
 
 class Attendance(models.Model):
     ATTENDANCE_STATES = (
@@ -121,7 +133,33 @@ class Attendance(models.Model):
     attendance_time = models.TimeField()
     duration = models.SmallIntegerField(default=1)
 
+class Marks(models.Model):
+    MARK_TYPE = (
+        ('F','Final'),
+        ('M','Mid'),
+        ('Q','Quiz'),
+        ('A','Assignment'),
+        ('CP','Class Participation'),
+        ('L','Lab Marks')
+    )
+    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+    mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
+    obtained_marks = models.PositiveIntegerField(blank=True, null=True)
+    total_marks = models.PositiveIntegerField(blank=True, null=True)
+    
 
+# Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
+class AttendanceSheet(models.Model):
+    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+    SDDC = models.CharField(max_length=256, name='sddc', null=True)
+    attendance = models.ManyToManyField('initial.Attendance')
+
+class MarkSheet(models.Model):
+    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+    SDDC = models.CharField(max_length=256, name='sddc', null=True)
+    Marks = models.ManyToManyField('initial.Marks')
+    grand_total_marks = models.PositiveIntegerField(blank=True, null=True)
+    
 
 class RegularCoreCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
