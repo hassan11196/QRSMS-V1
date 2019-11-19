@@ -53,7 +53,14 @@ class BaseStudentLoginView(View):
     @method_decorator(user_passes_test(check_if_student))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
-        
+
+class TimeTableView(BaseStudentLoginView):
+    def get(self, request):
+        import requests
+        url = 'https://timetablenotifier.com/api/fetch.php?email=%22k173650@nu.edu.pk%22'
+        r = requests.get(url)
+        data = r.json()    
+        return JsonResponse(data)
 class RegistrationCheck(BaseStudentLoginView):
     def get(self, request):
         print(request.user)
