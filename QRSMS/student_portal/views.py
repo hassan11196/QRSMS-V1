@@ -99,7 +99,7 @@ class RegistrationCourses(BaseStudentLoginView):
             el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
             from initial.serializers import RegularCoreCourseLoadSerializer, RegularElectiveCourseLoadSerializer
             rg = ordered_to_dict(RegularCoreCourseLoadSerializer([rg_courses],many=True, read_only=True).data)
-            el = ordered_to_dict(RegularElectiveCourseLoadSerializer([el_courses],many=True,read_only=True).data)
+            el = RegularElectiveCourseLoadSerializer([el_courses],many=True,read_only=True).data
             from pprint import pprint
             pprint(rg)
             

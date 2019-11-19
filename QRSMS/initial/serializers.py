@@ -14,7 +14,7 @@ class RegularCoreCourseLoadSerializer(serializers.ModelSerializer):
     class Meta:
         model= RegularCoreCourseLoad
         fields = '__all__'
-        depth = 3
+        depth = 1
 
 class RegularElectiveCourseLoadSerializer(serializers.ModelSerializer):
     class Meta:
