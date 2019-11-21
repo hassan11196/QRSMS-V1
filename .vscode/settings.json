@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\hassa\\.virtualenvs\\QRSMS-V1-kd4mN3f8\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\Hassan Ahmed\\.virtualenvs\\QRSMS-V1-MXxyfAh7\\Scripts\\python.exe",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
@@ -15,5 +15,11 @@
         "#4e758f",
         "#508991",
         "#86BAA1"
-    ]
+    ],
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }

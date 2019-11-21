@@ -156,9 +156,19 @@ class AttendanceSheet(models.Model):
 
 
 def get_attendance_table(table_name):
-    class ClassAttendanceSheet(models.Model):
-        class Meta:
-            db_table = table_name
+    class ClassAttendanceSheetMeta(models.base.ModelBase):
+        def __new__(cls, name, bases, attrs):
+            model = super(ClassAttendanceSheetMeta, cls).__new__(cls,name,bases,attrs)
+            model._meta.db_table = table_name
+            return model
+
+        
+    class ClassAttendanceModel(models.Model):
+        __metaclass__ = ClassAttendanceSheetMeta
+        student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+        SDDC = models.CharField(max_length=256, name='sddc', null=True)
+        attendance = models.ManyToManyField('initial.Attendance')
+    return ClassAttendanceModel
 
 class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)

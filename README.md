@@ -9,7 +9,7 @@ Actor.models holds CURRENT_SEMESTER and CURRENT_SEMESTER_CODE, necessary for reg
 [http://chris.photobooks.com/json/](http://chris.photobooks.com/json/)
 
 https://stackoverflow.com/questions/33795000/subclass-django-modelbase-metaclass-for-django-models
-
+https://dynamic-models.readthedocs.io/en/latest/pdfindex.html
 
 # QRSMS-V1.48
 Added Endpoints for Login and Logout. Student Also has a Signup Endpoint.
