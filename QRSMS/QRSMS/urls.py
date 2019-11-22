@@ -47,6 +47,7 @@ urlpatterns = [
     path('teacher/',include('teacher_portal.urls')),
     path('faculty/',include('faculty_portal.urls')),
     path('rest/', include(router.urls)),
+
     
     
 

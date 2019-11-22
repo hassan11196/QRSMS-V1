@@ -19,7 +19,7 @@ class Campus(models.Model):
 
     class Meta:
         verbose_name_plural = "Campuses"
-        unique_together = ('campus_name','campus_city',)
+        unique_together = ('campus_name', 'campus_city',)
     
     campus_id = models.AutoField(
         primary_key=True, name="campus_id", verbose_name="Campus ID")

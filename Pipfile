@@ -20,7 +20,7 @@ django-rest-swagger = "*"
 sentry-sdk = "==0.13.2"
 django-extensions = "*"
 ipython = "*"
-
+django-xadmin = "*"
 
 [requires]
 python_version = "3.7"

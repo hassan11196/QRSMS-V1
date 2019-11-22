@@ -96,7 +96,40 @@ class Semester(models.Model):
     def get_update_url(self):
         return reverse('initial_semester_update', args=(self.pk,))
 
+    def make_semester(self):
+        rg = self.regular_course_load.all()[0]
+        for c in rg.courses.all():
+            make_classes(semester_code = self.semester_code, course_code = c.course_code, sections=['A','B','C','D','E'])
+    def offer_core_courses(self):
+        for rg in self.regular_course_load.all():
+            students = Student.objects.filter(student_year = rg.student_year)
+            for s in students:
+                of_courses = OfferedCourses(student = s, semester_code = self.semester_code)
+                of_courses.save()
+                for c in rg.courses.all():
+                    course_status = CourseStatus(course = c)
+                    course_status.save()
+                    of_courses.courses_offered.add(course_status)
+                of_courses.save()
+    def offer_elective_courses(self, student_year):
+        for eg in self.elective_course_load.all():
+            students = Student.objects.filter(student_year = student_year)
+            for s in students:
+                of_courses = OfferedCourses(student = s, semester_code = self.semester_code)
+                of_courses.save()
+                for c in rg.courses.all():
+                    course_status = CourseStatus(course = c)
+                    course_status.save()
+                    of_courses.courses_offered.add(course_status)
+                of_courses.save()
+
 class CourseSection(models.Model):
+    semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
+    course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
+    CSDDC =  models.CharField(max_length=256, blank=True, null=True)
+
+    section_name = models.CharField(max_length=256, blank=True, null=True)
+
     students = models.ManyToManyField('student_portal.Student')
     attendance_sheet = models.ManyToManyField('initial.AttendanceSheet')
     mark_sheet = models.ManyToManyField('initial.MarkSheet')
@@ -107,17 +140,28 @@ class CourseSection(models.Model):
     minimum = models.PositiveIntegerField(blank=True, null=True)
     maximum = models.PositiveIntegerField(blank=True, null=True)
 
+    def __str__(self):
+        return self.section_name + "_" + self.course_code + "_" + self.semester_code
+    
+
     def calculate_class_marks(self):
         pass
     
 
 
 class CourseClass(models.Model):
-    course_code = models.ForeignKey('initial.Course', on_delete=models.SET_NULL, null = True)
+    semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
+    course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
+    CSDDC =  models.CharField(max_length=256, blank=True, null=True)
+
+    course = models.ForeignKey('initial.Course', on_delete=models.SET_NULL, null = True)
     sections = models.ManyToManyField('initial.CourseSection')
     teachers = models.ManyToManyField('teacher_portal.Teacher')
     course_coordinator = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null=True, related_name='course_coordinator_CourseClass')
 
+    def __str__(self):
+        return self.course_code + "_" + self.semester_code
+    
 
 class Attendance(models.Model):
     ATTENDANCE_STATES = (
@@ -151,28 +195,28 @@ class Marks(models.Model):
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
 class AttendanceSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    SDDC = models.CharField(max_length=256, name='sddc', null=True)
+    CSDDC = models.CharField(max_length=256, name='sddc', null=True)
     attendance = models.ManyToManyField('initial.Attendance')
 
 
-def get_attendance_table(table_name):
-    class ClassAttendanceSheetMeta(models.base.ModelBase):
-        def __new__(cls, name, bases, attrs):
-            model = super(ClassAttendanceSheetMeta, cls).__new__(cls,name,bases,attrs)
-            model._meta.db_table = table_name
-            return model
+# def get_attendance_table(table_name):
+#     class ClassAttendanceSheetMeta(models.base.ModelBase):
+#         def __new__(cls, name, bases, attrs):
+#             model = super(ClassAttendanceSheetMeta, cls).__new__(cls,name,bases,attrs)
+#             model._meta.db_table = table_name
+#             return model
 
         
-    class ClassAttendanceModel(models.Model):
-        __metaclass__ = ClassAttendanceSheetMeta
-        student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-        SDDC = models.CharField(max_length=256, name='sddc', null=True)
-        attendance = models.ManyToManyField('initial.Attendance')
-    return ClassAttendanceModel
+#     class AttendanceSheet(models.Model):
+#         __metaclass__ = ClassAttendanceSheetMeta
+#         student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
+#         SDDC = models.CharField(max_length=256, name='sddc', null=True)
+#         attendance = models.ManyToManyField('initial.Attendance')
+#     return AttendanceSheet
 
 class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    SDDC = models.CharField(max_length=256, name='sddc', null=True)
+    CSDDC = models.CharField(max_length=256, name='sddc', null=True)
     Marks = models.ManyToManyField('initial.Marks')
     grand_total_marks = models.PositiveIntegerField(blank=True, null=True)
     
@@ -204,3 +248,33 @@ class RepeatCourseLoad(models.Model):
         choices=SEMSESTER_CHOICES, name="semester_season")
     core_coursess = models.ManyToManyField('initial.RegularCoreCourseLoad')
     elective_courses = models.ManyToManyField('initial.RegularElectiveCourseLoad')
+
+
+class CourseStatus(models.Model):
+    course = models.ForeignKey('initial.course', related_name='course_status_offer', on_delete=models.CASCADE)
+    status = models.CharField(choices=(('R','Registered'), ('NR','Not Registered')), blank=True, null=True, max_length=256, default='NR')
+
+
+class OfferedCourses(models.Model):
+    semester_code =  models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
+    student = models.ForeignKey('student_portal.Student', related_name='offered_courses', on_delete=models.SET_NULL, null = True)
+    courses_offered = models.ManyToManyField('initial.CourseStatus')
+    
+    class Meta:
+        unique_together = ('semester_code', 'student', )
+# course_code -> of course
+# teachers_assigned -> to sections
+# course_coordinator -> of course
+# students_registered -> in semester 
+def make_classes(semester_code, course_code, sections):
+    section_list = []
+    for section in sections:
+        course_section = CourseSection(semester_code = semester_code, course_code = course_code, section_name = section)
+        course_section.save()
+        section_list.append(course_section)
+
+    course_class = CourseClass(semester_code = semester_code, course_code = course_code, course = Course.objects.get(course_code = course_code))
+    course_class.save()
+    print(course_class)
+    for section in section_list:
+        course_class.sections.add(section)
