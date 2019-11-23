@@ -2,13 +2,15 @@ from django.db import models
 from django.db.models import F
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
+from django.dispatch import receiver
+
 from institution.models import University, Campus, Degree
 from institution.constants import UNIVERISTY_ID_REGEX
 from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR_CHOICE
 from student_portal.models import Student
 from teacher_portal.models import Teacher
 from faculty_portal.models import Faculty
-
+from .signals import attendance_sheet_for_student, mark_sheet_for_student
 
 
 ACADEMIC_YEAR = 2019
@@ -205,10 +207,13 @@ class Marks(models.Model):
 
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
 class AttendanceSheet(models.Model):
-    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    CSDDC = models.CharField(max_length=256, name='sddc', null=True)
-    attendance = models.ManyToManyField('initial.Attendance')
+    student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True,blank=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+    attendance = models.ManyToManyField('initial.Attendance', blank=True)
 
+    def __str__(self):
+        return self.student.uid + "_" + self.scsddc
+    
 
 # def get_attendance_table(table_name):
 #     class ClassAttendanceSheetMeta(models.base.ModelBase):
@@ -227,10 +232,12 @@ class AttendanceSheet(models.Model):
 
 class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    CSDDC = models.CharField(max_length=256, name='sddc', null=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
     Marks = models.ManyToManyField('initial.Marks')
     grand_total_marks = models.PositiveIntegerField(blank=True, null=True)
-    
+
+    def __str__(self):
+        return self.student.uid + "_" + self.scsddc    
 
 class RegularCoreCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
@@ -277,14 +284,23 @@ class CourseStatus(models.Model):
                 course_section.section_seats = F('section_seats') - 1
                 course_section.students.add(self.offeredcourses_set.get().student)
                 course_section.save()
-        else:
-            pass
-            # course_section = CourseSection.objects.get(course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
-            # if course_section is None:
-            #     raise CourseSection.DoesNotExist
-            # course_section.section_seats = F(section_seats) + 1
-            # course_section.students.add(self.offeredcourses_set.get().student)
-            # course_section.save()
+                print("Sending Signal")
+                av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+                mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+                print(av)
+
+        elif self.status == 'NR':
+            course_section = CourseSection.objects.get(section_name = self.section,course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
+            if course_section is None:
+                raise CourseSection.DoesNotExist
+            course_section.section_seats = F('section_seats') + 1
+            course_section.students.remove(self.offeredcourses_set.get().student)
+            print("Sending Signal")
+            av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
+            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+            print(av)
+            course_section.save()
+            
         super(CourseStatus, self).save(*args, **kwargs) # Call the real save() method    
 
 class OfferedCourses(models.Model):
@@ -313,3 +329,33 @@ def make_classes(semester_code, course_code, sections):
     print(course_class)
     for section in section_list:
         course_class.sections.add(section)
+
+@receiver(attendance_sheet_for_student)
+def make_or_delete_attendance_sheet_for_student(**kwargs):
+    if kwargs['option'] == 'create':
+        print('Received Signal For Creation Attendance Sheet')
+        SCSDDC_temp = str(kwargs['course_section'])
+        new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+        new_sheet.save()
+        return 'Success'
+    else:
+        print('Received Signal For Deletion Attendance Sheet')
+        SCSDDC_temp = str(kwargs['course_section'])
+        new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        new_sheet.delete()
+        return 'Success'
+
+@receiver(mark_sheet_for_student)
+def make_or_delete_mark_sheet_for_student(**kwargs):
+    if kwargs['option'] == 'create':
+        print('Received Signal For Creation Mark Sheet')
+        SCSDDC_temp = str(kwargs['course_section'])
+        new_sheet = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+        new_sheet.save()
+        return 'Success'
+    else:
+        print('Received Signal For Deletion Attendance Sheet')
+        SCSDDC_temp = str(kwargs['course_section'])
+        new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        new_sheet.delete()
+        return 'Success'

@@ -46,6 +46,8 @@ class Student(models.Model):
     attending_semester = models.BooleanField(name='attending_semester', null= True, help_text = 'If the student is currently attending classes') # If the student is currently attending classes
     student_year = models.SmallIntegerField(choices=STUDENT_YEAR_CHOICE, name='student_year', null=True)
     admission_section = models.CharField(max_length=256,null=True, blank = True)
+
+    semester_code = models.CharField(max_length=256, blank=True, null=True)
     def __str__(self):
         return self.user.username
 

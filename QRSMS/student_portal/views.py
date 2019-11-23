@@ -54,6 +54,21 @@ class BaseStudentLoginView(View):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
+
+class AttendanceView(BaseStudentLoginView):
+    def get(self, request, course_code):
+        from initial.models import AttendanceSheet, OfferedCourses
+        print(dir(self))
+        print(dir(request.user))
+        s = Student.objects.get(uid = request.user)
+        csddc = course_code + "_" + s.semester_code
+        at = AttendanceSheet.objects.get(student__uid = request.user, scsddc__endswith = csddc)
+        
+        from initial.serializers import AttendanceSheetSerializer
+        att_serialized = AttendanceSheetSerializer(at, many = True).data
+
+        return JsonResponse({'message':'Available Attendacne','condition':True, 'attendance':att_serialized}, status=200)
+
 class TimeTableView(BaseStudentLoginView):
     def get(self, request):
         import requests

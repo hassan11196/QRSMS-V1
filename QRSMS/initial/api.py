@@ -3,6 +3,12 @@ from . import serializers
 from rest_framework import viewsets, permissions, routers
 
 
+
+class AttendanceSheetViewSet(viewsets.ModelViewSet):
+    queryset = models.AttendanceSheet.objects.all()
+    serializer_class = serializers.AttendanceSheetSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
 class OfferedCoursesViewSet(viewsets.ModelViewSet):
     queryset = models.OfferedCourses.objects.all()
     serializer_class = serializers.OfferedCoursesSerializer
