@@ -57,7 +57,7 @@ class BaseStudentLoginView(View):
 class TimeTableView(BaseStudentLoginView):
     def get(self, request):
         import requests
-        url = 'https://timetablenotifier.com/api/fetch.php?email=%22k173650@nu.edu.pk%22'
+        url = 'https://timetablenotifier.com/api/fetch.php?email='+ request.user +'@nu.edu.pk'
         r = requests.get(url)
         data = r.json()    
         return JsonResponse(data)
@@ -93,26 +93,31 @@ class RegistrationCourses(BaseStudentLoginView):
             s = Student.objects.get(uid = request.user)
             if s.warning_count > 0:
                 return JsonResponse({'message':'Student in Warning. Conatact Academic Office.','condition':False}, status=200)
-            from initial.models import Semester
-            sem = Semester.objects.get(semester_code=CURRENT_SEMESTER_CODE)
-            rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
-            el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
-            from initial.serializers import RegularCoreCourseLoadSerializer, RegularElectiveCourseLoadSerializer
-            rg = ordered_to_dict(RegularCoreCourseLoadSerializer([rg_courses],many=True, read_only=True).data)
-            el = RegularElectiveCourseLoadSerializer([el_courses],many=True,read_only=True).data
+            from initial.models import Semester, OfferedCourses
+            # sem = Semester.objects.get(semester_code=CURRENT_SEMESTER_CODE)
+            # rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
+            # el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
+
+            s = OfferedCourses.objects.filter(student__uid=str(request.user))
+        
+            from rest_framework.request import Request
+
+            from initial.serializers import OfferedCoursesSerializer
+            offered_courses_to_student = OfferedCoursesSerializer(s, many = True, context = {'request': Request(request)}).data
+
             from pprint import pprint
-            pprint(rg)
+            pprint(offered_courses_to_student)
             
         except Semester.DoesNotExist as e:
             return JsonResponse({'message':'Invalid Semester. Contact Adminstration.','condition':False, 'error_raised':True}, status=401)
 
-        except Department.DoesNotExist as e:
+        except OfferedCourses.DoesNotExist as e:
             return JsonResponse({'message':'Invalid Student. Department Does not Exist','condition':False, 'error_raised':True}, status=401)
 
-        if rg is None or el is None:
+        if offered_courses_to_student is None:
             return JsonResponse({'message':'No Available Courses','condition':False}, status=401)
 
-        return JsonResponse({'message':'Available Courses','condition':True, 'regular_courses':rg,'elective_courses':el}, status=200)
+        return JsonResponse({'message':'Available Courses','condition':True, 'regular_courses':offered_courses_to_student}, status=200)
         
 
 class StudentSignupView(View):

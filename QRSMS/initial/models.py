@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import F
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from institution.models import University, Campus, Degree
@@ -8,6 +8,7 @@ from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR
 from student_portal.models import Student
 from teacher_portal.models import Teacher
 from faculty_portal.models import Faculty
+
 
 
 ACADEMIC_YEAR = 2019
@@ -100,25 +101,34 @@ class Semester(models.Model):
         rg = self.regular_course_load.all()[0]
         for c in rg.courses.all():
             make_classes(semester_code = self.semester_code, course_code = c.course_code, sections=['A','B','C','D','E'])
+
+
+    def pre_offer(self):
+        for rg in self.regular_course_load.all():
+            students = Student.objects.filter(student_year = rg.student_year)
+            for s in students:
+                of_courses = OfferedCourses(student = s, semester_code = self.semester_code) # One time only for student
+                of_courses.save()
+
     def offer_core_courses(self):
         for rg in self.regular_course_load.all():
             students = Student.objects.filter(student_year = rg.student_year)
             for s in students:
-                of_courses = OfferedCourses(student = s, semester_code = self.semester_code)
-                of_courses.save()
+                of_courses = OfferedCourses.objects.get(student = s, semester_code = self.semester_code)
+                
                 for c in rg.courses.all():
-                    course_status = CourseStatus(course = c)
+                    course_status = CourseStatus(course = c, section = s.admission_section)
                     course_status.save()
                     of_courses.courses_offered.add(course_status)
                 of_courses.save()
-    def offer_elective_courses(self, student_year):
+    def offer_elective_courses(self):
         for eg in self.elective_course_load.all():
-            students = Student.objects.filter(student_year = student_year)
+            students = Student.objects.filter(student_year = eg.student_year)
             for s in students:
-                of_courses = OfferedCourses(student = s, semester_code = self.semester_code)
-                of_courses.save()
-                for c in rg.courses.all():
-                    course_status = CourseStatus(course = c)
+                of_courses = OfferedCourses.objects.get(student = s, semester_code = self.semester_code)
+                
+                for c in eg.courses.all():
+                    course_status = CourseStatus(course = c, section = 'GR1')
                     course_status.save()
                     of_courses.courses_offered.add(course_status)
                 of_courses.save()
@@ -128,6 +138,7 @@ class CourseSection(models.Model):
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
     CSDDC =  models.CharField(max_length=256, blank=True, null=True)
 
+    section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
     students = models.ManyToManyField('student_portal.Student')
@@ -236,10 +247,10 @@ class RegularElectiveCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
     courses = models.ManyToManyField(Course)
-    
+    student_year = models.SmallIntegerField(choices=STUDENT_YEAR_CHOICE, name='student_year', null=True)    
 
     def __str__(self):
-        return 'Electives : ' + SEMSESTER_CHOICES[self.semester_season - 1][1]
+        return 'Electives : ' + SEMSESTER_CHOICES[self.semester_season - 1][1] +"-"+STUDENT_YEAR_CHOICE[self.student_year-1][1]
     
 
 # Relegated to Later Versions
@@ -253,7 +264,28 @@ class RepeatCourseLoad(models.Model):
 class CourseStatus(models.Model):
     course = models.ForeignKey('initial.course', related_name='course_status_offer', on_delete=models.CASCADE)
     status = models.CharField(choices=(('R','Registered'), ('NR','Not Registered')), blank=True, null=True, max_length=256, default='NR')
+    section = models.CharField(max_length=256 ,blank=True, null=True)
+    one_time_field = models.BooleanField(blank=True, null=True, default=False, help_text='Used for First Time Registration.')
+    def __str__(self):
+        return self.offeredcourses_set.get().student.uid + "_" +self.course.course_name + "_" + self.status
 
+    def save(self, *args, **kwargs):
+        if self.status == 'R':
+                course_section = CourseSection.objects.get(section_name = self.section, course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
+                if course_section is None:
+                    raise CourseSection.DoesNotExist
+                course_section.section_seats = F('section_seats') - 1
+                course_section.students.add(self.offeredcourses_set.get().student)
+                course_section.save()
+        else:
+            pass
+            # course_section = CourseSection.objects.get(course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
+            # if course_section is None:
+            #     raise CourseSection.DoesNotExist
+            # course_section.section_seats = F(section_seats) + 1
+            # course_section.students.add(self.offeredcourses_set.get().student)
+            # course_section.save()
+        super(CourseStatus, self).save(*args, **kwargs) # Call the real save() method    
 
 class OfferedCourses(models.Model):
     semester_code =  models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
@@ -262,6 +294,9 @@ class OfferedCourses(models.Model):
     
     class Meta:
         unique_together = ('semester_code', 'student', )
+    def __str__(self):
+        return self.student.uid + "_" + self.semester_code
+    
 # course_code -> of course
 # teachers_assigned -> to sections
 # course_coordinator -> of course

@@ -19,6 +19,7 @@ admin.site.register(RepeatCourseLoad)
 admin.site.register(OfferedCourses)
 admin.site.register(CourseStatus)
 
+
 site.register(OfferedCourses)
 site.register(CourseStatus)
 site.register(RepeatCourseLoad)

@@ -8,6 +8,8 @@ initial='initial'
 router = routers.DefaultRouter()
 router.register(r'course', api.CourseViewSet)
 router.register(r'semester', api.SemesterViewSet)
+router.register(r'offeredcourses', api.OfferedCoursesViewSet)
+router.register(r'coursestatus', api.CourseStatusViewSet)
 
 urlpatterns = [
     # urls for Django Rest Framework API

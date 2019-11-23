@@ -1,11 +1,24 @@
 
-from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad
+from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus
 from rest_framework import serializers
 from . import models
 
 
+class OfferedCoursesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = OfferedCourses
+        fields = ('courses_offered','semester_code') 
+        depth = 2
+    
 
-class CourseSerializer(serializers.ModelSerializer):
+
+class CourseStatusSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = CourseStatus
+        fields = '__all__'
+
+
+class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
         fields = '__all__'

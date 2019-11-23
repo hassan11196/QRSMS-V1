@@ -10,10 +10,10 @@
             "request": "launch",
             "program": "${workspaceFolder}\\QRSMS\\manage.py",
             "args": [
-                "runserver",
-                "--noreload"
+                "runserver"
             ],
-            "django": true
+            "django": true,
+            "subProcess": true
         }
     ]
 }
