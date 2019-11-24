@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import F
+from django.db.models import F, Q
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from django.dispatch import receiver
@@ -138,7 +138,7 @@ class Semester(models.Model):
 class CourseSection(models.Model):
     semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
-    CSDDC =  models.CharField(max_length=256, blank=True, null=True)
+    SCSDDC =  models.CharField(max_length=256, blank=True, null=True, name='scsddc')
 
     section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
     section_name = models.CharField(max_length=256, blank=True, null=True)
@@ -159,7 +159,15 @@ class CourseSection(models.Model):
 
     def calculate_class_marks(self):
         pass
-    
+
+    @classmethod
+    def set_scsddc(cls):
+        all_sections = cls.objects.exclude(scsddc__isnull = True,scsddc__exact='')
+        for section in all_sections:
+            section.scsddc = section.section_name + "_" + section.course_code + "_" + section.semester_code
+            section.save()
+
+
 
 
 class CourseClass(models.Model):
@@ -214,6 +222,8 @@ class AttendanceSheet(models.Model):
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
     
+    class Meta:
+        unique_together = ('student','scsddc')
 
 # def get_attendance_table(table_name):
 #     class ClassAttendanceSheetMeta(models.base.ModelBase):
@@ -238,6 +248,9 @@ class MarkSheet(models.Model):
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc    
+
+    class Meta:
+        unique_together = ('student','scsddc')
 
 class RegularCoreCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
@@ -297,7 +310,7 @@ class CourseStatus(models.Model):
             course_section.students.remove(self.offeredcourses_set.get().student)
             print("Sending Signal")
             av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
-            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
             print(av)
             course_section.save()
             
@@ -337,12 +350,18 @@ def make_or_delete_attendance_sheet_for_student(**kwargs):
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
         new_sheet.save()
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.attendance_sheet.add(new_sheet)
+        csection.save()
         return 'Success'
     else:
         print('Received Signal For Deletion Attendance Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.attendance_sheet.add(new_sheet)
         new_sheet.delete()
+        csection.save()
         return 'Success'
 
 @receiver(mark_sheet_for_student)
@@ -351,11 +370,21 @@ def make_or_delete_mark_sheet_for_student(**kwargs):
         print('Received Signal For Creation Mark Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+        
         new_sheet.save()
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.mark_sheet.add(new_sheet)
+        print('Marksheet create')
+        print(csection.mark_sheet.all())
+        csection.save()
         return 'Success'
     else:
         print('Received Signal For Deletion Attendance Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
+        
         new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.mark_sheet.remove(new_sheet)
         new_sheet.delete()
+        csection.save()
         return 'Success'

@@ -72,7 +72,12 @@ class AttendanceView(BaseStudentLoginView):
 class TimeTableView(BaseStudentLoginView):
     def get(self, request):
         import requests
-        url = 'https://timetablenotifier.com/api/fetch.php?email='+ request.user +'@nu.edu.pk'
+        uid = str(request.user)
+        city = uid[2].lower()
+        rnum = uid[4:]
+        year = uid[0:2]
+        url = 'https://timetablenotifier.com/api/fetch.php?email="'+ str(city+year+rnum) +'@nu.edu.pk"'
+        print(url)
         r = requests.get(url)
         data = r.json()    
         return JsonResponse(data)
