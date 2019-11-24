@@ -183,8 +183,36 @@ class CourseClass(models.Model):
     def __str__(self):
         return self.course_code + "_" + self.semester_code
     
+class SectionAttendance(models.Model):
+    
+    ATTENDANCE_SLOTS = (
+        (1, '8:00 AM - 9:00'),
+        (2, '9:00 AM- 10:00'),
+        (3, '10:00 AM- 11:00 PM'),
+        (4, '11:00 AM- 12:00 PM'),
+        (5, '12:00 PM- 1:00 PM'),
+        (6, '1:00 PM- 2:00 PM'),
+        (7, '2:00 PM- 3:00 PM'),
+        (8, '3:00 PM- 4:00 PM'),
+    )
+    
+    class_date = models.DateField()
+    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
+    attendance_time_start = models.TimeField(null=True,blank=True)
+    attendance_interval_allowed = models.PositiveSmallIntegerField(null=True,blank=True)
+    qr_change_interval = models.PositiveSmallIntegerField(null=True,blank=True)
 
-class Attendance(models.Model):
+    duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+
+    class Meta:
+        unique_together = ('scsddc', 'class_date', 'attendance_slot')
+
+    def __str__(self):
+        return self.student.uid + self.class_date + self.att
+
+
+class StudentAttendance(models.Model):
     ATTENDANCE_STATES = (
         ('NR', 'Not Registered'),
         ('P', 'Present'),
@@ -192,11 +220,33 @@ class Attendance(models.Model):
         ('L', 'Late'), # late
         ('LV', 'Leave')
     )
+    ATTENDANCE_SLOTS = (
+        (1, '8:00 AM - 9:00'),
+        (2, '9:00 AM- 10:00'),
+        (3, '10:00 AM- 11:00 PM'),
+        (4, '11:00 AM- 12:00 PM'),
+        (5, '12:00 PM- 1:00 PM'),
+        (6, '1:00 PM- 2:00 PM'),
+        (7, '2:00 PM- 3:00 PM'),
+        (8, '3:00 PM- 4:00 PM'),
+    )
+
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
     class_date = models.DateField()
+    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
     state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
-    attendance_time = models.TimeField()
-    duration = models.SmallIntegerField(default=1)
+    attendance_marked_time = models.TimeField(null=True, blank=True)
+
+    duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
+    attendance_type = models.CharField(choices = (('M', 'Manual'),('QR', 'QR-Code')), max_length = 256,blank=True, null=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+
+    class Meta:
+        unique_together = ('student','scsddc', 'class_date', 'attendance_slot')
+
+    def __str__(self):
+        return self.student.uid + self.class_date + self.att
+    
 
 class Marks(models.Model):
     MARK_TYPE = (
@@ -211,7 +261,9 @@ class Marks(models.Model):
     mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
     obtained_marks = models.PositiveIntegerField(blank=True, null=True)
     total_marks = models.PositiveIntegerField(blank=True, null=True)
-    
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+
+
 
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
 class AttendanceSheet(models.Model):

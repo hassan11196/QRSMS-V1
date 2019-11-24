@@ -1,5 +1,4 @@
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 # Create your views here.
 from django.http import JsonResponse
@@ -13,13 +12,17 @@ from rest_framework.permissions import IsAuthenticated
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
-
+from django.contrib.auth.decorators import user_passes_test, login_required
 
 from .serializers import (TeacherSerializer)
 
 
 from .forms import  TeacherForm
 from .models import  Teacher
+from initial.models import CourseSection
+def check_if_teacher(user):
+    return True if user.is_teacher else False
+
 # Create your views here.
 
 # class TeacherSignupView(View):
@@ -31,6 +34,18 @@ from .models import  Teacher
 #             return JsonResponse({'status':"Success"})
 #         else:
 #             return JsonResponse(form.errors.get_json_data())
+class BaseTeacherLoginView(View):
+    @method_decorator(login_required)
+    @method_decorator(user_passes_test(check_if_teacher))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+
+
+class AssignedSections(BaseTeacherLoginView):
+    def get(self, request):
+        sections = CourseSection.objects.filter(teacher__user__username = str(request.user))
+    
 
 class Home_json(View):
         
