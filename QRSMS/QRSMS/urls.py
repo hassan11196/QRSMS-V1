@@ -39,6 +39,8 @@ admin.site.site_title = "QRSMS"
 admin.site.index_title = "Welcome to QRSMS Admin Portal"
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('swagger/', schema_view),
     path('', include('initial.urls')),
