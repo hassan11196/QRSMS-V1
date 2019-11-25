@@ -269,7 +269,7 @@ class Marks(models.Model):
 class AttendanceSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True,blank=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
-    attendance = models.ManyToManyField('initial.Attendance', blank=True)
+    attendance = models.ManyToManyField('initial.StudentAttendance', blank=True)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
