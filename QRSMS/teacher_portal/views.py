@@ -91,7 +91,9 @@ class TeacherLoginView(View):
         if user is not None:
             login(request, user)
             dict_user = model_to_dict(user)
-            return JsonResponse({'status':'success','message' : 'User Logged In', **user})
+            dict_user.pop('groups',None)
+            dict_user.pop('password', None)
+            return JsonResponse({'status':'success','message' : 'User Logged In', **dict_user})
         else:
             return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
         
