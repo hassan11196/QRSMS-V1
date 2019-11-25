@@ -204,12 +204,12 @@ class SectionAttendance(models.Model):
 
     duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
-
+    section = models.CharField(max_length=256 ,blank=True, null=True)
     class Meta:
-        unique_together = ('scsddc', 'class_date', 'attendance_slot')
+        unique_together = ('scsddc', 'class_date', 'attendance_slot', 'section')
 
     def __str__(self):
-        return self.student.uid + self.class_date + self.att
+        return  + self.class_date + "_" + self.attendance_slot + "_" + self.scsddc
 
 
 class StudentAttendance(models.Model):
@@ -240,12 +240,12 @@ class StudentAttendance(models.Model):
     duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
     attendance_type = models.CharField(choices = (('M', 'Manual'),('QR', 'QR-Code')), max_length = 256,blank=True, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
-
+    section = models.CharField(max_length=256 ,blank=True, null=True)
     class Meta:
-        unique_together = ('student','scsddc', 'class_date', 'attendance_slot')
+        unique_together = ('student','scsddc', 'class_date', 'attendance_slot', 'section')
 
     def __str__(self):
-        return self.student.uid + self.class_date + self.att
+        return self.student.uid + "_" + self.class_date + "_" + self.attendance_slot
     
 
 class Marks(models.Model):
