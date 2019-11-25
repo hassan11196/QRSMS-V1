@@ -13,13 +13,15 @@ from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test, login_required
+from django.dispatch import receiver
 
+from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance
 from .serializers import (TeacherSerializer)
-
+from .signals import attendance_of_day_for_student
 
 from .forms import  TeacherForm
 from .models import  Teacher
-from initial.models import CourseSection, SectionAttendance
+
 
 def check_if_teacher(user):
     return True if user.is_teacher else False
@@ -55,17 +57,68 @@ class AssignedSections(BaseTeacherLoginView):
         else:
             return JsonResponse({'message':'Teacher has assigned courses.','condition':True, 'sections':serial_sections}, status=200)  
 
+
+
 class StartSectionAttendance(BaseTeacherLoginView):
-    def get(self, request):
-        sec_att = SectionAttendance()
+    def post(self, request):
+        req_scsddc = request.POST['scsddc']
+        slot = request.POST['slot']
+        section = request.POST['section']
+        if(slot is None or req_scsddc is None or section is None):
+            return JsonResponse({'message':'Invalud Form Inputs','condition':False, }, status=200)
+        print(request.POST)
+        sec_att = SectionAttendance(scsddc = req_scsddc, attendance_slot = slot, section=section)
+        sec_att.save()
+        from rest_framework.request import Request
+        from initial.serializers import SectionAttendanceSerializer
+        data = SectionAttendanceSerializer(sec_att , context = {'request': Request(request)}).data
         
+        if sec_att is None :
+            return JsonResponse({'message':'Teacher has no assigned courses or Invalid scsddc.','condition':True, 'qr_json':data}, status=200)
+        else:
+            return JsonResponse({'message':'Attendance QR.','condition':True, 'qr_json':data}, status=200)          
+
+
+@receiver(attendance_of_day_for_student)
+def generate_attendance_for_student(**kwargs):
+    pass
+    # if kwargs['option'] == 'create':
+    #     print('Received Signal For Creation Attendance of Day for student')
+    #     SCSDDC_temp = str(kwargs['scsddc'])
+    #     section = kwargs['coursesection']
+    #     for student in section.students.all():
+    #         new_sheet = StudentAttendance(scsddc = SCSDDC_temp)
+    #         new_sheet.save()
+        
+
+
+    #     new_sheet.save()
+    #     csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+    #     csection.mark_sheet.add(new_sheet)
+    #     print('Marksheet create')
+    #     print(csection.mark_sheet.all())
+    #     csection.save()
+    #     return 'Success'
+    # else:
+    #     print('Received Signal For Deletion Attendance of Day for student')
+    #     SCSDDC_temp = str(kwargs['course_section'])
+        
+    #     new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+    #     csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+    #     csection.mark_sheet.remove(new_sheet)
+    #     new_sheet.delete()
+    #     csection.save()
+    #     return 'Success'
+
 
 class Home_json(View):
         
     def get(self, request):
         print(dir(request))
-        data_dict = model_to_dict(Teacher.objects.filter(username = request.user).first())
+        data_dict = model_to_dict(Teacher.objects.filter(user__username = request.user).first())
         user_data = model_to_dict(request.user)
+        user_data.pop('groups',None)
+        user_data.pop('password', None)
         print(data_dict)
         print(user_data)
         dat = {'status':'success',**data_dict,**user_data}

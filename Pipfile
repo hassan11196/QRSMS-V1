@@ -22,6 +22,8 @@ django-extensions = "*"
 ipython = "*"
 django-jet = "*"
 pyqrcode = "*"
+png = "*"
+pypng = "*"
 
 [requires]
 python_version = "3.7"

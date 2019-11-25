@@ -13,6 +13,11 @@ class CourseSectionViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.CourseSectionSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+class MarkSheetViewSet(viewsets.ModelViewSet):
+    queryset = models.MarkSheet.objects.all()
+    serializer_class = serializers.MarkSheetSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
 class AttendanceSheetViewSet(viewsets.ModelViewSet):
     queryset = models.AttendanceSheet.objects.all()
     serializer_class = serializers.AttendanceSheetSerializer

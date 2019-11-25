@@ -138,6 +138,7 @@ class Semester(models.Model):
 class CourseSection(models.Model):
     semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
+    
     SCSDDC =  models.CharField(max_length=256, blank=True, null=True, name='scsddc')
 
     section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
@@ -209,7 +210,7 @@ class SectionAttendance(models.Model):
         unique_together = ('scsddc', 'class_date', 'attendance_slot', 'section')
 
     def __str__(self):
-        return  + self.class_date + "_" + self.attendance_slot + "_" + self.scsddc
+        return  str(self.class_date) + "_" + self.attendance_slot + "_" + self.scsddc
 
 
 class StudentAttendance(models.Model):
