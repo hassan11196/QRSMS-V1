@@ -82,19 +82,17 @@ class StartSectionAttendance(BaseTeacherLoginView):
 @receiver(attendance_of_day_for_student)
 def generate_attendance_for_student(**kwargs):
     pass
-    # if kwargs['option'] == 'create':
+    #  if kwargs['option'] == 'create':
     #     print('Received Signal For Creation Attendance of Day for student')
     #     SCSDDC_temp = str(kwargs['scsddc'])
+    #     section_attendance = kwargs['sectionattendance']
     #     section = kwargs['coursesection']
     #     for student in section.students.all():
-    #         new_sheet = StudentAttendance(scsddc = SCSDDC_temp)
-    #         new_sheet.save()
+    #         new_a = StudentAttendance(scsddc = section_attendance.scsddc, student= student, class_date = section_attendance.class_date, attendance_slot = section_attendance.attendance_slot, duration_hour = section_attendance.duration_hour, section = section_attendance.section)
+    #         new_a.save()
         
 
-
-    #     new_sheet.save()
-    #     csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-    #     csection.mark_sheet.add(new_sheet)
+        
     #     print('Marksheet create')
     #     print(csection.mark_sheet.all())
     #     csection.save()
