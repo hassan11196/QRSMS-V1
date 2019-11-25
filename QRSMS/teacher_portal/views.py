@@ -19,7 +19,8 @@ from .serializers import (TeacherSerializer)
 
 from .forms import  TeacherForm
 from .models import  Teacher
-from initial.models import CourseSection
+from initial.models import CourseSection, SectionAttendance
+
 def check_if_teacher(user):
     return True if user.is_teacher else False
 
@@ -56,8 +57,8 @@ class AssignedSections(BaseTeacherLoginView):
 
 class StartSectionAttendance(BaseTeacherLoginView):
     def get(self, request):
-        sec_att = CourseSection()
-        pass
+        sec_att = SectionAttendance()
+        
 
 class Home_json(View):
         

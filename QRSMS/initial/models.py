@@ -196,11 +196,11 @@ class SectionAttendance(models.Model):
         (8, '3:00 PM- 4:00 PM'),
     )
     
-    class_date = models.DateField()
-    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
-    attendance_time_start = models.TimeField(null=True,blank=True)
-    attendance_interval_allowed = models.PositiveSmallIntegerField(null=True,blank=True)
-    qr_change_interval = models.PositiveSmallIntegerField(null=True,blank=True)
+    class_date = models.DateField(auto_now_add=True, null=True, blank=True)
+    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS, max_length=256, blank=True, null=True) 
+    attendance_time_start = models.TimeField(auto_now_add=True, null=True, blank=True)
+    attendance_interval_allowed = models.PositiveSmallIntegerField(null=True, blank=True, default = 30)
+    qr_change_interval = models.PositiveSmallIntegerField(null=True, blank=True, default = 1800)
 
     duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)

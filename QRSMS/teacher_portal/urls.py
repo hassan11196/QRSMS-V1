@@ -22,7 +22,8 @@ urlpatterns += (
     path('login/',views.TeacherLoginView.as_view(), name="teacher_login"),
     path('logout/',views.TeacherLogoutView.as_view(), name='teacher_logout'),
     path('home_json/',views.Home_json.as_view(), name='home_json'),
-    path('create', views.TeacherCreateView.as_view(), name='initial_teacher_create'),
-    path('detail/<int:pk>/', views.TeacherDetailView.as_view(), name='initial_teacher_detail'),
-    path('update/<int:pk>/', views.TeacherUpdateView.as_view(), name='initial_teacher_update'),
+    path('sections/',views.AssignedSections.as_view(), name='sections'),
+    # path('create', views.TeacherCreateView.as_view(), name='initial_teacher_create'),
+    # path('detail/<int:pk>/', views.TeacherDetailView.as_view(), name='initial_teacher_detail'),
+    # path('update/<int:pk>/', views.TeacherUpdateView.as_view(), name='initial_teacher_update'),
 )
