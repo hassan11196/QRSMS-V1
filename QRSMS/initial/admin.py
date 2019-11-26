@@ -4,7 +4,7 @@ Admin
 """
 from django.contrib import admin
 from django_restful_admin import site
-from .models import Semester, Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, CourseClass, CourseSection, SectionAttendance, RepeatCourseLoad, CourseSection,CourseClass, CourseStatus, OfferedCourses, AttendanceSheet, MarkSheet
+from .models import Semester, Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, CourseClass, CourseSection, SectionAttendance, RepeatCourseLoad, CourseSection,CourseClass, CourseStatus, OfferedCourses, AttendanceSheet, MarkSheet, StudentAttendance
 
 
 admin.site.site_title = "UMSRA Admin Portal"
@@ -20,8 +20,9 @@ admin.site.register(OfferedCourses)
 admin.site.register(CourseStatus)
 admin.site.register(AttendanceSheet)
 admin.site.register(MarkSheet)
+admin.site.register(StudentAttendance)
 
-
+site.register(StudentAttendance)
 site.register(AttendanceSheet)
 site.register(MarkSheet)
 site.register(OfferedCourses)

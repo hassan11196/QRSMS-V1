@@ -29,7 +29,14 @@ class UserNotLogged(View):
 def check_if_student(user):
     return True if user.is_student else False
 
-class Home_json(View):
+class BaseStudentLoginView(View):
+    @method_decorator(login_required)
+    @method_decorator(user_passes_test(check_if_student, login_url='/student/login'))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+
+class Home_json(BaseStudentLoginView):
         
     def get(self, request):
         print(dir(request))
@@ -43,16 +50,9 @@ class Home_json(View):
         
         return JsonResponse(dat)
     
-    @method_decorator(login_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
+
         
 
-class BaseStudentLoginView(View):
-    @method_decorator(login_required)
-    @method_decorator(user_passes_test(check_if_student))
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
 
 
 class AttendanceView(BaseStudentLoginView):
@@ -68,6 +68,10 @@ class AttendanceView(BaseStudentLoginView):
         att_serialized = AttendanceSheetSerializer(at, many = True).data
 
         return JsonResponse({'message':'Available Attendacne','condition':True, 'attendance':att_serialized}, status=200)
+
+class PostAttendanceQR(BaseStudentLoginView):
+    def post(self, request):
+        pass
 
 class TimeTableView(BaseStudentLoginView):
     def get(self, request):

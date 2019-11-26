@@ -135,6 +135,15 @@ class Semester(models.Model):
                     of_courses.courses_offered.add(course_status)
                 of_courses.save()
 
+class StudentInfoSection(models.Model):
+    student = models.ManyToManyField('student_portal.Student')
+    attendance_sheet = models.ManyToManyField('initial.AttendanceSheet')
+    mark_sheet = models.ManyToManyField('initial.MarkSheet')
+    
+    def __str__(self):
+        return self.student.uid 
+    
+    
 class CourseSection(models.Model):
     semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
@@ -144,9 +153,8 @@ class CourseSection(models.Model):
     section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
-    students = models.ManyToManyField('student_portal.Student')
-    attendance_sheet = models.ManyToManyField('initial.AttendanceSheet')
-    mark_sheet = models.ManyToManyField('initial.MarkSheet')
+    student_info = models.ManyToManyField('initial.StudentInfoSection', blank=True, null=True)
+
     teacher = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null =True)
     
     average = models.PositiveIntegerField(blank=True, null=True)

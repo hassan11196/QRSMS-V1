@@ -18,6 +18,7 @@ from django.dispatch import receiver
 from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance
 from .serializers import (TeacherSerializer)
 from .signals import attendance_of_day_for_student
+from django.db.utils import IntegrityError
 
 from .forms import  TeacherForm
 from .models import  Teacher
@@ -66,11 +67,24 @@ class StartSectionAttendance(BaseTeacherLoginView):
         section = request.POST['section']
         if(slot is None or req_scsddc is None or section is None):
             return JsonResponse({'message':'Invalud Form Inputs','condition':False, }, status=200)
-        print(request.POST)
-        sec_att = SectionAttendance(scsddc = req_scsddc, attendance_slot = slot, section=section)
-        sec_att.save()
+
         from rest_framework.request import Request
         from initial.serializers import SectionAttendanceSerializer
+        print(request.POST)
+        
+        try:
+            sec_att = SectionAttendance(scsddc = req_scsddc, attendance_slot = slot, section=section)
+            sec_att.save()
+        except IntegrityError as e:
+            sec_att2 = SectionAttendance.objects.get(scsddc = req_scsddc, attendance_slot = slot, section=section, class_date = sec_att.class_date)
+            
+            data = SectionAttendanceSerializer(sec_att2 , context = {'request': Request(request)}).data
+            return JsonResponse({'message':'Attendance Already Open For This Class.','condition':True, 'qr_json':data}, status=200)
+
+
+
+        
+        
         data = SectionAttendanceSerializer(sec_att , context = {'request': Request(request)}).data
         
         if sec_att is None :
@@ -82,17 +96,17 @@ class StartSectionAttendance(BaseTeacherLoginView):
 @receiver(attendance_of_day_for_student)
 def generate_attendance_for_student(**kwargs):
     pass
-    #  if kwargs['option'] == 'create':
+    # if kwargs['option'] == 'create':
     #     print('Received Signal For Creation Attendance of Day for student')
     #     SCSDDC_temp = str(kwargs['scsddc'])
     #     section_attendance = kwargs['sectionattendance']
     #     section = kwargs['coursesection']
+
     #     for student in section.students.all():
     #         new_a = StudentAttendance(scsddc = section_attendance.scsddc, student= student, class_date = section_attendance.class_date, attendance_slot = section_attendance.attendance_slot, duration_hour = section_attendance.duration_hour, section = section_attendance.section)
     #         new_a.save()
-        
-
-        
+    #         student.attendance_sheet.add(new_a)
+            
     #     print('Marksheet create')
     #     print(csection.mark_sheet.all())
     #     csection.save()
@@ -109,7 +123,7 @@ def generate_attendance_for_student(**kwargs):
     #     return 'Success'
 
 
-class Home_json(View):
+class Home_json(BaseTeacherLoginView):
         
     def get(self, request):
         print(dir(request))
@@ -123,9 +137,6 @@ class Home_json(View):
         
         return JsonResponse(dat)
     
-    @method_decorator(login_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
 class TeacherLoginView(View):
 
     def get(self, request,*args, **kwargs):
