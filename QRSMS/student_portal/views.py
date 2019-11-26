@@ -21,6 +21,10 @@ from .serializers import StudentSerializer
 
 from .forms import StudentForm, StudentFormValidate
 from .models import Student
+
+from django.core.mail import send_mail
+from django.conf import settings
+
 # Create your views here.
 class UserNotLogged(View):
     def get(self, request):
@@ -197,3 +201,11 @@ class StudentUpdateView(UpdateView):
     form_class = StudentForm
 
 
+def email(request):
+    subject = 'GPA Warning Alert'
+    message = "Dear Student, this is to inform you that your Progress "
+    message += "has not been very satisfactory in last semester and your GradePoints are below 2.0."
+    email_from = settings.EMAIL_HOST_USER
+    recipient = [email]
+    send_mail(subject, message, email_from, recipient)
+    return HttpResponse({"Status":"Success"})
