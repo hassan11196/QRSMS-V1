@@ -1,7 +1,26 @@
 
-from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet
+from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet
 from rest_framework import serializers
 from . import models
+
+
+class SectionAttendanceSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = SectionAttendance
+        fields = '__all__'
+
+class CourseSectionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = CourseSection
+        fields = '__all__'
+        depth = 1
+
+
+class MarkSheetSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = MarkSheet
+        fields = '__all__'
+    
 
 
 class AttendanceSheetSerializer(serializers.HyperlinkedModelSerializer):

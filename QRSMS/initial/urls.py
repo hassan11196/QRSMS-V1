@@ -11,7 +11,9 @@ router.register(r'semester', api.SemesterViewSet)
 router.register(r'offeredcourses', api.OfferedCoursesViewSet)
 router.register(r'coursestatus', api.CourseStatusViewSet)
 router.register(r'attendance_sheet',api.AttendanceSheetViewSet)
-
+router.register(r'coursesection', api.CourseSectionViewSet)
+router.register(r'sectionattendance', api.SectionAttendanceViewSet)
+router.register(r'marksheet', api.MarkSheetViewSet)
 urlpatterns = [
     # urls for Django Rest Framework API
     path('api/', include(router.urls)),

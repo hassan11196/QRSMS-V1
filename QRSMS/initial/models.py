@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import F
+from django.db.models import F, Q
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from django.dispatch import receiver
@@ -138,7 +138,8 @@ class Semester(models.Model):
 class CourseSection(models.Model):
     semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
-    CSDDC =  models.CharField(max_length=256, blank=True, null=True)
+    
+    SCSDDC =  models.CharField(max_length=256, blank=True, null=True, name='scsddc')
 
     section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
     section_name = models.CharField(max_length=256, blank=True, null=True)
@@ -159,7 +160,15 @@ class CourseSection(models.Model):
 
     def calculate_class_marks(self):
         pass
-    
+
+    @classmethod
+    def set_scsddc(cls):
+        all_sections = cls.objects.exclude(scsddc__isnull = True,scsddc__exact='')
+        for section in all_sections:
+            section.scsddc = section.section_name + "_" + section.course_code + "_" + section.semester_code
+            section.save()
+
+
 
 
 class CourseClass(models.Model):
@@ -175,8 +184,36 @@ class CourseClass(models.Model):
     def __str__(self):
         return self.course_code + "_" + self.semester_code
     
+class SectionAttendance(models.Model):
+    
+    ATTENDANCE_SLOTS = (
+        (1, '8:00 AM - 9:00'),
+        (2, '9:00 AM- 10:00'),
+        (3, '10:00 AM- 11:00 PM'),
+        (4, '11:00 AM- 12:00 PM'),
+        (5, '12:00 PM- 1:00 PM'),
+        (6, '1:00 PM- 2:00 PM'),
+        (7, '2:00 PM- 3:00 PM'),
+        (8, '3:00 PM- 4:00 PM'),
+    )
+    
+    class_date = models.DateField(auto_now_add=True, null=True, blank=True)
+    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS, max_length=256, blank=True, null=True) 
+    attendance_time_start = models.TimeField(auto_now_add=True, null=True, blank=True)
+    attendance_interval_allowed = models.PositiveSmallIntegerField(null=True, blank=True, default = 30)
+    qr_change_interval = models.PositiveSmallIntegerField(null=True, blank=True, default = 1800)
 
-class Attendance(models.Model):
+    duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+    section = models.CharField(max_length=256 ,blank=True, null=True)
+    class Meta:
+        unique_together = ('scsddc', 'class_date', 'attendance_slot', 'section')
+
+    def __str__(self):
+        return  str(self.class_date) + "_" + self.attendance_slot + "_" + self.scsddc
+
+
+class StudentAttendance(models.Model):
     ATTENDANCE_STATES = (
         ('NR', 'Not Registered'),
         ('P', 'Present'),
@@ -184,11 +221,33 @@ class Attendance(models.Model):
         ('L', 'Late'), # late
         ('LV', 'Leave')
     )
+    ATTENDANCE_SLOTS = (
+        (1, '8:00 AM - 9:00'),
+        (2, '9:00 AM- 10:00'),
+        (3, '10:00 AM- 11:00 PM'),
+        (4, '11:00 AM- 12:00 PM'),
+        (5, '12:00 PM- 1:00 PM'),
+        (6, '1:00 PM- 2:00 PM'),
+        (7, '2:00 PM- 3:00 PM'),
+        (8, '3:00 PM- 4:00 PM'),
+    )
+
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
     class_date = models.DateField()
+    attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
     state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
-    attendance_time = models.TimeField()
-    duration = models.SmallIntegerField(default=1)
+    attendance_marked_time = models.TimeField(null=True, blank=True)
+
+    duration_hour = models.SmallIntegerField(default=1, null=True,blank=True)
+    attendance_type = models.CharField(choices = (('M', 'Manual'),('QR', 'QR-Code')), max_length = 256,blank=True, null=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+    section = models.CharField(max_length=256 ,blank=True, null=True)
+    class Meta:
+        unique_together = ('student','scsddc', 'class_date', 'attendance_slot', 'section')
+
+    def __str__(self):
+        return self.student.uid + "_" + self.class_date + "_" + self.attendance_slot
+    
 
 class Marks(models.Model):
     MARK_TYPE = (
@@ -203,17 +262,21 @@ class Marks(models.Model):
     mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
     obtained_marks = models.PositiveIntegerField(blank=True, null=True)
     total_marks = models.PositiveIntegerField(blank=True, null=True)
-    
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+
+
 
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
 class AttendanceSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True,blank=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
-    attendance = models.ManyToManyField('initial.Attendance', blank=True)
+    attendance = models.ManyToManyField('initial.StudentAttendance', blank=True)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
     
+    class Meta:
+        unique_together = ('student','scsddc')
 
 # def get_attendance_table(table_name):
 #     class ClassAttendanceSheetMeta(models.base.ModelBase):
@@ -238,6 +301,9 @@ class MarkSheet(models.Model):
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc    
+
+    class Meta:
+        unique_together = ('student','scsddc')
 
 class RegularCoreCourseLoad(models.Model):
     semester_season = models.SmallIntegerField(
@@ -297,7 +363,7 @@ class CourseStatus(models.Model):
             course_section.students.remove(self.offeredcourses_set.get().student)
             print("Sending Signal")
             av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
-            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
             print(av)
             course_section.save()
             
@@ -337,12 +403,18 @@ def make_or_delete_attendance_sheet_for_student(**kwargs):
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
         new_sheet.save()
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.attendance_sheet.add(new_sheet)
+        csection.save()
         return 'Success'
     else:
         print('Received Signal For Deletion Attendance Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.attendance_sheet.add(new_sheet)
         new_sheet.delete()
+        csection.save()
         return 'Success'
 
 @receiver(mark_sheet_for_student)
@@ -351,11 +423,21 @@ def make_or_delete_mark_sheet_for_student(**kwargs):
         print('Received Signal For Creation Mark Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
         new_sheet = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+        
         new_sheet.save()
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.mark_sheet.add(new_sheet)
+        print('Marksheet create')
+        print(csection.mark_sheet.all())
+        csection.save()
         return 'Success'
     else:
         print('Received Signal For Deletion Attendance Sheet')
         SCSDDC_temp = str(kwargs['course_section'])
+        
         new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        csection.mark_sheet.remove(new_sheet)
         new_sheet.delete()
+        csection.save()
         return 'Success'
