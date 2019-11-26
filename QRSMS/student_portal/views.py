@@ -14,7 +14,10 @@ from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
-
+import io
+from rest_framework.parsers import JSONParser
+from rest_framework.renderers import JSONRenderer
+from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance
 from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
 from .serializers import StudentSerializer
 
@@ -51,8 +54,7 @@ class Home_json(BaseStudentLoginView):
         return JsonResponse(dat)
     
 
-        
-
+    
 
 
 class AttendanceView(BaseStudentLoginView):
@@ -71,7 +73,19 @@ class AttendanceView(BaseStudentLoginView):
 
 class PostAttendanceQR(BaseStudentLoginView):
     def post(self, request):
-        pass
+        print(request.POST['qr_code'])
+        import json
+        request_data =json.loads(request.POST['qr_code'])
+        print(request_data)
+        att_object = StudentAttendance.objects.get(student = Student.objects.get(uid = str(request.user)), scsddc = request_data['scsddc'], class_date = request_data['class_date'], attendance_slot = request_data['attendance_slot'], section = request_data['section'])
+        
+        att_object.state = 'P'
+        att_object.save()
+        from initial.serializers import StudentAttendanceSerializer
+        from rest_framework.request import Request
+        data = StudentAttendanceSerializer(att_object, context = {'request': Request(request)}).data
+
+        return JsonResponse({'message':'Attendance Marked','condition':True, 'attendance':data}, status=200)
 
 class TimeTableView(BaseStudentLoginView):
     def get(self, request):

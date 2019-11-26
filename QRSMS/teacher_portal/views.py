@@ -75,10 +75,13 @@ class StartSectionAttendance(BaseTeacherLoginView):
         try:
             sec_att = SectionAttendance(scsddc = req_scsddc, attendance_slot = slot, section=section)
             sec_att.save()
+            g = attendance_of_day_for_student.send(StartSectionAttendance,scsddc = req_scsddc,coursesection = section, sectionattendance = sec_att, option = 'create')
+            print(g)
         except IntegrityError as e:
             sec_att2 = SectionAttendance.objects.get(scsddc = req_scsddc, attendance_slot = slot, section=section, class_date = sec_att.class_date)
-            
+        
             data = SectionAttendanceSerializer(sec_att2 , context = {'request': Request(request)}).data
+           
             return JsonResponse({'message':'Attendance Already Open For This Class.','condition':True, 'qr_json':data}, status=200)
 
 
@@ -95,32 +98,18 @@ class StartSectionAttendance(BaseTeacherLoginView):
 
 @receiver(attendance_of_day_for_student)
 def generate_attendance_for_student(**kwargs):
-    pass
-    # if kwargs['option'] == 'create':
-    #     print('Received Signal For Creation Attendance of Day for student')
-    #     SCSDDC_temp = str(kwargs['scsddc'])
-    #     section_attendance = kwargs['sectionattendance']
-    #     section = kwargs['coursesection']
-
-    #     for student in section.students.all():
-    #         new_a = StudentAttendance(scsddc = section_attendance.scsddc, student= student, class_date = section_attendance.class_date, attendance_slot = section_attendance.attendance_slot, duration_hour = section_attendance.duration_hour, section = section_attendance.section)
-    #         new_a.save()
-    #         student.attendance_sheet.add(new_a)
-            
-    #     print('Marksheet create')
-    #     print(csection.mark_sheet.all())
-    #     csection.save()
-    #     return 'Success'
-    # else:
-    #     print('Received Signal For Deletion Attendance of Day for student')
-    #     SCSDDC_temp = str(kwargs['course_section'])
-        
-    #     new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
-    #     csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-    #     csection.mark_sheet.remove(new_sheet)
-    #     new_sheet.delete()
-    #     csection.save()
-    #     return 'Success'
+    if kwargs['option'] == 'create':
+        print('Received Signal For Creation Attendance of Day for student')
+        SCSDDC_temp = str(kwargs['scsddc'])
+        section_attendance = kwargs['sectionattendance']
+        section = kwargs['coursesection']
+        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+        for student_info in csection.student_info.all():
+            new_a = StudentAttendance(attendance_type = 'M',state = 'A',scsddc = section_attendance.scsddc, student= student_info.student, class_date = section_attendance.class_date, attendance_slot = section_attendance.attendance_slot, duration_hour = section_attendance.duration_hour, section = section_attendance.section)
+            new_a.save()
+            info = csection.student_info.get(student= student_info.student)
+            info.attendance_sheet.attendance.add(new_a)
+        return 'Success'
 
 
 class Home_json(BaseTeacherLoginView):

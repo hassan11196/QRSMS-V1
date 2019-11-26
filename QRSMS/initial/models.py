@@ -10,7 +10,7 @@ from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR
 from student_portal.models import Student
 from teacher_portal.models import Teacher
 from faculty_portal.models import Faculty
-from .signals import attendance_sheet_for_student, mark_sheet_for_student
+from .signals import attendance_sheet_for_student, mark_sheet_for_student, student_info_section_for_student
 
 
 ACADEMIC_YEAR = 2019
@@ -136,12 +136,12 @@ class Semester(models.Model):
                 of_courses.save()
 
 class StudentInfoSection(models.Model):
-    student = models.ManyToManyField('student_portal.Student')
-    attendance_sheet = models.ManyToManyField('initial.AttendanceSheet')
-    mark_sheet = models.ManyToManyField('initial.MarkSheet')
+    student = models.ForeignKey('student_portal.Student',on_delete = models.SET_NULL, blank=True, null=True)
+    attendance_sheet = models.ForeignKey('initial.AttendanceSheet',on_delete = models.SET_NULL, blank=True, null=True)
+    mark_sheet = models.ForeignKey('initial.MarkSheet', on_delete = models.SET_NULL, blank=True, null=True)
     
     def __str__(self):
-        return self.student.uid 
+        return self.student.uid + "_" + self.coursesection_set.get().scsddc
     
     
 class CourseSection(models.Model):
@@ -254,10 +254,10 @@ class StudentAttendance(models.Model):
         unique_together = ('student','scsddc', 'class_date', 'attendance_slot', 'section')
 
     def __str__(self):
-        return self.student.uid + "_" + self.class_date + "_" + self.attendance_slot
+        return self.student.uid + "_" + str(self.class_date) + "_" + self.attendance_slot
     
 
-class Marks(models.Model):
+class StudentMarks(models.Model):
     MARK_TYPE = (
         ('F','Final'),
         ('M','Mid'),
@@ -304,7 +304,7 @@ class AttendanceSheet(models.Model):
 class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
-    Marks = models.ManyToManyField('initial.Marks')
+    Marks = models.ManyToManyField('initial.StudentMarks')
     grand_total_marks = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
@@ -351,30 +351,24 @@ class CourseStatus(models.Model):
         return self.offeredcourses_set.get().student.uid + "_" +self.course.course_name + "_" + self.status
 
     def save(self, *args, **kwargs):
-        if self.status == 'R':
-                course_section = CourseSection.objects.get(section_name = self.section, course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
-                if course_section is None:
+        course_section = CourseSection.objects.get(section_name = self.section, course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
+        if course_section is None:
                     raise CourseSection.DoesNotExist
+        if self.status == 'R':
                 course_section.section_seats = F('section_seats') - 1
-                course_section.students.add(self.offeredcourses_set.get().student)
-                course_section.save()
+                
                 print("Sending Signal")
-                av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
-                mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
-                print(av)
+                info = student_info_section_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
+                
+                print(info)
 
         elif self.status == 'NR':
-            course_section = CourseSection.objects.get(section_name = self.section,course_code = self.course.course_code, semester_code = self.offeredcourses_set.get().semester_code)
-            if course_section is None:
-                raise CourseSection.DoesNotExist
             course_section.section_seats = F('section_seats') + 1
-            course_section.students.remove(self.offeredcourses_set.get().student)
             print("Sending Signal")
-            av = attendance_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
-            mv = mark_sheet_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
-            print(av)
-            course_section.save()
-            
+            info = student_info_section_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
+            print(info)
+
+        course_section.save()
         super(CourseStatus, self).save(*args, **kwargs) # Call the real save() method    
 
 class OfferedCourses(models.Model):
@@ -404,48 +398,83 @@ def make_classes(semester_code, course_code, sections):
     for section in section_list:
         course_class.sections.add(section)
 
-@receiver(attendance_sheet_for_student)
-def make_or_delete_attendance_sheet_for_student(**kwargs):
+
+@receiver(student_info_section_for_student)
+def make_or_delete_student_info_section_for_student(**kwargs):
     if kwargs['option'] == 'create':
-        print('Received Signal For Creation Attendance Sheet')
+        print('Received Signal For Creation Student Info Section')
         SCSDDC_temp = str(kwargs['course_section'])
-        new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
-        new_sheet.save()
+        new_sheet_attendance = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+        new_sheet_marks = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+
+        new_sheet_marks.save()
+        new_sheet_attendance.save()
+
+        info = StudentInfoSection(student = kwargs['student'], mark_sheet = new_sheet_marks, attendance_sheet = new_sheet_attendance)
+
+        info.save()
+
         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-        csection.attendance_sheet.add(new_sheet)
+        csection.student_info.add(info)
         csection.save()
+
         return 'Success'
     else:
-        print('Received Signal For Deletion Attendance Sheet')
+        print('Received Signal For Deletion Student Info Section')
         SCSDDC_temp = str(kwargs['course_section'])
-        new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+        info = StudentInfoSection.objects.get(student = kwargs['student'])
+        info.mark_sheet.delete()
+        info.attendance_sheet.delete()
+
         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-        csection.attendance_sheet.add(new_sheet)
-        new_sheet.delete()
+        csection.student_info.remove(info)
+        info.delete()
         csection.save()
         return 'Success'
 
-@receiver(mark_sheet_for_student)
-def make_or_delete_mark_sheet_for_student(**kwargs):
-    if kwargs['option'] == 'create':
-        print('Received Signal For Creation Mark Sheet')
-        SCSDDC_temp = str(kwargs['course_section'])
-        new_sheet = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+
+# @receiver(attendance_sheet_for_student)
+# def make_or_delete_attendance_sheet_for_student(**kwargs):
+#     if kwargs['option'] == 'create':
+#         print('Received Signal For Creation Attendance Sheet')
+#         SCSDDC_temp = str(kwargs['course_section'])
+#         new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+#         new_sheet.save()
+#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         csection.attendance_sheet.add(new_sheet)
+#         csection.save()
+#         return 'Success'
+#     else:
+#         print('Received Signal For Deletion Attendance Sheet')
+#         SCSDDC_temp = str(kwargs['course_section'])
+#         new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         csection.attendance_sheet.remove(new_sheet)
+#         new_sheet.delete()
+#         csection.save()
+#         return 'Success'
+
+# @receiver(mark_sheet_for_student)
+# def make_or_delete_mark_sheet_for_student(**kwargs):
+#     if kwargs['option'] == 'create':
+#         print('Received Signal For Creation Mark Sheet')
+#         SCSDDC_temp = str(kwargs['course_section'])
+#         new_sheet = MarkSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
         
-        new_sheet.save()
-        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-        csection.mark_sheet.add(new_sheet)
-        print('Marksheet create')
-        print(csection.mark_sheet.all())
-        csection.save()
-        return 'Success'
-    else:
-        print('Received Signal For Deletion Attendance Sheet')
-        SCSDDC_temp = str(kwargs['course_section'])
+#         new_sheet.save()
+#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         csection.mark_sheet.add(new_sheet)
+#         print('Marksheet create')
+#         print(csection.mark_sheet.all())
+#         csection.save()
+#         return 'Success'
+#     else:
+#         print('Received Signal For Deletion Attendance Sheet')
+#         SCSDDC_temp = str(kwargs['course_section'])
         
-        new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
-        csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
-        csection.mark_sheet.remove(new_sheet)
-        new_sheet.delete()
-        csection.save()
-        return 'Success'
+#         new_sheet = MarkSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
+#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         csection.mark_sheet.remove(new_sheet)
+#         new_sheet.delete()
+#         csection.save()
+#         return 'Success'
