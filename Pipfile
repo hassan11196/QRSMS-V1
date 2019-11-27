@@ -22,8 +22,10 @@ django-extensions = "*"
 ipython = "*"
 django-jet = "*"
 pyqrcode = "*"
-png = "*"
 pypng = "*"
+pydotplus = "*"
+graphviz = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
