@@ -1,0 +1,6581 @@
+[
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 2,
+    "fields": {
+        "title": "Applications",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"models\": null, \"exclude\": [\"auth.*\"]}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 3,
+    "fields": {
+        "title": "Administration",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 2,
+        "column": 2,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 4,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": null,
+        "user": 2,
+        "column": 0,
+        "order": 1,
+        "settings": "{\"limit\": 10, \"include_list\": null, \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 7,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "actor",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"actor.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 8,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "actor",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"actor.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 9,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "initial",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"initial.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 10,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "initial",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"initial.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 11,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "auth",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 12,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "auth",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"auth.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 13,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "institution",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"institution.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 14,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "institution",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"institution.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 15,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "teacher_portal",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"teacher_portal.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 16,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "teacher_portal",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"teacher_portal.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 17,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "student_portal",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"student_portal.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 18,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "student_portal",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"student_portal.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 19,
+    "fields": {
+        "title": "Administration",
+        "module": "jet.dashboard.modules.AppList",
+        "app_label": null,
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"auth.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 21,
+    "fields": {
+        "title": "Application models",
+        "module": "jet.dashboard.modules.ModelList",
+        "app_label": "faculty_portal",
+        "user": 2,
+        "column": 0,
+        "order": 0,
+        "settings": "{\"models\": [\"faculty_portal.*\"], \"exclude\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "dashboard.userdashboardmodule",
+    "pk": 22,
+    "fields": {
+        "title": "Recent Actions",
+        "module": "jet.dashboard.modules.RecentActions",
+        "app_label": "faculty_portal",
+        "user": 2,
+        "column": 1,
+        "order": 0,
+        "settings": "{\"limit\": 10, \"include_list\": [\"faculty_portal.*\"], \"exclude_list\": null, \"user\": null}",
+        "children": "",
+        "collapsed": false
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "student_group",
+        "permissions": [
+            [
+                "add_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "change_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "delete_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "view_student",
+                "student_portal",
+                "student"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "teacher_group",
+        "permissions": [
+            [
+                "add_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "change_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "delete_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "view_teacher",
+                "teacher_portal",
+                "teacher"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+        "name": "faculty_group",
+        "permissions": [
+            [
+                "add_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "change_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "delete_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "view_faculty",
+                "faculty_portal",
+                "faculty"
+            ]
+        ]
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 4,
+    "fields": {
+        "name": "maintainer_group",
+        "permissions": [
+            [
+                "add_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "change_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "delete_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "view_faculty",
+                "faculty_portal",
+                "faculty"
+            ],
+            [
+                "add_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "change_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "delete_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "view_student",
+                "student_portal",
+                "student"
+            ],
+            [
+                "add_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "change_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "delete_teacher",
+                "teacher_portal",
+                "teacher"
+            ],
+            [
+                "view_teacher",
+                "teacher_portal",
+                "teacher"
+            ]
+        ]
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0b6wzfk3qn78pzqpys96xi8blld0j4cm",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-28T04:24:10.446Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0kjyaue6bb5oycjwvcaxiikyg3x6hjf2",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-28T04:18:27.246Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0ug1wdyo59nr1m3wwy490ohgs1asm3qm",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-11-25T07:45:07.297Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1atrg2qtmnxuk3supspjl6e0wtj8nhpy",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-03T04:21:56.646Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "2hku9cvbld81sbq5ghuo69bkmtq7vfiv",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-24T15:48:00.507Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "394wwksdbxyce8pp65pb93i8fjmth2rn",
+    "fields": {
+        "session_data": "NjA0OGM3Y2YxMWY1MzZlM2U5ZTQwZWFmZTY2ZGUxNjRhYzI1MDEzYzp7Il9hdXRoX3VzZXJfaWQiOiI0MTY2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjZTFhZTE5Mjk4M2Q5NzNmYzFjNzY2ZTc3OGU0NTMwMGFhM2ZlNjI5In0=",
+        "expire_date": "2019-12-03T15:29:29.009Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "3uokwi90il281fk8aikdxmg1ggiiozr5",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-24T14:22:02.299Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "3w16f6cun773s76ji8zccifekckjyjak",
+    "fields": {
+        "session_data": "YTYwY2NjMWQzNmVjNmEzNGE2Y2NkZGNlMDY4ZWY0ZWM3NzM3ODMyZDp7Il9hdXRoX3VzZXJfaWQiOiIzODU1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0MTYwNWJkZWRjYmM0YTJlZmRkY2Q5MjcwM2I3NTkwYjRjZGFmNTU2In0=",
+        "expire_date": "2019-11-26T14:38:48.074Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5f9axafbimozrjurw67at62dufrvj6k1",
+    "fields": {
+        "session_data": "MzNjNzNhN2M4MjVjZDc0NTkxMTQwYjUxMDI3MzUyYmRiY2RjMGY5MDp7Il9hdXRoX3VzZXJfaWQiOiI0MTY5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2ZjlhNzBjZjA4YWY3YWE4ZTI2YTAwNGM3NTdhNzRmZDhkNDhhMmQzIn0=",
+        "expire_date": "2019-11-28T04:39:57.939Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "71carvb17vdw2z6f9t7bhyan4tbq31f5",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-08T20:40:43.476Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8wpimib08w37n69wzvpv9vukvyivxg36",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-06T10:45:07.102Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8z60qy111pxvj1du9oydn6dsf3udpkbx",
+    "fields": {
+        "session_data": "OTY2MWMyOTJlYzhhYmY2ZWZkMWM3YzRhNDk4ZmVjNzNlN2U2YzliZDp7Il9hdXRoX3VzZXJfaWQiOiI0MTkzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZTgwOGVmYmQwZTkyYWY0MDNlYmY4N2ZhZWNlNjIxODdlNGM5MGIyIn0=",
+        "expire_date": "2019-12-09T05:49:57.689Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "96vwo2tcz6wimokdj3lk3zcfqu94bhhn",
+    "fields": {
+        "session_data": "MzNjNzNhN2M4MjVjZDc0NTkxMTQwYjUxMDI3MzUyYmRiY2RjMGY5MDp7Il9hdXRoX3VzZXJfaWQiOiI0MTY5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2ZjlhNzBjZjA4YWY3YWE4ZTI2YTAwNGM3NTdhNzRmZDhkNDhhMmQzIn0=",
+        "expire_date": "2019-12-08T19:39:43.662Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "afk4jc7ad1677voujggkqml9twkunb8u",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-11-13T22:26:40.619Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "d7bxy6e0dq808pa3q47autup560qxe1l",
+    "fields": {
+        "session_data": "NjA0OGM3Y2YxMWY1MzZlM2U5ZTQwZWFmZTY2ZGUxNjRhYzI1MDEzYzp7Il9hdXRoX3VzZXJfaWQiOiI0MTY2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjZTFhZTE5Mjk4M2Q5NzNmYzFjNzY2ZTc3OGU0NTMwMGFhM2ZlNjI5In0=",
+        "expire_date": "2019-12-03T16:19:25.418Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "dcsulix207lexwfuizal401tk2c0c4pk",
+    "fields": {
+        "session_data": "NjA0OGM3Y2YxMWY1MzZlM2U5ZTQwZWFmZTY2ZGUxNjRhYzI1MDEzYzp7Il9hdXRoX3VzZXJfaWQiOiI0MTY2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjZTFhZTE5Mjk4M2Q5NzNmYzFjNzY2ZTc3OGU0NTMwMGFhM2ZlNjI5In0=",
+        "expire_date": "2019-11-28T20:47:18.253Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "dzulkbfvrzsiuji9vz1jcci0baqh030g",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-11-25T08:15:45.348Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ekneisfyd5sidg1i282n4sa33x0qdzqv",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-10T18:43:22.166Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "esfuwpo4pgk2qs92fghg85ugs0qooi3d",
+    "fields": {
+        "session_data": "ODk3ZjEzZTRkYzQxOTdlZGJkZGQyNzE5YWI3NGJlYTk1NmZjMDRlMjp7Il9hdXRoX3VzZXJfaWQiOiIxNjUzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxMzhlODdhMGFhYmYyYzhmOTE1M2Y5NGNiZmIyYjM4MTg1NjA3OTY0In0=",
+        "expire_date": "2019-11-14T17:36:44.717Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ewtq60ksaiu0yi3i1pg4au4i1qe5fsys",
+    "fields": {
+        "session_data": "ODgzN2QzOGZmN2I2ZTEwZjc5MWMyZGJjMGNhZTIzMDE2MTBlOTE2Mzp7Il9hdXRoX3VzZXJfaWQiOiIzODI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NWE5YjhjMmUwNGNjNmY0ZWFkYWZkMTZmODkyM2FkZmE3ODIxNTBkIn0=",
+        "expire_date": "2019-11-23T12:18:51.725Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ft7oiq3lsg6kd9uw102fxu123w421irt",
+    "fields": {
+        "session_data": "MzNjNzNhN2M4MjVjZDc0NTkxMTQwYjUxMDI3MzUyYmRiY2RjMGY5MDp7Il9hdXRoX3VzZXJfaWQiOiI0MTY5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2ZjlhNzBjZjA4YWY3YWE4ZTI2YTAwNGM3NTdhNzRmZDhkNDhhMmQzIn0=",
+        "expire_date": "2019-12-10T21:11:50.662Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gm4ettmp2j10t379xm47085ghvzsgr21",
+    "fields": {
+        "session_data": "OTY2MWMyOTJlYzhhYmY2ZWZkMWM3YzRhNDk4ZmVjNzNlN2U2YzliZDp7Il9hdXRoX3VzZXJfaWQiOiI0MTkzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZTgwOGVmYmQwZTkyYWY0MDNlYmY4N2ZhZWNlNjIxODdlNGM5MGIyIn0=",
+        "expire_date": "2019-12-10T21:14:32.289Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gnqzc0h3v63290kqwtrti818i8i5p7fm",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-24T15:47:15.178Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "itj8lsrvivdk69yy9qcv05yzai2d7pmy",
+    "fields": {
+        "session_data": "NzM1NWUwOWM5ZjEzNTExZGY0Y2IwYTVlYTk0YmE3YTFiNzk3NTU1ODp7Il9hdXRoX3VzZXJfaWQiOiI3MTMiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6ImIwMzZlNmZkZDJkZDc3OTdlOThiMTQwY2Q0MDUyMWExZTc1NjRlM2UifQ==",
+        "expire_date": "2019-11-13T21:41:51.571Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kyt7uoyvl0ku93f8deywc3lq6vqqnxk7",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-25T08:26:36.441Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mnozs4g4e2t99dpiokuif7xabbewdkkz",
+    "fields": {
+        "session_data": "NjA0OGM3Y2YxMWY1MzZlM2U5ZTQwZWFmZTY2ZGUxNjRhYzI1MDEzYzp7Il9hdXRoX3VzZXJfaWQiOiI0MTY2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjZTFhZTE5Mjk4M2Q5NzNmYzFjNzY2ZTc3OGU0NTMwMGFhM2ZlNjI5In0=",
+        "expire_date": "2019-12-03T17:07:36.839Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mtf5pgzn2jg9tgpqlyeorbrv0uk1xzjm",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-24T15:49:34.047Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "nosizjqwew0rdeildaa0qtg8umkq2qct",
+    "fields": {
+        "session_data": "NjA0OGM3Y2YxMWY1MzZlM2U5ZTQwZWFmZTY2ZGUxNjRhYzI1MDEzYzp7Il9hdXRoX3VzZXJfaWQiOiI0MTY2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjZTFhZTE5Mjk4M2Q5NzNmYzFjNzY2ZTc3OGU0NTMwMGFhM2ZlNjI5In0=",
+        "expire_date": "2019-12-10T22:16:08.193Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "q8htxxjojb1vh8q2dg0zuynm5efw8pfe",
+    "fields": {
+        "session_data": "MzNjNzNhN2M4MjVjZDc0NTkxMTQwYjUxMDI3MzUyYmRiY2RjMGY5MDp7Il9hdXRoX3VzZXJfaWQiOiI0MTY5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2ZjlhNzBjZjA4YWY3YWE4ZTI2YTAwNGM3NTdhNzRmZDhkNDhhMmQzIn0=",
+        "expire_date": "2019-12-10T17:46:48.519Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qfb47tjkl7v8nsiefd0k5qrna4wucql6",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-25T07:34:45.731Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ryuytctnt1o02w8pnyjsw15nuc24mxvv",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-08T20:49:39.080Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "s4489pkprnym5b1d5ihwr0t2y8t15s5n",
+    "fields": {
+        "session_data": "MWFmMjZjMzg0MWI1OWU1MGU2MmVjZWIwMmFjOWQ4YmUwN2IyY2ZmNjp7Il9hdXRoX3VzZXJfaWQiOiIzODYwIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZjRhZGRhYWM4MjEzY2Y1ZTk1Y2UxYzRkZDExMTk1OTY5MzFmZDMzIn0=",
+        "expire_date": "2019-11-25T08:27:14.106Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "tdha94ii6tehtqkwbeuwhbm45bh58491",
+    "fields": {
+        "session_data": "YWEwYTM3YmZjZjhkODQ5NmVlNjliYWQ3NDZkNDQ1MWRjMTI3N2ZmMjp7fQ==",
+        "expire_date": "2019-11-24T15:51:01.982Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ud8hxooxy13gbew6r4cvbcnyz9iromnv",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-11-19T13:21:54.249Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "unwlucmmzp2tqiczmgh0b8joy9hgcmaq",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-12-09T05:51:13.150Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "uo7nrswvmtrkvd88lmwu054owxgxgddr",
+    "fields": {
+        "session_data": "NWI1Mjc5ZWQ0MGI1NDY4MWRhNzBhOWYzMWJhMDdlOGQxYzY2NjU4Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiMjI5ODYwNDU4ODNiNTQ3NDllNTBjYmM3YjViNWIzMDI3ZmU5NDVlIn0=",
+        "expire_date": "2019-11-13T22:21:09.896Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "y8f6svfklpyxwycfs8562ncrzqt9fje3",
+    "fields": {
+        "session_data": "OTY2MWMyOTJlYzhhYmY2ZWZkMWM3YzRhNDk4ZmVjNzNlN2U2YzliZDp7Il9hdXRoX3VzZXJfaWQiOiI0MTkzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmZTgwOGVmYmQwZTkyYWY0MDNlYmY4N2ZhZWNlNjIxODdlNGM5MGIyIn0=",
+        "expire_date": "2019-12-09T07:23:04.158Z"
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$OBIa2mJ5lQb9$2oTnAtgtjQzT5TZY7Ms3vZ5F7CMIOzYEaSMk/s5DiGQ=",
+        "last_login": "2019-11-26T18:43:21.956Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "email": "hassan11196@hotmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-10-30T21:22:20.176Z",
+        "username": "admin11196",
+        "gender": "",
+        "is_teacher": false,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": true,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$50ruoC4upV60$t0QMIiODP6pCsdwg3PCPDQERM2WWnNd4AatDKmu4JoQ=",
+        "last_login": null,
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "email": "ahsan11196@hotmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-10-30T21:22:20.391Z",
+        "username": "admin3650",
+        "gender": "",
+        "is_teacher": false,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": true,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4166,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$uiN0k6YP9E8v$UlzJwXA86FZ2oEA5OQroGuHbmCzpODa91cjSor5sG2k=",
+        "last_login": "2019-11-26T22:16:08.052Z",
+        "is_superuser": false,
+        "first_name": "Muhammad",
+        "last_name": "Hassan Ahmed",
+        "email": "pribouql@cbsnews.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T11:38:12.291Z",
+        "username": "17K-3654",
+        "gender": "F",
+        "is_teacher": false,
+        "is_student": true,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "43117-7863749-5",
+        "permanent_address": "29 Eastwood Pass",
+        "permanent_home_phone": 273768853475,
+        "permanent_postal_code": 25893,
+        "permanent_city": "Karachi",
+        "permanent_country": "Pakistan",
+        "current_address": "29 Eastwood Pass",
+        "current_home_phone": 273768853475,
+        "current_postal_code": 25893,
+        "current_city": "Karachi",
+        "current_country": "Pakistan",
+        "DOB": "1998-06-05",
+        "nationality": "Pakistani",
+        "mobile_contact": 920616491402,
+        "emergency_contact": 926017313155,
+        "educational_history": null,
+        "groups": [
+            [
+                "student_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4167,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$Pap8qvO83I9k$yl7Gps6/5G/UdR/H5yPNCJKc7tg9mJb6+/kPX2OxEjk=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Muhammad",
+        "last_name": "Mustafa Manga",
+        "email": "mkirmanmn@dell.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T11:38:12.736Z",
+        "username": "17K-3795",
+        "gender": "M",
+        "is_teacher": false,
+        "is_student": true,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "24249-0647204-9",
+        "permanent_address": "8001 Stuart Park",
+        "permanent_home_phone": 280775850757,
+        "permanent_postal_code": 89978,
+        "permanent_city": "Karachi",
+        "permanent_country": "Pakistan",
+        "current_address": "8001 Stuart Park",
+        "current_home_phone": 280775850757,
+        "current_postal_code": 89978,
+        "current_city": "Karachi",
+        "current_country": "Pakistan",
+        "DOB": "1999-02-20",
+        "nationality": "Pakistani",
+        "mobile_contact": 924790151731,
+        "emergency_contact": 928167712389,
+        "educational_history": null,
+        "groups": [
+            [
+                "student_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4168,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$wl8a7qr1G7iv$jRiHnz/ttgucfc5dSrIVUic2UoQ82cMDS3gUI1LliUU=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Noman",
+        "last_name": "Anjum",
+        "email": "jpaffettav@networkadvertising.org",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T11:38:13.204Z",
+        "username": "17K-3755",
+        "gender": "F",
+        "is_teacher": false,
+        "is_student": true,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "00967-8661143-9",
+        "permanent_address": "630 Express Trail",
+        "permanent_home_phone": 288425875306,
+        "permanent_postal_code": 17277,
+        "permanent_city": "Karachi",
+        "permanent_country": "Pakistan",
+        "current_address": "630 Express Trail",
+        "current_home_phone": 288425875306,
+        "current_postal_code": 17277,
+        "current_city": "Karachi",
+        "current_country": "Pakistan",
+        "DOB": "2002-02-01",
+        "nationality": "Pakistani",
+        "mobile_contact": 921968447534,
+        "emergency_contact": 929744937995,
+        "educational_history": null,
+        "groups": [
+            [
+                "student_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4169,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$TlUwYbhRKGUG$tIA7TmXS+871bAZDgtO5MD3Q1zK9mwYWoySttoeMTBo=",
+        "last_login": "2019-11-26T21:11:50.515Z",
+        "is_superuser": false,
+        "first_name": "Muhammad",
+        "last_name": "Ahsan Siddiq",
+        "email": "mpaulleyae@tinyurl.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T11:38:13.653Z",
+        "username": "17K-3650",
+        "gender": "M",
+        "is_teacher": false,
+        "is_student": true,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "65054-2508089-1",
+        "permanent_address": "80 Westerfield Avenue",
+        "permanent_home_phone": 417224548543,
+        "permanent_postal_code": 30456,
+        "permanent_city": "Karachi",
+        "permanent_country": "Pakistan",
+        "current_address": "80 Westerfield Avenue",
+        "current_home_phone": 417224548543,
+        "current_postal_code": 30456,
+        "current_city": "Karachi",
+        "current_country": "Pakistan",
+        "DOB": "2001-05-01",
+        "nationality": "Pakistani",
+        "mobile_contact": 927294002101,
+        "emergency_contact": 925549594588,
+        "educational_history": null,
+        "groups": [
+            [
+                "student_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4170,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$Xfnr8vFNMl15$h0gPX5qCH30NHxGcUl+linDfbFOYA+3PL+Bs4ru/Xgo=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Syed",
+        "last_name": "Muhammad Maaz",
+        "email": "lpykeaf@aboutads.info",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T11:38:14.128Z",
+        "username": "17K-3655",
+        "gender": "M",
+        "is_teacher": false,
+        "is_student": true,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "63110-0656613-2",
+        "permanent_address": "1 Nevada Junction",
+        "permanent_home_phone": 203428797567,
+        "permanent_postal_code": 16218,
+        "permanent_city": "Karachi",
+        "permanent_country": "Pakistan",
+        "current_address": "1 Nevada Junction",
+        "current_home_phone": 203428797567,
+        "current_postal_code": 16218,
+        "current_city": "Karachi",
+        "current_country": "Pakistan",
+        "DOB": "1999-01-07",
+        "nationality": "Pakistani",
+        "mobile_contact": 926115157922,
+        "emergency_contact": 921770130695,
+        "educational_history": null,
+        "groups": [
+            [
+                "student_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4188,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$cSmVQ7tWUnZE$s8NoWH0FpchcOrzfPaOczqx2i91S5VXqIzgpNBU/Vbg=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:21.112Z",
+        "username": "Zulfiqar.Ali.Memon",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 27,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4189,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$ja7VRXpFle4E$ZJO+/N5HPwT1NIKU56TO5GTkwmCR71ROwnkyIYBTTjQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:22.070Z",
+        "username": "Anum.Qureshi",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 28,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4190,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$OjD7XwHBfdp6$ggqpN9+0JVoMPnbHYO8APieI0m1Zo4hQ2wOmj+80gUU=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:22.953Z",
+        "username": "Tania.Irum",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 29,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4191,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$8ul9G9a8KuOF$0w3j3lQcZKOWQxmUumsEahfyZ3teE4zjCpEUq2KlrAo=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:23.696Z",
+        "username": "Ammara.Yaseen",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 30,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4192,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$p8tDXK6vJwSf$nd3Qb7mdXRGhZl79vR2Yo+B29EZpKuWsOI9gyo32hMU=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:24.699Z",
+        "username": "Mohammad.Faheem",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 31,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4193,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$Cwzbohrxvs7V$yovoDYU8gQ0xV+fx5r2mnaKZpoInhbWw+q9U4VmNgiY=",
+        "last_login": "2019-11-26T21:14:32.187Z",
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:25.538Z",
+        "username": "Abdul.Rehman",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 32,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4194,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$lUNAgotDOKN1$kxItIHMJ36KYykiNLNft6NntlMO6tL2meMngxgYW64E=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:26.436Z",
+        "username": "Javeria.Farooq",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 33,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4195,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$eA9hvFcQ5Wvr$rJbriqDAVRwMe7TWcpvmw2x9bq//Z1gafeKsaVfmd/4=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:27.327Z",
+        "username": "Syeda.Rubab.Jaffar",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 34,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4196,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$4kd86PJjFtw2$TeyBrYEYBTejGf1QpaSUQDUdKusIaPK19qBibogYGpc=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:28.553Z",
+        "username": "M.Nadeem",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 35,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4197,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$k2iF2ehd89Yb$o66I+gtpsS34pchYd3ifTN8XmwFttRjyV3t2nwP6OZM=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:29.404Z",
+        "username": "Hamza.Ahmed",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 36,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4198,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$LzD4VI6fDW8T$rHIc4/Fm9xz9mMY5hOom9rtwph2Ngmu2pCF5aNKwdX8=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:30.203Z",
+        "username": "Atif.Tahir",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 37,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4199,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$DPLNTMJ2Gy1D$HlEzMBKgZxvgPZZjjqeB3hal2yeXwoWPGjqnLZQFANc=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:31.106Z",
+        "username": "Zeshan.Khan",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 38,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4200,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$MGwFONjzn5aH$GVWwJ3lcWWWxHjMwHN/DOz8Hoab7bynXixI1UGhbdU8=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:31.913Z",
+        "username": "M.Waqas",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 39,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4201,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$JYZrwNdM55ec$QB5ek6oFdkFEAZ/aoyi3d+tlynfBYHNHH7t3VF/haSI=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:32.988Z",
+        "username": "Hasina.Khatoon",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 40,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4202,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$cDUKHCU4g4JF$odmVulmDZ9B6xy0qJH2IZbJeTU3zhPQ2buCkDRdTAIU=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-13T12:01:33.938Z",
+        "username": "Hassan.Jamil.Syed",
+        "gender": "",
+        "is_teacher": true,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": true,
+        "employee": 41,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [
+            [
+                "teacher_group"
+            ]
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.user",
+    "pk": 4203,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$pzFJ3JvgpSQU$lX7EmTpTxZqtt7dswaR16rQBZx8TX7RtOfzsp2/Qjgc=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-14T21:22:09.905Z",
+        "username": "abdul.syed",
+        "gender": "",
+        "is_teacher": false,
+        "is_student": false,
+        "is_faculty": false,
+        "is_maintainer": false,
+        "is_employee": false,
+        "employee": null,
+        "CNIC": "",
+        "permanent_address": null,
+        "permanent_home_phone": null,
+        "permanent_postal_code": null,
+        "permanent_city": null,
+        "permanent_country": null,
+        "current_address": null,
+        "current_home_phone": null,
+        "current_postal_code": null,
+        "current_city": null,
+        "current_country": null,
+        "DOB": null,
+        "nationality": null,
+        "mobile_contact": null,
+        "emergency_contact": null,
+        "educational_history": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "actor.employeedesignation",
+    "pk": 1,
+    "fields": {
+        "designation_name": "Teacher"
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 27,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 28,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 29,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 30,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 31,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 32,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 33,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 34,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 35,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 36,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 37,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 38,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 39,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 40,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "actor.employee",
+    "pk": 41,
+    "fields": {
+        "hire_date": null,
+        "salary": null,
+        "employee_designation": [
+            1
+        ]
+    }
+},
+{
+    "model": "student_portal.student",
+    "pk": "17K-3650",
+    "fields": {
+        "user": [
+            "17K-3650"
+        ],
+        "batch": 2017,
+        "arn": 174750,
+        "degree_name_enrolled": "Bachelors of Computer Science",
+        "degree_short_enrolled": "BS(CS)",
+        "department_name_enrolled": "Computer Sciences",
+        "uni_mail": "K173650@nu.edu.pk",
+        "current_semester": 5,
+        "warning_count": 0,
+        "attending_semester": true,
+        "student_year": 3,
+        "admission_section": "E",
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "student_portal.student",
+    "pk": "17K-3654",
+    "fields": {
+        "user": [
+            "17K-3654"
+        ],
+        "batch": 2017,
+        "arn": 1783135,
+        "degree_name_enrolled": "Bachelors of Computer Science",
+        "degree_short_enrolled": "BS(CS)",
+        "department_name_enrolled": "Computer Sciences",
+        "uni_mail": "K173654@nu.edu.pk",
+        "current_semester": 5,
+        "warning_count": 0,
+        "attending_semester": true,
+        "student_year": 3,
+        "admission_section": "E",
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "student_portal.student",
+    "pk": "17K-3655",
+    "fields": {
+        "user": [
+            "17K-3655"
+        ],
+        "batch": 2017,
+        "arn": 1716469,
+        "degree_name_enrolled": "Bachelors of Computer Science",
+        "degree_short_enrolled": "BS(CS)",
+        "department_name_enrolled": "Computer Sciences",
+        "uni_mail": "K173655@nu.edu.pk",
+        "current_semester": 5,
+        "warning_count": 0,
+        "attending_semester": true,
+        "student_year": 3,
+        "admission_section": "E",
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "student_portal.student",
+    "pk": "17K-3755",
+    "fields": {
+        "user": [
+            "17K-3755"
+        ],
+        "batch": 2017,
+        "arn": 1774629,
+        "degree_name_enrolled": "Bachelors of Computer Science",
+        "degree_short_enrolled": "BS(CS)",
+        "department_name_enrolled": "Computer Sciences",
+        "uni_mail": "K173755@nu.edu.pk",
+        "current_semester": 5,
+        "warning_count": 0,
+        "attending_semester": true,
+        "student_year": 3,
+        "admission_section": "E",
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "student_portal.student",
+    "pk": "17K-3795",
+    "fields": {
+        "user": [
+            "17K-3795"
+        ],
+        "batch": 2017,
+        "arn": 1745387,
+        "degree_name_enrolled": "Bachelors of Computer Science",
+        "degree_short_enrolled": "BS(CS)",
+        "department_name_enrolled": "Computer Sciences",
+        "uni_mail": "K173795@nu.edu.pk",
+        "current_semester": 5,
+        "warning_count": 0,
+        "attending_semester": true,
+        "student_year": 3,
+        "admission_section": "E",
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 17,
+    "fields": {
+        "user": [
+            "Zulfiqar.Ali.Memon"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Zulfiqar.Ali.Memon@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 18,
+    "fields": {
+        "user": [
+            "Anum.Qureshi"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Anum.Qureshi@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 19,
+    "fields": {
+        "user": [
+            "Tania.Irum"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Tania.Irum@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 20,
+    "fields": {
+        "user": [
+            "Ammara.Yaseen"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Ammara.Yaseen@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 21,
+    "fields": {
+        "user": [
+            "Mohammad.Faheem"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Mohammad.Faheem@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 22,
+    "fields": {
+        "user": [
+            "Abdul.Rehman"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Abdul.Rehman@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 23,
+    "fields": {
+        "user": [
+            "Javeria.Farooq"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Javeria.Farooq@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 24,
+    "fields": {
+        "user": [
+            "Syeda.Rubab.Jaffar"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Syeda.Rubab.Jaffar@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 25,
+    "fields": {
+        "user": [
+            "M.Nadeem"
+        ],
+        "highest_qualification": null,
+        "nu_email": "M.Nadeem@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 26,
+    "fields": {
+        "user": [
+            "Hamza.Ahmed"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Hamza.Ahmed@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 27,
+    "fields": {
+        "user": [
+            "Atif.Tahir"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Atif.Tahir@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 28,
+    "fields": {
+        "user": [
+            "Zeshan.Khan"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Zeshan.Khan@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 29,
+    "fields": {
+        "user": [
+            "M.Waqas"
+        ],
+        "highest_qualification": null,
+        "nu_email": "M.Waqas@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 30,
+    "fields": {
+        "user": [
+            "Hasina.Khatoon"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Hasina.Khatoon@nu.edu.pk"
+    }
+},
+{
+    "model": "teacher_portal.teacher",
+    "pk": 31,
+    "fields": {
+        "user": [
+            "Hassan.Jamil.Syed"
+        ],
+        "highest_qualification": null,
+        "nu_email": "Hassan.Jamil.Syed@nu.edu.pk"
+    }
+},
+{
+    "model": "faculty_portal.faculty",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "abdul.syed"
+        ]
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL101",
+    "fields": {
+        "course_name": "Introduction to Computing Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL102",
+    "fields": {
+        "course_name": "Engineering Surveying - Lab",
+        "course_short": "",
+        "credit_hour": 2,
+        "course_type": 3,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL103",
+    "fields": {
+        "course_name": "Computer Programming Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL104",
+    "fields": {
+        "course_name": "Engineering Drawing - Lab",
+        "course_short": "",
+        "credit_hour": 2,
+        "course_type": 3,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL117",
+    "fields": {
+        "course_name": "Intro to Info. and Comm. Technologies",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL118",
+    "fields": {
+        "course_name": "Programming Fundamentals - Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL203",
+    "fields": {
+        "course_name": "Database Systems Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL205",
+    "fields": {
+        "course_name": "Operating Systems Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL218",
+    "fields": {
+        "course_name": "Data Structures - Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL307",
+    "fields": {
+        "course_name": "Computer Networks Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL309",
+    "fields": {
+        "course_name": "Object Oriented Analysis and Design Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CL323",
+    "fields": {
+        "course_name": "Computer Networks Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS101",
+    "fields": {
+        "course_name": "Introduction to Computing",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS103",
+    "fields": {
+        "course_name": "Computer Programming",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS118",
+    "fields": {
+        "course_name": "Programming Fundamentals",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS201",
+    "fields": {
+        "course_name": "Data Structures",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS203",
+    "fields": {
+        "course_name": "Database Systems",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS205",
+    "fields": {
+        "course_name": "Operating Systems",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS209",
+    "fields": {
+        "course_name": "Computer Programming and Data Structures",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 3,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS211",
+    "fields": {
+        "course_name": "Discrete Structures",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS212",
+    "fields": {
+        "course_name": "Fundamentals of Operating System",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 3,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS218",
+    "fields": {
+        "course_name": "Data Structures",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS301",
+    "fields": {
+        "course_name": "Theory of Automata",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS302",
+    "fields": {
+        "course_name": "Design and Analysis of Algorithms",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS303",
+    "fields": {
+        "course_name": "Software Engineering",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS307",
+    "fields": {
+        "course_name": "Computer Networks",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS309",
+    "fields": {
+        "course_name": "Object Oriented Analysis and Design",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS317",
+    "fields": {
+        "course_name": "Information Retrieval",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS323",
+    "fields": {
+        "course_name": "Computer Networks",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS401",
+    "fields": {
+        "course_name": "Artificial Intelligence",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS406",
+    "fields": {
+        "course_name": "Web Programming",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS408",
+    "fields": {
+        "course_name": "Data Warehousing",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS409",
+    "fields": {
+        "course_name": "Data Warehousing and Data Mining",
+        "course_short": "",
+        "credit_hour": 4,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS413",
+    "fields": {
+        "course_name": "Remote Sensing and GIS",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS418",
+    "fields": {
+        "course_name": "Computer Graphics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS422",
+    "fields": {
+        "course_name": "Human Computer Interaction",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS429",
+    "fields": {
+        "course_name": "Data Mining",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS433",
+    "fields": {
+        "course_name": "Advanced Programming",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS440",
+    "fields": {
+        "course_name": "Software for Mobile Devices",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS449",
+    "fields": {
+        "course_name": "Professional Issues in IT",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS460",
+    "fields": {
+        "course_name": "Introduction to Bioinformatics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS491",
+    "fields": {
+        "course_name": "Project - I",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS492",
+    "fields": {
+        "course_name": "Project - II",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS495",
+    "fields": {
+        "course_name": "Fundamentals of Computer Vision",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "CS531",
+    "fields": {
+        "course_name": "Machine Learning",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE117",
+    "fields": {
+        "course_name": "Applied Physics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE182",
+    "fields": {
+        "course_name": "Basic Electronics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE204",
+    "fields": {
+        "course_name": "Computer Architecture",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE213",
+    "fields": {
+        "course_name": "Comp. Organization and Assembly Lang.",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE227",
+    "fields": {
+        "course_name": "Digital Logic Design",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EE402",
+    "fields": {
+        "course_name": "Digital Image Processing",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EL213",
+    "fields": {
+        "course_name": "Comp. Organization and Assembly Lang. Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "EL227",
+    "fields": {
+        "course_name": "Digital Logic Design - Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG101",
+    "fields": {
+        "course_name": "Fundamentals of Management",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG103",
+    "fields": {
+        "course_name": "Finance and Accounting",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG108",
+    "fields": {
+        "course_name": "Fundamentals of Accounting",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG110",
+    "fields": {
+        "course_name": "Principles of Marketing",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG211",
+    "fields": {
+        "course_name": "Total Quality Management",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG220",
+    "fields": {
+        "course_name": "Marketing Management",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG223",
+    "fields": {
+        "course_name": "Fundamentals of Management",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG407",
+    "fields": {
+        "course_name": "International HR Management",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MG414",
+    "fields": {
+        "course_name": "Entrepreneurship",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT101",
+    "fields": {
+        "course_name": "Calculus - I",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT104",
+    "fields": {
+        "course_name": "Linear Algebra",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT115",
+    "fields": {
+        "course_name": "Calculus - II",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT119",
+    "fields": {
+        "course_name": "Calculus and Analytical Geometry",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT203",
+    "fields": {
+        "course_name": "Differential Equations",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT206",
+    "fields": {
+        "course_name": "Probability and Statistics",
+        "course_short": "",
+        "credit_hour": 4,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT207",
+    "fields": {
+        "course_name": "Numerical Methods",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "MT303",
+    "fields": {
+        "course_name": "Operations Research",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SL101",
+    "fields": {
+        "course_name": "English Language Lab",
+        "course_short": "",
+        "credit_hour": 1,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS101",
+    "fields": {
+        "course_name": "English Language",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS103",
+    "fields": {
+        "course_name": "Arabic Language",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS104",
+    "fields": {
+        "course_name": "French Language",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS108",
+    "fields": {
+        "course_name": "Technical and Business Writing",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS111",
+    "fields": {
+        "course_name": "Islamic and Religious Studies",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS113",
+    "fields": {
+        "course_name": "Pakistan Studies",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS114",
+    "fields": {
+        "course_name": "Human Ethics and Behavior",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS118",
+    "fields": {
+        "course_name": "Psychology",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS122",
+    "fields": {
+        "course_name": "English Composition",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS127",
+    "fields": {
+        "course_name": "Sociology",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS135",
+    "fields": {
+        "course_name": "Micro Economics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS141",
+    "fields": {
+        "course_name": "Technical and Business Writing",
+        "course_short": "",
+        "credit_hour": 4,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS150",
+    "fields": {
+        "course_name": "English Composition and Comprehension",
+        "course_short": "",
+        "credit_hour": 2,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS203",
+    "fields": {
+        "course_name": "Professional Ethics",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 1,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS204",
+    "fields": {
+        "course_name": "International Relations",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS206",
+    "fields": {
+        "course_name": "Organizational Behavior",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS207",
+    "fields": {
+        "course_name": "Philosophy",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS217",
+    "fields": {
+        "course_name": "Mass Communication",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS220",
+    "fields": {
+        "course_name": "Modern Politics and Government",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS230",
+    "fields": {
+        "course_name": "German Language",
+        "course_short": "",
+        "credit_hour": 2,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.course",
+    "pk": "SS403",
+    "fields": {
+        "course_name": "Chinese Language",
+        "course_short": "",
+        "credit_hour": 3,
+        "course_type": 2,
+        "pre_requisites": []
+    }
+},
+{
+    "model": "initial.semester",
+    "pk": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+    "fields": {
+        "department": 1,
+        "semester_season": 1,
+        "semester_year": 2019,
+        "start_date": "2019-08-01",
+        "end_date": "2019-12-31",
+        "degree_short": "BS(CS)",
+        "teachers_available": [
+            31,
+            30,
+            28,
+            27,
+            26,
+            25,
+            24,
+            23,
+            22,
+            21,
+            20,
+            19,
+            18
+        ],
+        "students_registered": [
+            "17K-3755",
+            "17K-3655",
+            "17K-3654",
+            "17K-3650"
+        ],
+        "regular_course_load": [
+            1
+        ],
+        "elective_course_load": [
+            1
+        ]
+    }
+},
+{
+    "model": "initial.studentinfosection",
+    "pk": 4,
+    "fields": {
+        "student": "17K-3654",
+        "attendance_sheet": 18,
+        "mark_sheet": 15
+    }
+},
+{
+    "model": "initial.studentinfosection",
+    "pk": 5,
+    "fields": {
+        "student": "17K-3654",
+        "attendance_sheet": 19,
+        "mark_sheet": 16
+    }
+},
+{
+    "model": "initial.studentinfosection",
+    "pk": 6,
+    "fields": {
+        "student": "17K-3650",
+        "attendance_sheet": 20,
+        "mark_sheet": 17
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 31,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "scsddc": "A_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 32,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "scsddc": "B_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 33,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "scsddc": "C_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 34,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "scsddc": "D_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 35,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "scsddc": "E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 26,
+        "section_name": "E",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": [
+            4
+        ]
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 36,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "scsddc": "A_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 37,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "scsddc": "B_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 38,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "scsddc": "C_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 39,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "scsddc": "D_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 40,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 37,
+        "section_name": "E",
+        "teacher": 22,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 41,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "scsddc": "A_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 42,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "scsddc": "B_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 43,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "scsddc": "C_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 44,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "scsddc": "D_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 45,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "scsddc": "E_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 37,
+        "section_name": "E",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 46,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "scsddc": "A_CS203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 47,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "scsddc": "B_CS203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 48,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "scsddc": "C_CS203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 49,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "scsddc": "D_CS203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 50,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "scsddc": "E_CS203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "E",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 51,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "scsddc": "A_CL309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 52,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "scsddc": "B_CL309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 53,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "scsddc": "C_CL309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 54,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "scsddc": "D_CL309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 55,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "scsddc": "E_CL309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "E",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 56,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "scsddc": "A_CL203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "A",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 57,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "scsddc": "B_CL203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "B",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 58,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "scsddc": "C_CL203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "C",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 59,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "scsddc": "D_CL203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "D",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.coursesection",
+    "pk": 60,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "scsddc": "E_CL203_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section_seats": 40,
+        "section_name": "E",
+        "teacher": null,
+        "average": null,
+        "standard_devition": null,
+        "minimum": null,
+        "maximum": null,
+        "student_info": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 8,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "EE204",
+        "CSDDC": null,
+        "course": "EE204",
+        "course_coordinator": null,
+        "sections": [
+            31,
+            32,
+            33,
+            34,
+            35
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 9,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS309",
+        "CSDDC": null,
+        "course": "CS309",
+        "course_coordinator": null,
+        "sections": [
+            36,
+            37,
+            38,
+            39,
+            40
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 10,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS302",
+        "CSDDC": null,
+        "course": "CS302",
+        "course_coordinator": null,
+        "sections": [
+            41,
+            42,
+            43,
+            44,
+            45
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 11,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CS203",
+        "CSDDC": null,
+        "course": "CS203",
+        "course_coordinator": null,
+        "sections": [
+            46,
+            47,
+            48,
+            49,
+            50
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 12,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL309",
+        "CSDDC": null,
+        "course": "CL309",
+        "course_coordinator": null,
+        "sections": [
+            51,
+            52,
+            53,
+            54,
+            55
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.courseclass",
+    "pk": 13,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "course_code": "CL203",
+        "CSDDC": null,
+        "course": "CL203",
+        "course_coordinator": null,
+        "sections": [
+            56,
+            57,
+            58,
+            59,
+            60
+        ],
+        "teachers": []
+    }
+},
+{
+    "model": "initial.sectionattendance",
+    "pk": 20,
+    "fields": {
+        "class_date": "2019-11-27",
+        "attendance_slot": "1",
+        "attendance_time_start": "03:10:40.528",
+        "attendance_interval_allowed": 30,
+        "qr_change_interval": 1800,
+        "duration_hour": 1,
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section": "E"
+    }
+},
+{
+    "model": "initial.studentattendance",
+    "pk": 6,
+    "fields": {
+        "student": "17K-3654",
+        "class_date": "2019-11-27",
+        "attendance_slot": "1",
+        "state": "P",
+        "attendance_marked_time": null,
+        "duration_hour": 1,
+        "attendance_type": "M",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section": "E"
+    }
+},
+{
+    "model": "initial.studentattendance",
+    "pk": 7,
+    "fields": {
+        "student": "17K-3650",
+        "class_date": "2019-11-27",
+        "attendance_slot": "1",
+        "state": "A",
+        "attendance_marked_time": null,
+        "duration_hour": 1,
+        "attendance_type": "M",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "section": "E"
+    }
+},
+{
+    "model": "initial.attendancesheet",
+    "pk": 18,
+    "fields": {
+        "student": "17K-3654",
+        "scsddc": "E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "attendance": []
+    }
+},
+{
+    "model": "initial.attendancesheet",
+    "pk": 19,
+    "fields": {
+        "student": "17K-3654",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "attendance": [
+            6
+        ]
+    }
+},
+{
+    "model": "initial.attendancesheet",
+    "pk": 20,
+    "fields": {
+        "student": "17K-3650",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "attendance": [
+            7
+        ]
+    }
+},
+{
+    "model": "initial.marksheet",
+    "pk": 15,
+    "fields": {
+        "student": "17K-3654",
+        "scsddc": "E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "grand_total_marks": null,
+        "Marks": []
+    }
+},
+{
+    "model": "initial.marksheet",
+    "pk": 16,
+    "fields": {
+        "student": "17K-3654",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "grand_total_marks": null,
+        "Marks": []
+    }
+},
+{
+    "model": "initial.marksheet",
+    "pk": 17,
+    "fields": {
+        "student": "17K-3650",
+        "scsddc": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "grand_total_marks": null,
+        "Marks": []
+    }
+},
+{
+    "model": "initial.regularcorecourseload",
+    "pk": 1,
+    "fields": {
+        "semester_season": 1,
+        "degree": "BS(CS)",
+        "credit_hour_limit": 19,
+        "student_year": 3,
+        "courses": [
+            "EE204",
+            "CS309",
+            "CS302",
+            "CS203",
+            "CL309",
+            "CL203"
+        ]
+    }
+},
+{
+    "model": "initial.regularelectivecourseload",
+    "pk": 1,
+    "fields": {
+        "semester_season": 1,
+        "student_year": 3,
+        "courses": [
+            "MG223",
+            "MG220"
+        ]
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 111,
+    "fields": {
+        "course": "EE204",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 112,
+    "fields": {
+        "course": "CS309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 113,
+    "fields": {
+        "course": "CS302",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 114,
+    "fields": {
+        "course": "CS203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 115,
+    "fields": {
+        "course": "CL309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 116,
+    "fields": {
+        "course": "CL203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 117,
+    "fields": {
+        "course": "EE204",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 118,
+    "fields": {
+        "course": "CS309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 119,
+    "fields": {
+        "course": "CS302",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 120,
+    "fields": {
+        "course": "CS203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 121,
+    "fields": {
+        "course": "CL309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 122,
+    "fields": {
+        "course": "CL203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 123,
+    "fields": {
+        "course": "EE204",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 124,
+    "fields": {
+        "course": "CS309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 125,
+    "fields": {
+        "course": "CS302",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 126,
+    "fields": {
+        "course": "CS203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 127,
+    "fields": {
+        "course": "CL309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 128,
+    "fields": {
+        "course": "CL203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 129,
+    "fields": {
+        "course": "EE204",
+        "status": "R",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 130,
+    "fields": {
+        "course": "CS309",
+        "status": "R",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 131,
+    "fields": {
+        "course": "CS302",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 132,
+    "fields": {
+        "course": "CS203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 133,
+    "fields": {
+        "course": "CL309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 134,
+    "fields": {
+        "course": "CL203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 135,
+    "fields": {
+        "course": "EE204",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 136,
+    "fields": {
+        "course": "CS309",
+        "status": "R",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 137,
+    "fields": {
+        "course": "CS302",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 138,
+    "fields": {
+        "course": "CS203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 139,
+    "fields": {
+        "course": "CL309",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 140,
+    "fields": {
+        "course": "CL203",
+        "status": "NR",
+        "section": "E",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 141,
+    "fields": {
+        "course": "MG223",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 142,
+    "fields": {
+        "course": "MG220",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 143,
+    "fields": {
+        "course": "MG223",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 144,
+    "fields": {
+        "course": "MG220",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 145,
+    "fields": {
+        "course": "MG223",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 146,
+    "fields": {
+        "course": "MG220",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 147,
+    "fields": {
+        "course": "MG223",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 148,
+    "fields": {
+        "course": "MG220",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 149,
+    "fields": {
+        "course": "MG223",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.coursestatus",
+    "pk": 150,
+    "fields": {
+        "course": "MG220",
+        "status": "NR",
+        "section": "GR1",
+        "one_time_field": false
+    }
+},
+{
+    "model": "initial.offeredcourses",
+    "pk": 17,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "student": "17K-3795",
+        "courses_offered": [
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            141,
+            142
+        ]
+    }
+},
+{
+    "model": "initial.offeredcourses",
+    "pk": 18,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "student": "17K-3755",
+        "courses_offered": [
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            143,
+            144
+        ]
+    }
+},
+{
+    "model": "initial.offeredcourses",
+    "pk": 19,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "student": "17K-3655",
+        "courses_offered": [
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            145,
+            146
+        ]
+    }
+},
+{
+    "model": "initial.offeredcourses",
+    "pk": 20,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "student": "17K-3654",
+        "courses_offered": [
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            147,
+            148
+        ]
+    }
+},
+{
+    "model": "initial.offeredcourses",
+    "pk": 21,
+    "fields": {
+        "semester_code": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "student": "17K-3650",
+        "courses_offered": [
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            149,
+            150
+        ]
+    }
+},
+{
+    "model": "institution.university",
+    "pk": 101101,
+    "fields": {
+        "name": "National University of Computing and Emerging Sciences"
+    }
+},
+{
+    "model": "institution.campus",
+    "pk": 1,
+    "fields": {
+        "uni_name": 101101,
+        "campus_address": "St-4 Sector 17-D On National Highway Karachi , Pakistan",
+        "campus_name": "MAIN CAMPUS",
+        "campus_city": "Karachi",
+        "contact_no": 9221341005416,
+        "contact_email": "info@nu.edu.pk",
+        "campus_country": "Pakistan"
+    }
+},
+{
+    "model": "institution.department",
+    "pk": 1,
+    "fields": {
+        "campus": 1,
+        "department_name": "Computer Sciences",
+        "department_hod": [
+            "Atif.Tahir"
+        ],
+        "department_teachers": [
+            30,
+            29,
+            28,
+            26,
+            25,
+            24,
+            23,
+            22
+        ],
+        "department_students": [
+            "17K-3755",
+            "17K-3655",
+            "17K-3654",
+            "17K-3650"
+        ],
+        "department_faculty": [
+            1
+        ]
+    }
+},
+{
+    "model": "institution.degree",
+    "pk": "BS(CS)",
+    "fields": {
+        "offering_department": 1,
+        "minimium_years_education": 12,
+        "completion_year": 16,
+        "duration": 4,
+        "education_level": "Bachelors",
+        "degree_name": "Computer Science",
+        "registrations_open": true,
+        "registration_semester": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi"
+    }
+},
+{
+    "model": "institution.degree",
+    "pk": "BS(EE)",
+    "fields": {
+        "offering_department": 1,
+        "minimium_years_education": 12,
+        "completion_year": 16,
+        "duration": 4,
+        "education_level": "Bachelors",
+        "degree_name": "Electrical Engineering",
+        "registrations_open": false,
+        "registration_semester": null
+    }
+},
+{
+    "model": "institution.batchsection",
+    "pk": 1,
+    "fields": {
+        "sec_batch": "2017-E",
+        "batch": "2017",
+        "section": "E",
+        "limit": 40,
+        "students": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2019-11-09T10:23:31.233Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "3754",
+        "object_repr": "nadeem.kafi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2019-11-09T10:26:02.329Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "teacher_portal",
+            "teacher"
+        ],
+        "object_id": "1",
+        "object_repr": "nadeem.kafi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2019-11-09T11:49:45.134Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "campus"
+        ],
+        "object_id": "2",
+        "object_repr": "MAIN CAMPUS Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2019-11-09T11:51:09.367Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "campus"
+        ],
+        "object_id": "4",
+        "object_repr": "MAIN CAMPUS Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2019-11-09T11:51:09.501Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "campus"
+        ],
+        "object_id": "3",
+        "object_repr": "MAIN CAMPUS Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2019-11-09T11:53:12.466Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "department"
+        ],
+        "object_id": "1",
+        "object_repr": "Computer Science(MAIN CAMPUS)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2019-11-09T11:55:03.589Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "CS",
+        "object_repr": "Computer Science(XS) CS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2019-11-09T11:55:11.231Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "CS",
+        "object_repr": "Computer Science(CS) CS",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"degree_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2019-11-09T11:55:18.798Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "CS",
+        "object_repr": "Computer Science CS",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"degree_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2019-11-09T12:25:30.455Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019",
+        "object_repr": "Semester object (FALL2019)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2019-11-11T08:23:46.485Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "department"
+        ],
+        "object_id": "1",
+        "object_repr": "Computer Science(MAIN CAMPUS)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2019-11-11T18:38:56.810Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "department"
+        ],
+        "object_id": "1",
+        "object_repr": "Computer Science(MAIN CAMPUS)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2019-11-12T19:52:28.537Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BS(CS)",
+        "object_repr": "Computer Science BS(CS)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"offering_department\", \"degree_short\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2019-11-12T19:53:01.387Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "CS",
+        "object_repr": "Computer Science CS",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2019-11-12T19:53:04.535Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BS(CS)",
+        "object_repr": "Computer Science BS(CS)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2019-11-12T19:53:10.745Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BS(EE)",
+        "object_repr": "Electrical Engineering BS(EE)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2019-11-12T19:54:11.326Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BBA",
+        "object_repr": "Business Administration BBA",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2019-11-13T09:47:28.320Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4159",
+        "object_repr": "",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2019-11-13T09:49:25.182Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4160",
+        "object_repr": "",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2019-11-13T09:50:51.357Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4161",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2019-11-13T10:01:32.929Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4162",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2019-11-13T10:06:22.615Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4163",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2019-11-13T10:06:56.675Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4164",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2019-11-13T10:08:23.887Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4165",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2019-11-13T10:14:42.888Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4166",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2019-11-13T10:24:23.779Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4159",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2019-11-13T11:00:36.303Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "2",
+        "object_repr": "[] ,ENo: 2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2019-11-13T11:00:36.435Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "1",
+        "object_repr": "[] ,ENo: 1",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2019-11-13T11:05:44.385Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4160",
+        "object_repr": "atif.tahir",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2019-11-13T11:33:38.851Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "3754",
+        "object_repr": "nadeem.kafi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2019-11-13T11:54:24.360Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4171",
+        "object_repr": "Zulfiqar.Ali.Memon",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2019-11-13T11:56:19.724Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4172",
+        "object_repr": "Zulfiqar.Ali.Memon",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2019-11-13T11:59:00.030Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "3",
+        "object_repr": "  ENo: 3, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2019-11-13T12:00:56.607Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "26",
+        "object_repr": "  ENo: 26, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2019-11-13T12:00:56.771Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "25",
+        "object_repr": "  ENo: 25, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2019-11-13T12:00:56.898Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "24",
+        "object_repr": "  ENo: 24, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.022Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "23",
+        "object_repr": "  ENo: 23, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.138Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "22",
+        "object_repr": "  ENo: 22, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.290Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "21",
+        "object_repr": "  ENo: 21, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.430Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "20",
+        "object_repr": "  ENo: 20, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.581Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "19",
+        "object_repr": "  ENo: 19, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.713Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "18",
+        "object_repr": "  ENo: 18, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2019-11-13T12:00:57.893Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "17",
+        "object_repr": "  ENo: 17, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.137Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "16",
+        "object_repr": "  ENo: 16, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.312Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "15",
+        "object_repr": "  ENo: 15, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.464Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "14",
+        "object_repr": "  ENo: 14, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.588Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "13",
+        "object_repr": "  ENo: 13, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.704Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "12",
+        "object_repr": "  ENo: 12, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.812Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "11",
+        "object_repr": "  ENo: 11, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2019-11-13T12:00:58.932Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "10",
+        "object_repr": "  ENo: 10, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.055Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "9",
+        "object_repr": "  ENo: 9, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.195Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "8",
+        "object_repr": "  ENo: 8, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.339Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "7",
+        "object_repr": "  ENo: 7, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.487Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "6",
+        "object_repr": "  ENo: 6, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.647Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "5",
+        "object_repr": "  ENo: 5, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2019-11-13T12:00:59.782Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "employee"
+        ],
+        "object_id": "4",
+        "object_repr": "  ENo: 4, Designations :Teacher",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2019-11-13T16:35:38.780Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularcorecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "FALL-JUNIOR",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2019-11-13T16:36:03.976Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularelectivecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "RegularElectiveCourseLoad object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2019-11-13T16:43:22.360Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019_BS(CS)_MainCampus_Karachi",
+        "object_repr": "Semester object (FALL2019_BS(CS)_MainCampus_Karachi)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2019-11-14T21:22:09.987Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "actor",
+            "user"
+        ],
+        "object_id": "4203",
+        "object_repr": "abdul.syed",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2019-11-14T21:22:11.353Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "faculty_portal",
+            "faculty"
+        ],
+        "object_id": "1",
+        "object_repr": "Faculty object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2019-11-14T21:23:59.215Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "department"
+        ],
+        "object_id": "1",
+        "object_repr": "Computer Sciences(MAIN CAMPUS)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"department_hod\", \"department_teachers\", \"department_students\", \"department_faculty\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2019-11-14T21:43:18.462Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BS(CS)",
+        "object_repr": "Computer Science BS(CS)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"registrations_open\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2019-11-15T03:51:00.536Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "institution",
+            "degree"
+        ],
+        "object_id": "BS(CS)",
+        "object_repr": "Computer Science BS(CS)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"registration_semester\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2019-11-15T04:04:50.727Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019_BS(CS)_MainCampus_Karachi",
+        "object_repr": "FALL2019_BS(CS)_MainCampus_Karachi",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"degree_short\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2019-11-19T04:48:46.782Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019_BS(CS)_MainCampus_Karachi",
+        "object_repr": "FALL2019_BS(CS)_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2019-11-19T04:49:20.190Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "object_repr": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2019-11-22T12:03:55.848Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "semester"
+        ],
+        "object_id": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "object_repr": "FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"teachers_available\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2019-11-22T22:45:01.479Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularelectivecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "Electives : FALL-JUNIOR",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"courses\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2019-11-22T23:11:59.771Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularcorecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "FALL-JUNIOR",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"courses\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2019-11-22T23:13:36.060Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularelectivecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "Electives : FALL-JUNIOR",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"courses\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2019-11-23T02:24:35.472Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "regularcorecourseload"
+        ],
+        "object_id": "1",
+        "object_repr": "FALL-JUNIOR",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"courses\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2019-11-24T17:34:04.110Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "9",
+        "object_repr": "17K-3654_E_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2019-11-24T17:34:41.631Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "marksheet"
+        ],
+        "object_id": "7",
+        "object_repr": "17K-3654_E_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2019-11-24T17:34:49.814Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "10",
+        "object_repr": "17K-3654_E_CS302_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2019-11-24T17:48:04.564Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "coursesection"
+        ],
+        "object_id": "40",
+        "object_repr": "E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"teacher\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2019-11-25T07:37:56.424Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "1",
+        "object_repr": "2019-11-25_1_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2019-11-25T08:10:26.069Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "5",
+        "object_repr": "2019-11-25_2_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2019-11-25T08:10:26.084Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "4",
+        "object_repr": "2019-11-25_4_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2019-11-25T08:10:26.104Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "3",
+        "object_repr": "2019-11-25_3_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2019-11-25T08:10:26.123Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "2",
+        "object_repr": "2019-11-25__E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2019-11-25T08:13:28.658Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "7",
+        "object_repr": "2019-11-25_7_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2019-11-25T08:13:28.680Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "6",
+        "object_repr": "2019-11-25_3_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2019-11-26T19:41:41.425Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "11",
+        "object_repr": "2019-11-27_2_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+        "action_time": "2019-11-26T19:41:41.666Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "10",
+        "object_repr": "2019-11-27_1_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+        "action_time": "2019-11-26T19:41:41.919Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "9",
+        "object_repr": "2019-11-25_8_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+        "action_time": "2019-11-26T19:41:42.116Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "8",
+        "object_repr": "2019-11-25_1_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+        "action_time": "2019-11-26T20:58:13.303Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "14",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+        "action_time": "2019-11-26T20:58:22.397Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "marksheet"
+        ],
+        "object_id": "11",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+        "action_time": "2019-11-26T21:06:52.715Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentinfosection"
+        ],
+        "object_id": "1",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+        "action_time": "2019-11-26T21:07:20.691Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "marksheet"
+        ],
+        "object_id": "12",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+        "action_time": "2019-11-26T21:07:25.982Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "15",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+        "action_time": "2019-11-26T21:10:44.288Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "16",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+        "action_time": "2019-11-26T21:11:00.595Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "marksheet"
+        ],
+        "object_id": "13",
+        "object_repr": "17K-3654_E_EE204_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+        "action_time": "2019-11-26T22:10:08.741Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "19",
+        "object_repr": "2019-11-27_3_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+        "action_time": "2019-11-26T22:10:08.893Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "18",
+        "object_repr": "2019-11-27_4_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.042Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "17",
+        "object_repr": "2019-11-27_5_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.193Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "16",
+        "object_repr": "2019-11-27_6_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.369Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "15",
+        "object_repr": "2019-11-27_7_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.536Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "14",
+        "object_repr": "2019-11-27_8_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.694Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "13",
+        "object_repr": "2019-11-27_2_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2019-11-26T22:10:09.868Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "sectionattendance"
+        ],
+        "object_id": "12",
+        "object_repr": "2019-11-27_1_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2019-11-26T22:10:23.769Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "19",
+        "object_repr": "17K-3654_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"attendance\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2019-11-26T22:10:27.825Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "attendancesheet"
+        ],
+        "object_id": "20",
+        "object_repr": "17K-3650_E_CS309_FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"attendance\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+        "action_time": "2019-11-26T22:11:51.217Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentattendance"
+        ],
+        "object_id": "5",
+        "object_repr": "17K-3650_2019-11-27_3",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+        "action_time": "2019-11-26T22:11:51.439Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentattendance"
+        ],
+        "object_id": "4",
+        "object_repr": "17K-3654_2019-11-27_3",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+        "action_time": "2019-11-26T22:11:51.563Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentattendance"
+        ],
+        "object_id": "3",
+        "object_repr": "17K-3650_2019-11-27_4",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+        "action_time": "2019-11-26T22:11:51.697Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentattendance"
+        ],
+        "object_id": "2",
+        "object_repr": "17K-3654_2019-11-27_4",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+        "action_time": "2019-11-26T22:11:51.814Z",
+        "user": [
+            "admin11196"
+        ],
+        "content_type": [
+            "initial",
+            "studentattendance"
+        ],
+        "object_id": "1",
+        "object_repr": "17K-3654_2019-11-27_5",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}
+]
