@@ -1,3 +1,43 @@
+# QRSMS-V1.50
+
+> **The Big Update is here.**
+
+For Course API:
+course_type =  1 refers to Core Course.
+course_type =  2 refers to Core Elective.
+course_type =  3 refers to Core Elective(X).
+
+Djnago Signals would certainly improve efficiency and reliability, but due to time constraints we resort to some very promiscuous functions such as 
+
+    Semesterinstance.make_semeter() 
+    Semesterinstance.pre_offer()
+    CourseStatusinstance.save() # Over-ridden Method
+
+After 1 hour:
+I ended up setting up signals for attendance and marks tables generation. :P 
+signals.py holds all the signals.
+
+PostgreSQL Database Added, Use SQLite in development:
+To Dump Pre-existing Data:
+
+    python manage.py dumpdata --natural-foreign --exclude auth.permission --exclude contenttypes --indent 4 > dump2.json
+
+To Load json in DB:
+
+    python .\manage.py loaddata dump2.json
+
+
+**Links:** 
+Will check if dumpdata continues to fail me.
+[https://django-extensions.readthedocs.io/en/latest/dumpscript.html](https://django-extensions.readthedocs.io/en/latest/dumpscript.html)
+
+[https://django-configurations.readthedocs.io/en/latest/](https://django-configurations.readthedocs.io/en/latest/)
+
+[https://dev.to/coderasha/how-to-migrate-data-from-sqlite-to-postgresql-in-django-182h](https://dev.to/coderasha/how-to-migrate-data-from-sqlite-to-postgresql-in-django-182h)
+
+[https://tutorialinux.com/today-learned-migrating-sqlite-postgres-easy-sequel/](https://tutorialinux.com/today-learned-migrating-sqlite-postgres-easy-sequel/)
+
+
 # QRSMS-V1.49
 Actor.models holds CURRENT_SEMESTER and CURRENT_SEMESTER_CODE, necessary for registration into started semester. Will be updated to a Singleton Class.
 
