@@ -58,9 +58,13 @@ class BaseTeacherLoginView(View):
 
 
 class TeacherAttendanceView(BaseTeacherLoginView):
-    def get(self, request):
-        query = json.loads(request.body)
-        print('Request From : ' + str(request.user))
+    def post(self, request):
+        try:
+            query = json.loads(request.body)
+            print('Request From : ' + str(request.user))
+        except json.JSONDecodeError as err:
+            print(request.body)
+            return JsonResponse({'status': 'Failure', 'message': 'Inavlid JSON Object', 'conditon': False, 'error': str(err)})
         try:
             city = query['city']  # "city":"Karachi"
             campus = query['campus']  # "campus":"MainCampus",
