@@ -150,7 +150,10 @@ class CourseSection(models.Model):
     
     SCSDDC =  models.CharField(max_length=256, blank=True, null=True, name='scsddc')
 
-    section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40)
+    section_total_seats = models.PositiveIntegerField(blank=True, null=True, default = 40, help_text = 'Total Seats : Seats Left + students Registered')
+    section_seats = models.PositiveIntegerField(blank=True, null=True, default = 40, help_text = 'Seats Left')
+    
+    students_count = models.PositiveIntegerField(blank=True, null=True, default = True)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
     student_info = models.ManyToManyField('initial.StudentInfoSection', blank=True, null=True)
@@ -241,7 +244,7 @@ class StudentAttendance(models.Model):
     )
 
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    class_date = models.DateField()
+    class_date = models.DateField(name='class_date', blank=True, null=True)
     attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
     state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
     attendance_marked_time = models.TimeField(null=True, blank=True)
@@ -356,6 +359,7 @@ class CourseStatus(models.Model):
                     raise CourseSection.DoesNotExist
         if self.status == 'R':
                 course_section.section_seats = F('section_seats') - 1
+                course_section.students_count = F('students_count')  + 1
                 
                 print("Sending Signal")
                 info = student_info_section_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='create')
@@ -364,6 +368,7 @@ class CourseStatus(models.Model):
 
         elif self.status == 'NR':
             course_section.section_seats = F('section_seats') + 1
+            course_section.students_count = F('students_count')  - 1
             print("Sending Signal")
             info = student_info_section_for_student.send(sender = self, student = self.offeredcourses_set.get().student, course_section = course_section, option='delete')
             print(info)

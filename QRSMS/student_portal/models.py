@@ -53,7 +53,7 @@ class Student(models.Model):
 
 
     class Meta:
-        ordering = ('-pk',)
+        ordering = ('user',)
 
     def get_absolute_url(self):
         return reverse('initial_student_detail', args=(self.pk,))

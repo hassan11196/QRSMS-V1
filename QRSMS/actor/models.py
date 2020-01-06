@@ -84,6 +84,8 @@ class User(AbstractUser):
     educational_history = models.OneToOneField("actor.EducationalHistory", verbose_name="Educational Histories", on_delete=models.CASCADE, null=True)
 
     def __str__(self):
+        if self.is_student:
+            return self.first_name + " " + self.last_name
         return self.username
 
     def __init__(self, *args, **kwargs):
