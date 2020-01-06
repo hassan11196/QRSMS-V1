@@ -244,7 +244,7 @@ class StudentAttendance(models.Model):
     )
 
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    class_date = models.DateField()
+    class_date = models.DateField(name='class_date', blank=True, null=True)
     attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
     state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
     attendance_marked_time = models.TimeField(null=True, blank=True)

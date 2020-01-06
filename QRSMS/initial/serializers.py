@@ -2,6 +2,21 @@
 from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance
 from rest_framework import serializers
 from . import models
+from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
+
+
+class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = StudentAttendance
+        fields = ('url','class_date','attendance_slot','state','duration_hour')
+
+class StudentAttendanceSheetSerializerMinimized(serializers.HyperlinkedModelSerializer):
+    attendance = StudentAttendanceSerializerMinimized(many = True)
+    student = WrapperStudentSerializer('uid')
+    class Meta:
+        model = AttendanceSheet
+        fields = ('url','student', 'scsddc', 'attendance',)
 
 class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -9,9 +24,19 @@ class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class StudentInfoSectionSerializer(serializers.HyperlinkedModelSerializer):
+    
     class Meta:
         model = StudentInfoSection
         fields = '__all__'
+    
+
+class StudentInfoSectionModelSerializerGetAttendance(serializers.ModelSerializer):
+    student = StudentSerializerOnlyNameAndUid()
+    attendance_sheet = StudentAttendanceSheetSerializerMinimized()
+    class Meta:
+        model = StudentInfoSection
+        fields = '__all__'
+
 class SectionAttendanceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = SectionAttendance
@@ -28,7 +53,6 @@ class MarkSheetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MarkSheet
         fields = '__all__'
-    
 
 
 class AttendanceSheetSerializer(serializers.HyperlinkedModelSerializer):

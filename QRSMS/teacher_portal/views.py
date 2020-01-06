@@ -24,8 +24,7 @@ from .signals import attendance_of_day_for_student
 from django.db.utils import IntegrityError
 
 from initial.models import CourseSection, SectionAttendance
-from student_portal.serializers import StudentSerializerNameAndUid
-from initial.serializers import StudentInfoSectionSerializer, SectionAttendanceSerializer
+from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
 from .forms import TeacherForm
 from .models import Teacher
 
@@ -64,6 +63,7 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             print('Request From : ' + str(request.user))
         except json.JSONDecodeError as err:
             print(request.body)
+            print(request)
             return JsonResponse({'status': 'Failure', 'message': 'Inavlid JSON Object', 'conditon': False, 'error': str(err)})
         try:
             city = query['city']  # "city":"Karachi"
@@ -84,20 +84,15 @@ class TeacherAttendanceView(BaseTeacherLoginView):
         try:
             section_object = CourseSection.objects.get(
                 section_name=section, course_code=course_code, semester_code=sddc, teacher__user__username=str(request.user))
+
         except CourseSection.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
         
         
 
-        students =  StudentInfoSectionSerializer(section_object.student_info.all(), many=True, context={'request': Request(request)}).data
+        students =  StudentInfoSectionModelSerializerGetAttendance(section_object.student_info.all(), many=True, context={'request': Request(request)}).data
+        # print(students)
         
-        attendance_data = {
-            'campus_name': city,
-            'semester': semester_code,
-            'course_code': course_code,
-            'student_cnt':section_object.students_count,
-
-        }
         scsddc = section + '_' + course_code  +'_' + sddc
         try:
             attendance_list = SectionAttendance.objects.filter(scsddc = scsddc)
@@ -105,10 +100,22 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
         
         class_attendance = SectionAttendanceSerializer(attendance_list, many=True, context={'request': Request(request)}).data
-        print(attendance_list)
-        print(class_attendance)
+        print('Atteddance for this section : ' + str(len(attendance_list)))
+        print('Students in this Section : ' + str(len(students)))
+        # print(class_attendance)
 
-        return JsonResponse({'status': 'success', 'student_sheets': students, 'class_sheet':class_attendance})
+        attendance_data = {
+            'campus_name': city,
+            'semester': semester_code,
+            'course_code': course_code,
+            'student_cnt': len(students),
+            'attendance_cnt' : len(attendance_list),
+            'student_sheets': students,
+             'class_sheet': class_attendance
+
+        }
+
+        return JsonResponse({'status': 'success', 'attendance_data' : attendance_data})
 
 
 class AssignedSections(BaseTeacherLoginView):
