@@ -124,13 +124,9 @@ class AssignedSections(BaseTeacherLoginView):
             teacher__user__username=str(request.user))
         from rest_framework.request import Request
         from initial.serializers import CourseSectionSerializer
-<<<<<<< HEAD
-        serial_sections = CourseSectionSerializer(sections, many=True,  context = {'request': Request(request)}).data
-=======
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
                                                   'request': Request(request)}).data
 
->>>>>>> 4a2606120f96349ea98f8108f3d751b66c2dc958
         if sections is None or serial_sections is None:
             return JsonResponse({'message': 'Teacher has no assigned courses.', 'condition': True, 'sections': serial_sections}, status=200)
         else:
