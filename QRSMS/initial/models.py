@@ -50,6 +50,8 @@ class Course(models.Model):
 
 class Semester(models.Model):
 
+    
+
     department = models.ForeignKey('institution.Department', on_delete = models.SET_NULL, null=True)
     semester_code = models.CharField(max_length=255, primary_key=True , default='TEST2000')
     # offered_courses = models.ManyToManyField(
@@ -74,7 +76,8 @@ class Semester(models.Model):
     degree_short = models.CharField(max_length=30, null=True, blank = True)
     class Meta:
         unique_together = ('semester_season', 'semester_year')
-    
+        ordering = ['-semester_code']
+        
     def __str__(self):
         return self.semester_code
     
@@ -156,7 +159,7 @@ class CourseSection(models.Model):
     students_count = models.PositiveIntegerField(blank=True, null=True, default = True)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
-    student_info = models.ManyToManyField('initial.StudentInfoSection', blank=True, null=True)
+    student_info = models.ManyToManyField('initial.StudentInfoSection')
 
     teacher = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null =True)
     
