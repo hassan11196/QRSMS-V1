@@ -77,8 +77,14 @@ class PostAttendanceQR(BaseStudentLoginView):
         import json
         request_data =json.loads(request.POST['qr_code'])
         print(request_data)
-        att_object = StudentAttendance.objects.get(student = Student.objects.get(uid = str(request.user)), scsddc = request_data['scsddc'], class_date = request_data['class_date'], attendance_slot = request_data['attendance_slot'], section = request_data['section'])
-        
+        print(request.user)
+        try:
+            att_object = StudentAttendance.objects.get(student = Student.objects.get(uid = str(request.user)), scsddc = request_data['scsddc'], class_date = request_data['class_date'], attendance_slot = request_data['attendance_slot'], section = request_data['section'])
+        except StudentAttendance.DoesNotExist as e:
+            return JsonResponse({'message':'Student is not enrolled in this Class','condition':False}, status=400)
+
+        if att_object.state == 'P':
+            return JsonResponse({'message':'Attendance Already Marked','condition':True, }, status=200)
         att_object.state = 'P'
         att_object.save()
         from initial.serializers import StudentAttendanceSerializer
