@@ -18,13 +18,13 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.dispatch import receiver
 
-from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance
+from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance,SectionMarks,StudentMarks
 from .serializers import (TeacherSerializer)
-from .signals import attendance_of_day_for_student
+from .signals import attendance_of_day_for_student,marks_for_student
 from django.db.utils import IntegrityError
 
 from initial.models import CourseSection, SectionAttendance
-from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
+from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer,SectionMarksSerializer
 from .forms import TeacherForm
 from .models import Teacher
 
@@ -170,20 +170,58 @@ class StartSectionAttendance(BaseTeacherLoginView):
             return JsonResponse({'message': 'Attendance QR.', 'condition': True, 'qr_json': data}, status=200)
 
 
-@receiver(attendance_of_day_for_student)
-def generate_attendance_for_student(**kwargs):
+class AddSectionMarks(BaseTeacherLoginView):
+    def post(self, request):
+        req_scsddc = request.POST['scsddc']
+        marks_type = request.POST['marks_type']
+        total_marks = request.POST['total_marks']
+        weightage = request.POST['weightage']
+        section = request.POST['section']
+        if(marks_type is None or req_scsddc is None or section is None):
+            return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
+
+        from rest_framework.request import Request
+        from initial.serializers import SectionMarksSerializer
+        print(request.POST)
+
+        try:
+            sec_marks = SectionMarks(scsddc=req_scsddc, marks_type=marks_type, section=section, total_marks=total_marks, weightage=weightage)
+            sec_marks.save()
+            g = marks_for_student.send(
+                AddSectionMarks, scsddc=req_scsddc, coursesection=section, sectionmarks=sec_marks, option='create')
+            print(g)
+        except IntegrityError as e:
+            sec_att2 = SectionMarks.objects.get(
+                scsddc=req_scsddc, marks_type=marks_type, section=section)
+
+            data = SectionMarksSerializer(
+                sec_att2, context={'request': Request(request)}).data
+
+            return JsonResponse({'message': 'Maerks Already Added For This Class.', 'condition': True, 'qr_json': data}, status=200)
+
+        data = SectionMarksSerializer(
+            sec_marks, context={'request': Request(request)}).data
+
+        if sec_marks is None:
+            return JsonResponse({'message': 'Teacher has no assigned courses or Invalid scsddc.', 'condition': True, 'qr_json': data}, status=200)
+        else:
+            return JsonResponse({'message': 'Marks Open For This Section.', 'condition': True, 'qr_json': data}, status=200)
+
+
+@receiver(marks_for_student)
+def generate_marks_for_student(**kwargs):
     if kwargs['option'] == 'create':
-        print('Received Signal For Creation Attendance of Day for student')
+        print('Received Signal For Creation Marks of Day for student')
         SCSDDC_temp = str(kwargs['scsddc'])
-        section_attendance = kwargs['sectionattendance']
+        section_marks = kwargs['sectionamarks']
         section = kwargs['coursesection']
         csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
         for student_info in csection.student_info.all():
-            new_a = StudentAttendance(attendance_type='M', state='A', scsddc=section_attendance.scsddc, student=student_info.student, class_date=section_attendance.class_date,
-                                      attendance_slot=section_attendance.attendance_slot, duration_hour=section_attendance.duration_hour, section=section_attendance.section)
+            new_a = StudentMarks(marks_type=section_marks.marks_type, total_marks=section_marks.total_marks, scsddc=section_marks.scsddc, student=student_info.student, weightage=section_marks.weightage
+                                    , section=section_marks.section)
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
-            info.attendance_sheet.attendance.add(new_a)
+            info.mark_sheet.Marks.add(new_a)
         return 'Success'
 
 

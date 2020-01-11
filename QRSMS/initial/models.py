@@ -222,6 +222,17 @@ class SectionAttendance(models.Model):
 
     def __str__(self):
         return  str(self.class_date) + "_" + self.attendance_slot + "_" + self.scsddc
+class SectionMarks(models.Model):
+    marks_type = models.CharField(max_length=256)
+    total_marks = models.FloatField(null=True,blank=True)
+    weightage = models.FloatField(null=True,blank=True)
+    SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
+    section = models.CharField(max_length=256 ,blank=True, null=True)
+    class Meta:
+        unique_together = ('scsddc' ,'marks_type', 'section')
+
+    def __str__(self):
+        return  self.marks_type + "_" + self.scsddc
 
 
 class StudentAttendance(models.Model):
@@ -270,9 +281,11 @@ class StudentMarks(models.Model):
         ('L','Lab Marks')
     )
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
-    obtained_marks = models.PositiveIntegerField(blank=True, null=True)
-    total_marks = models.PositiveIntegerField(blank=True, null=True)
+    #mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
+    mark_type = models.CharField(max_length=256,blank=True,null=True)
+    obtained_marks = models.FloatField(blank=True, null=True)
+    total_marks = models.FloatField(blank=True, null=True)
+    weightage = models.FloatField(null=True,blank=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True,blank=True)
 
 
@@ -308,7 +321,7 @@ class MarkSheet(models.Model):
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
     Marks = models.ManyToManyField('initial.StudentMarks')
-    grand_total_marks = models.PositiveIntegerField(blank=True, null=True)
+    grand_total_marks = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc    
