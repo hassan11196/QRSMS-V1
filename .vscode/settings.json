@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/root/.local/share/virtualenvs/QRSMS-V1-vGSTOkp-/bin/python",
+    "python.pythonPath": "C:\\Users\\hassa\\.virtualenvs\\QRSMS-V1-kd4mN3f8\\Scripts\\python.exe",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [

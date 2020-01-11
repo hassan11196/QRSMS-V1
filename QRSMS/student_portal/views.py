@@ -15,11 +15,12 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
 import io
+from rest_framework.request import Request
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance
 from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
-from .serializers import StudentSerializer
+from .serializers import StudentSerializer, StudentSerializerAllData
 
 
 from .forms import StudentForm, StudentFormValidate
@@ -42,14 +43,13 @@ class BaseStudentLoginView(View):
 class Home_json(BaseStudentLoginView):
         
     def get(self, request):
-        print(dir(request))
-        data_dict = model_to_dict(Student.objects.filter(uid = request.user).first())
-        user_data = model_to_dict(request.user)
-        user_data.pop('groups',None)
-        user_data.pop('password', None)
-        print(data_dict)
-        print(user_data)
-        dat = {'status':'success',**data_dict,**user_data}
+        print((request.user))
+        stud_obj= Student.objects.filter(uid = str(request.user))
+        print(stud_obj)
+        user_obj = request.user
+        student_data = StudentSerializer(stud_obj, many=True,  context={'request': Request(request)}).data
+        
+        dat = {'status':'success', 'data':student_data}
         
         return JsonResponse(dat)
     
@@ -77,8 +77,14 @@ class PostAttendanceQR(BaseStudentLoginView):
         import json
         request_data =json.loads(request.POST['qr_code'])
         print(request_data)
-        att_object = StudentAttendance.objects.get(student = Student.objects.get(uid = str(request.user)), scsddc = request_data['scsddc'], class_date = request_data['class_date'], attendance_slot = request_data['attendance_slot'], section = request_data['section'])
-        
+        print(request.user)
+        try:
+            att_object = StudentAttendance.objects.get(student = Student.objects.get(uid = str(request.user)), scsddc = request_data['scsddc'], class_date = request_data['class_date'], attendance_slot = request_data['attendance_slot'], section = request_data['section'])
+        except StudentAttendance.DoesNotExist as e:
+            return JsonResponse({'message':'Student is not enrolled in this Class','condition':False}, status=400)
+
+        if att_object.state == 'P':
+            return JsonResponse({'message':'Attendance Already Marked','condition':True, }, status=200)
         att_object.state = 'P'
         att_object.save()
         from initial.serializers import StudentAttendanceSerializer
