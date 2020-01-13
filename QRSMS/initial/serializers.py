@@ -1,5 +1,5 @@
 
-from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance
+from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance,StudentMarks,SectionMarks
 from rest_framework import serializers
 from . import models
 from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
@@ -42,12 +42,22 @@ class SectionAttendanceSerializer(serializers.HyperlinkedModelSerializer):
         model = SectionAttendance
         fields = '__all__'
 
+class SectionMarksSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = SectionMarks
+        fields = '__all__'
+
 class CourseSectionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CourseSection
         fields = '__all__'
         depth = 1
 
+
+class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = StudentMarks
+        fields = '__all__'
 
 class MarkSheetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
