@@ -8,7 +8,7 @@ pylint = "*"
 autopep8 = "*"
 
 [packages]
-django = "*"
+django = "==2.2"
 django-rest-framework = "*"
 djangorestframework = "*"
 django-webpack-loader = "*"
@@ -26,6 +26,7 @@ pypng = "*"
 pydotplus = "*"
 graphviz = "*"
 psycopg2 = "*"
+openpyxl = "*"
 
 [requires]
 python_version = "3.7"
