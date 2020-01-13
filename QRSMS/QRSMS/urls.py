@@ -47,7 +47,7 @@ urlpatterns = [
     path('actor/', include('actor.urls')),
     path(r'student/',include('student_portal.urls')),
     path('teacher/',include('teacher_portal.urls')),
-    path('faculty/',include('faculty_portal.urls')),
+    path('faculty-api/',include('faculty_portal.urls')),
     path('rest/', include(router.urls)),
 
     path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),

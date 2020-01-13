@@ -9,6 +9,4 @@ class FacultySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Faculty
-        fields = (
-            'pk', 
-        )
+        fields = '__all__'

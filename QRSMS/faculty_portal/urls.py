@@ -23,6 +23,8 @@ urlpatterns += (
     path('login/',views.FacultyLoginView.as_view(), name="faculty_login"),
     path('logout/',views.FacultyLogoutView.as_view(), name='Faculty_logout'),
     path('home_json/',views.Home_json.as_view(), name='home_json'),
+    path('student-timetable/',views.GetStudentTimeTable.as_view(), name='student_timetable'),
+
     path('create', views.FacultyCreateView.as_view(), name='initial_faculty_create'),
     path('detail/<int:pk>/', views.FacultyDetailView.as_view(), name='initial_faculty_detail'),
     path('update/<int:pk>/', views.FacultyUpdateView.as_view(), name='initial_faculty_update'),
