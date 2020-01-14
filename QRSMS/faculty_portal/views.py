@@ -78,7 +78,11 @@ class GetStudentTimeTable(BaseFacultyLoginView):
         wb = openpyxl.load_workbook(excel_file)
 
         # getting a particular sheet by name out of many sheets
-        worksheet = wb["BATCH 2016"]
+
+        student_batch = request.POST['batch']
+        if student_batch == None:
+            student_batch = 2016
+        worksheet = wb["BATCH " + str(student_batch)]
         print(worksheet)
 
         excel_data = list()
