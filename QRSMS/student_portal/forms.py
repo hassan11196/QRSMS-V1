@@ -1,6 +1,7 @@
 from django import forms
 from .models import Student,BATCH_YEAR_REGEX, UNIVERISTY_ID_REGEX
 from actor.models import User
+from django.contrib.auth.forms import AuthenticationForm
 
 def arn_helper(batch):
     last_student = Student.objects.all().filter(batch=batch).order_by('arn').last()
