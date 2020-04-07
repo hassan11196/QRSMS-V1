@@ -47,9 +47,16 @@ class Home_json(BaseStudentLoginView):
         stud_obj= Student.objects.filter(uid = str(request.user))
         print(stud_obj)
         user_obj = request.user
+
+        dict_user = model_to_dict(user_obj)
+        dict_user.pop('groups',None)
+        dict_user.pop('password', None)
+        
+
+
         student_data = StudentSerializer(stud_obj, many=True,  context={'request': Request(request)}).data
         
-        dat = {'status':'success', 'data':student_data}
+        dat = {'status':'success', 'student_data':student_data,'user_data': dict_user}
         
         return JsonResponse(dat)
     
@@ -189,10 +196,10 @@ class StudentLoginView(View):
 
         if user is not None:
             login(request, user)
-            dict_user = model_to_dict(user)
-            dict_user.pop('groups',None)
-            dict_user.pop('password', None)
-            return JsonResponse({'status':'success','message' : 'User Logged In', **dict_user})
+            # dict_user = model_to_dict(user)
+            # dict_user.pop('groups',None)
+            # dict_user.pop('password', None)
+            return JsonResponse({'status':'success','message' : 'User Logged In'})
         else:
             return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
         
