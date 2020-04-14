@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django_restful_admin',
     'corsheaders',
     'crispy_forms',
-    'rest_framework_swagger',
+    'drf_yasg',
     'django_extensions',
     
 

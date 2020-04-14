@@ -1,6 +1,8 @@
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
+from drf_yasg.utils import swagger_auto_schema
+
 # Create your views here.
 from django.http import JsonResponse
 from django.views import View
@@ -21,7 +23,7 @@ from rest_framework.renderers import JSONRenderer
 from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance
 from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
 from .serializers import StudentSerializer, StudentSerializerAllData
-
+from rest_framework import viewsets, views, status, mixins
 
 from .forms import StudentForm, StudentFormValidate
 from .models import Student
@@ -33,7 +35,7 @@ class UserNotLogged(View):
 def check_if_student(user):
     return True if user.is_student else False
 
-class BaseStudentLoginView(View):
+class BaseStudentLoginView(views.APIView):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_student, login_url='/student/login'))
     def dispatch(self, request, *args, **kwargs):
@@ -138,6 +140,7 @@ class RegistrationCheck(BaseStudentLoginView):
             return JsonResponse({'message' : 'Regisrations are NOT Active', 'condition':False},status=200)  
 
 class RegistrationCourses(BaseStudentLoginView):
+    @swagger_auto_schema()
     def get(self, request):
         from institution.models import Department, Degree
         try:
@@ -151,10 +154,10 @@ class RegistrationCourses(BaseStudentLoginView):
 
             s = OfferedCourses.objects.filter(student__uid=str(request.user))
         
-            from rest_framework.request import Request
-
+            # from rest_framework.request import Request
+            
             from initial.serializers import OfferedCoursesSerializer
-            offered_courses_to_student = OfferedCoursesSerializer(s, many = True, context = {'request': Request(request)}).data
+            offered_courses_to_student = OfferedCoursesSerializer(s, many = True, context = {'request': request}).data
 
             from pprint import pprint
             pprint(offered_courses_to_student)

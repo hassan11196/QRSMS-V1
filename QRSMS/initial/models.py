@@ -144,13 +144,16 @@ class StudentInfoSection(models.Model):
     mark_sheet = models.ForeignKey('initial.MarkSheet', on_delete = models.SET_NULL, blank=True, null=True)
     
     def __str__(self):
-        return self.student.uid + "_" + self.coursesection_set.get().scsddc
+        return self.student.uid + "_" + self.coursesection_set.first().scsddc
     
     
 class CourseSection(models.Model):
+    class Meta:
+        ordering = ['-scsddc']
+
     semester_code = models.CharField(max_length=256, name='semester_code', help_text = 'semester code - SDDC', blank=True, null=True)
     course_code = models.CharField(max_length = 256, name = 'course_code', blank=True, null=True)
-    
+    course = models.ForeignKey('initial.Course', on_delete=models.SET_NULL, null = True)
     SCSDDC =  models.CharField(max_length=256, blank=True, null=True, name='scsddc')
 
     section_total_seats = models.PositiveIntegerField(blank=True, null=True, default = 40, help_text = 'Total Seats : Seats Left + students Registered')
@@ -159,7 +162,7 @@ class CourseSection(models.Model):
     students_count = models.PositiveIntegerField(blank=True, null=True, default = True)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
-    student_info = models.ManyToManyField('initial.StudentInfoSection')
+    student_info = models.ForeignKey('initial.StudentInfoSection',  on_delete=models.SET_NULL, null = True)
 
     teacher = models.ForeignKey('teacher_portal.Teacher', on_delete = models.SET_NULL, null =True)
     

@@ -5,16 +5,31 @@ from rest_framework import viewsets, permissions, routers
 class StudentAttendanceViewSet(viewsets.ModelViewSet):
     queryset = models.StudentAttendance.objects.all()
     serializer_class = serializers.StudentAttendanceSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, ]
 
 class StudentInfoSectionViewSet(viewsets.ModelViewSet):
     queryset = models.StudentInfoSection.objects.all()
     serializer_class = serializers.StudentInfoSectionSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+
 class SectionAttendanceViewSet(viewsets.ModelViewSet):
     queryset = models.SectionAttendance.objects.all()
     serializer_class = serializers.SectionAttendanceSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class AssignedSectionsViewSet(viewsets.ModelViewSet):
+
+    def get_queryset(self):
+        user = self.request.user
+        print(user)
+        return models.CourseSection.objects.filter(
+                teacher__user__username=str(user)).all()
+    # queryset = models.CourseSection.objects.all()
+    serializer_class = serializers.CourseSectionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
 
 class CourseSectionViewSet(viewsets.ModelViewSet):
     queryset = models.CourseSection.objects.all()

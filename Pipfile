@@ -27,6 +27,7 @@ pydotplus = "*"
 graphviz = "*"
 psycopg2 = "*"
 openpyxl = "*"
+drf-yasg = "*"
 
 [requires]
 python_version = "3.7"

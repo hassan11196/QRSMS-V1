@@ -29,7 +29,10 @@ class StudentInfoSectionSerializer(serializers.HyperlinkedModelSerializer):
         model = StudentInfoSection
         fields = '__all__'
     
-
+class CourseSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
 class StudentInfoSectionModelSerializerGetAttendance(serializers.ModelSerializer):
     student = StudentSerializerOnlyNameAndUid()
     attendance_sheet = StudentAttendanceSheetSerializerMinimized()
@@ -48,11 +51,22 @@ class SectionMarksSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class CourseSectionSerializer(serializers.HyperlinkedModelSerializer):
+    # def __init__(self, *args, **kwargs):
+    #     # Don't pass the 'fields' arg up to the superclass
+    #     fields = kwargs.pop('fields', None)
+    #     # Instantiate the superclass normally
+    #     super(CourseSectionSerializer, self).__init__(*args, **kwargs)
+
+    #     for course in self.instance:
+    #         course.course_name = Course.objects.get(course_code = course.course_code)
+        
+    
+    
     class Meta:
         model = CourseSection
         fields = '__all__'
         depth = 1
-
+    # course = CourseSerializer()
 
 class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -86,10 +100,7 @@ class CourseStatusSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class CourseSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Course
-        fields = '__all__'
+
 
 class RegularCoreCourseLoadSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
 
-
+import initial
 from . import api
 from . import views
 
@@ -10,6 +10,7 @@ teacher_portal = 'teacher_portal'
 
 router = routers.DefaultRouter()
 router.register(r'teacher', api.TeacherViewSet)
+router.register(r'assignedCourses', initial.api.AssignedSectionsViewSet, basename='assigned_courses')
 
 urlpatterns = [
     # urls for Django Rest Framework API
