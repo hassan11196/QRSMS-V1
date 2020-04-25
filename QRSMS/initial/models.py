@@ -3,7 +3,7 @@ from django.db.models import F, Q
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from django.dispatch import receiver
-
+import datetime
 from institution.models import University, Campus, Degree
 from institution.constants import UNIVERISTY_ID_REGEX
 from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR_CHOICE
@@ -64,8 +64,8 @@ class Semester(models.Model):
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season")
     semester_year = models.IntegerField(name="semester_year")
-    start_date = models.DateField(name="start_date")
-    end_date = models.DateField(name="end_date")
+    start_date = models.DateField(name="start_date", default=datetime.date.today)
+    end_date = models.DateField(name="end_date",default=datetime.date.today)
     teachers_available = models.ManyToManyField(
         Teacher, related_name="teachers_available")
     students_registered = models.ManyToManyField(
@@ -214,7 +214,7 @@ class SectionAttendance(models.Model):
         (8, '3:00 PM- 4:00 PM'),
     )
     
-    class_date = models.DateField(auto_now_add=True, null=True, blank=True)
+    class_date = models.DateField(default=datetime.date.today, null=True, blank=True)
     attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS, max_length=256, blank=True, null=True) 
     attendance_time_start = models.TimeField(auto_now_add=True, null=True, blank=True)
     attendance_interval_allowed = models.PositiveSmallIntegerField(null=True, blank=True, default = 30)
@@ -261,7 +261,7 @@ class StudentAttendance(models.Model):
     )
 
     student = models.ForeignKey("student_portal.Student", on_delete=models.SET_NULL, null=True)
-    class_date = models.DateField(name='class_date', blank=True, null=True)
+    class_date = models.DateField(name='class_date', blank=True, null=True, default=datetime.date.today)
     attendance_slot = models.CharField(choices = ATTENDANCE_SLOTS,max_length=256, blank=True, null=True) 
     state = models.CharField(choices=ATTENDANCE_STATES, max_length=256, default='NR')
     attendance_marked_time = models.TimeField(null=True, blank=True)

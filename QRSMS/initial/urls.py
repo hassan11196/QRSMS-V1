@@ -7,6 +7,7 @@ from . import views
 initial='initial'
 router = routers.DefaultRouter()
 router.register(r'course', api.CourseViewSet)
+router.register(r'courseDebug', api.CourseViewSetDebug)
 router.register(r'semester', api.SemesterViewSet)
 router.register(r'offeredcourses', api.OfferedCoursesViewSet)
 router.register(r'coursestatus', api.CourseStatusViewSet)

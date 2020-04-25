@@ -28,6 +28,7 @@ graphviz = "*"
 psycopg2 = "*"
 openpyxl = "*"
 drf-yasg = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"

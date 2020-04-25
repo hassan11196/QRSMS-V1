@@ -6,7 +6,7 @@ from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperS
 
 
 class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerializer):
-    
+    # attendance_sheet = serializers.PrimaryKeyRelatedField(many=True, queryset=models.AttendanceSheet.objects.all())
     class Meta:
         model = StudentAttendance
         fields = ('url','class_date','attendance_slot','state','duration_hour')
@@ -33,6 +33,14 @@ class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
         fields = '__all__'
+
+
+class CourseSerializerDebug(serializers.ModelSerializer):
+    course_status_offer = serializers.PrimaryKeyRelatedField(many = True, queryset = models.CourseStatus.objects.all())
+    class Meta:
+        model = Course
+        fields = ['course_code', 'course_name', 'course_type','course_status_offer']
+
 class StudentInfoSectionModelSerializerGetAttendance(serializers.ModelSerializer):
     student = StudentSerializerOnlyNameAndUid()
     attendance_sheet = StudentAttendanceSheetSerializerMinimized()
@@ -40,10 +48,19 @@ class StudentInfoSectionModelSerializerGetAttendance(serializers.ModelSerializer
         model = StudentInfoSection
         fields = '__all__'
 
-class SectionAttendanceSerializer(serializers.HyperlinkedModelSerializer):
+class SectionAttendanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = SectionAttendance
         fields = '__all__'
+
+class AssignedSectionAttendanceSerializer(serializers.Serializer):
+
+    section = SectionAttendanceSerializer(many = True)
+    section_attendance = SectionAttendanceSerializer(many = True)
+
+    # class Meta:
+    #     fields = '__all__'
+    #     model = dict
 
 class SectionMarksSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -84,6 +101,7 @@ class AttendanceSheetSerializer(serializers.HyperlinkedModelSerializer):
         model = AttendanceSheet
         fields = '__all__'
         depth = 1
+
 
 
 class OfferedCoursesSerializer(serializers.HyperlinkedModelSerializer):

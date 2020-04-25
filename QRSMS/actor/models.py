@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser, Group
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from institution.constants import UNIVERISTY_ID_REGEX
-
+import datetime
 # from initial.models import Semester, BATCH_YEAR_REGEX, STUDENT_YEAR_CHOICE, SEMSESTER_CHOICES, ACADEMIC_YEAR
 # Create your models here.
 from json import loads, dumps
@@ -76,7 +76,7 @@ class User(AbstractUser):
     current_country = models.TextField(max_length=100,null=True)
 
     
-    DOB = models.DateField(verbose_name='Date of Birth',null=True)
+    DOB = models.DateField(verbose_name='Date of Birth',null=True, default=datetime.date.today)
     nationality = models.CharField(verbose_name='Nationality', max_length=100,null=True)
     mobile_contact = models.PositiveIntegerField(verbose_name='Mobile Contact',null=True)
     emergency_contact = models.PositiveIntegerField(verbose_name='Emergency Contact',null=True)
@@ -139,7 +139,7 @@ class EmployeeDesignation(models.Model):
 class Employee(models.Model):
     employee_id = models.AutoField(primary_key = True)
     employee_designation = models.ManyToManyField('actor.EmployeeDesignation')
-    hire_date = models.DateField(null = True)
+    hire_date = models.DateField(null = True, default=datetime.date.today)
     salary = models.PositiveIntegerField(null = True)
 
     @classmethod

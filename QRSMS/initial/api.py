@@ -1,10 +1,11 @@
 from . import models
 from . import serializers
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, permissions, routers
-
+from rest_framework.response import Response
 class StudentAttendanceViewSet(viewsets.ModelViewSet):
     queryset = models.StudentAttendance.objects.all()
-    serializer_class = serializers.StudentAttendanceSerializer
+    serializer_class = serializers.StudentAttendanceSerializerMinimized
     permission_classes = [permissions.IsAuthenticated, ]
 
 class StudentInfoSectionViewSet(viewsets.ModelViewSet):
@@ -14,7 +15,9 @@ class StudentInfoSectionViewSet(viewsets.ModelViewSet):
 
 
 
+
 class SectionAttendanceViewSet(viewsets.ModelViewSet):
+    lookup_field = 'class_date'
     queryset = models.SectionAttendance.objects.all()
     serializer_class = serializers.SectionAttendanceSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -30,6 +33,49 @@ class AssignedSectionsViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.CourseSectionSerializer
     permission_classes = [permissions.IsAuthenticated]
     
+class AssignedSectionsAttendanceViewSet(viewsets.ViewSet):
+    def list(self, request):
+        course_section = models.CourseSection.objects.filter(teacher__user__username=str(request.user))
+        data = []
+        for x in course_section:
+            print(x.scsddc)
+            temp = {
+                'section':serializers.CourseSectionSerializer(x, context = {'request' : self.request}).data,
+                'section_attendance':serializers.CourseSectionSerializer(models.SectionAttendance.objects.filter(scsddc=x.scsddc).all(), context  =  {'request' : self.request}, many = True).data
+            }
+            data.append(temp)
+        
+
+        # models.SectionAttendance.objects.models.CourseSection.objects.filter(
+        #         teacher__user__username=str(user)).filter(scsddc__in=.values_list('scsddc')).all()
+        # SectionAttendance.objects.filter(scsddc__in=CourseSection.objects.filter(teacher__user__username=str('Abdul.Rehman')).values_list('scsddc')).all()
+        return Response(data)
+
+
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     print(user)
+
+    #     course_section = models.CourseSection.objects.filter(teacher__user__username=str(user))
+    #     data = []
+    #     for x in course_section:
+    #         print(x.scsddc)
+    #         temp = {
+    #             'section':serializers.CourseSectionSerializer(x, context = {'request' : self.request}).data,
+    #             'section_attendance':serializers.CourseSectionSerializer(models.SectionAttendance.objects.filter(scsddc=x.scsddc).all(), context  =  {'request' : self.request}, many = True).data
+    #         }
+    #         data.append(temp)
+        
+
+    #     # models.SectionAttendance.objects.models.CourseSection.objects.filter(
+    #     #         teacher__user__username=str(user)).filter(scsddc__in=.values_list('scsddc')).all()
+    #     # SectionAttendance.objects.filter(scsddc__in=CourseSection.objects.filter(teacher__user__username=str('Abdul.Rehman')).values_list('scsddc')).all()
+    #     return data
+
+        
+    # # queryset = models.CourseSection.objects.all()
+    # serializer_class = serializers.AssignedSectionAttendanceSerializer
+    # permission_classes = [permissions.IsAuthenticated]
 
 class CourseSectionViewSet(viewsets.ModelViewSet):
     queryset = models.CourseSection.objects.all()
@@ -55,6 +101,17 @@ class CourseStatusViewSet(viewsets.ModelViewSet):
     queryset = models.CourseStatus.objects.all()
     serializer_class = serializers.CourseStatusSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class CourseViewSetDebug(viewsets.ModelViewSet):
+    """ViewSet for the Course class"""
+
+    
+
+
+    queryset = models.Course.objects.all()
+    serializer_class = serializers.CourseSerializerDebug
+    permission_classes = [permissions.IsAuthenticated]
+
 
 class CourseViewSet(viewsets.ModelViewSet):
     """ViewSet for the Course class"""

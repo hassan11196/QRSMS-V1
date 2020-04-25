@@ -68,6 +68,7 @@ urlpatterns = [
 
     path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
     path('accounts/', include('django.contrib.auth.urls')),
+    
     path(r'rest_admin/', django_restful_admin.site.urls),
     #re_path(r'^(?:.*)/?$', views.index), # URL Fallback to react router
 ]

@@ -11,6 +11,7 @@ teacher_portal = 'teacher_portal'
 router = routers.DefaultRouter()
 router.register(r'teacher', api.TeacherViewSet)
 router.register(r'assignedCourses', initial.api.AssignedSectionsViewSet, basename='assigned_courses')
+router.register(r'sectionAttendance', initial.api.AssignedSectionsAttendanceViewSet, basename='section_attendance')
 
 urlpatterns = [
     # urls for Django Rest Framework API

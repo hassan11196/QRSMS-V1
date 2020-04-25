@@ -1,7 +1,7 @@
 import json
 import os
 from pprint import pprint
-
+import datetime
 from django.db import connection
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import Permission
@@ -379,7 +379,7 @@ def add_degrees(arg_offering_department = 1, arg_education_level = 'Bachelors', 
 
 def add_semesterCore():
     Semester.objects.all().delete()
-    from datetime import datetime
+    
     # temp_date = datetime.strptime(date_str, "%Y-%m-%d").date()
     s = Semester(
         semester_code='FALL2019',

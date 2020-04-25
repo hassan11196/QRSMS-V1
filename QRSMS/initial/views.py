@@ -6,7 +6,9 @@ from django.http import JsonResponse
 from django.views import View
 from django.middleware.csrf import get_token
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
-from rest_framework import generics, viewsets
+from rest_framework import generics, viewsets, views
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -22,8 +24,9 @@ from .serializers import (CourseSerializer)
 from .forms import CourseForm, SemesterForm
 from .models import Course, Semester
 
+@api_view(['GET'])
 def csrf(request):
-    return JsonResponse({'csrfToken': get_token(request)})
+    return Response({'csrfToken': get_token(request)})
 
 # @login_required(login_url ='/')
 def ping(request):
@@ -36,7 +39,7 @@ def index(request):
 def check_if_admin(user):
     return True if user.is_staff else False
 
-class UserNotLogged(View):
+class UserNotLogged(views.APIView):
 
     def get(self, request):
         return JsonResponse({'message':'Not Authenticated'}, status=401)
