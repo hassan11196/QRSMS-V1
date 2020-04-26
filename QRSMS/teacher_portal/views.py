@@ -18,7 +18,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.dispatch import receiver
 
-from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance,SectionMarks,StudentMarks
+from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance, SectionMarks,StudentMarks
 from .serializers import (TeacherSerializer)
 from .signals import attendance_of_day_for_student,marks_for_student
 from django.db.utils import IntegrityError
@@ -250,10 +250,12 @@ class TeacherLoginView(View):
     def post(self, request, *args, **kwargs):
         username = request.POST['username']
         password = request.POST['password']
-        if username is "" or password is "":
+        if username == "" or password == "":
             return HttpResponse(content="Empty Usename or Password Field.", status=400)
 
         user = authenticate(request, username=username, password=password)
+        if user.is_teacher == False:
+            return JsonResponse({'status':"User not a Student."}, status = 401)
 
         if user is not None:
             login(request, user)
@@ -272,25 +274,3 @@ class TeacherLogoutView(View):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
 
-
-class TeacherViewSet(viewsets.ModelViewSet):
-    queryset = Teacher.objects.all()
-    serializer_class = TeacherSerializer
-
-
-class TeacherListView(ListView):
-    model = Teacher
-
-
-class TeacherCreateView(CreateView):
-    model = Teacher
-    form_class = TeacherForm
-
-
-class TeacherDetailView(DetailView):
-    model = Teacher
-
-
-class TeacherUpdateView(UpdateView):
-    model = Teacher
-    form_class = TeacherForm

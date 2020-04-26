@@ -20,7 +20,7 @@ urlpatterns = [
 
 urlpatterns += (
     # urls for Teacher
-    path('', views.TeacherListView.as_view(), name='initial_teacher_list'),
+    
     path('login/',views.TeacherLoginView.as_view(), name="teacher_login"),
     path('logout/',views.TeacherLogoutView.as_view(), name='teacher_logout'),
     path('home_json/',views.Home_json.as_view(), name='home_json'),

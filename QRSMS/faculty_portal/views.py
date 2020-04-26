@@ -29,7 +29,6 @@ from .serializers import FacultySerializer
 from initial.serializers import SemesterSerializer
 # Create your views here.
 
-from .forms import FacultyForm
 from .models import  Faculty
 
 def check_if_faculty(user):
@@ -169,19 +168,3 @@ class FacultyLogoutView(View):
         logout(request)
         return JsonResponse({'status':'success','message' : 'User Logged Out'})
 
-class FacultyListView(ListView):
-    model = Faculty
-
-
-class FacultyCreateView(CreateView):
-    model = Faculty
-    form_class = FacultyForm
-
-
-class FacultyDetailView(DetailView):
-    model = Faculty
-
-
-class FacultyUpdateView(UpdateView):
-    model = Faculty
-    form_class = FacultyForm

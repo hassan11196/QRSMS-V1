@@ -198,7 +198,7 @@ class StudentLoginView(View):
         
         user = authenticate(request, username=username, password=password)
         if user.is_student == False:
-            return JsonResponse({'status':"User not a Student."}, status = 403)
+            return JsonResponse({'status':"User not a Student."}, status = 401)
         
         if user is not None:
             login(request, user)
@@ -216,26 +216,5 @@ class StudentLogoutView(View):
         logout(request)
         return JsonResponse({'status':'success','message' : 'User Logged Out'})
 
-class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-
-
-class StudentListView(ListView):
-    model = Student
-
-
-class StudentCreateView(CreateView):
-    model = Student
-    form_class = StudentForm
-
-
-class StudentDetailView(DetailView):
-    model = Student
-
-
-class StudentUpdateView(UpdateView):
-    model = Student
-    form_class = StudentForm
 
 

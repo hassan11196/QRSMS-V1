@@ -17,7 +17,6 @@ urlpatterns = [
 
 
 urlpatterns += [
-    # path('',views.StudentListView.as_view(), name='student_portal_student_list'),
     path('login/',views.StudentLoginView.as_view(), name="student_login"),
     path('logout/',views.StudentLogoutView.as_view(), name='student_logout'),
     path('home_json/',views.Home_json.as_view(), name='home_json'),
@@ -27,8 +26,5 @@ urlpatterns += [
     path('registration/available_courses/',views.RegistrationCourses.as_view(),name='registration_available_courses'),
     path('timetable/',views.TimeTableView.as_view(), name='student_timetable'),
     path('postQR/',views.PostAttendanceQR.as_view(), name='student_post_qr')
-    # path('create', views.StudentCreateView.as_view(), name='initial_student_create'),
-    # path('detail/<int:pk>/', views.StudentDetailView.as_view(), name='initial_student_detail'),
-    # path('update/<int:pk>/', views.StudentUpdateView.as_view(), name='initial_student_update'),
  
 ]

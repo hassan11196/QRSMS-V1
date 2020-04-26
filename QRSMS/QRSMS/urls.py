@@ -33,8 +33,7 @@ router = routers.DefaultRouter()
 router.register(r'users', actor_views.UserViewSet)
 router.register(r'groups', actor_views.GroupViewSet)
 router.register(r'course_info',views.CourseViewSet)
-router.register(r'students', student_views.StudentViewSet)
-router.register(r'teachers', teacher_views.TeacherViewSet)
+
 
 schema_view = get_schema_view(
    openapi.Info(
