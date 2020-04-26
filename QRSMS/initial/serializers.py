@@ -191,10 +191,8 @@ class SemesterSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Semester
         fields = [
-            'pk', 
-            # 'semester_year', 
-            # 'start_date', 
-            # 'end_date', 
+            'semester_code',
+            'semester_season', 'semester_year', 'start_date', 'end_date'
         ]
 
 

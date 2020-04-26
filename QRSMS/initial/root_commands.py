@@ -377,7 +377,7 @@ def add_degrees(arg_offering_department = 1, arg_education_level = 'Bachelors', 
     # nd.save()
     return degree
 
-def add_semesterCore():
+def add_semesterCore(semester_code, semester_season, semester_year, start_date, end_date):
     Semester.objects.all().delete()
     
     # temp_date = datetime.strptime(date_str, "%Y-%m-%d").date()

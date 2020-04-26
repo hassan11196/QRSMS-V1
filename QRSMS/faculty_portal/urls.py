@@ -24,6 +24,8 @@ urlpatterns += (
     path('logout/',views.FacultyLogoutView.as_view(), name='Faculty_logout'),
     path('home_json/',views.Home_json.as_view(), name='home_json'),
     path('student-timetable/',views.GetStudentTimeTable.as_view(), name='student_timetable'),
+    path('start-semester/', views.SemesterStart.as_view(), name = 'semester_start'),
+
 
     path('create', views.FacultyCreateView.as_view(), name='initial_faculty_create'),
     path('detail/<int:pk>/', views.FacultyDetailView.as_view(), name='initial_faculty_detail'),
@@ -31,12 +33,3 @@ urlpatterns += (
 )
 
 
-
-urlpatterns += [
-    # path('temp_login',views.temp_login, name="temp_login"),
-    # path('test_student_login',views.StudentLoginView.as_view(), name="test_student_login"),
-    # path('test_student_login/<str:value>',views.StudentLoginView.as_view(), name="test_student_login2"),
-    # path('test_student_signup',views.StudentSignupView.as_view(), name="test_student_signup"),
-    # path('home_json',views.Home_json.as_view(), name='home_json')
- 
-]

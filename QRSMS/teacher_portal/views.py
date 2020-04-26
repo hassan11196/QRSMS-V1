@@ -198,7 +198,7 @@ class AddSectionMarks(BaseTeacherLoginView):
             data = SectionMarksSerializer(
                 sec_att2, context={'request': Request(request)}).data
 
-            return JsonResponse({'message': 'Maerks Already Added For This Class.', 'condition': True, 'qr_json': data}, status=200)
+            return JsonResponse({'message': 'Marks Already Added For This Class.', 'condition': True, 'qr_json': data}, status=200)
 
         data = SectionMarksSerializer(
             sec_marks, context={'request': Request(request)}).data

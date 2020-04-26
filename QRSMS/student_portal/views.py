@@ -195,8 +195,11 @@ class StudentLoginView(View):
         if username is "" or password is "":
             return HttpResponse(content="Empty Usename or Password Field.", status=400)
 
+        
         user = authenticate(request, username=username, password=password)
-
+        if user.is_student == False:
+            return JsonResponse({'status':"User not a Student."}, status = 403)
+        
         if user is not None:
             login(request, user)
             # dict_user = model_to_dict(user)

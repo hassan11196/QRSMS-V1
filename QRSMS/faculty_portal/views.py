@@ -7,18 +7,26 @@ from django.views import View
 from django.middleware.csrf import get_token
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from rest_framework import generics, viewsets
+from rest_framework.request import Request
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import serializers
+from drf_yasg.utils import swagger_auto_schema
+
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
 from django.forms.models import model_to_dict
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
-from rest_framework.request import Request
+
+
+
 import re
 import openpyxl
-
+from initial.root_commands import add_semesterCore
 from .serializers import FacultySerializer
-
+from initial.serializers import SemesterSerializer
 # Create your views here.
 
 from .forms import FacultyForm
@@ -27,11 +35,22 @@ from .models import  Faculty
 def check_if_faculty(user):
     return True if user.is_faculty else False
 
-class BaseFacultyLoginView(View):
+class BaseFacultyLoginView(APIView):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_faculty, login_url='/faculty/login'))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+
+class SemesterStart(BaseFacultyLoginView):
+
+    @swagger_auto_schema(request_body=SemesterSerializer)
+    def post(self, request, format=None):
+        print(request.data)
+        # add_semesterCore('Spring2020', semester_season, semester_year, start_date, end_date)
+        return Response(request.data)
+
+    def delete(self, request, format=None):
+        return Response('Delete Api - Debug')
 
 class Home_json(BaseFacultyLoginView):
         
