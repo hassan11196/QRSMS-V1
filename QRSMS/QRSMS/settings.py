@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+from sentry_sdk.integrations.django import DjangoIntegration
+import sentry_sdk
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +27,8 @@ SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com', 'localhost', '127.0.0.1', '172.16.71.12','180.149.217.63', 'www.qrsms.ml']
+ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com', 'localhost',
+                 '127.0.0.1', '172.16.71.12', '180.149.217.63', 'www.qrsms.ml']
 
 
 # Application definition
@@ -52,7 +55,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'drf_yasg',
     'django_extensions',
-    
+
 
 ]
 
@@ -77,7 +80,7 @@ TEMPLATES = [
             '/faculty_portal',
             '/teacher_portal',
             '/student_portal',
-            
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -96,16 +99,17 @@ WSGI_APPLICATION = 'QRSMS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-print('Environment : %s ' % os.environ.get('environment')  )
-if True or os.environ.get('environment') == 'dev': # Short Circuited to Used Sqlite
-    
+print('Environment : %s ' % os.environ.get('environment'))
+# Short Circuited to Used Sqlite
+if True or os.environ.get('environment') == 'dev':
+
     print('Using SQLITE')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
-    }   
+    }
 else:
     print('Using PostGreSQl')
     DATABASES = {
@@ -157,15 +161,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE' : 10,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
     # 'DEFAULT_PERMISSION_CLASSES': [
     #     'rest_framework.permissions.IsAdminUser',
     # ],
@@ -178,15 +181,15 @@ REST_FRAMEWORK = {
 
 
 # Webpack Settings
-WEBPACK_LOADER = { 
-        
-          'DEFAULT': { 
-                   'BUNDLE_DIR_NAME': 'bundles/', 
-                   'STATS_FILE': os.path.join(BASE_DIR, '..','webpack_output/', 'webpack-stats.json'), 
-                      }
-                  } 
+WEBPACK_LOADER = {
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, '..', 'webpack_output/static')]
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, '..', 'webpack_output/', 'webpack-stats.json'),
+    }
+}
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '..', 'webpack_output/static')]
 
 AUTH_USER_MODEL = 'actor.User'
 CORS_ORIGIN_ALLOW_ALL = False
@@ -197,9 +200,6 @@ CORS_ALLOW_CREDENTIALS = True
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
-
 sentry_sdk.init(
     dsn="https://668ce2775d094f2e90662ac3a554b7da@sentry.io/1815682",
     integrations=[DjangoIntegration()]
@@ -208,9 +208,9 @@ sentry_sdk.init(
 
 JET_THEMES = [
     {
-        'theme': 'default', # theme folder name
-        'color': '#47bac1', # color of the theme's button in user menu
-        'title': 'Default' # theme title
+        'theme': 'default',  # theme folder name
+        'color': '#47bac1',  # color of the theme's button in user menu
+        'title': 'Default'  # theme title
     },
     {
         'theme': 'green',
@@ -238,3 +238,29 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+SWAGGER_SETTINGS = {
+    'DEFAULT_AUTO_SCHEMA_CLASS': 'drf_yasg.inspectors.SwaggerAutoSchema',
+
+    'DEFAULT_FIELD_INSPECTORS': [
+        'drf_yasg.inspectors.CamelCaseJSONFilter',
+        'drf_yasg.inspectors.RecursiveFieldInspector',
+        'drf_yasg.inspectors.ReferencingSerializerInspector',
+        'drf_yasg.inspectors.ChoiceFieldInspector',
+        'drf_yasg.inspectors.FileFieldInspector',
+        'drf_yasg.inspectors.DictFieldInspector',
+        'drf_yasg.inspectors.JSONFieldInspector',
+        'drf_yasg.inspectors.HiddenFieldInspector',
+        'drf_yasg.inspectors.RelatedFieldInspector',
+        'drf_yasg.inspectors.SerializerMethodFieldInspector',
+        'drf_yasg.inspectors.SimpleFieldInspector',
+        'drf_yasg.inspectors.StringDefaultFieldInspector',
+    ],
+    'DEFAULT_FILTER_INSPECTORS': [
+        'drf_yasg.inspectors.CoreAPICompatInspector',
+    ],
+    'DEFAULT_PAGINATOR_INSPECTORS': [
+        'drf_yasg.inspectors.DjangoRestResponsePagination',
+        'drf_yasg.inspectors.CoreAPICompatInspector',
+    ],
+}

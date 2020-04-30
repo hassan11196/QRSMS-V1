@@ -10,8 +10,10 @@ teacher_portal = 'teacher_portal'
 
 router = routers.DefaultRouter()
 router.register(r'teacher', api.TeacherViewSet)
-router.register(r'assignedCourses', initial.api.AssignedSectionsViewSet, basename='assigned_courses')
-router.register(r'sectionAttendance', initial.api.AssignedSectionsAttendanceViewSet, basename='section_attendance')
+router.register(r'assignedCourses',
+                initial.api.AssignedSectionsViewSet, basename='assigned_courses')
+router.register(r'sectionAttendance',
+                initial.api.AssignedSectionsAttendanceViewSet, basename='section_attendance')
 
 urlpatterns = [
     # urls for Django Rest Framework API
@@ -20,15 +22,16 @@ urlpatterns = [
 
 urlpatterns += (
     # urls for Teacher
-    
-    path('login/',views.TeacherLoginView.as_view(), name="teacher_login"),
-    path('logout/',views.TeacherLogoutView.as_view(), name='teacher_logout'),
-    path('home_json/',views.Home_json.as_view(), name='home_json'),
-    path('sections/',views.AssignedSections.as_view(), name='sections'),
-    path('start_attendance/',views.StartSectionAttendance.as_view(), name = 'sections'),
-    path('get_attendance/', views.TeacherAttendanceView.as_view(), name='attendance_list'),
 
-   
+    path('login/', views.TeacherLoginView.as_view(), name="teacher_login"),
+    path('logout/', views.TeacherLogoutView.as_view(), name='teacher_logout'),
+    path('home_json/', views.Home_json.as_view(), name='home_json'),
+    path('sections/', views.AssignedSections.as_view(), name='sections'),
+    path('start_attendance/', views.StartSectionAttendance.as_view(), name='sections'),
+    path('get_attendance/', views.TeacherAttendanceView.as_view(),
+         name='attendance_list'),
+
+
     # path('create', views.TeacherCreateView.as_view(), name='initial_teacher_create'),
     # path('detail/<int:pk>/', views.TeacherDetailView.as_view(), name='initial_teacher_detail'),
     # path('update/<int:pk>/', views.TeacherUpdateView.as_view(), name='initial_teacher_update'),

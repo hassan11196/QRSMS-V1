@@ -24,11 +24,14 @@ from .serializers import (CourseSerializer)
 from .forms import CourseForm, SemesterForm
 from .models import Course, Semester
 
+
 @api_view(['GET'])
 def csrf(request):
     return Response({'csrfToken': get_token(request)})
 
 # @login_required(login_url ='/')
+
+
 def ping(request):
     return JsonResponse({'result': 'OK'})
 
@@ -36,114 +39,77 @@ def ping(request):
 def index(request):
     return render(request, 'initial/index.html')
 
+
 def check_if_admin(user):
     return True if user.is_staff else False
+
 
 class UserNotLogged(views.APIView):
 
     def get(self, request):
-        return JsonResponse({'message':'Not Authenticated'}, status=401)
+        return JsonResponse({'message': 'Not Authenticated'}, status=401)
+
 
 class Add_students(View):
-     permission_classes = [IsAdminUser]
-     def post(self, request):
+    permission_classes = [IsAdminUser]
+
+    def post(self, request):
         print('Inserting Students')
         from .root_commands import add_students
         students = add_students()
-        data = {'List':[x.uid + "," for x in students]}
+        data = {'List': [x.uid + "," for x in students]}
 
-        return JsonResponse({'status':'success', **data})
+        return JsonResponse({'status': 'success', **data})
 
 
 class Add_semesterCore(View):
-    @method_decorator(user_passes_test(check_if_admin,login_url='/management/user_not_logged/'))
+    @method_decorator(user_passes_test(check_if_admin, login_url='/management/user_not_logged/'))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
-    
     def get(self, request):
-        return JsonResponse({'message':'Invalid Request'}, status = 405)
+        return JsonResponse({'message': 'Invalid Request'}, status=405)
 
     def post(self, request):
         print('Inserting Semester')
         from .root_commands import add_semesterCore
         data = model_to_dict(add_semesterCore())
-        return JsonResponse({'status':'success', **data})     
-    
-    
-    
-    
-        
+        return JsonResponse({'status': 'success', **data})
+
+
 class Add_university(View):
     def post(self, request):
         print('Inserting University')
         from .root_commands import add_university
         data = model_to_dict(add_university())
-        return JsonResponse({'status':'success', **data})    
+        return JsonResponse({'status': 'success', **data})
+
 
 class Add_superuser(View):
     def post(self, request):
         print('Inserting Superusers')
         from .root_commands import create_super_users
         data = model_to_dict(create_super_users())
-        return JsonResponse({'status':'success', **data})    
+        return JsonResponse({'status': 'success', **data})
+
 
 class Add_courses(View):
     def post(self, request):
         print('Inserting Courses')
         from .root_commands import add_courses
         courses = add_courses()
-        data = {'List':[x[1] + "," for x in courses]}
-        return JsonResponse({'status':'success', **data})
-        
+        data = {'List': [x[1] + "," for x in courses]}
+        return JsonResponse({'status': 'success', **data})
+
+
 class AddCampuses(View):
     def post(self, request):
         from .root_commands import add_campuses
-    
-        try:    
+
+        try:
             data = model_to_dict(add_campuses())
         except IntegrityError as e:
             print(e)
-            return JsonResponse({'status':'success', 'error' : 'Campus Already Exists'})
-        return JsonResponse({'status':'success', **data})
-
-class CourseViewSet(viewsets.ModelViewSet):
-    queryset = Course.objects.all()
-    serializer_class = CourseSerializer
-
-
-class CourseListView(ListView):
-    model = Course
-
-
-class CourseCreateView(CreateView):
-    model = Course
-    form_class = CourseForm
-
-
-class CourseDetailView(DetailView):
-    model = Course
-
-
-class CourseUpdateView(UpdateView):
-    model = Course
-    form_class = CourseForm
-
-
-class SemesterListView(ListView):
-    model = Semester
-
-
-class SemesterCreateView(CreateView):
-    model = Semester
-    form_class = SemesterForm
-
-
-class SemesterDetailView(DetailView):
-    model = Semester
-
-
-class SemesterUpdateView(UpdateView):
-    model = Semester
-    form_class = SemesterForm
+            return JsonResponse({'status': 'success', 'error': 'Campus Already Exists'})
+        return JsonResponse({'status': 'success', **data})
 

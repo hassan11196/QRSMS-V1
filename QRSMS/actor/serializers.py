@@ -7,7 +7,8 @@ from . import models
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups', 'CNIC']
+        # fields = '__all__'
+        exclude = ['password', 'groups']
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,3 +16,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ['url', 'name']
 
+
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'password']

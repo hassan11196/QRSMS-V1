@@ -1,3 +1,7 @@
+from .models import Teacher
+from .forms import TeacherForm
+from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer, SectionMarksSerializer
+from initial.models import CourseSection, SectionAttendance
 import json
 from django.db.models import Count
 from django.contrib.auth import authenticate, login, logout
@@ -7,26 +11,30 @@ from django.http import JsonResponse
 from django.views import View
 from django.middleware.csrf import get_token
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, viewsets
+from rest_framework.request import Request
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, parser_classes
+from rest_framework.views import APIView
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import FormParser, MultiPartParser
+
 from django.forms.models import model_to_dict
-from rest_framework.request import Request
-from django.views.generic import DetailView, ListView, UpdateView, CreateView
+
+
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.dispatch import receiver
 
-from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance, SectionMarks,StudentMarks
+from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance, SectionMarks, StudentMarks
 from .serializers import (TeacherSerializer)
-from .signals import attendance_of_day_for_student,marks_for_student
+from .signals import attendance_of_day_for_student, marks_for_student
 from django.db.utils import IntegrityError
 
-from initial.models import CourseSection, SectionAttendance
-from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer,SectionMarksSerializer
-from .forms import TeacherForm
-from .models import Teacher
+from actor.serializers import LoginSerializer, UserSerializer
 
 
 def get_sddc(semester, degree, department, campus, city):
@@ -49,7 +57,8 @@ def check_if_teacher(user):
 #             return JsonResponse(form.errors.get_json_data())
 
 
-class BaseTeacherLoginView(View):
+class BaseTeacherLoginView(APIView):
+    @swagger_auto_schema()
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_teacher))
     def dispatch(self, request, *args, **kwargs):
@@ -79,7 +88,6 @@ class TeacherAttendanceView(BaseTeacherLoginView):
         except KeyError as err:
             return JsonResponse({'status': 'Failure', 'message': 'Malformed Query', 'conditon': False, 'missing key': str(err)})
 
-        
         sddc = get_sddc(semester_code, degree, department, campus, city)
         try:
             section_object = CourseSection.objects.get(
@@ -87,19 +95,19 @@ class TeacherAttendanceView(BaseTeacherLoginView):
 
         except CourseSection.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
-        
-        
 
-        students =  StudentInfoSectionModelSerializerGetAttendance(section_object.student_info.all(), many=True, context={'request': Request(request)}).data
+        students = StudentInfoSectionModelSerializerGetAttendance(
+            section_object.student_info.all(), many=True, context={'request': Request(request)}).data
         # print(students)
-        
-        scsddc = section + '_' + course_code  +'_' + sddc
+
+        scsddc = section + '_' + course_code + '_' + sddc
         try:
-            attendance_list = SectionAttendance.objects.filter(scsddc = scsddc)
+            attendance_list = SectionAttendance.objects.filter(scsddc=scsddc)
         except SectionAttendance.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
-        
-        class_attendance = SectionAttendanceSerializer(attendance_list, many=True, context={'request': Request(request)}).data
+
+        class_attendance = SectionAttendanceSerializer(
+            attendance_list, many=True, context={'request': Request(request)}).data
         print('Atteddance for this section : ' + str(len(attendance_list)))
         print('Students in this Section : ' + str(len(students)))
         # print(class_attendance)
@@ -109,20 +117,20 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             'semester': semester_code,
             'course_code': course_code,
             'student_cnt': len(students),
-            'attendance_cnt' : len(attendance_list),
+            'attendance_cnt': len(attendance_list),
             'student_sheets': students,
-             'class_sheet': class_attendance
+            'class_sheet': class_attendance
 
         }
 
-        return JsonResponse({'status': 'success', 'attendance_data' : attendance_data})
+        return JsonResponse({'status': 'success', 'attendance_data': attendance_data})
 
 
 class AssignedSections(BaseTeacherLoginView):
     def get(self, request):
         sections = CourseSection.objects.filter(
             teacher__user__username=str(request.user)).all()
-        
+
         from rest_framework.request import Request
         from initial.serializers import CourseSectionSerializer
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
@@ -186,7 +194,8 @@ class AddSectionMarks(BaseTeacherLoginView):
         print(request.POST)
 
         try:
-            sec_marks = SectionMarks(scsddc=req_scsddc, marks_type=marks_type, section=section, total_marks=total_marks, weightage=weightage)
+            sec_marks = SectionMarks(scsddc=req_scsddc, marks_type=marks_type,
+                                     section=section, total_marks=total_marks, weightage=weightage)
             sec_marks.save()
             g = marks_for_student.send(
                 AddSectionMarks, scsddc=req_scsddc, coursesection=section, sectionmarks=sec_marks, option='create')
@@ -218,8 +227,8 @@ def generate_marks_for_student(**kwargs):
         section = kwargs['coursesection']
         csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
         for student_info in csection.student_info.all():
-            new_a = StudentMarks(marks_type=section_marks.marks_type, total_marks=section_marks.total_marks, scsddc=section_marks.scsddc, student=student_info.student, weightage=section_marks.weightage
-                                    , section=section_marks.section)
+            new_a = StudentMarks(marks_type=section_marks.marks_type, total_marks=section_marks.total_marks, scsddc=section_marks.scsddc,
+                                 student=student_info.student, weightage=section_marks.weightage, section=section_marks.section)
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
             info.mark_sheet.Marks.add(new_a)
@@ -242,29 +251,35 @@ class Home_json(BaseTeacherLoginView):
         return JsonResponse(dat)
 
 
-class TeacherLoginView(View):
+class TeacherLoginView(APIView):
 
     def get(self, request, *args, **kwargs):
         return HttpResponse("PLease Login" + str(kwargs))
+    from initial.serializers import SectionMarksSerializer
+    serialzer_class = SectionMarksSerializer
+    parser_classes = [MultiPartParser]
 
+    @swagger_auto_schema(request_body=LoginSerializer, responses={200: UserSerializer(many=True)})
     def post(self, request, *args, **kwargs):
         username = request.POST['username']
         password = request.POST['password']
         if username == "" or password == "":
-            return HttpResponse(content="Empty Usename or Password Field.", status=400)
+            return Response(data="Empty Usename or Password Field.", status=400)
 
         user = authenticate(request, username=username, password=password)
-        if user.is_teacher == False:
-            return JsonResponse({'status':"User not a Student."}, status = 401)
 
-        if user is not None:
+        print(user)
+
+        if user is not None and user.is_teacher:
             login(request, user)
             dict_user = model_to_dict(user)
             dict_user.pop('groups', None)
             dict_user.pop('password', None)
-            return JsonResponse({'status': 'success', 'message': 'User Logged In', **dict_user})
+            return Response({'status': 'success', 'message': 'User Logged In', **dict_user})
         else:
-            return JsonResponse({'status': "Invalid Username of Password."}, status=403)
+            if not user.is_teacher:
+                return Response({'status': "User not a Student."}, status=401)
+            return Response({'status': "Invalid Username of Password."}, status=403)
 
         return HttpResponseRedirect('/home')
 
@@ -273,4 +288,3 @@ class TeacherLogoutView(View):
     def post(self, request):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
-

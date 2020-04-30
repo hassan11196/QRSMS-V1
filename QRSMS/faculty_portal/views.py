@@ -21,7 +21,6 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 
 
-
 import re
 import openpyxl
 from initial.root_commands import add_semesterCore
@@ -29,16 +28,21 @@ from .serializers import FacultySerializer
 from initial.serializers import SemesterSerializer
 # Create your views here.
 
-from .models import  Faculty
+from .models import Faculty
+
 
 def check_if_faculty(user):
     return True if user.is_faculty else False
+
 
 class BaseFacultyLoginView(APIView):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_faculty, login_url='/faculty/login'))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
+
+# Redundant and Dysfunctional View, Stay away
+
 
 class SemesterStart(BaseFacultyLoginView):
 
@@ -51,22 +55,26 @@ class SemesterStart(BaseFacultyLoginView):
     def delete(self, request, format=None):
         return Response('Delete Api - Debug')
 
+
 class Home_json(BaseFacultyLoginView):
-        
+
     def get(self, request):
         print(dir(request))
-        fa = Faculty.objects.filter(user__username = str(request.user))
-        faculty_data = FacultySerializer(fa, many=True,  context={'request': Request(request)}).data
-        dat = {'status':'success', 'message':'Faculty Data', 'data':faculty_data}
-        
+        fa = Faculty.objects.filter(user__username=str(request.user))
+        faculty_data = FacultySerializer(fa, many=True,  context={
+                                         'request': Request(request)}).data
+        dat = {'status': 'success',
+               'message': 'Faculty Data', 'data': faculty_data}
+
         return JsonResponse(dat)
+
 
 class FacultyLoginView(View):
 
-    def get(self, request,*args, **kwargs):
+    def get(self, request, *args, **kwargs):
         return HttpResponse("PLease Login" + str(kwargs))
 
-    def post(self, request,*args,**kwargs):
+    def post(self, request, *args, **kwargs):
         username = request.POST['username']
         password = request.POST['password']
         if username is "" or password is "":
@@ -79,11 +87,9 @@ class FacultyLoginView(View):
             dict_user = model_to_dict(user)
             dict_user.pop('password')
             dict_user.pop('groups')
-            return JsonResponse({'status':'success','message' : 'User Logged In', 'data':dict_user})
+            return JsonResponse({'status': 'success', 'message': 'User Logged In', 'data': dict_user})
         else:
-            return JsonResponse({'status':"Invalid Username of Password."}, status = 403)
-        
-        
+            return JsonResponse({'status': "Invalid Username of Password."}, status=403)
 
 
 class GetStudentTimeTable(BaseFacultyLoginView):
@@ -125,46 +131,44 @@ class GetStudentTimeTable(BaseFacultyLoginView):
 
         for col in worksheet['I']:
             if(col.value != None):
-                col.value = col.value.replace(' ','')
+                col.value = col.value.replace(' ', '')
                 if(('CoursePlanning:' in col.value)or('Courseplanning:' in col.value)):
-                    s = re.findall(r'[A-Za-z]+:[A-Z,a-z0-9()\/]+\)',col.value)[0]
-                    col.value=col.value.replace(s,'')
+                    s = re.findall(
+                        r'[A-Za-z]+:[A-Z,a-z0-9()\/]+\)', col.value)[0]
+                    col.value = col.value.replace(s, '')
                 insArray = col.value
-                secArray = re.findall(r'\([A-Za-z,0-9]*\)',col.value)
+                secArray = re.findall(r'\([A-Za-z,0-9]*\)', col.value)
                 subjSec = list()
                 for sec in secArray:
-                    insArray = insArray.replace(sec,'').replace(' ','')
-                    sec=sec.replace('(','').replace(')','').split(',')
+                    insArray = insArray.replace(sec, '').replace(' ', '')
+                    sec = sec.replace('(', '').replace(')', '').split(',')
                     subjSec.append(sec)
                 section.append(subjSec)
                 insArray = insArray.split(',')
                 instructor.append(insArray)
-        
+
         timetable_list = []
 
-        for i in range(1,len(code)):
+        for i in range(1, len(code)):
             print(code[i])
             print(title[i])
-            print(short[i]) 
+            print(short[i])
             print(crdthr[i])
             print(instructor[i])
             print(section[i])
             timetable_list.append(
-                {'course_code':code[i],
-                'course_name':title[i],
-                'course_short':short[i],
-                'course_credits':crdthr[i],
-                'course_instructors':instructor[i],
-                'course_sections':section[i]
-                }
+                {'course_code': code[i],
+                 'course_name': title[i],
+                 'course_short': short[i],
+                 'course_credits': crdthr[i],
+                 'course_instructors': instructor[i],
+                 'course_sections': section[i]
+                 }
             )
-
-
-        return JsonResponse({'status':'success','message' : 'TimeTable', 'data': timetable_list})
+        return JsonResponse({'status': 'success', 'message': 'TimeTable', 'data': timetable_list})
 
 
 class FacultyLogoutView(View):
     def post(self, request):
         logout(request)
-        return JsonResponse({'status':'success','message' : 'User Logged Out'})
-
+        return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
