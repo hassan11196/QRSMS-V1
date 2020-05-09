@@ -68,7 +68,9 @@ class BaseTeacherLoginView(APIView):
 
 
 class TeacherAttendanceView(BaseTeacherLoginView):
+    parser_classes = [JSONParser, MultiPartParser]
     @csrf_exempt
+    @swagger_auto_schema()
     def post(self, request):
         try:
             query = request.data
