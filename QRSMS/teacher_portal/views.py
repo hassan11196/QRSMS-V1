@@ -140,8 +140,9 @@ class AssignedSections(BaseTeacherLoginView):
 
         from rest_framework.request import Request
         from initial.serializers import CourseSectionSerializer
+      
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
-                                                  'request': Request(request)}).data
+                                                  'request': request}).data
         print(serial_sections)
         if sections is None or serial_sections is None:
             return JsonResponse({'message': 'Teacher has no assigned courses.', 'condition': True, 'sections': serial_sections}, status=200)
@@ -172,12 +173,12 @@ class StartSectionAttendance(BaseTeacherLoginView):
                 scsddc=req_scsddc, attendance_slot=slot, section=section, class_date=sec_att.class_date)
 
             data = SectionAttendanceSerializer(
-                sec_att2, context={'request': Request(request)}).data
+                sec_att2, context={'request': request}).data
 
             return JsonResponse({'message': 'Attendance Already Open For This Class.', 'condition': True, 'qr_json': data}, status=200)
 
         data = SectionAttendanceSerializer(
-            sec_att, context={'request': Request(request)}).data
+            sec_att, context={'request': request}).data
 
         if sec_att is None:
             return JsonResponse({'message': 'Teacher has no assigned courses or Invalid scsddc.', 'condition': True, 'qr_json': data}, status=200)
