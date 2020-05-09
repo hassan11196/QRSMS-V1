@@ -101,7 +101,6 @@ class Semester(models.Model):
         # Call the real save() method
         super(Semester, self).save(*args, **kwargs)
 
-
     def get_absolute_url(self):
         return reverse('initial_semester_detail', args=(self.pk,))
 
@@ -160,7 +159,7 @@ class StudentInfoSection(models.Model):
         'initial.MarkSheet', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
-        return self.student.uid + "_" + self.coursesection_set.first().scsddc
+        return self.student.uid + "_" + (self.coursesection_set.first().semester_code if self.coursesection_set.first() != None else 'NO COURSE SECTION')
 
 
 class CourseSection(models.Model):

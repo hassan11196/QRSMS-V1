@@ -26,7 +26,7 @@ from student_portal import views as student_views
 from teacher_portal import views as teacher_views
 from faculty_portal import views as faculty_views
 from initial import views
-
+from django.contrib.auth import views as auth_views
 
 router = routers.DefaultRouter()
 router.register(r'users', actor_views.UserViewSet)
@@ -68,7 +68,7 @@ urlpatterns = [
 
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('accounts/', include('django.contrib.auth.urls')),
-
+    path('change-password/', auth_views.PasswordChangeView.as_view()),
     # path(r'rest_admin/', django_restful_admin.site.urls),
     # re_path(r'^(?:.*)/?$', views.index), # URL Fallback to react router
 ]

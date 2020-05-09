@@ -10,6 +10,7 @@ from django.contrib.auth.models import Group
 from django.http import JsonResponse
 from django.views import View
 from django.middleware.csrf import get_token
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, viewsets
@@ -20,7 +21,7 @@ from rest_framework.views import APIView
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.parsers import FormParser, MultiPartParser
+from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
 
 from django.forms.models import model_to_dict
 
@@ -59,6 +60,7 @@ def check_if_teacher(user):
 
 class BaseTeacherLoginView(APIView):
     @swagger_auto_schema()
+    @csrf_exempt
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_teacher))
     def dispatch(self, request, *args, **kwargs):
@@ -66,12 +68,13 @@ class BaseTeacherLoginView(APIView):
 
 
 class TeacherAttendanceView(BaseTeacherLoginView):
+    @csrf_exempt
     def post(self, request):
         try:
-            query = json.loads(request.body)
+            query = request.data
             print('Request From : ' + str(request.user))
         except json.JSONDecodeError as err:
-            print(request.body)
+
             print(request)
             return JsonResponse({'status': 'Failure', 'message': 'Inavlid JSON Object', 'conditon': False, 'error': str(err)})
         try:
@@ -89,15 +92,20 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             return JsonResponse({'status': 'Failure', 'message': 'Malformed Query', 'conditon': False, 'missing key': str(err)})
 
         sddc = get_sddc(semester_code, degree, department, campus, city)
+
         try:
             section_object = CourseSection.objects.get(
-                section_name=section, course_code=course_code, semester_code=sddc, teacher__user__username=str(request.user))
+                section_name=section, course_code=course_code, semester_code=sddc, teacher__user__username=str('Abdul.Rehman'))
+
+            # section_object = CourseSection.objects.get(
+            #     section_name="E", course_code="CS309", semester_code="FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi", teacher__user__username=str('Abdul.Rehman'))
+            print(section_object)
 
         except CourseSection.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
 
         students = StudentInfoSectionModelSerializerGetAttendance(
-            section_object.student_info.all(), many=True, context={'request': Request(request)}).data
+            [section_object.student_info], many=True, context={'request': (request)}).data
         # print(students)
 
         scsddc = section + '_' + course_code + '_' + sddc
@@ -105,9 +113,8 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             attendance_list = SectionAttendance.objects.filter(scsddc=scsddc)
         except SectionAttendance.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
-
         class_attendance = SectionAttendanceSerializer(
-            attendance_list, many=True, context={'request': Request(request)}).data
+            attendance_list, many=True).data
         print('Atteddance for this section : ' + str(len(attendance_list)))
         print('Students in this Section : ' + str(len(students)))
         # print(class_attendance)
@@ -150,7 +157,6 @@ class StartSectionAttendance(BaseTeacherLoginView):
         if(slot is None or req_scsddc is None or section is None):
             return JsonResponse({'message': 'Invalud Form Inputs', 'condition': False, }, status=200)
 
-        from rest_framework.request import Request
         from initial.serializers import SectionAttendanceSerializer
         print(request.POST)
 
@@ -255,8 +261,7 @@ class TeacherLoginView(APIView):
 
     def get(self, request, *args, **kwargs):
         return HttpResponse("PLease Login" + str(kwargs))
-    from initial.serializers import SectionMarksSerializer
-    serialzer_class = SectionMarksSerializer
+
     parser_classes = [MultiPartParser]
 
     @swagger_auto_schema(request_body=LoginSerializer, responses={200: UserSerializer(many=True)})

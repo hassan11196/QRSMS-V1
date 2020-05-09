@@ -112,4 +112,3 @@ class AddCampuses(View):
             print(e)
             return JsonResponse({'status': 'success', 'error': 'Campus Already Exists'})
         return JsonResponse({'status': 'success', **data})
-

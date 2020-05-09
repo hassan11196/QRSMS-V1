@@ -29,6 +29,8 @@ psycopg2 = "*"
 openpyxl = "*"
 drf-yasg = "*"
 django-filter = "*"
+pyyaml = "*"
+pinax-theme-bootstrap = "*"
 
 [requires]
 python_version = "3.7"

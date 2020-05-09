@@ -1,26 +1,28 @@
 {
-    "python.pythonPath": "C:\\Users\\hassa\\.virtualenvs\\QRSMS-V1-kd4mN3f8\\Scripts\\python.exe",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "editor.formatOnSave": true,
-    "python.linting.pylintArgs": [
-        "--disable=C0111", // missing docstring
-        "--load-plugins=pylint_django",
-    ],
-    "python.formatting.provider": "autopep8",
-    "bracket-pair-colorizer-2.colors": [
-        
-        "LightSkyBlue",
-        "#74B3CE",
-        "#086375",
-        "#4e758f",
-        "#508991",
-        "#86BAA1"
-    ],
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    }
+  "python.pythonPath": "C:\\Users\\hassa\\.virtualenvs\\QRSMS-V1-kd4mN3f8\\Scripts\\python.exe",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "autopep8",
+  "python.linting.pylintArgs": [
+    "--disable=C0111", // missing docstring
+    "--load-plugins",
+    "pylint_django"
+  ],
+  "python.jediEnabled": false,
+  "python.formatting.provider": "autopep8",
+  "bracket-pair-colorizer-2.colors": [
+    "LightSkyBlue",
+    "#74B3CE",
+    "#086375",
+    "#4e758f",
+    "#508991",
+    "#86BAA1"
+  ],
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
 }

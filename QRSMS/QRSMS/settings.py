@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django_extensions',
 
 
+
 ]
 
 MIDDLEWARE = [
@@ -76,10 +77,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/templates',
+            # os.path.join(BASE_DIR, 'templates'),
             '/faculty_portal',
             '/teacher_portal',
             '/student_portal',
+
 
         ],
         'APP_DIRS': True,
@@ -89,10 +91,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'QRSMS.wsgi.application'
 
@@ -162,6 +166,7 @@ USE_TZ = True
 
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 STATIC_URL = '/static/'

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import Group
 # Create your views here.
 from django.http import JsonResponse
-from django.views import View
+
 from django.middleware.csrf import get_token
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from rest_framework import generics, viewsets
@@ -11,6 +11,9 @@ from rest_framework.request import Request
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import serializers
+from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
+from rest_framework.permissions import IsAuthenticated
+import re
 from drf_yasg.utils import swagger_auto_schema
 
 from rest_framework.authentication import (BasicAuthentication,
@@ -21,10 +24,11 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from django.utils.decorators import method_decorator
 
 
-import re
 import openpyxl
+
 from initial.root_commands import add_semesterCore
 from .serializers import FacultySerializer
+from student_portal.serializers import StudentSerializer
 from initial.serializers import SemesterSerializer
 # Create your views here.
 
@@ -41,7 +45,13 @@ class BaseFacultyLoginView(APIView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
-# Redundant and Dysfunctional View, Stay away
+
+class RegisterStudent(BaseFacultyLoginView):
+    parser_classes = [JSONParser]
+    @swagger_auto_schema(request_body=StudentSerializer, responses={200: StudentSerializer(many=True)})
+    def post(self, request):
+        return Response({'Created': True})
+        # Redundant and Dysfunctional View, Stay away
 
 
 class SemesterStart(BaseFacultyLoginView):
@@ -69,7 +79,7 @@ class Home_json(BaseFacultyLoginView):
         return JsonResponse(dat)
 
 
-class FacultyLoginView(View):
+class FacultyLoginView(APIView):
 
     def get(self, request, *args, **kwargs):
         return HttpResponse("PLease Login" + str(kwargs))
@@ -168,7 +178,7 @@ class GetStudentTimeTable(BaseFacultyLoginView):
         return JsonResponse({'status': 'success', 'message': 'TimeTable', 'data': timetable_list})
 
 
-class FacultyLogoutView(View):
+class FacultyLogoutView(APIView):
     def post(self, request):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
