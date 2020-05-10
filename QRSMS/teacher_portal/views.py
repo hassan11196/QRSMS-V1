@@ -297,3 +297,19 @@ class TeacherLogoutView(View):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
 
+
+@receiver(attendance_of_day_for_student)
+def generate_attendance_for_student(**kwargs):
+    if kwargs['option'] == 'create':
+        print('Received Signal For Creation Attendance of Day for student')
+        SCSDDC_temp = str(kwargs['scsddc'])
+        section_attendance = kwargs['sectionattendance']
+        section = kwargs['coursesection']
+        csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
+        for student_info in csection.student_info.all():
+            new_a = StudentAttendance(attendance_type='M', state='A', scsddc=section_attendance.scsddc, student=student_info.student, class_date=section_attendance.class_date,
+                                      attendance_slot=section_attendance.attendance_slot, duration_hour=section_attendance.duration_hour, section=section_attendance.section)
+            new_a.save()
+            info = csection.student_info.get(student=student_info.student)
+            info.attendance_sheet.attendance.add(new_a)
+        return 'Success'
