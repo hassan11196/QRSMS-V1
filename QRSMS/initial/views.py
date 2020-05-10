@@ -1,3 +1,4 @@
+import django_filters
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
@@ -112,3 +113,4 @@ class AddCampuses(View):
             print(e)
             return JsonResponse({'status': 'success', 'error': 'Campus Already Exists'})
         return JsonResponse({'status': 'success', **data})
+

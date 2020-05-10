@@ -133,7 +133,10 @@ class Semester(models.Model):
                     course_status = CourseStatus(
                         course=c, section=s.admission_section)
                     course_status.save()
-                    of_courses.courses_offered.add(course_status)
+                    if of_courses.courses_offered is None:
+                        of_courses.courses_offered = course_status
+                    else:
+                        of_courses.courses_offered.add(course_status)
                 of_courses.save()
 
     def offer_elective_courses(self):
@@ -146,7 +149,10 @@ class Semester(models.Model):
                 for c in eg.courses.all():
                     course_status = CourseStatus(course=c, section='GR1')
                     course_status.save()
-                    of_courses.courses_offered.add(course_status)
+                    if of_courses.courses_offered is None:
+                        of_courses.courses_offered = course_status
+                    else:
+                        of_courses.courses_offered.add(course_status)
                 of_courses.save()
 
 
@@ -159,7 +165,7 @@ class StudentInfoSection(models.Model):
         'initial.MarkSheet', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
-        return self.student.uid + "_" + (self.coursesection_set.first().semester_code if self.coursesection_set.first() != None else 'NO COURSE SECTION')
+        return self.student.uid + "_" + (self.coursesection_set.first().scsddc if self.coursesection_set.first() != None else 'NO COURSE SECTION')
 
 
 class CourseSection(models.Model):
@@ -184,8 +190,8 @@ class CourseSection(models.Model):
         blank=True, null=True, default=True)
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
-    student_info = models.ForeignKey(
-        'initial.StudentInfoSection', on_delete=models.SET_NULL, null=True)
+    student_info = models.ManyToManyField(
+        'initial.StudentInfoSection')
 
     teacher = models.ForeignKey(
         'teacher_portal.Teacher', on_delete=models.SET_NULL, null=True)
@@ -497,7 +503,10 @@ def make_classes(semester_code, course_code, sections):
     course_class.save()
     print(course_class)
     for section in section_list:
-        course_class.sections.add(section)
+        if course_class.sections is None:
+            course_class.sections = section
+        else:
+            course_class.sections.add(section)
 
 
 @receiver(student_info_section_for_student)
@@ -505,10 +514,10 @@ def make_or_delete_student_info_section_for_student(**kwargs):
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Student Info Section')
         SCSDDC_temp = str(kwargs['course_section'])
-        new_sheet_attendance = AttendanceSheet(
-            student=kwargs['student'], scsddc=SCSDDC_temp)
-        new_sheet_marks = MarkSheet(
-            student=kwargs['student'], scsddc=SCSDDC_temp)
+        new_sheet_attendance = AttendanceSheet.objects.get_or_create(
+            student=kwargs['student'], scsddc=SCSDDC_temp)[0]
+        new_sheet_marks = MarkSheet.objects.get_or_create(
+            student=kwargs['student'], scsddc=SCSDDC_temp)[0]
 
         new_sheet_marks.save()
         new_sheet_attendance.save()
@@ -519,7 +528,11 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         info.save()
 
         csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
-        csection.student_info.add(info)
+        print(csection)
+        if csection.student_info is None:
+            csection.student_info = info
+        else:
+            csection.student_info.add(info)
         csection.save()
 
         return 'Success'

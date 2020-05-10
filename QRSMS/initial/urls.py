@@ -1,17 +1,19 @@
 from django.urls import path, include
 from rest_framework import routers
+from django_filters.views import FilterView
 
 from . import api
 from . import views
+from . import models
 
-initial='initial'
+initial = 'initial'
 router = routers.DefaultRouter()
 router.register(r'course', api.CourseViewSet)
-router.register(r'courseDebug', api.CourseViewSetDebug)
+# router.register(r'courseDebug', api.CourseViewSetDebug)
 router.register(r'semester', api.SemesterViewSet)
 router.register(r'offeredcourses', api.OfferedCoursesViewSet)
 router.register(r'coursestatus', api.CourseStatusViewSet)
-router.register(r'attendance_sheet',api.AttendanceSheetViewSet)
+router.register(r'attendance_sheet', api.AttendanceSheetViewSet)
 router.register(r'coursesection', api.CourseSectionViewSet)
 router.register(r'sectionattendance', api.SectionAttendanceViewSet)
 router.register(r'marksheet', api.MarkSheetViewSet)
@@ -40,14 +42,23 @@ urlpatterns = [
 # )
 urlpatterns += [
     path('', views.index, name='index'),
-    path('management/get_csrf',views.csrf,name="csrf_get"),
+    path('management/get_csrf', views.csrf, name="csrf_get"),
     path('management/ping_csrf', views.ping, name="csrf_ping"),
-    path('management/user_not_logged/', views.UserNotLogged.as_view(), name = 'user_not_loggged'),
-    path('management/add_students/', views.Add_students.as_view(), name='manage_add_students'),
-    path('management/add_semestercore/', views.Add_semesterCore.as_view(), name='manage_add_semsterCore'),
-    path('management/add_university/', views.Add_university.as_view(), name = 'manage_add_university'),
-    path('management/add_superuser/', views.Add_superuser.as_view(), name = 'manage_add_superuser'),
-    path('management/add_courses/', views.Add_courses.as_view(), name = 'manage_add_courses'),
-    path('management/add_campuses/', views.AddCampuses.as_view(), name = 'manage_add_campuses')
- 
+    path('management/user_not_logged/',
+         views.UserNotLogged.as_view(), name='user_not_loggged'),
+    path('management/add_students/', views.Add_students.as_view(),
+         name='manage_add_students'),
+    path('management/add_semestercore/',
+         views.Add_semesterCore.as_view(), name='manage_add_semsterCore'),
+    path('management/add_university/', views.Add_university.as_view(),
+         name='manage_add_university'),
+    path('management/add_superuser/', views.Add_superuser.as_view(),
+         name='manage_add_superuser'),
+    path('management/add_courses/', views.Add_courses.as_view(),
+         name='manage_add_courses'),
+    path('management/add_campuses/',
+         views.AddCampuses.as_view(), name='manage_add_campuses'),
+
+    path('filter-semester/', FilterView.as_view(model=models.Semester))
+
 ]
