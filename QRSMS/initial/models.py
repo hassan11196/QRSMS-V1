@@ -555,17 +555,19 @@ def make_or_delete_student_info_section_for_student(**kwargs):
 #     if kwargs['option'] == 'create':
 #         print('Received Signal For Creation Attendance Sheet')
 #         SCSDDC_temp = str(kwargs['course_section'])
-#         new_sheet = AttendanceSheet(student = kwargs['student'], scsddc = SCSDDC_temp)
+#         new_sheet = AttendanceSheet(
+#             student=kwargs['student'], scsddc=SCSDDC_temp)
 #         new_sheet.save()
-#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
 #         csection.attendance_sheet.add(new_sheet)
 #         csection.save()
 #         return 'Success'
 #     else:
 #         print('Received Signal For Deletion Attendance Sheet')
 #         SCSDDC_temp = str(kwargs['course_section'])
-#         new_sheet = AttendanceSheet.objects.get(student = kwargs['student'], scsddc = SCSDDC_temp)
-#         csection = CourseSection.objects.get(scsddc = SCSDDC_temp)
+#         new_sheet = AttendanceSheet.objects.get(
+#             student=kwargs['student'], scsddc=SCSDDC_temp)
+#         csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
 #         csection.attendance_sheet.remove(new_sheet)
 #         new_sheet.delete()
 #         csection.save()

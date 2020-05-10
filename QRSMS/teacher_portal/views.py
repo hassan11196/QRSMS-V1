@@ -296,3 +296,4 @@ class TeacherLogoutView(View):
     def post(self, request):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
+
