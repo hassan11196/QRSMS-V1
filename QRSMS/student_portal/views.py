@@ -20,13 +20,13 @@ import io
 from rest_framework.request import Request
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
-from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance
+from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance,Course
 from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
 from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
-
 from .forms import StudentForm, StudentFormValidate
-from .models import Student
+from .models import Student,FeeChallan
+from initial.models import Semester
 # Create your views here.
 class UserNotLogged(View):
     def get(self, request):
@@ -215,6 +215,65 @@ class StudentLogoutView(View):
     def post(self, request):
         logout(request)
         return JsonResponse({'status':'success','message' : 'User Logged Out'})
+
+
+
+# def generate_challan(request):
+#     student = Student.objects.get(user = request.user)
+#     semester = Semester.objects.get(semester_code= request.POST['semester'])
+#     csr = request.POST['course'].split(',')
+#     challan = FeeChallan.object.create(student=student,semester=semester)
+#     fee_per_Cr = semester.fee_per_CR
+#     fee = 0
+#     for c in csr:
+#         challan.coursea.add(Course.object.get(course_code=c))
+#         fee+=fee_per_Cr
+#     challan.Tution_fee = fee
+#     challan.total_fee = fee
+#     challan.save()
+
+def update_challan(request):
+    admission_fee = request.POST['admission_fee']
+    student = Student.objects.get(user = request.user)
+    semester = Semester.objects.get(semester_code= request.POST['semester'])
+    challan,created = FeeChallan.objects.get_or_create(student = student,semester =semester)
+    option = request.POST['action']
+    code = request.POST['code']
+    course = Course.objects.get(course_code = code)
+    course_fee = semester.fee_per_CR
+    if option == 'drop':
+        challan.course.remove(course)
+        challan.total_fee = challan.total_fee-course_fee
+    else:
+        challan.course.add(course)
+        challan.total_fee = challan.total_fee+course_fee
+        if(admission_fee!=''):
+            challan.total_fee += admission_fee
+    challan.save()
+
+def get_challan(request):
+    student = Student.objects.get(user = request.user)
+    semester= Semester.objects.get(semester_code = request.POST['code'])
+    challan = FeeChallan.objects.get(student = student,semester = semester)
+    challan_obj = {
+        "due_date":challan.due_date,
+        "name" : request.user.first_name+request.user.last_name,
+        "roll_no" :student.uid,
+        "challan_no": "123456678",
+        "discipline": student.degree_short_enrolled+'('+student.department_name_enrolled+')',
+        "semester":semester.semester_season+" "+semester.semester_year,
+        "admission_fee":challan.admission_fee,
+        "tution_fee": challan.tution_fee,
+        "fine": challan.Fine,
+        "other":challan.other_charges+challan.coActivity_charges,
+        "arrears":challan.Arrear,
+        "withholding":challan.withholding_tax,
+        "total_amount":challan.total_fee,
+        "fine_per_day":challan.total_fee*0.001,
+
+
+    }
+    return JsonResponse(list(challan_obj,safe=False))
 
 
 

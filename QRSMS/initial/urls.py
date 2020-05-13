@@ -48,6 +48,7 @@ urlpatterns += [
     path('management/add_university/', views.Add_university.as_view(), name = 'manage_add_university'),
     path('management/add_superuser/', views.Add_superuser.as_view(), name = 'manage_add_superuser'),
     path('management/add_courses/', views.Add_courses.as_view(), name = 'manage_add_courses'),
-    path('management/add_campuses/', views.AddCampuses.as_view(), name = 'manage_add_campuses')
+    path('management/add_campuses/', views.AddCampuses.as_view(), name = 'manage_add_campuses'),
+    path('accounts/updateChallan',views.update_challan, name="AccountUpdateChallan"),
  
 ]
