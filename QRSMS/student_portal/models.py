@@ -63,3 +63,18 @@ class Student(models.Model):
         return reverse('initial_student_update', args=(self.pk,))
 
 
+class FeeChallan(models.Model):
+    due_date = models.DateField(auto_now=True)
+    student = models.ForeignKey(Student, verbose_name="Student Name", on_delete=models.CASCADE)
+    courses = models.ManyToManyField("initial.Course")
+    admission_fee = models.FloatField(max_length=20 ,null=True,default=0)
+    tution_fee = models.FloatField(max_length=20 ,null=True,default=0)
+    Fine = models.FloatField(max_length=20 ,null=True,default=0)
+    Arrear = models.FloatField(max_length=20 ,null=True,default=0)
+    withholding_tax = models.FloatField(max_length=20 ,null=True,default=0)
+    other_charges = models.FloatField(max_length=10, null=True,default=0)
+    coActivity_charges = models.FloatField(max_length=10 ,null=True,default=0)
+    semester = models.ForeignKey("initial.Semester",on_delete=models.CASCADE)
+    total_fee = models.FloatField(max_length=20,null=True,default=0)
+    discount = models.FloatField(max_length=15)
+    financial_aid = models.FloatField(max_length=15)

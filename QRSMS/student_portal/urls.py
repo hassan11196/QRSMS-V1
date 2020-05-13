@@ -25,6 +25,8 @@ urlpatterns += [
     path('registration/period_active/',views.RegistrationCheck.as_view(),name='stduent_registration_open'),
     path('registration/available_courses/',views.RegistrationCourses.as_view(),name='registration_available_courses'),
     path('timetable/',views.TimeTableView.as_view(), name='student_timetable'),
-    path('postQR/',views.PostAttendanceQR.as_view(), name='student_post_qr')
+    path('postQR/',views.PostAttendanceQR.as_view(), name='student_post_qr'),
+    path('getChallan/',views.get_challan, name="ChallanGenerate"),
+    path('updateChallan/',views.update_challan, name = "updateCHallan")
  
 ]

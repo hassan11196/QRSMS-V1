@@ -1,0 +1,1 @@
+IDRViewer.config = {"pagecount":1,"title":"","author":"","fileName":"12017375501.pdf","bounds":[[1286,909]],"bookmarks":[],"thumbnailType":"jpg","pageType":"html","pageLabels":[]};
