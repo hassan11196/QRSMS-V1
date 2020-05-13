@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'drf_yasg',
     'django_extensions',
-
+    'django_filters',
 
 
 ]
@@ -81,7 +81,7 @@ TEMPLATES = [
             '/faculty_portal',
             '/teacher_portal',
             '/student_portal',
-
+            os.path.join(BASE_DIR, 'initial', 'templates'),
 
         ],
         'APP_DIRS': True,
@@ -181,7 +181,8 @@ REST_FRAMEWORK = {
     #     'rest_framework.authentication.BasicAuthentication',
     #     'rest_framework.authentication.SessionAuthentication',
     # ]
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 

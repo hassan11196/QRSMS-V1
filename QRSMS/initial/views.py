@@ -1,3 +1,4 @@
+import django_filters
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
@@ -113,6 +114,7 @@ class AddCampuses(View):
             return JsonResponse({'status': 'success', 'error': 'Campus Already Exists'})
         return JsonResponse({'status': 'success', **data})
 
+<<<<<<< HEAD
 class update_challan(View):
     def post(self,request):
         id = request.post['id']
@@ -138,3 +140,5 @@ class update_challan(View):
         challan.total_fee = challan.tution_fee+admission_fee+Fine+withhold+other+coactivity-discount-aid;
         challan.Arrears = aid
         challan.save()
+=======
+>>>>>>> 47031e338c624ba3dc752a6333887cafc4162580

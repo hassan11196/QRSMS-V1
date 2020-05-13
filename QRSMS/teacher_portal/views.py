@@ -68,7 +68,9 @@ class BaseTeacherLoginView(APIView):
 
 
 class TeacherAttendanceView(BaseTeacherLoginView):
+    parser_classes = [JSONParser, MultiPartParser]
     @csrf_exempt
+    @swagger_auto_schema()
     def post(self, request):
         try:
             query = request.data
@@ -105,7 +107,7 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
 
         students = StudentInfoSectionModelSerializerGetAttendance(
-            [section_object.student_info], many=True, context={'request': (request)}).data
+            section_object.student_info, many=True, context={'request': (request)}).data
         # print(students)
 
         scsddc = section + '_' + course_code + '_' + sddc
@@ -140,7 +142,7 @@ class AssignedSections(BaseTeacherLoginView):
 
         from rest_framework.request import Request
         from initial.serializers import CourseSectionSerializer
-      
+
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
                                                   'request': request}).data
         print(serial_sections)
@@ -155,8 +157,8 @@ class StartSectionAttendance(BaseTeacherLoginView):
         req_scsddc = request.POST['scsddc']
         slot = request.POST['slot']
         section = request.POST['section']
-        if(slot is None or req_scsddc is None or section is None):
-            return JsonResponse({'message': 'Invalud Form Inputs', 'condition': False, }, status=200)
+        if(slot == '' or slot == 'null' or req_scsddc == '' or section == ''):
+            return JsonResponse({'message': 'Invalud Form Inputs', 'condition': False, }, status=422)
 
         from initial.serializers import SectionAttendanceSerializer
         print(request.POST)
@@ -294,3 +296,20 @@ class TeacherLogoutView(View):
     def post(self, request):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
+
+
+@receiver(attendance_of_day_for_student)
+def generate_attendance_for_student(**kwargs):
+    if kwargs['option'] == 'create':
+        print('Received Signal For Creation Attendance of Day for student')
+        SCSDDC_temp = str(kwargs['scsddc'])
+        section_attendance = kwargs['sectionattendance']
+        section = kwargs['coursesection']
+        csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
+        for student_info in csection.student_info.all():
+            new_a = StudentAttendance(attendance_type='M', state='A', scsddc=section_attendance.scsddc, student=student_info.student, class_date=section_attendance.class_date,
+                                      attendance_slot=section_attendance.attendance_slot, duration_hour=section_attendance.duration_hour, section=section_attendance.section)
+            new_a.save()
+            info = csection.student_info.get(student=student_info.student)
+            info.attendance_sheet.attendance.add(new_a)
+        return 'Success'
