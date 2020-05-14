@@ -21,7 +21,7 @@ from django.db.utils import IntegrityError
 
 from .serializers import (CourseSerializer)
 
-from  student_portal.models import FeeChallan,Student
+from student_portal.models import FeeChallan, Student
 from .forms import CourseForm, SemesterForm
 from .models import Course, Semester
 
@@ -114,9 +114,9 @@ class AddCampuses(View):
             return JsonResponse({'status': 'success', 'error': 'Campus Already Exists'})
         return JsonResponse({'status': 'success', **data})
 
-<<<<<<< HEAD
+
 class update_challan(View):
-    def post(self,request):
+    def post(self, request):
         id = request.post['id']
         due_date = request.POST['date']
         admission_fee = request.POST['admission_fee']
@@ -126,9 +126,9 @@ class update_challan(View):
         coactivity = request.POST['coactivity']
         aid = request.POST['aid']
         discount = request.POST['discount']
-        
-        challan = FeeChallan.objects.get(student = Student.objects.get(uid = id))
-        challan.due_date =due_date
+
+        challan = FeeChallan.objects.get(student=Student.objects.get(uid=id))
+        challan.due_date = due_date
         challan.admission_fee = admission_fee
         challan.Fine = Fine
         challan.withholding_tax = withhold
@@ -137,8 +137,7 @@ class update_challan(View):
         challan.discount = discount
         challan.financial_aid = aid
 
-        challan.total_fee = challan.tution_fee+admission_fee+Fine+withhold+other+coactivity-discount-aid;
+        challan.total_fee = challan.tution_fee+admission_fee + \
+            Fine+withhold+other+coactivity-discount-aid
         challan.Arrears = aid
         challan.save()
-=======
->>>>>>> 47031e338c624ba3dc752a6333887cafc4162580
