@@ -73,6 +73,10 @@ class Add_semesterCore(View):
 
     def post(self, request):
         print('Inserting Semester')
+        semesters = Semester.objects.get(current_semester=True)
+        for sem in semesters:
+            sem.current_semester = False
+            sem.save()
         from .root_commands import add_semesterCore
         data = model_to_dict(add_semesterCore())
         return JsonResponse({'status': 'success', **data})
@@ -141,3 +145,8 @@ class update_challan(View):
             Fine+withhold+other+coactivity-discount-aid
         challan.Arrears = aid
         challan.save()
+
+
+def current_semester(request):
+    semester = Semester.objects.get(current_semester=True)
+    return JsonResponse(semester.semester_code, safe=False)

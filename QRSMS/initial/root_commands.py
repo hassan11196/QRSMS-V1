@@ -15,24 +15,29 @@ from institution.constants import DEFAULT_PASSWORD
 
 CURRENT_SEMESTER = 'Fall'  # , 0 , (1,'Fall')
 
+
 def random_func():
     add_teachers()
 
 
 def setup_university():
-    add_students('Dumps/students2.json',5)
+    add_students('Dumps/students2.json', 5)
     add_university()
     add_campuses()
     add_departments()
     add_degrees()
 
+
 def add_students_in_department():
-    dep = Department.objects.get(department_id = 1)
+    dep = Department.objects.get(department_id=1)
     for stud in Student.objects.all():
         dep.department_students.add(stud)
     dep.save()
+
+
 def add_teachers_in_department():
     pass
+
 
 def add_users_in_group():
     for user in User.objects.all():
@@ -49,13 +54,17 @@ def add_users_in_group():
             user.groups.add(Group.objects.get(name='faculty_group'))
             print('Added ' + str(user) + ' in ' + 'faculty_group')
 
+
 def add_teachers():
-    
-    teachers =["Zulfiqar.Ali.Memon","Anum.Qureshi","Tania.Irum","Ammara.Yaseen","Mohammad.Faheem","Abdul.Rehman","Javeria.Farooq","Syeda.Rubab.Jaffar","M.Nadeem","Hamza.Ahmed","Atif.Tahir","Zeshan.Khan","M.Waqas","Hasina.Khatoon","Hassan.Jamil.Syed"]
+
+    teachers = ["Zulfiqar.Ali.Memon", "Anum.Qureshi", "Tania.Irum", "Ammara.Yaseen", "Mohammad.Faheem", "Abdul.Rehman", "Javeria.Farooq",
+                "Syeda.Rubab.Jaffar", "M.Nadeem", "Hamza.Ahmed", "Atif.Tahir", "Zeshan.Khan", "M.Waqas", "Hasina.Khatoon", "Hassan.Jamil.Syed"]
 
     for teacher in teachers:
-        t = Teacher.create(nu_email= teacher+'nu.edu.pk',username = teacher,password = DEFAULT_PASSWORD)
+        t = Teacher.create(nu_email=teacher+'nu.edu.pk',
+                           username=teacher, password=DEFAULT_PASSWORD)
         print(t)
+
 
 def delete_groups():
     status = Group.objects.all().delete()
@@ -184,7 +193,7 @@ def insert_degrees():
     nd.save()
 
 
-def add_students(file_name = 'Dumps\Students.json', count = 20):
+def add_students(file_name='Dumps\Students.json', count=20):
     # u = User(first_name = "saya",last_name = "dapra",email= "wohra@hotmail.com",password = 'redragon')
     # u.save()
     # print(u)
@@ -254,28 +263,32 @@ def add_students(file_name = 'Dumps\Students.json', count = 20):
             d['attending_semester'] = True
             d['current_semester'] = 1  # Hardcode to Fall Semester
             created_user = User.create(first_name=d.get('first_name'),
-                                last_name=d.get('last_name'),
-                                email=d.get('registration_mail'),
-                                username=d.get('uid'),
-                                gender=d.get('gender'),
-                                is_student=True,
-                                CNIC=d.get('CNIC'),
-                                permanent_address=d.get('address'),
-                                permanent_home_phone=d.get('home_phone'),
-                                permanent_postal_code=d.get('postal_code'),
-                                permanent_city=d.get('city'),
-                                permanent_country=d.get('country'),
-                                current_address=d.get('address'),
-                                current_home_phone=d.get('home_phone'),
-                                current_postal_code=d.get('postal_code'),
-                                current_city=d.get('city'),
-                                current_country=d.get('country'),
-                                nationality='Pakistani',
-                                DOB=d.get('DOB'),
-                                mobile_contact=d.get('mobile_contact'),
-                                emergency_contact=d.get('emergency_contact'),
-                                password = DEFAULT_PASSWORD
-                                )
+                                       last_name=d.get('last_name'),
+                                       email=d.get('registration_mail'),
+                                       username=d.get('uid'),
+                                       gender=d.get('gender'),
+                                       is_student=True,
+                                       CNIC=d.get('CNIC'),
+                                       permanent_address=d.get('address'),
+                                       permanent_home_phone=d.get(
+                                           'home_phone'),
+                                       permanent_postal_code=d.get(
+                                           'postal_code'),
+                                       permanent_city=d.get('city'),
+                                       permanent_country=d.get('country'),
+                                       current_address=d.get('address'),
+                                       current_home_phone=d.get('home_phone'),
+                                       current_postal_code=d.get(
+                                           'postal_code'),
+                                       current_city=d.get('city'),
+                                       current_country=d.get('country'),
+                                       nationality='Pakistani',
+                                       DOB=d.get('DOB'),
+                                       mobile_contact=d.get('mobile_contact'),
+                                       emergency_contact=d.get(
+                                           'emergency_contact'),
+                                       password=DEFAULT_PASSWORD
+                                       )
             # created_user.set_password(DEFAULT_PASSWORD)
             # created_user.save()
             # pprint(d)
@@ -294,10 +307,10 @@ def add_students(file_name = 'Dumps\Students.json', count = 20):
                                       attending_semester=d.get(
                                           'attending_semester'),
                                       warning_count=d.get('warning_count'),
-                                      admission_section = d.get('Section')
+                                      admission_section=d.get('Section')
                                       # current_semester = Semester.objects.get(semester_season = d.get('current_semester'))
                                       )
-            
+
             # pprint(d)
             created_student.save()
             students_object_list.append(created_student)
@@ -315,13 +328,13 @@ def add_university(arg_uni_id=101101, arg_name='National University of Computing
     return u
 
 
-def add_campuses(arg_uni_id=101101,arg_campus_id=1, arg_campus_address='St-4 Sector 17-D On National Highway Karachi , Pakistan',
+def add_campuses(arg_uni_id=101101, arg_campus_id=1, arg_campus_address='St-4 Sector 17-D On National Highway Karachi , Pakistan',
                  arg_campus_name='MAIN CAMPUS', arg_campus_city='Karachi', arg_contact_no=9221341005416,
                  arg_contact_email='info@nu.edu.pk',
                  arg_campus_country='Pakistan'):
     campus = Campus(
         uni_name=University.objects.get(uni_id=arg_uni_id),
-        campus_id = arg_campus_id,
+        campus_id=arg_campus_id,
         campus_address=arg_campus_address,
         campus_name=arg_campus_name,
         campus_city=arg_campus_city,
@@ -335,28 +348,31 @@ def add_campuses(arg_uni_id=101101,arg_campus_id=1, arg_campus_address='St-4 Sec
     return campus
 
 
-def add_departments(arg_campus_id = 1, arg_department_id = 1, arg_department_name = 'Computer Sciences'):
+def add_departments(arg_campus_id=1, arg_department_id=1, arg_department_name='Computer Sciences'):
     department = Department(
-        campus_id = arg_campus_id,
-        department_id = arg_department_id,
-        department_name = arg_department_name
+        campus_id=arg_campus_id,
+        department_id=arg_department_id,
+        department_name=arg_department_name
     )
     department.save()
     return department
 
-def add_degrees(arg_offering_department = 1, arg_education_level = 'Bachelors', arg_degree_name = 'Computer Science', arg_degree_short = 'BS(CS)'):
+
+def add_degrees(arg_offering_department=1, arg_education_level='Bachelors', arg_degree_name='Computer Science', arg_degree_short='BS(CS)'):
     degree = Degree(
-        offering_department = Department.objects.get(department_id = arg_offering_department),
-        education_level = arg_education_level,
-        degree_name= arg_degree_name,
-        degree_short = arg_degree_short,
+        offering_department=Department.objects.get(
+            department_id=arg_offering_department),
+        education_level=arg_education_level,
+        degree_name=arg_degree_name,
+        degree_short=arg_degree_short,
         minimium_years_education=12,
         completion_year=16,
         duration=4,
     )
     degree.save()
     nd = Degree(
-        offering_department = Department.objects.get(department_id =arg_offering_department),
+        offering_department=Department.objects.get(
+            department_id=arg_offering_department),
         minimium_years_education=12,
         completion_year=16,
         duration=4,
@@ -377,9 +393,10 @@ def add_degrees(arg_offering_department = 1, arg_education_level = 'Bachelors', 
     # nd.save()
     return degree
 
+
 def add_semesterCore(semester_code, semester_season, semester_year, start_date, end_date):
-    Semester.objects.all().delete()
-    
+    # Semester.objects.all().delete()
+
     # temp_date = datetime.strptime(date_str, "%Y-%m-%d").date()
     s = Semester(
         semester_code='FALL2019',
@@ -387,6 +404,7 @@ def add_semesterCore(semester_code, semester_season, semester_year, start_date, 
         semester_year=2019,
         start_date=datetime.strptime('19-08-2019', "%d-%m-%Y").date(),
         end_date=datetime.strptime('19-12-2019', "%d-%m-%Y").date(),
+        current_semester=True,
     )
     s.save()
     return s

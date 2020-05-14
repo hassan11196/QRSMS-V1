@@ -80,7 +80,9 @@ class Semester(models.Model):
     elective_course_load = models.ManyToManyField(
         'initial.RegularElectiveCourseLoad')
     degree_short = models.CharField(max_length=30, null=True, blank=True)
-    fee_per_CR = models.FloatField(max_length=10,null=True,blank=True)
+    fee_per_CR = models.FloatField(max_length=10, null=True, blank=True)
+    current_semester = models.BooleanField(default=False)
+
     class Meta:
         unique_together = ('semester_season', 'semester_year')
         ordering = ['-semester_code']
