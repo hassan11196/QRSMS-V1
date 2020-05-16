@@ -245,7 +245,8 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
-
+# DISABLE THIS IS PRODUCTION
+AUTH_PASSWORD_VALIDATORS = []
 SWAGGER_SETTINGS = {
     'DEFAULT_AUTO_SCHEMA_CLASS': 'drf_yasg.inspectors.SwaggerAutoSchema',
 
