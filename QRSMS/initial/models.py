@@ -80,12 +80,14 @@ class Semester(models.Model):
     elective_course_load = models.ManyToManyField(
         'initial.RegularElectiveCourseLoad')
     degree_short = models.CharField(max_length=30, null=True, blank=True)
-    fee_per_CR = models.FloatField(max_length=10, null=True, blank=True)
+    fee_per_CR = models.FloatField(
+        max_length=10, null=True, blank=True, default=7400)
     current_semester = models.BooleanField(default=False)
 
     class Meta:
         unique_together = ('semester_season', 'semester_year')
         ordering = ['-semester_code']
+        get_latest_by = 'start_date'
 
     def __str__(self):
         return self.semester_code
@@ -496,7 +498,7 @@ def make_classes(semester_code, course_code, sections):
     section_list = []
     for section in sections:
         course_section = CourseSection(
-            semester_code=semester_code, course_code=course_code, section_name=section)
+            semester_code=semester_code, course_code=course_code, section_name=section, course=Course.objects.get(course_code=course_code))
         course_section.save()
         section_list.append(course_section)
 

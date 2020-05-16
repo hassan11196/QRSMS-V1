@@ -11,9 +11,10 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from rest_framework import generics, viewsets
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
+from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from django.forms.models import model_to_dict
-from django.views.generic import DetailView, ListView, UpdateView, CreateView
+
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
 import io
@@ -40,7 +41,7 @@ def check_if_student(user):
     return True if user.is_student else False
 
 
-class BaseStudentLoginView(views.APIView):
+class BaseStudentLoginView(APIView):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_student, login_url='/student/login'))
     def dispatch(self, request, *args, **kwargs):
@@ -221,6 +222,14 @@ class StudentLoginView(View):
             return JsonResponse({'status': "Invalid Username of Password."}, status=403)
 
         return HttpResponseRedirect('/home')
+
+
+class StudentSectionView(StudentLoginView):
+    def get(self, request, *args, **kwargs):
+        current_semester = Semester.objects.filter(
+            current_semester=True).latest()
+
+        return Response()
 
 
 class StudentLogoutView(View):
