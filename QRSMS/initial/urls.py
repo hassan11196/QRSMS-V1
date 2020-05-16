@@ -44,17 +44,6 @@ urlpatterns += [
     path('', views.index, name='index'),
     path('management/get_csrf', views.csrf, name="csrf_get"),
     path('management/ping_csrf', views.ping, name="csrf_ping"),
-<<<<<<< HEAD
-    path('management/user_not_logged/', views.UserNotLogged.as_view(), name = 'user_not_loggged'),
-    path('management/add_students/', views.Add_students.as_view(), name='manage_add_students'),
-    path('management/add_semestercore/', views.Add_semesterCore.as_view(), name='manage_add_semsterCore'),
-    path('management/add_university/', views.Add_university.as_view(), name = 'manage_add_university'),
-    path('management/add_superuser/', views.Add_superuser.as_view(), name = 'manage_add_superuser'),
-    path('management/add_courses/', views.Add_courses.as_view(), name = 'manage_add_courses'),
-    path('management/add_campuses/', views.AddCampuses.as_view(), name = 'manage_add_campuses'),
-    path('accounts/updateChallan',views.update_challan, name="AccountUpdateChallan"),
- 
-=======
     path('management/user_not_logged/',
          views.UserNotLogged.as_view(), name='user_not_loggged'),
     path('management/add_students/', views.Add_students.as_view(),
@@ -69,8 +58,9 @@ urlpatterns += [
          name='manage_add_courses'),
     path('management/add_campuses/',
          views.AddCampuses.as_view(), name='manage_add_campuses'),
+    path('accounts/updateChallan', views.update_challan,
+         name="AccountUpdateChallan"),
+    path('filter-semester/', FilterView.as_view(model=models.Semester)),
+    path('semester/getCurrentSemester/', views.current_semester)
 
-    path('filter-semester/', FilterView.as_view(model=models.Semester))
-
->>>>>>> 47031e338c624ba3dc752a6333887cafc4162580
 ]
