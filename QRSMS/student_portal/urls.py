@@ -22,7 +22,7 @@ urlpatterns += [
     path('home_json/', views.Home_json.as_view(), name='home_json'),
     # path('login/<str:value>',views.StudentLoginView.as_view(), name="test_student_login2"),
     path('signup/', views.StudentSignupView.as_view(), name="test_student_signup"),
-    # path('sections/', views.StudentSectionView.as_view(), name='student_section'),
+    path('sections/', views.StudentSectionView.as_view(), name='student_section'),
     # path('attendance/', , name='student_attendance'),
     path('registration/period_active/', views.RegistrationCheck.as_view(),
          name='stduent_registration_open'),

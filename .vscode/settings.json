@@ -9,7 +9,8 @@
     "--load-plugins",
     "pylint_django"
   ],
-  "python.jediEnabled": false,
+  "python.linting.pycodestyleArgs": ["--ignore=E501"],
+  "python.jediEnabled": true,
   "python.formatting.provider": "autopep8",
   "bracket-pair-colorizer-2.colors": [
     "LightSkyBlue",
@@ -23,6 +24,7 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "**/*.pyc": true
   }
 }
