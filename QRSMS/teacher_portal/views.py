@@ -36,6 +36,7 @@ from .signals import attendance_of_day_for_student, marks_for_student
 from django.db.utils import IntegrityError
 
 from actor.serializers import LoginSerializer, UserSerializer
+from initial.models import split_scsddc, Semester
 
 
 def get_sddc(semester, degree, department, campus, city):
@@ -97,7 +98,7 @@ class TeacherAttendanceView(BaseTeacherLoginView):
 
         try:
             section_object = CourseSection.objects.get(
-                section_name=section, course_code=course_code, semester_code=sddc, teacher__user__username=str('Abdul.Rehman'))
+                section_name=section, course_code=course_code, semester_code=sddc, teacher__user__username=str(request.user))
 
             # section_object = CourseSection.objects.get(
             #     section_name="E", course_code="CS309", semester_code="FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi", teacher__user__username=str('Abdul.Rehman'))
@@ -157,11 +158,17 @@ class StartSectionAttendance(BaseTeacherLoginView):
         req_scsddc = request.POST['scsddc']
         slot = request.POST['slot']
         section = request.POST['section']
+        course_code = request.POST['course_code']
         if(slot == '' or slot == 'null' or req_scsddc == '' or section == ''):
             return JsonResponse({'message': 'Invalud Form Inputs', 'condition': False, }, status=422)
 
         from initial.serializers import SectionAttendanceSerializer
         print(request.POST)
+
+        current_semester = Semester.objects.filter(
+            current_semester=True).latest()
+
+        req_scsddc = f'{request.POST["section"]}_{request.POST["course_code"]}_{current_semester.semester_code}'
 
         try:
             sec_att = SectionAttendance(
@@ -234,7 +241,10 @@ def generate_marks_for_student(**kwargs):
         SCSDDC_temp = str(kwargs['scsddc'])
         section_marks = kwargs['sectionamarks']
         section = kwargs['coursesection']
-        csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
+        scsddc_dict = split_scsddc(SCSDDC_temp)
+        csection = CourseSection.objects.get(
+            section_name=scsddc_dict['section'], course_code=scsddc_dict['course_code'], semester_code="_".join(SCSDDC_temp.split('_')[2:]))
+
         for student_info in csection.student_info.all():
             new_a = StudentMarks(marks_type=section_marks.marks_type, total_marks=section_marks.total_marks, scsddc=section_marks.scsddc,
                                  student=student_info.student, weightage=section_marks.weightage, section=section_marks.section)
@@ -286,7 +296,7 @@ class TeacherLoginView(APIView):
             return Response({'status': 'success', 'message': 'User Logged In', **dict_user})
         else:
             if not user.is_teacher:
-                return Response({'status': "User not a Student."}, status=401)
+                return Response({'status': "User not a Teacher. Contact Admin"}, status=401)
             return Response({'status': "Invalid Username of Password."}, status=403)
 
         return HttpResponseRedirect('/home')
@@ -305,11 +315,15 @@ def generate_attendance_for_student(**kwargs):
         SCSDDC_temp = str(kwargs['scsddc'])
         section_attendance = kwargs['sectionattendance']
         section = kwargs['coursesection']
-        csection = CourseSection.objects.get(scsddc=SCSDDC_temp)
+        scsddc_dict = split_scsddc(SCSDDC_temp)
+        csection = CourseSection.objects.get(
+            section_name=scsddc_dict['section'], course_code=scsddc_dict['course_code'], semester_code="_".join(SCSDDC_temp.split('_')[2:]))
+
         for student_info in csection.student_info.all():
             new_a = StudentAttendance(attendance_type='M', state='A', scsddc=section_attendance.scsddc, student=student_info.student, class_date=section_attendance.class_date,
                                       attendance_slot=section_attendance.attendance_slot, duration_hour=section_attendance.duration_hour, section=section_attendance.section)
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
             info.attendance_sheet.attendance.add(new_a)
+            print(new_a)
         return 'Success'

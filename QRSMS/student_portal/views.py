@@ -11,22 +11,28 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from rest_framework import generics, viewsets
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
+from rest_framework.views import APIView
+from rest_framework.mixins import ListModelMixin
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from django.forms.models import model_to_dict
-from django.views.generic import DetailView, ListView, UpdateView, CreateView
+from django_filters.rest_framework import DjangoFilterBackend, OrderingFilter
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test
 import io
 from rest_framework.request import Request
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
-from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance, Course
+from rest_framework.response import Response
+from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance, Course, CourseStatus
 from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
 from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
-from initial.models import Semester
+from initial.models import Semester, OfferedCourses
+from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer
+from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
 # Create your views here.
 
@@ -40,7 +46,7 @@ def check_if_student(user):
     return True if user.is_student else False
 
 
-class BaseStudentLoginView(views.APIView):
+class BaseStudentLoginView(APIView):
     @method_decorator(login_required)
     @method_decorator(user_passes_test(check_if_student, login_url='/student/login'))
     def dispatch(self, request, *args, **kwargs):
@@ -161,8 +167,10 @@ class RegistrationCourses(BaseStudentLoginView):
             # sem = Semester.objects.get(semester_code=CURRENT_SEMESTER_CODE)
             # rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
             # el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
-
-            s = OfferedCourses.objects.filter(student__uid=str(request.user))
+            current_semester = Semester.objects.filter(
+                current_semester=True).latest()
+            s = OfferedCourses.objects.filter(student__uid=str(
+                request.user), semester_code=current_semester.semester_code)
 
             # from rest_framework.request import Request
 
@@ -196,7 +204,7 @@ class StudentSignupView(View):
             return JsonResponse(form.errors.get_json_data())
 
 
-class StudentLoginView(View):
+class StudentLoginView(APIView):
 
     def get(self, request, *args, **kwargs):
         return HttpResponse("PLease Login" + str(kwargs))
@@ -223,7 +231,105 @@ class StudentLoginView(View):
         return HttpResponseRedirect('/home')
 
 
+class CustomOfferedCourseSerializer(ModelSerializer):
+    # student = StudentSerializerOnlyNameAndUid()
+    # courses = SerializerMethodField('registered_courses')
+
+    # def registered_courses(self, offeredCourses):
+    #     courses = ['gello']
+    #     # for courseStatus in offeredCourses.courses_offered.all():
+    #     #     print(CourseStatus)
+    #     #     courses.append({
+    #     #         'course_code': courseStatus.course.course_code,
+    #     #         'course_name': courseStatus.course.course_name,
+    #     #         'section': courseStatus.section
+    #     #     })
+
+    #     return courses
+
+    class Meta:
+        model = OfferedCourses
+        fields = [
+            # 'courses',
+            'courses_offered'
+        ]
+        # fields = '__all__'
+
+
+class StudentSectionView(StudentLoginView):
+    serializer_class = OfferedCoursesSerializer
+    renderer_classes = [JSONRenderer]
+    pagination_class = None
+    # queryset = OfferedCourses.objects.all()
+    # filter_backends = [DjangoFilterBackend, OrderingFilter]
+
+    # def get_queryset(self):
+    #     current_semester = Semester.objects.filter(
+    #         current_semester=True).latest()
+    #     student = Student.objects.get(uid=self.request.user)
+    #     courses = OfferedCourses.objects.filter(
+    #         courses_offered__status='NR', student=student, semester_code=current_semester.semester_code)
+    #     return courses
+
+    # def filter_queryset(self, queryset):
+    #     filter_backends = [DjangoFilterBackend]
+
+    #     for backend in list(filter_backends):
+    #         queryset = backend().filter_queryset(self.request, queryset, view=self)
+    #     return queryset
+
+    @swagger_auto_schema()
+    def get(self, request, *args, **kwargs):
+
+        current_semester = Semester.objects.filter(
+            current_semester=True).latest()
+        student = Student.objects.get(uid=self.request.user)
+        courses = OfferedCourses.objects.get(
+            student=student, semester_code=current_semester.semester_code)
+        # courses_offered__status='NR', student=student, semester_code=current_semester.semester_code)
+        processed_courses = []
+        for courseStatus in courses.courses_offered.all():
+
+            processed_courses.append({
+                'course_code': courseStatus.course.course_code,
+                'course_name': courseStatus.course.course_name,
+                'section': courseStatus.section
+            })
+
+        # serialized_courses = OfferedCoursesSerializer(
+        #     courses, many=True, context={'request': request}).data
+        #  student=student, semester_code=current_semester.semester_code)
+        # print(courses)
+        # return Response(courses, status=200)
+        return Response(processed_courses)
+
+
+class StudentAttendanceView(StudentLoginView):
+
+    def get(self, request, *args, **kwargs):
+        print(kwargs['section'])
+        print(kwargs['course_code'])
+        current_semester = Semester.objects.filter(
+            current_semester=True).latest()
+        student = Student.objects.get(uid=self.request.user)
+        print(
+            f'{kwargs["section"]}_{kwargs["course_code"]}_{current_semester.semester_code}')
+        try:
+
+            attendance_sheet = AttendanceSheet.objects.filter(
+                student=student, scsddc=f'{kwargs["section"]}_{kwargs["course_code"]}_{current_semester.semester_code}'
+            )
+        except AttendanceSheet.DoesNotExist as e:
+            return Response({'message': 'Error, Invalid Attendance Sheet Requested. Please contact admin.', 'error': str(e)}, status=400)
+
+        print(type(attendance_sheet))
+        sheet_serialized = AttendanceSheetSerializer(
+            attendance_sheet, many=True, context={'request': request}).data
+        return Response(sheet_serialized, status=200)
+
+
 class StudentLogoutView(View):
+
     def post(self, request):
         logout(request)
         return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
@@ -303,7 +409,6 @@ def get_challan(request):
         "total_amount": challan.total_fee,
         "fine_per_day": int(challan.total_fee*0.001),
         "challan_no": challan.challan_no,
-
 
     }
     return JsonResponse(challan_obj, safe=False)
