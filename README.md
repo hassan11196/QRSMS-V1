@@ -1,7 +1,14 @@
-# Check for Jira:
-Check 1
-Check 2
-Check 3
+# QRSMS-V1.65
+
+To start a semester, Create semester object. Add Courseloads. Run following methods.
+- make_semester()
+- make_elective_semester()
+- pre_offer()
+- offer_core_courses()
+- offer_elective_courses()
+
+To alot a Teacher to a Course Section. Use Admin Portal.
+Make sure that teacher User Object has is_teacher == True
 
 # QRSMS-V1.50
 
