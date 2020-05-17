@@ -31,7 +31,7 @@ from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
 from initial.models import Semester, OfferedCourses
-from initial.serializers import OfferedCoursesSerializer
+from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
 # Create your views here.
@@ -302,6 +302,30 @@ class StudentSectionView(StudentLoginView):
         # print(courses)
         # return Response(courses, status=200)
         return Response(processed_courses)
+
+
+class StudentAttendanceView(StudentLoginView):
+
+    def get(self, request, *args, **kwargs):
+        print(kwargs['section'])
+        print(kwargs['course_code'])
+        current_semester = Semester.objects.filter(
+            current_semester=True).latest()
+        student = Student.objects.get(uid=self.request.user)
+        print(
+            f'{kwargs["section"]}_{kwargs["course_code"]}_{current_semester.semester_code}')
+        try:
+
+            attendance_sheet = AttendanceSheet.objects.filter(
+                student=student, scsddc=f'{kwargs["section"]}_{kwargs["course_code"]}_{current_semester.semester_code}'
+            )
+        except AttendanceSheet.DoesNotExist as e:
+            return Response({'message': 'Error, Invalid Attendance Sheet Requested. Please contact admin.', 'error': str(e)}, status=400)
+
+        print(type(attendance_sheet))
+        sheet_serialized = AttendanceSheetSerializer(
+            attendance_sheet, many=True, context={'request': request}).data
+        return Response(sheet_serialized, status=200)
 
 
 class StudentLogoutView(View):

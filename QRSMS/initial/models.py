@@ -178,7 +178,7 @@ class StudentInfoSection(models.Model):
         'initial.MarkSheet', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
-        return self.student.uid + "_" + (self.coursesection_set.first().scsddc if self.coursesection_set.first() != None else 'NO COURSE SECTION')
+        return self.student.uid + "_" + (self.coursesection_set.first().course_code if self.coursesection_set.first() != None else 'NO COURSE SECTION')
 
 
 class CourseSection(models.Model):
