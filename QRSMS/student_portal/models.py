@@ -87,3 +87,4 @@ class FeeChallan(models.Model):
     discount = models.FloatField(max_length=15, default=0)
     financial_aid = models.FloatField(max_length=15, default=0)
     status = models.BooleanField(default=False)
+    payment_date = models.DateField(auto_now=False, null=True)

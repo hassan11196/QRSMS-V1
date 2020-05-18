@@ -1,8 +1,9 @@
 import unittest
 from django.urls import reverse
 from django.test import Client
+from actor.models import User
 from .models import Course, Teacher, Faculty, Student, Semester
-from django.contrib.auth.models import User
+
 from django.contrib.auth.models import Group
 from django.contrib.contenttypes.models import ContentType
 
@@ -11,6 +12,15 @@ def create_django_contrib_auth_models_user(**kwargs):
     defaults = {}
     defaults["username"] = "username"
     defaults["email"] = "username@tempurl.com"
+    defaults.update(**kwargs)
+    return User.objects.create(**defaults)
+
+
+def create_user(**kwargs):
+    defaults = {}
+    defaults["username"] = "username"
+    defaults["email"] = "username@tempurl.com"
+
     defaults.update(**kwargs)
     return User.objects.create(**defaults)
 
@@ -84,11 +94,12 @@ class CourseViewTest(unittest.TestCase):
     '''
     Tests for Course
     '''
+
     def setUp(self):
         self.client = Client()
 
     def test_list_course(self):
-        url = reverse('app_name_course_list')
+        url = reverse('initial_course_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -103,7 +114,7 @@ class CourseViewTest(unittest.TestCase):
 
     def test_detail_course(self):
         course = create_course()
-        url = reverse('app_name_course_detail', args=[course.pk,])
+        url = reverse('initial_course_detail', args=[course.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -113,7 +124,7 @@ class CourseViewTest(unittest.TestCase):
             "course_name": "course_name",
             "course_code": "course_code",
         }
-        url = reverse('app_name_course_update', args=[course.pk,])
+        url = reverse('initial_course_update', args=[course.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -122,16 +133,17 @@ class TeacherViewTest(unittest.TestCase):
     '''
     Tests for Teacher
     '''
+
     def setUp(self):
         self.client = Client()
 
     def test_list_teacher(self):
-        url = reverse('app_name_teacher_list')
+        url = reverse('initial_teacher_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_create_teacher(self):
-        url = reverse('app_name_teacher_create')
+        url = reverse('initial_teacher_create')
         data = {
             "department": "department",
             "nu_email": "nu_email",
@@ -142,7 +154,7 @@ class TeacherViewTest(unittest.TestCase):
 
     def test_detail_teacher(self):
         teacher = create_teacher()
-        url = reverse('app_name_teacher_detail', args=[teacher.pk,])
+        url = reverse('initial_teacher_detail', args=[teacher.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -153,7 +165,7 @@ class TeacherViewTest(unittest.TestCase):
             "nu_email": "nu_email",
             "user": create_user().pk,
         }
-        url = reverse('app_name_teacher_update', args=[teacher.pk,])
+        url = reverse('initial_teacher_update', args=[teacher.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -162,6 +174,7 @@ class FacultyViewTest(unittest.TestCase):
     '''
     Tests for Faculty
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -180,7 +193,7 @@ class FacultyViewTest(unittest.TestCase):
 
     def test_detail_faculty(self):
         faculty = create_faculty()
-        url = reverse('app_name_faculty_detail', args=[faculty.pk,])
+        url = reverse('app_name_faculty_detail', args=[faculty.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -189,7 +202,7 @@ class FacultyViewTest(unittest.TestCase):
         data = {
             "user": create_user().pk,
         }
-        url = reverse('app_name_faculty_update', args=[faculty.pk,])
+        url = reverse('app_name_faculty_update', args=[faculty.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -198,6 +211,7 @@ class StudentViewTest(unittest.TestCase):
     '''
     Tests for Student
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -223,7 +237,7 @@ class StudentViewTest(unittest.TestCase):
 
     def test_detail_student(self):
         student = create_student()
-        url = reverse('app_name_student_detail', args=[student.pk,])
+        url = reverse('app_name_student_detail', args=[student.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -239,7 +253,7 @@ class StudentViewTest(unittest.TestCase):
             "uni_mail": "uni_mail",
             "user": create_user().pk,
         }
-        url = reverse('app_name_student_update', args=[student.pk,])
+        url = reverse('app_name_student_update', args=[student.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -248,6 +262,7 @@ class SemesterViewTest(unittest.TestCase):
     '''
     Tests for Semester
     '''
+
     def setUp(self):
         self.client = Client()
 
@@ -269,7 +284,7 @@ class SemesterViewTest(unittest.TestCase):
 
     def test_detail_semester(self):
         semester = create_semester()
-        url = reverse('app_name_semester_detail', args=[semester.pk,])
+        url = reverse('app_name_semester_detail', args=[semester.pk, ])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -281,8 +296,6 @@ class SemesterViewTest(unittest.TestCase):
             "end_date": "end_date",
             "teachers_available": create_teacher().pk,
         }
-        url = reverse('app_name_semester_update', args=[semester.pk,])
+        url = reverse('app_name_semester_update', args=[semester.pk, ])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
-
-
