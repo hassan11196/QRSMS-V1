@@ -81,7 +81,7 @@ class Semester(models.Model):
         'initial.RegularElectiveCourseLoad')
     degree_short = models.CharField(max_length=30, null=True, blank=True)
     fee_per_CR = models.FloatField(max_length=10, null=True, blank=True)
-    current_semester = models.BooleanField(default=False)
+    current_semester = models.BooleanField(default=True)
 
     class Meta:
         unique_together = ('semester_season', 'semester_year')
