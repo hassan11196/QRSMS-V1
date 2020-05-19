@@ -147,6 +147,8 @@ class update_challan(View):
         challan.save()
 
 
-def current_semester(request):
-    semester = Semester.objects.get(current_semester=True)
-    return JsonResponse(semester.semester_code, safe=False)
+class Current_Semester(View):
+
+    def get(self, request):
+        semester = Semester.objects.get(current_semester=True)
+        return JsonResponse(semester.semester_code, safe=False)

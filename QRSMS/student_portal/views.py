@@ -369,8 +369,8 @@ def update_challan(request):
     course_fee = semester.fee_per_CR
     if option == 'drop':
         challan.courses.remove(course)
-        challan.tution_fee = challan.tution_fee-course_fee
-        challan.total_fee = challan.total_fee-course_fee
+        challan.tution_fee = challan.tution_fee-course_fee*credit_hour
+        challan.total_fee = challan.total_fee-course_fee*credit_hour
     else:
         challan.courses.add(course)
         challan.tution_fee = challan.tution_fee+course_fee*credit_hour
@@ -385,7 +385,8 @@ def get_challan(request):
     student = Student.objects.get(user=request.user)
 
     code = request.POST['code']
-    if code != '':
+    print(code)
+    if len(code) > 1:
         semester = Semester.objects.get(semester_code=code)
         try:
             challan = FeeChallan.objects.get(
@@ -395,9 +396,9 @@ def get_challan(request):
     else:
         try:
             challan = FeeChallan.objects.filter(student=student).values()
-            return JsonResponse(challan)
+            return JsonResponse(list(challan), safe=False)
         except:
-            return JsonResponse("No Challan")
+            return JsonResponse("No challan", safe=False)
     opt = semester.semester_season
     if(opt == 1):
         season = "Fall"
