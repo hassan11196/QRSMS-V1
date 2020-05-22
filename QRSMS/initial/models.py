@@ -358,12 +358,13 @@ class StudentMarks(models.Model):
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     #mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
-    mark_type = models.CharField(max_length=256, blank=True, null=True)
+    marks_type = models.CharField(max_length=256, blank=True, null=True)
     obtained_marks = models.FloatField(blank=True, null=True)
     total_marks = models.FloatField(blank=True, null=True)
     weightage = models.FloatField(null=True, blank=True)
     SCSDDC = models.CharField(
         max_length=256, name='scsddc', null=True, blank=True)
+    section = models.CharField(max_length=256, blank=True, null=True)
 
 
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
@@ -401,7 +402,7 @@ class MarkSheet(models.Model):
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
     Marks = models.ManyToManyField('initial.StudentMarks')
-    grand_total_marks = models.FloatField(blank=True, null=True)
+    grand_total_marks = models.FloatField(blank=True, null=True, default=100)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc

@@ -30,8 +30,8 @@ urlpatterns += (
     path('start_attendance/', views.StartSectionAttendance.as_view(), name='sections'),
     path('get_attendance/', views.TeacherAttendanceView.as_view(),
          name='attendance_list'),
-
-
+    path('add_marks/', views.AddSectionMarks.as_view(), name="SetNewMarks"),
+    path('get_marks_info', views.marks_info, name='return_marksinfo')
     # path('create', views.TeacherCreateView.as_view(), name='initial_teacher_create'),
     # path('detail/<int:pk>/', views.TeacherDetailView.as_view(), name='initial_teacher_detail'),
     # path('update/<int:pk>/', views.TeacherUpdateView.as_view(), name='initial_teacher_update'),

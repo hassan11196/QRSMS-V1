@@ -70,6 +70,7 @@ class BaseTeacherLoginView(APIView):
 
 class TeacherAttendanceView(BaseTeacherLoginView):
     parser_classes = [JSONParser, MultiPartParser]
+
     @csrf_exempt
     @swagger_auto_schema()
     def post(self, request):
@@ -202,6 +203,7 @@ class AddSectionMarks(BaseTeacherLoginView):
         total_marks = request.POST['total_marks']
         weightage = request.POST['weightage']
         section = request.POST['section']
+
         if(marks_type is None or req_scsddc is None or section is None):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
 
@@ -217,21 +219,16 @@ class AddSectionMarks(BaseTeacherLoginView):
                 AddSectionMarks, scsddc=req_scsddc, coursesection=section, sectionmarks=sec_marks, option='create')
             print(g)
         except IntegrityError as e:
-            sec_att2 = SectionMarks.objects.get(
-                scsddc=req_scsddc, marks_type=marks_type, section=section)
 
-            data = SectionMarksSerializer(
-                sec_att2, context={'request': Request(request)}).data
+            # data = SectionMarksSerializer(
+            #     sec_att2, context={'request': request}).data
 
-            return JsonResponse({'message': 'Marks Already Added For This Class.', 'condition': True, 'qr_json': data}, status=200)
-
-        data = SectionMarksSerializer(
-            sec_marks, context={'request': Request(request)}).data
+            return JsonResponse({'message': 'Marks Already Added For This Class.'}, status=200)
 
         if sec_marks is None:
             return JsonResponse({'message': 'Teacher has no assigned courses or Invalid scsddc.', 'condition': True, 'qr_json': data}, status=200)
         else:
-            return JsonResponse({'message': 'Marks Open For This Section.', 'condition': True, 'qr_json': data}, status=200)
+            return JsonResponse({'message': 'Marks Open For This Section.', 'condition': True}, status=200)
 
 
 @receiver(marks_for_student)
@@ -239,7 +236,7 @@ def generate_marks_for_student(**kwargs):
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Marks of Day for student')
         SCSDDC_temp = str(kwargs['scsddc'])
-        section_marks = kwargs['sectionamarks']
+        section_marks = kwargs['sectionmarks']
         section = kwargs['coursesection']
         scsddc_dict = split_scsddc(SCSDDC_temp)
         csection = CourseSection.objects.get(
@@ -327,3 +324,10 @@ def generate_attendance_for_student(**kwargs):
             info.attendance_sheet.attendance.add(new_a)
             print(new_a)
         return 'Success'
+
+
+def marks_info(request):
+    scsddc = request.POST['scsddc']
+    print(scsddc)
+    marks = SectionMarks.objects.filter(scsddc=scsddc).values()
+    return JsonResponse(list(marks), safe=False)
