@@ -1,6 +1,6 @@
 from .models import Teacher
 from .forms import TeacherForm
-from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer, SectionMarksSerializer
+from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer, SectionMarksSerializer, StudentInfoSectionModelSerializerGetMarks
 from initial.models import CourseSection, SectionAttendance
 import json
 from django.db.models import Count
@@ -135,6 +135,23 @@ class TeacherAttendanceView(BaseTeacherLoginView):
         }
 
         return JsonResponse({'status': 'success', 'attendance_data': attendance_data})
+
+
+class TeacherMarksView(BaseTeacherLoginView):
+    def post(self, request):
+        marks_type = request.POST['marks_type']
+        scsddc = request.POST['scsddc']
+
+        student_marks = StudentMarks.objects.filter(
+            marks_type=marks_type, scsddc=scsddc).values()
+        class_marks = SectionMarks.objects.filter(
+            marks_type=marks_type, scsddc=scsddc).values()
+        data = {
+            "studentMarks": list(student_marks),
+            "MarksInfo": list(class_marks)
+
+        }
+        return JsonResponse(data, safe=False)
 
 
 class AssignedSections(BaseTeacherLoginView):
