@@ -359,7 +359,8 @@ class StudentMarks(models.Model):
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     #mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
     marks_type = models.CharField(max_length=256, blank=True, null=True)
-    obtained_marks = models.FloatField(blank=True, null=True)
+    obtained_marks = models.FloatField(blank=True, null=True, default=0)
+    obtained_weightage = models.FloatField(blank=True, null=True, default=0)
     total_marks = models.FloatField(blank=True, null=True)
     weightage = models.FloatField(null=True, blank=True)
     SCSDDC = models.CharField(
