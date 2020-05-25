@@ -141,7 +141,8 @@ class TeacherMarksView(BaseTeacherLoginView):
     def post(self, request):
         marks_type = request.POST['marks_type']
         scsddc = request.POST['scsddc']
-
+        if marks_type == None or marks_type == "" or scsddc == None or scsddc == "":
+            return JsonResponse({"Failure": "Parameters Are Nor Valid"}, safe=False)
         student_marks = StudentMarks.objects.filter(
             marks_type=marks_type, scsddc=scsddc).values()
         class_marks = SectionMarks.objects.filter(
@@ -345,6 +346,8 @@ def generate_attendance_for_student(**kwargs):
 
 def marks_info(request):
     scsddc = request.POST['scsddc']
+    if scsddc == None or scsddc == "":
+        return JsonResponse({"Failed": "Invalid Input Parameters"})
     print(scsddc)
     marks = SectionMarks.objects.filter(scsddc=scsddc).values()
     return JsonResponse(list(marks), safe=False)
