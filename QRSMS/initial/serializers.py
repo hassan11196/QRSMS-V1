@@ -23,7 +23,7 @@ class StudentMarksSheetSerializerMinimized(serializers.HyperlinkedModelSerialize
 
 class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = StudentMarks
+        model = StudentAttendance
         fields = '__all__'
 
 
