@@ -118,7 +118,7 @@ class TeacherAttendanceView(BaseTeacherLoginView):
         except SectionAttendance.DoesNotExist as err:
             return JsonResponse({'status': 'Failure', 'message': 'Invalid Values', 'conditon': False, 'error': str(err)})
         class_attendance = SectionAttendanceSerializer(
-            attendance_list, many=True).data
+            attendance_list, many=True, context={'request': (request)}).data
         print('Atteddance for this section : ' + str(len(attendance_list)))
         print('Students in this Section : ' + str(len(students)))
         # print(class_attendance)
