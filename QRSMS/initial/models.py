@@ -357,7 +357,7 @@ class StudentMarks(models.Model):
     )
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
-    #mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
+    # mark_type = models.CharField(max_length=256, choices=MARK_TYPE,blank=True, null=True)
     marks_type = models.CharField(max_length=256, blank=True, null=True)
     obtained_marks = models.FloatField(blank=True, null=True, default=0)
     obtained_weightage = models.FloatField(blank=True, null=True, default=0)
@@ -404,6 +404,9 @@ class MarkSheet(models.Model):
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
     Marks = models.ManyToManyField('initial.StudentMarks')
     grand_total_marks = models.FloatField(blank=True, null=True, default=100)
+    year = models.IntegerField(null=True, blank=True)
+    semester_season = models.SmallIntegerField(
+        choices=SEMSESTER_CHOICES, name="semester_season", default=1)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
@@ -546,7 +549,7 @@ def split_scsddc(scsddc):
     return scsddc_dict
 
 
-@receiver(student_info_section_for_student)
+@ receiver(student_info_section_for_student)
 def make_or_delete_student_info_section_for_student(**kwargs):
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Student Info Section')

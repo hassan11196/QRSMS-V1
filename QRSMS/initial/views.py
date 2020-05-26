@@ -24,6 +24,7 @@ from .serializers import (CourseSerializer)
 from student_portal.models import FeeChallan, Student
 from .forms import CourseForm, SemesterForm
 from .models import Course, Semester
+from .models import MarkSheet
 
 
 @api_view(['GET'])
@@ -152,3 +153,12 @@ class Current_Semester(View):
     def get(self, request):
         semester = Semester.objects.get(current_semester=True)
         return JsonResponse(semester.semester_code, safe=False)
+
+
+class Student_Transcript(View):
+
+    def post(self, request):
+        student = Student.objects.get(uid=request.POST['id'])
+        transcript = MarkSheet.objects.filter(student=student).order_by(
+            'semester_season').order_by('year').values()
+        return JsonResponse(list(transcript), safe=False)

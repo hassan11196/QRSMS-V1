@@ -61,6 +61,7 @@ urlpatterns += [
     path('accounts/updateChallan', views.update_challan,
          name="AccountUpdateChallan"),
     path('filter-semester/', FilterView.as_view(model=models.Semester)),
-    path('management/getCurrentSemester/', views.Current_Semester.as_view())
+    path('management/getCurrentSemester/', views.Current_Semester.as_view()),
+    path('management/get_transcript/', views.Student_Transcript.as_view()),
 
 ]
