@@ -154,6 +154,29 @@ class TeacherMarksView(BaseTeacherLoginView):
         }
         return JsonResponse(data, safe=False)
 
+def update_marks(request):
+    scsddc = request.POST['scsddc']
+    marks_type = request.POST['marks_type']
+    marks_data = request.POST['marks_data']
+    if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or marks_data==None or marks_data =="":
+        return JsonResponse({"Failed": "Invalid Input Parameters"})
+    else:
+        try:
+            for i in range(len(marks_data)):
+                student_marks = StudentMarks.objects.get(marks_type=marks_type, scsddc=scsddc,pk = marks_data[i].id)
+                old_weightage = student_marks.obtained_weightage
+                student_marks.obtained_marks = marks_data[i].obtained_marks
+                student_marks.obtained_weightage = marks_data[i].obtained_weightage
+                student_marks.save()
+                mark_sheet = MarkSheet.objects.get(student = student.objects.get(uid=marks_data[i].student_id),scsddc = marks_data[i].scsddc)
+                marks_sheet.obtained_marks-=old_weightage
+                mark_sheet.obtained_marks += marks_data[i].obtained_weightage
+            return JsonResponse("Success")
+        except:
+            return JsonResponse("Marks Not saved Completely")
+
+
+
 
 class AssignedSections(BaseTeacherLoginView):
     def get(self, request):
@@ -269,6 +292,7 @@ def generate_marks_for_student(**kwargs):
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
             info.mark_sheet.Marks.add(new_a)
+            info.mark_sheet.grand_total_marks += section_marks.total_marks
             info.mark_sheet.year = year
             info.mark_sheet.semester_season = season
             info.mark_sheet.save()
