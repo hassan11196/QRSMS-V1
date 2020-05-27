@@ -5,31 +5,6 @@ from . import models
 from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
 
 
-class StudentMarksSerializerMinimized(serializers.HyperlinkedModelSerializer):
-    # attendance_sheet = serializers.PrimaryKeyRelatedField(many=True, queryset=models.AttendanceSheet.objects.all())
-    class Meta:
-        model = StudentMarks
-        fields = ('marks_type', 'obtained_marks', 'weightage', 'total_marks')
-
-
-class StudentMarksSheetSerializerMinimized(serializers.HyperlinkedModelSerializer):
-    attendance = StudentMarksSerializerMinimized(many=True)
-    student = WrapperStudentSerializer('uid')
-
-    class Meta:
-        model = MarkSheet
-        fields = ('url', 'student', 'SCSDDC', )
-
-
-class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = StudentAttendance
-        fields = '__all__'
-
-
-##################Marks########################
-
-
 class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerializer):
     # attendance_sheet = serializers.PrimaryKeyRelatedField(many=True, queryset=models.AttendanceSheet.objects.all())
     class Meta:
@@ -45,15 +20,6 @@ class StudentAttendanceSheetSerializerMinimized(serializers.HyperlinkedModelSeri
     class Meta:
         model = AttendanceSheet
         fields = ('url', 'student', 'scsddc', 'attendance',)
-
-
-class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = StudentAttendance
-        fields = '__all__'
-
-
-################################################
 
 
 class StudentInfoSectionSerializer(serializers.HyperlinkedModelSerializer):
@@ -77,17 +43,6 @@ class CourseSerializerDebug(serializers.ModelSerializer):
         model = Course
         fields = ['course_code', 'course_name',
                   'course_type', 'course_status_offer']
-
-################Marks###########
-
-
-class StudentInfoSectionModelSerializerGetMarks(serializers.ModelSerializer):
-    student = StudentSerializerOnlyNameAndUid()
-    attendance_sheet = StudentMarksSheetSerializerMinimized()
-
-    class Meta:
-        model = StudentInfoSection
-        fields = '__all__'
 
 
 class StudentInfoSectionModelSerializerGetAttendance(serializers.ModelSerializer):

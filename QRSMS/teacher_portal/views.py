@@ -1,6 +1,6 @@
 from .models import Teacher
 from .forms import TeacherForm
-from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer, SectionMarksSerializer, StudentInfoSectionModelSerializerGetMarks
+from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
 from initial.models import CourseSection, SectionAttendance
 import json
 from django.db.models import Count
@@ -36,7 +36,7 @@ from .signals import attendance_of_day_for_student, marks_for_student
 from django.db.utils import IntegrityError
 
 from actor.serializers import LoginSerializer, UserSerializer
-from initial.models import split_scsddc, Semester
+from initial.models import split_scsddc, Semester, MarkSheet
 
 
 def get_sddc(semester, degree, department, campus, city):
@@ -266,6 +266,7 @@ def generate_marks_for_student(**kwargs):
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
             info.mark_sheet.Marks.add(new_a)
+
         return 'Success'
 
 
