@@ -251,6 +251,9 @@ class AddSectionMarks(BaseTeacherLoginView):
 
 @receiver(marks_for_student)
 def generate_marks_for_student(**kwargs):
+    semester = Semester.objects.get(current_semester=True)
+    year = semester.semester_year
+    season = semester.semester_season
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Marks of Day for student')
         SCSDDC_temp = str(kwargs['scsddc'])
@@ -266,6 +269,9 @@ def generate_marks_for_student(**kwargs):
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
             info.mark_sheet.Marks.add(new_a)
+            info.mark_sheet.year = year
+            info.mark_sheet.semester_season = season
+            info.mark_sheet.save()
 
         return 'Success'
 

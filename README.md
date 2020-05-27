@@ -1,3 +1,9 @@
+# Update
+
+Changed Number Sequence For Semseter
+1 for spring and 2 for fall to fetch transcript in acsendong order
+
+
 # QRSMS-V1.65
 
 To start a semester, Create semester object. Add Courseloads. Run following methods.

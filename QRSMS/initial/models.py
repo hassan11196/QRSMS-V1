@@ -60,8 +60,8 @@ class Semester(models.Model):
     # offered_courses = models.ManyToManyField(
     #     Course, related_name="semester_offered")
     SEMSESTER_CHOICES = (
-        (1, "FALL"),
-        (2, "SPRING"),
+        (2, "FALL"),
+        (1, "SPRING"),
         (3, "SUMMER")
     )
     semester_season = models.SmallIntegerField(
