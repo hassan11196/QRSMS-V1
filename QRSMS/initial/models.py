@@ -177,7 +177,6 @@ class StudentInfoSection(models.Model):
         'initial.AttendanceSheet', on_delete=models.SET_NULL, blank=True, null=True)
     mark_sheet = models.ForeignKey(
         'initial.MarkSheet', on_delete=models.SET_NULL, blank=True, null=True)
-
     def __str__(self):
         return self.student.uid + "_" + (self.coursesection_set.first().course_code if self.coursesection_set.first() != None else 'NO COURSE SECTION')
 
@@ -399,12 +398,17 @@ class AttendanceSheet(models.Model):
 #     return AttendanceSheet
 
 class MarkSheet(models.Model):
+    course = models.ForeignKey(Course,on_delete = models.SET_NULL, null=True)
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
     Marks = models.ManyToManyField('initial.StudentMarks')
-    grand_total_marks = models.FloatField(blank=True, null=True, default=100)
+    grand_total_marks = models.FloatField(blank=True, null=True, default=0.)
+    obtained_marks = models.FloatField(blank=True, null=True,default=0.)
+    grade = models.CharField(max_length=3, null=True)
     year = models.IntegerField(null=True, blank=True)
+    gpa = models.FloatField(blank=True, null=True,max_length=5,default=0.)
+    finalized = models.BooleanField(default=False)
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season", default=1)
 
@@ -413,6 +417,23 @@ class MarkSheet(models.Model):
 
     class Meta:
         unique_together = ('student', 'scsddc')
+
+
+
+class Transcript(models.Model):
+    student = models.ForeignKey(
+        "student_portal.Student", on_delete=models.SET_NULL, null=True)
+    course_result = models.ManyToManyField(MarkSheet)
+    sgpa = models.FloatField(blank=True, null=True,max_length=6,default  = 0.)
+    cgpa = models.FloatField(blank=True, null=True,max_length=6,default  = 0.)
+    credit_hours_earned = models.IntegerField(blank=True,default=0)
+    credit_hours_attempted = models.IntegerField(blank=True,default=0)
+    semester = models.ForeignKey(Semester,on_delete=models.CASCADE, null=True)
+    last = models.BooleanField(default=False)
+    def __str__(self):
+        return self.student.uid+ "_" +str(self.semester)
+
+
 
 
 class RegularCoreCourseLoad(models.Model):
@@ -565,7 +586,10 @@ def make_or_delete_student_info_section_for_student(**kwargs):
 
         info = StudentInfoSection(
             student=kwargs['student'], mark_sheet=new_sheet_marks, attendance_sheet=new_sheet_attendance)
-
+        semester = Semester.objects.get(current_semester=True)
+        transcript = Transcript.objects.get(student = kwargs['student'],semester = semester)
+        transcript.course_result.add(new_sheet_marks)
+        transcript.save()
         info.save()
         print(scsddc_dict)
         print("_".join(SCSDDC_temp.split('_')[2:]))
@@ -585,15 +609,25 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         scsddc_dict = split_scsddc(SCSDDC_temp)
         info = StudentInfoSection.objects.get(
             student=kwargs['student'], attendance_sheet__scsddc=SCSDDC_temp)
+        semester = Semester.objects.get(current_semester=True)
+        transcript = Transcript.objects.get(student = kwargs['student'],semester = semester)
+        transcript.course_result.remove(info.mark_sheet)
+        transcript.save()
         info.mark_sheet.delete()
         info.attendance_sheet.delete()
-
+        
         csection = CourseSection.objects.get(
             semester_code="_".join(SCSDDC_temp.split('_')[2:]), course_code=scsddc_dict['course_code'], section_name=scsddc_dict['section'])
         csection.student_info.remove(info)
         info.delete()
         csection.save()
         return 'Success'
+
+
+
+
+
+
 
 
 # @receiver(attendance_sheet_for_student)

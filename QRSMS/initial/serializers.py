@@ -208,3 +208,12 @@ class SemesterSerializer(serializers.ModelSerializer):
             'semester_code',
             'semester_season', 'semester_year', 'start_date', 'end_date'
         ]
+
+
+
+class TranscriptSerilazer(serializers.ModelSerializer):
+    course_result = MarkSheetSerializer(many=True)
+
+    class Meta:
+        model = models.Transcript
+        

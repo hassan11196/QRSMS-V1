@@ -30,8 +30,8 @@ from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
-from initial.models import Semester, OfferedCourses
-from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer
+from initial.models import Semester, OfferedCourses,Transcript
+from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer,TranscriptSerilazer
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
 # Create your views here.
@@ -221,10 +221,10 @@ class StudentLoginView(APIView):
 
         if user is not None:
             login(request, user)
-            # dict_user = model_to_dict(user)
-            # dict_user.pop('groups',None)
-            # dict_user.pop('password', None)
-            return JsonResponse({'status': 'success', 'message': 'User Logged In'})
+            dict_user = model_to_dict(user)
+            dict_user.pop('groups', None)
+            dict_user.pop('password', None)
+            return JsonResponse({'status': 'success', 'message': 'User Logged In', **dict_user})
         else:
             return JsonResponse({'status': "Invalid Username of Password."}, status=403)
 
@@ -350,6 +350,7 @@ class StudentLogoutView(View):
 #     challan.save()
 
 def update_challan(request):
+
     ts = int(datetime.datetime.now().timestamp())
     EndDate = datetime.date.today() + datetime.timedelta(days=30)
     admission_fee = request.POST['admission_fee']
@@ -358,6 +359,7 @@ def update_challan(request):
     challan, created = FeeChallan.objects.get_or_create(
         student=student, semester=semester)
     if created == True:
+        transcript = Transcript.objects.create(student = student,semester = Semester.objects.get(current_semester=True))
         challan.coActivity_charges = semester.co_circular_fee
         challan.due_date = EndDate
         challan.challan_no = ts
@@ -425,3 +427,13 @@ def get_challan(request):
 
     }
     return JsonResponse(challan_obj, safe=False)
+
+
+class Student_Transcript(View):
+
+    def post(self, request):
+        student = Student.objects.get(uid=request.POST['id'])
+        transcript = Transcript.objects.get(student=student)
+        json_trancript = TranscriptSerilazer(transcript , many=True)       
+        return JsonResponse(list(transcript), safe=False)
+

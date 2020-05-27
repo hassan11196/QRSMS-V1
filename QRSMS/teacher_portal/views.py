@@ -358,3 +358,112 @@ def marks_info(request):
     print(scsddc)
     marks = SectionMarks.objects.filter(scsddc=scsddc).values()
     return JsonResponse(list(marks), safe=False)
+
+
+def generate_grades(request):
+    
+    grades = {
+        1:"A+",
+        2:"A",
+        3:"A-",
+        4:"B+",
+        5:"B",
+        6:"B-",
+        7:"C+",
+        8:"C",
+        9:"C-",
+        10:"D+",
+        11:"D",
+        12:"D-",
+        13:"F"
+
+    }
+    gpas = {
+        1:"4.00",
+        2:"4.00",
+        3:"3.67",
+        4:"3.33",
+        5:"3.00",
+        6:"2.67",
+        7:"2.33",
+        8:"2.00",
+        9:"1.67",
+        10:"1.33",
+        11:"1.00",
+        12:"F"
+
+    }
+
+    #grading_type = request.POST['Type']
+    scheme = 0
+    scsddc = request.POST['scsddc']
+    csection = CourseSection.objects.get(scsddc = scsddc)
+    for student_info in csection.student_info.all():
+        info = csection.student_info.get(student=student_info.student)
+        weight = info.mark_sheet.obtained_marks
+        if(weight >90):
+            info.mark_sheet.grade = grades[1-scheme]
+            info.mark_sheet.gpa = gpas[1-scheme]
+        elif(weight<90 and weight>85):
+            info.mark_sheet.grade = grades[2-scheme]
+            info.mark_sheet.gpa = gpas[2-scheme]
+        elif(weight<86 and weight>81):
+            info.mark_sheet.grade = grades[3-scheme]
+            info.mark_sheet.gpa = gpas[3-scheme]
+        elif(weight<82 and weight>77):
+            info.mark_sheet.grade = grades[4-scheme]
+            info.mark_sheet.gpa = gpas[4-scheme]
+        elif(weight<78 and weight>73):
+            info.mark_sheet.grade = grades[5-scheme]
+            info.mark_sheet.gpa = gpas[5-scheme]
+        elif(weight<74 and weight>69):
+            info.mark_sheet.grade = grades[6-scheme]
+            info.mark_sheet.gpa = gpas[6-scheme]
+        elif(weight<70 and weight>65):
+            info.mark_sheet.grade = grades[7-scheme]
+            info.mark_sheet.gpa = gpas[7-scheme]
+        elif(weight<66 and weight>61):
+            info.mark_sheet.grade = grades[8-scheme]
+            info.mark_sheet.gpa = gpas[8-scheme]
+        elif(weight<62 and weight>57):
+            info.mark_sheet.grade = grades[9-scheme]
+            info.mark_sheet.gpa = gpas[9-scheme]
+        elif(weight<58 and weight>53):
+            info.mark_sheet.grade = grades[10-scheme]
+            info.mark_sheet.gpa = gpas[10-scheme]
+        elif(weight<54 and weight>49):
+            info.mark_sheet.grade = grades[11-scheme]
+            info.mark_sheet.gpa = gpas[11-scheme]
+        else:
+            info.mark_sheet.grade = grades[12-scheme]
+            info.mark_sheet.gpa = gpas[12-scheme]
+        info.mark_sheet.finalized = True
+        current_Sem = Semester.objects.get(current_semester=True)
+        transcript = Transcript.objects.get(student = student_info.student,Semester=current_sem)
+        sum = 0
+        count = 0
+        last_course_being_final = True
+        for sheet in transcript.course_result:
+            if last_course_being_final and sheet.finalized == False:
+                last_course_being_final = False
+            sum+=sheet.gpa
+            count+=1            
+
+        sgpa = sum/count
+        transcript.sgpa = sgpa
+        if weight >49:
+            transcript.credit_hours_earned+=info.mark_sheet.course.credit_hour
+        transcript.credit_hours_attempted+=info.mark_sheet.course.credit_hour
+        transcript.save()
+        all_transcript = Transcript.objects.get(student = student_info.student)
+        sum = 0
+        count = 0
+        for tr in all_transcript:
+            if last_course_being_finalized:
+                tr.last = False
+            sum+=tr.sgpa
+            count+=1
+        transcript.cgpa = sum/count
+        if last_course_being_finalized:
+            transcript.last = True
+    return JsonResponse("Success")

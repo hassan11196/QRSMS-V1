@@ -32,6 +32,7 @@ urlpatterns += [
     path('timetable/', views.TimeTableView.as_view(), name='student_timetable'),
     path('postQR/', views.PostAttendanceQR.as_view(), name='student_post_qr'),
     path('getChallan/', views.get_challan, name="ChallanGenerate"),
-    path('updateChallan/', views.update_challan, name="updateCHallan")
+    path('updateChallan/', views.update_challan, name="updateCHallan"),
+    path('get_transcript/', views.Student_Transcript.as_view()),
 
 ]
