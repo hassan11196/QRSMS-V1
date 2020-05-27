@@ -158,8 +158,6 @@ def update_marks(request):
     scsddc = request.POST['scsddc']
     marks_type = request.POST['marks_type']
     marks_data = json.loads(request.POST['marks_data'])
-    print("Hey")
-    print(marks_data)
     if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or marks_data==None or marks_data =="":
         return JsonResponse({"Failed": "Invalid Input Parameters"})
     else:
@@ -170,20 +168,29 @@ def update_marks(request):
                 student_marks.obtained_marks = marks_data[i]['obtained_marks']
                 student_marks.obtained_weightage = marks_data[i]['obtained_weightage']
                 student_marks.save()
-                mark_sheet = MarkSheet.objects.get(student = Student.objects.get(uid=marks_data[i]['student_id']),scsddc = marks_data[i]['scsddc'])
-                mark_sheet.obtained_marks-=old_weightage
-                mark_sheet.obtained_marks += marks_data[i]['obtained_weightage']
+                mark_sheet = MarkSheet.objects.get(student = Student.objects.get(uid=marks_data[i]['student_id']),scsddc = scsddc)
+                mark_sheet.obtained_marks-= int(old_weightage)
+                mark_sheet.obtained_marks += int(marks_data[i]['obtained_weightage'])
+                mark_sheet.save()
+                print(old_weightage)
+                print(marks_data[i]['obtained_weightage'])
+                print(mark_sheet.obtained_marks)
             student_marks = StudentMarks.objects.filter(marks_type=marks_type, scsddc=scsddc).values()
             class_marks = SectionMarks.objects.filter(marks_type=marks_type, scsddc=scsddc).values()
             data = {
-                "Success":"Marks Updated Succesfully",
+                "Status":"Success",
                 "studentMarks": list(student_marks),
                 "MarksInfo": list(class_marks)
 
             }
             return JsonResponse(data,safe=False)
         except:
-            return JsonResponse({"Failed":"Marks Not saved Completely"})
+            data = {
+                "Status":"Failed",
+                "studentMarks": list(student_marks),
+                "MarksInfo": list(class_marks)
+
+            }
 
 
 
