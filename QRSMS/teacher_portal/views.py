@@ -29,7 +29,7 @@ from django.forms.models import model_to_dict
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.dispatch import receiver
-
+from student_portal.models import Student
 from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance, SectionMarks, StudentMarks
 from .serializers import (TeacherSerializer)
 from .signals import attendance_of_day_for_student, marks_for_student
@@ -153,27 +153,37 @@ class TeacherMarksView(BaseTeacherLoginView):
 
         }
         return JsonResponse(data, safe=False)
-
+import json
 def update_marks(request):
     scsddc = request.POST['scsddc']
     marks_type = request.POST['marks_type']
-    marks_data = request.POST['marks_data']
+    marks_data = json.loads(request.POST['marks_data'])
+    print("Hey")
+    print(marks_data)
     if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or marks_data==None or marks_data =="":
         return JsonResponse({"Failed": "Invalid Input Parameters"})
     else:
         try:
             for i in range(len(marks_data)):
-                student_marks = StudentMarks.objects.get(marks_type=marks_type, scsddc=scsddc,pk = marks_data[i].id)
+                student_marks = StudentMarks.objects.get(marks_type=marks_type, scsddc=scsddc,pk = marks_data[i]['id'])
                 old_weightage = student_marks.obtained_weightage
-                student_marks.obtained_marks = marks_data[i].obtained_marks
-                student_marks.obtained_weightage = marks_data[i].obtained_weightage
+                student_marks.obtained_marks = marks_data[i]['obtained_marks']
+                student_marks.obtained_weightage = marks_data[i]['obtained_weightage']
                 student_marks.save()
-                mark_sheet = MarkSheet.objects.get(student = student.objects.get(uid=marks_data[i].student_id),scsddc = marks_data[i].scsddc)
-                marks_sheet.obtained_marks-=old_weightage
-                mark_sheet.obtained_marks += marks_data[i].obtained_weightage
-            return JsonResponse("Success")
+                mark_sheet = MarkSheet.objects.get(student = Student.objects.get(uid=marks_data[i]['student_id']),scsddc = marks_data[i]['scsddc'])
+                mark_sheet.obtained_marks-=old_weightage
+                mark_sheet.obtained_marks += marks_data[i]['obtained_weightage']
+            student_marks = StudentMarks.objects.filter(marks_type=marks_type, scsddc=scsddc).values()
+            class_marks = SectionMarks.objects.filter(marks_type=marks_type, scsddc=scsddc).values()
+            data = {
+                "Success":"Marks Updated Succesfully",
+                "studentMarks": list(student_marks),
+                "MarksInfo": list(class_marks)
+
+            }
+            return JsonResponse(data,safe=False)
         except:
-            return JsonResponse("Marks Not saved Completely")
+            return JsonResponse({"Failed":"Marks Not saved Completely"})
 
 
 
