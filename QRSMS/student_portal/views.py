@@ -434,7 +434,7 @@ class Student_Transcript(View):
     def post(self, request):
         try:
             student = Student.objects.get(uid=request.POST['id'])
-            transcript = Transcript.objects.get(student=student)
+            transcript = Transcript.objects.filter(student=student).values()
             json_trancript = TranscriptSerilazer(transcript , many=True)       
             return JsonResponse(list(transcript), safe=False)
         except:
