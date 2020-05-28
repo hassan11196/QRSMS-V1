@@ -1,5 +1,5 @@
 
-from .models import Course, RegularCoreCourseLoad, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
+from .models import Course, RegularCoreCourseLoad,Transcript, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
 from rest_framework import serializers
 from . import models
 from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
@@ -114,7 +114,7 @@ class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
-class MarkSheetSerializer(serializers.HyperlinkedModelSerializer):
+class MarkSheetSerializer(serializers.ModelSerializer):
     class Meta:
         model = MarkSheet
         fields = '__all__'
@@ -218,7 +218,8 @@ class SemesterSerializer(serializers.ModelSerializer):
 
 class TranscriptSerilazer(serializers.ModelSerializer):
     course_result = MarkSheetSerializer(many=True)
-
     class Meta:
-        model = models.Transcript
+        model = Transcript
+        #fields = ['__all__']
+        fields = ['sgpa','cgpa','credit_hours_earned','credit_hours_attempted','semester','last','course_result']
         
