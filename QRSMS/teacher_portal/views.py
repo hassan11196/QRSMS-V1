@@ -394,6 +394,7 @@ def generate_attendance_for_student(**kwargs):
 
 def marks_info(request):
     scsddc = request.POST['scsddc']
+    print(scsddc)
     if scsddc == None or scsddc == "":
         return JsonResponse({"Failed": "Invalid Input Parameters"})
     print(scsddc)

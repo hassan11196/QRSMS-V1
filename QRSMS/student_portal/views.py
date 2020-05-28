@@ -432,8 +432,12 @@ def get_challan(request):
 class Student_Transcript(View):
 
     def post(self, request):
-        student = Student.objects.get(uid=request.POST['id'])
-        transcript = Transcript.objects.get(student=student)
-        json_trancript = TranscriptSerilazer(transcript , many=True)       
-        return JsonResponse(list(transcript), safe=False)
+        try:
+            student = Student.objects.get(uid=request.POST['id'])
+            transcript = Transcript.objects.get(student=student)
+            json_trancript = TranscriptSerilazer(transcript , many=True)       
+            return JsonResponse(list(transcript), safe=False)
+        except:
+            return JsonResponse("No Transcript",safe=False)
+        
 

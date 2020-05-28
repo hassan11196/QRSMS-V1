@@ -12,7 +12,12 @@ class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerialize
         fields = ('url', 'class_date', 'attendance_slot',
                   'state', 'duration_hour')
 
+class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = StudentAttendance
+        fields = '__all__'
 
+        
 class StudentAttendanceSheetSerializerMinimized(serializers.HyperlinkedModelSerializer):
     attendance = StudentAttendanceSerializerMinimized(many=True)
     student = WrapperStudentSerializer('uid')
