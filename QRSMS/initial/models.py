@@ -1,9 +1,10 @@
+import datetime
 from django.db import models
 from django.db.models import F, Q
 from django.core.validators import RegexValidator, ValidationError
 from django.urls import reverse
 from django.dispatch import receiver
-import datetime
+
 from institution.models import University, Campus, Degree
 from institution.constants import UNIVERISTY_ID_REGEX
 from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR_CHOICE
@@ -13,7 +14,7 @@ from faculty_portal.models import Faculty
 from .signals import attendance_sheet_for_student, mark_sheet_for_student, student_info_section_for_student
 
 
-ACADEMIC_YEAR = 2019
+ACADEMIC_YEAR = 2020
 
 # Create your models here.
 
@@ -27,11 +28,11 @@ class Course(models.Model):
     course_name = models.CharField(max_length=50, name="course_name")
     course_code = models.CharField(
         max_length=20, primary_key=True, name="course_code")
-    course_short = models.CharField(max_length=50)
+    course_short = models.CharField(max_length=50, null=True)
     credit_hour = models.PositiveSmallIntegerField(
         name='credit_hour', null=True)
     pre_requisites = models.ManyToManyField(
-        "initial.Course", name='pre_requisites', verbose_name="Prerequisite Courses")
+        "initial.Course", name='pre_requisites', verbose_name="Prerequisite Courses", null=True)
     course_type = models.PositiveIntegerField(
         name='course_type', help_text="Core or Elective", choices=COURSE_TYPE_CHOICES)
 
@@ -39,13 +40,13 @@ class Course(models.Model):
         return self.course_name
 
     class Meta:
-        ordering = ('-pk',)
+        ordering = ('-course_name',)
 
-    def get_absolute_url(self):
-        return reverse('initial_course_detail', args=(self.course_code,))
+    # def get_absolute_url(self):
+    #     return reverse('initial_course_detail', args=(self.course_code,))
 
-    def get_update_url(self):
-        return reverse('initial_course_update', args=(self.course_code,))
+    # def get_update_url(self):
+    #     return reverse('initial_course_update', args=(self.course_code,))
 
 # class Student(models.Model):
 #     student_id = models.CharField(max_length=8,primary_key=True, validators = [RegexValidator("^[A-Z][0-9]{2}-[0-9]{4}$", message = "Invalid Student ID")], name="student_id_n")
@@ -56,12 +57,12 @@ class Semester(models.Model):
     department = models.ForeignKey(
         'institution.Department', on_delete=models.SET_NULL, null=True)
     semester_code = models.CharField(
-        max_length=255, primary_key=True, default='TEST2000')
+        max_length=255, primary_key=True, default='SPRING2020')
     # offered_courses = models.ManyToManyField(
     #     Course, related_name="semester_offered")
     SEMSESTER_CHOICES = (
-        (2, "FALL"),
         (1, "SPRING"),
+        (2, "FALL"),
         (3, "SUMMER")
     )
     semester_season = models.SmallIntegerField(
@@ -71,14 +72,14 @@ class Semester(models.Model):
         name="start_date", default=datetime.date.today)
     end_date = models.DateField(name="end_date", default=datetime.date.today)
     teachers_available = models.ManyToManyField(
-        Teacher, related_name="teachers_available")
+        Teacher, related_name="teachers_available", null=True)
     students_registered = models.ManyToManyField(
-        Student, related_name="students_registered")
+        Student, related_name="students_registered", null=True)
 
     regular_course_load = models.ManyToManyField(
-        'initial.RegularCoreCourseLoad')
+        'initial.RegularCoreCourseLoad', null=True)
     elective_course_load = models.ManyToManyField(
-        'initial.RegularElectiveCourseLoad')
+        'initial.RegularElectiveCourseLoad', null=True)
     degree_short = models.CharField(max_length=30, null=True, blank=True)
     fee_per_CR = models.FloatField(
         max_length=10, null=True, blank=True, default=7400)
@@ -177,6 +178,7 @@ class StudentInfoSection(models.Model):
         'initial.AttendanceSheet', on_delete=models.SET_NULL, blank=True, null=True)
     mark_sheet = models.ForeignKey(
         'initial.MarkSheet', on_delete=models.SET_NULL, blank=True, null=True)
+
     def __str__(self):
         return self.student.uid + "_" + (self.coursesection_set.first().course_code if self.coursesection_set.first() != None else 'NO COURSE SECTION')
 
@@ -290,7 +292,7 @@ class SectionMarks(models.Model):
     marks_type = models.CharField(max_length=256)
     total_marks = models.FloatField(null=True, blank=True)
     weightage = models.FloatField(null=True, blank=True)
-    SCSDDC = models.CharField(
+    scsddc = models.CharField(
         max_length=256, name='scsddc', null=True, blank=True)
     section = models.CharField(max_length=256, blank=True, null=True)
 
@@ -310,14 +312,14 @@ class StudentAttendance(models.Model):
         ('LV', 'Leave')
     )
     ATTENDANCE_SLOTS = (
-        (1, '8:00 AM - 9:00'),
-        (2, '9:00 AM- 10:00'),
-        (3, '10:00 AM- 11:00 PM'),
-        (4, '11:00 AM- 12:00 PM'),
-        (5, '12:00 PM- 1:00 PM'),
-        (6, '1:00 PM- 2:00 PM'),
-        (7, '2:00 PM- 3:00 PM'),
-        (8, '3:00 PM- 4:00 PM'),
+        (1, '8:00 AM - 9:00 PM'),
+        (2, '9:00 AM - 10:00 PM'),
+        (3, '10:00 AM - 11:00 PM'),
+        (4, '11:00 AM - 12:00 PM'),
+        (5, '12:00 PM - 1:00 PM'),
+        (6, '1:00 PM - 2:00 PM'),
+        (7, '2:00 PM - 3:00 PM'),
+        (8, '3:00 PM - 4:00 PM'),
     )
 
     student = models.ForeignKey(
@@ -374,7 +376,7 @@ class AttendanceSheet(models.Model):
     SCSDDC = models.CharField(
         max_length=256, name='scsddc', null=True, blank=True)
     attendance = models.ManyToManyField(
-        'initial.StudentAttendance', blank=True)
+        'initial.StudentAttendance', blank=True, null=True)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
@@ -398,16 +400,16 @@ class AttendanceSheet(models.Model):
 #     return AttendanceSheet
 
 class MarkSheet(models.Model):
-    course = models.ForeignKey(Course,on_delete = models.SET_NULL, null=True)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
-    Marks = models.ManyToManyField('initial.StudentMarks')
+    Marks = models.ManyToManyField('initial.StudentMarks', null=True)
     grand_total_marks = models.FloatField(blank=True, null=True, default=0.)
-    obtained_marks = models.FloatField(blank=True, null=True,default=0.)
+    obtained_marks = models.FloatField(blank=True, null=True, default=0.)
     grade = models.CharField(max_length=3, null=True)
     year = models.IntegerField(null=True, blank=True)
-    gpa = models.FloatField(blank=True, null=True,max_length=5,default=0.)
+    gpa = models.FloatField(blank=True, null=True, max_length=5, default=0.)
     finalized = models.BooleanField(default=False)
     semester_season = models.SmallIntegerField(
         choices=SEMSESTER_CHOICES, name="semester_season", default=1)
@@ -419,21 +421,19 @@ class MarkSheet(models.Model):
         unique_together = ('student', 'scsddc')
 
 
-
 class Transcript(models.Model):
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
-    course_result = models.ManyToManyField(MarkSheet)
-    sgpa = models.FloatField(blank=True, null=True,max_length=6,default  = 0.)
-    cgpa = models.FloatField(blank=True, null=True,max_length=6,default  = 0.)
-    credit_hours_earned = models.IntegerField(blank=True,default=0)
-    credit_hours_attempted = models.IntegerField(blank=True,default=0)
-    semester = models.ForeignKey(Semester,on_delete=models.CASCADE, null=True)
+    course_result = models.ManyToManyField(MarkSheet, null=True)
+    sgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
+    cgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
+    credit_hours_earned = models.IntegerField(blank=True, default=0)
+    credit_hours_attempted = models.IntegerField(blank=True, default=0)
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE, null=True)
     last = models.BooleanField(default=False)
+
     def __str__(self):
-        return self.student.uid+ "_" +str(self.semester)
-
-
+        return self.student.uid + "_" + str(self.semester)
 
 
 class RegularCoreCourseLoad(models.Model):
@@ -587,7 +587,8 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         info = StudentInfoSection(
             student=kwargs['student'], mark_sheet=new_sheet_marks, attendance_sheet=new_sheet_attendance)
         semester = Semester.objects.get(current_semester=True)
-        transcript = Transcript.objects.get(student = kwargs['student'],semester = semester)
+        transcript = Transcript.objects.get(
+            student=kwargs['student'], semester=semester)
         transcript.course_result.add(new_sheet_marks)
         transcript.save()
         info.save()
@@ -610,24 +611,19 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         info = StudentInfoSection.objects.get(
             student=kwargs['student'], attendance_sheet__scsddc=SCSDDC_temp)
         semester = Semester.objects.get(current_semester=True)
-        transcript = Transcript.objects.get(student = kwargs['student'],semester = semester)
+        transcript = Transcript.objects.get(
+            student=kwargs['student'], semester=semester)
         transcript.course_result.remove(info.mark_sheet)
         transcript.save()
         info.mark_sheet.delete()
         info.attendance_sheet.delete()
-        
+
         csection = CourseSection.objects.get(
             semester_code="_".join(SCSDDC_temp.split('_')[2:]), course_code=scsddc_dict['course_code'], section_name=scsddc_dict['section'])
         csection.student_info.remove(info)
         info.delete()
         csection.save()
         return 'Success'
-
-
-
-
-
-
 
 
 # @receiver(attendance_sheet_for_student)

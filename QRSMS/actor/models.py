@@ -34,8 +34,8 @@ STUDENT_YEAR_CHOICE = (
     (4, "SENIOR"),
     (5, "VETERAN")
 )
-CURRENT_SEMESTER = 1  # FALL
-CURRENT_SEMESTER_CODE = 'FALL2019_BS(CS)_ComputerSciences_MainCampus_Karachi'
+CURRENT_SEMESTER = 1  # Spring
+CURRENT_SEMESTER_CODE = 'SPRING2020_BS(CS)_ComputerSciences_MainCampus_Karachi'
 
 
 class User(AbstractUser):
@@ -82,11 +82,11 @@ class User(AbstractUser):
     DOB = models.DateField(verbose_name='Date of Birth',
                            null=True, default=datetime.date.today)
     nationality = models.CharField(
-        verbose_name='Nationality', max_length=100, null=True)
+        verbose_name='Nationality', max_length=100, null=True, default='Pakistani')
     mobile_contact = models.PositiveIntegerField(
-        verbose_name='Mobile Contact', null=True)
+        verbose_name='Mobile Contact', null=True, default=923293571855)
     emergency_contact = models.PositiveIntegerField(
-        verbose_name='Emergency Contact', null=True)
+        verbose_name='Emergency Contact', null=True,  default=923293571854)
 
     educational_history = models.OneToOneField(
         "actor.EducationalHistory", verbose_name="Educational Histories", on_delete=models.CASCADE, null=True)
