@@ -308,8 +308,11 @@ def generate_marks_for_student(**kwargs):
                                  student=student_info.student, weightage=section_marks.weightage, section=section_marks.section)
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
+            
             info.mark_sheet.Marks.add(new_a)
-            info.mark_sheet.grand_total_marks += section_marks.total_marks
+            if info.mark_sheet.grand_total_marks==None:
+                info.mark_sheet.grand_total_marks =0.0 
+            info.mark_sheet.grand_total_marks += int(section_marks.weightage)
             info.mark_sheet.year = year
             info.mark_sheet.semester_season = season
             info.mark_sheet.save()

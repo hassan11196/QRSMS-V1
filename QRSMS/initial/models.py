@@ -366,7 +366,8 @@ class StudentMarks(models.Model):
         max_length=256, name='scsddc', null=True, blank=True)
     section = models.CharField(max_length=256, blank=True, null=True)
 
-
+    def __str__(self):
+        return self.student.uid + "_" + self.marks_type + "_" +self.scsddc
 # Attendace Sheet of a Single Student, with SDDC Semester_Dep_Deg_Campus
 class AttendanceSheet(models.Model):
     student = models.ForeignKey(
@@ -405,7 +406,7 @@ class MarkSheet(models.Model):
     Marks = models.ManyToManyField('initial.StudentMarks')
     grand_total_marks = models.FloatField(blank=True, null=True, default=0.)
     obtained_marks = models.FloatField(blank=True, null=True,default=0.)
-    grade = models.CharField(max_length=3, null=True)
+    grade = models.CharField(max_length=3, null=True,blank=True)
     year = models.IntegerField(null=True, blank=True)
     gpa = models.FloatField(blank=True, null=True,max_length=5,default=0.)
     finalized = models.BooleanField(default=False)
@@ -502,7 +503,7 @@ class CourseStatus(models.Model):
 
                 print("Sending Signal")
                 info = student_info_section_for_student.send(sender=self, student=self.offeredcourses.get(
-                ).student, course_section=course_section, option='create')
+                ).student, course_section=course_section, option='create',course = self.course,scsddc =course_section.scsddc)
 
                 print(info)
 
@@ -511,7 +512,7 @@ class CourseStatus(models.Model):
                 course_section.students_count = F('students_count') - 1
                 print("Sending Signal")
                 info = student_info_section_for_student.send(sender=self, student=self.offeredcourses.get(
-                ).student, course_section=course_section, option='delete')
+                ).student, course_section=course_section, option='delete',course = self.course,scsddc =course_section.scsddc)
                 print(info)
 
             course_section.save()
@@ -572,14 +573,18 @@ def split_scsddc(scsddc):
 
 @ receiver(student_info_section_for_student)
 def make_or_delete_student_info_section_for_student(**kwargs):
+    scsddc = kwargs['scsddc']
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Student Info Section')
         SCSDDC_temp = str(kwargs['course_section'])
+        course = kwargs['course']
         scsddc_dict = split_scsddc(SCSDDC_temp)
         new_sheet_attendance = AttendanceSheet.objects.get_or_create(
             student=kwargs['student'], scsddc=SCSDDC_temp)[0]
+        import datetime
+        now = datetime.datetime.now()
         new_sheet_marks = MarkSheet.objects.get_or_create(
-            student=kwargs['student'], scsddc=SCSDDC_temp)[0]
+            student=kwargs['student'], scsddc=SCSDDC_temp,course=course,year=now.year)[0]
 
         new_sheet_marks.save()
         new_sheet_attendance.save()
@@ -591,6 +596,10 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         transcript.course_result.add(new_sheet_marks)
         transcript.save()
         info.save()
+        section_marks = SectionMarks.objects.filter(scsddc=scsddc)
+        for mrk in section_marks:
+            stu_marks = StudentMarks.objects.create(scsddc=scsddc,student=kwargs['student'],total_marks = mrk.total_marks,weightage=mrk.weightage,marks_type=mrk.marks_type,section = mrk.section)
+            new_sheet_marks.Marks.add(stu_marks)
         print(scsddc_dict)
         print("_".join(SCSDDC_temp.split('_')[2:]))
         csection = CourseSection.objects.get(
@@ -621,6 +630,7 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         csection.student_info.remove(info)
         info.delete()
         csection.save()
+        StudentMarks.objects.filter(scsddc = scsddc , student = kwargs['student']).delete()
         return 'Success'
 
 

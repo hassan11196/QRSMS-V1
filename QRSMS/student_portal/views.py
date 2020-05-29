@@ -366,7 +366,7 @@ def update_challan(request):
 
     option = request.POST['action']
     code = request.POST['code']
-    course = Course.objects.get(course_name=code)
+    course = Course.objects.filter(course_name=code).first()
     credit_hour = course.credit_hour
     course_fee = semester.fee_per_CR
     if option == 'drop':
