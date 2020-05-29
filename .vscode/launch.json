@@ -9,7 +9,10 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}\\QRSMS\\manage.py",
-      "args": ["runserver"],
+      // "env": {
+      //   "DJANGO_COLORS": "dark;error=yellow/blue,blink;notice=magenta;http_success=magenta"
+      // },
+      "args": ["runserver", "--force-color"],
       "django": true
       // "subProcess": true
     }

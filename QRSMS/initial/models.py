@@ -32,7 +32,7 @@ class Course(models.Model):
     credit_hour = models.PositiveSmallIntegerField(
         name='credit_hour', null=True)
     pre_requisites = models.ManyToManyField(
-        "initial.Course", name='pre_requisites', verbose_name="Prerequisite Courses", null=True)
+        "initial.Course", name='pre_requisites', verbose_name="Prerequisite Courses")
     course_type = models.PositiveIntegerField(
         name='course_type', help_text="Core or Elective", choices=COURSE_TYPE_CHOICES)
 
@@ -72,14 +72,14 @@ class Semester(models.Model):
         name="start_date", default=datetime.date.today)
     end_date = models.DateField(name="end_date", default=datetime.date.today)
     teachers_available = models.ManyToManyField(
-        Teacher, related_name="teachers_available", null=True)
+        Teacher, related_name="teachers_available")
     students_registered = models.ManyToManyField(
-        Student, related_name="students_registered", null=True)
+        Student, related_name="students_registered")
 
     regular_course_load = models.ManyToManyField(
-        'initial.RegularCoreCourseLoad', null=True)
+        'initial.RegularCoreCourseLoad')
     elective_course_load = models.ManyToManyField(
-        'initial.RegularElectiveCourseLoad', null=True)
+        'initial.RegularElectiveCourseLoad')
     degree_short = models.CharField(max_length=30, null=True, blank=True)
     fee_per_CR = models.FloatField(
         max_length=10, null=True, blank=True, default=7400)
@@ -376,7 +376,7 @@ class AttendanceSheet(models.Model):
     SCSDDC = models.CharField(
         max_length=256, name='scsddc', null=True, blank=True)
     attendance = models.ManyToManyField(
-        'initial.StudentAttendance', blank=True, null=True)
+        'initial.StudentAttendance', blank=True)
 
     def __str__(self):
         return self.student.uid + "_" + self.scsddc
@@ -404,7 +404,7 @@ class MarkSheet(models.Model):
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
     SCSDDC = models.CharField(max_length=256, name='scsddc', null=True)
-    Marks = models.ManyToManyField('initial.StudentMarks', null=True)
+    Marks = models.ManyToManyField('initial.StudentMarks')
     grand_total_marks = models.FloatField(blank=True, null=True, default=0.)
     obtained_marks = models.FloatField(blank=True, null=True, default=0.)
     grade = models.CharField(max_length=3, null=True)
@@ -424,7 +424,7 @@ class MarkSheet(models.Model):
 class Transcript(models.Model):
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
-    course_result = models.ManyToManyField(MarkSheet, null=True)
+    course_result = models.ManyToManyField(MarkSheet)
     sgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
     cgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
     credit_hours_earned = models.IntegerField(blank=True, default=0)
