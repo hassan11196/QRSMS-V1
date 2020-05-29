@@ -141,8 +141,8 @@ class TeacherMarksView(BaseTeacherLoginView):
     def post(self, request):
         marks_type = request.POST['marks_type']
         scsddc = request.POST['scsddc']
-        if marks_type == None or marks_type == "" or scsddc == None or scsddc == "":
-            return JsonResponse({"Failure": "Parameters Are Nor Valid"}, safe=False)
+        if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or scsddc=="null":
+            return JsonResponse({"Failure": "Parameters Are Not Valid"}, safe=False,status=403)
         student_marks = StudentMarks.objects.filter(
             marks_type=marks_type, scsddc=scsddc).values()
         class_marks = SectionMarks.objects.filter(
@@ -159,7 +159,7 @@ def update_marks(request):
     marks_type = request.POST['marks_type']
     marks_data = json.loads(request.POST['marks_data'])
     if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or marks_data==None or marks_data =="":
-        return JsonResponse({"Failed": "Invalid Input Parameters"})
+        return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
     else:
         try:
             for i in range(len(marks_data)):
@@ -262,7 +262,7 @@ class AddSectionMarks(BaseTeacherLoginView):
         weightage = request.POST['weightage']
         section = request.POST['section']
 
-        if(marks_type is None or req_scsddc is None or section is None):
+        if(marks_type is None or req_scsddc is None or section is None or req_scsddc is "null" ):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
 
         from rest_framework.request import Request
@@ -395,8 +395,8 @@ def generate_attendance_for_student(**kwargs):
 def marks_info(request):
     scsddc = request.POST['scsddc']
     print(scsddc)
-    if scsddc == None or scsddc == "":
-        return JsonResponse({"Failed": "Invalid Input Parameters"})
+    if scsddc == None or scsddc == "" or scsddc=="null":
+        return JsonResponse({"Failed": "Invalid Input Parameters"},status=403)
     print(scsddc)
     marks = SectionMarks.objects.filter(scsddc=scsddc).values()
     return JsonResponse(list(marks), safe=False)
@@ -439,6 +439,8 @@ def generate_grades(request):
     #grading_type = request.POST['Type']
     scheme = 0
     scsddc = request.POST['scsddc']
+    if scsddc==None or scsddc == "" or scsddc == "null":
+        return JsonResponse({"Error":"Invalid scsddc"},status=403)
     csection = CourseSection.objects.get(scsddc = scsddc)
     for student_info in csection.student_info.all():
         info = csection.student_info.get(student=student_info.student)

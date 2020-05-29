@@ -394,13 +394,13 @@ def get_challan(request):
             challan = FeeChallan.objects.get(
                 student=student, semester=semester)
         except:
-            return JsonResponse("No Challan", safe=False)
+            return JsonResponse({"Error":"No Challan"}, safe=False,response=403)
     else:
         try:
             challan = FeeChallan.objects.filter(student=student).values()
             return JsonResponse(list(challan), safe=False)
         except:
-            return JsonResponse("No challan", safe=False)
+            return JsonResponse({"Error":"No challan"}, safe=False,status=403)
     opt = semester.semester_season
     if(opt == 1):
         season = "Fall"
@@ -444,6 +444,6 @@ class Student_Transcript(View):
                 json_transcript = TranscriptSerilazer(transcript)
                 return JsonResponse([json_transcript.data], safe=False)
         except:
-            return JsonResponse("No Transcript",safe=False)
+            return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
         
 
