@@ -396,13 +396,13 @@ def get_challan(request):
             challan = FeeChallan.objects.get(
                 student=student, semester=semester)
         except:
-            return JsonResponse("No Challan", safe=False)
+            return JsonResponse({"Error": "No Challan"}, safe=False, response=403)
     else:
         try:
             challan = FeeChallan.objects.filter(student=student).values()
             return JsonResponse(list(challan), safe=False)
         except:
-            return JsonResponse("No challan", safe=False)
+            return JsonResponse({"Error": "No challan"}, safe=False, status=403)
     opt = semester.semester_season
     if(opt == 1):
         season = "Fall"
@@ -426,7 +426,6 @@ def get_challan(request):
         "total_amount": challan.total_fee,
         "fine_per_day": int(challan.total_fee*0.001),
         "challan_no": challan.challan_no,
-
     }
     return JsonResponse(challan_obj, safe=False)
 
@@ -446,4 +445,47 @@ class Student_Transcript(View):
                 json_transcript = TranscriptSerilazer(transcript)
                 return JsonResponse([json_transcript.data], safe=False)
         except:
-            return JsonResponse("No Transcript", safe=False)
+            return JsonResponse({"Error": "No Transcript"}, safe=False, status=420)
+
+
+class StudentMarksView(View):
+    def post(self, request):
+        scsddc = request.POST['scsddc']
+        id = request.POST['id']
+        if scsddc == None or scsddc == "" or scsddc == "null":
+            return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
+        else:
+            student = Student.objects.get(user=request.user)
+            marks_info = SectionMarks.objects.get(scsddc=scsddc)
+
+            if(len(marks_info) > 0):
+                marks_data = []
+                for mark in marks_info:
+                    marks = StudentMarks.objects.filter(
+                        student=student, scsddc=scsddc, marks_type=mark.mark_type)
+                    obj = {
+                        "marks_type": marks.marks_type,
+                        "total_marks": marks.total_marks,
+                        "weightage": marks.weightage,
+                        "obtained_marks": marks.obtained_marks,
+                        "obtained_weightage": marks.obtained_weightage,
+                        "section": marks.section,
+                        "marks_mean": mark.marks_mean,
+                        "marks_std_dev": mark.marks_standard_deviation,
+                        "weightage_mean": mark.weightage_mean,
+                        "weightage_std_dev": mark.weightage_standard_deviation,
+                    }
+                    marks_data.append(obj)
+
+                return JsonResponse(marks_data, safe=False, status=200)
+            else:
+                return JsonResponse({"Failed": "No Marks Available"}, status=403)
+
+
+def get_registered_scsddc(request):
+    #code = request.POST['code']
+    current_semester = Semester.objects.filter(
+        current_semester=True).values()
+    student = Student.objects.get(uid=request.user)
+    # mark_sheet = MarkSheet.objects.filter()
+    return JsonResponse({"Status": "Success", "Sem": list(current_semester)})

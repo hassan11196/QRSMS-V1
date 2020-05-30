@@ -1,7 +1,7 @@
 from .models import Teacher
 from .forms import TeacherForm
 from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
-from initial.models import CourseSection, SectionAttendance
+from initial.models import CourseSection, SectionAttendance, Transcript
 import json
 from colorama import Fore
 from django.db.models import Count
@@ -142,14 +142,29 @@ class TeacherMarksView(BaseTeacherLoginView):
     def post(self, request):
         marks_type = request.POST['marks_type']
         scsddc = request.POST['scsddc']
-        if marks_type == None or marks_type == "" or scsddc == None or scsddc == "":
-            return JsonResponse({"Failure": "Parameters Are Nor Valid"}, safe=False)
+        if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or scsddc == "null":
+            return JsonResponse({"Failure": "Parameters Are Not Valid"}, safe=False, status=403)
         student_marks = StudentMarks.objects.filter(
-            marks_type=marks_type, scsddc=scsddc).values()
+            marks_type=marks_type, scsddc=scsddc)
         class_marks = SectionMarks.objects.filter(
             marks_type=marks_type, scsddc=scsddc).values()
+        marks_data = []
+
+        for student_marks in student_marks:
+            obj = {
+                "id": student_marks.id,
+                "marks_type": student_marks.marks_type,
+                "total_marks": student_marks.total_marks,
+                "weightage": student_marks.weightage,
+                "obtained_marks": student_marks.obtained_marks,
+                "obtained_weightage": student_marks.obtained_weightage,
+                "student_id": student_marks.student.uid,
+                "student_name": student_marks.student.user.first_name+" "+student_marks.student.user.last_name,
+
+            }
+            marks_data.append(obj)
         data = {
-            "studentMarks": list(student_marks),
+            "studentMarks": marks_data,
             "MarksInfo": list(class_marks)
 
         }
@@ -161,15 +176,24 @@ def update_marks(request):
     marks_type = request.POST['marks_type']
     marks_data = json.loads(request.POST['marks_data'])
     if marks_type == None or marks_type == "" or scsddc == None or scsddc == "" or marks_data == None or marks_data == "":
-        return JsonResponse({"Failed": "Invalid Input Parameters"})
+        return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
     else:
         try:
+            import statistics
+            all_marks = []
+            all_weightage = []
             for i in range(len(marks_data)):
                 student_marks = StudentMarks.objects.get(
                     marks_type=marks_type, scsddc=scsddc, pk=marks_data[i]['id'])
+                print(student_marks)
                 old_weightage = student_marks.obtained_weightage
                 student_marks.obtained_marks = marks_data[i]['obtained_marks']
+                if float(student_marks.obtained_marks) > student_marks.total_marks:
+                    return JsonResponse({"Failed": "Invalid Marks"}, status=403)
                 student_marks.obtained_weightage = marks_data[i]['obtained_weightage']
+                all_marks.append(float(marks_data[i]['obtained_marks']))
+                all_weightage.append(
+                    float(marks_data[i]['obtained_weightage']))
                 student_marks.save()
                 mark_sheet = MarkSheet.objects.get(student=Student.objects.get(
                     uid=marks_data[i]['student_id']), scsddc=scsddc)
@@ -177,11 +201,19 @@ def update_marks(request):
                 mark_sheet.obtained_marks += int(
                     marks_data[i]['obtained_weightage'])
                 mark_sheet.save()
-                print(old_weightage)
-                print(marks_data[i]['obtained_weightage'])
-                print(mark_sheet.obtained_marks)
+                # print(old_weightage)
+                # print(marks_data[i]['obtained_weightage'])
+                # print(mark_sheet.obtained_marks)
             student_marks = StudentMarks.objects.filter(
                 marks_type=marks_type, scsddc=scsddc).values()
+            class_marks = SectionMarks.objects.get(
+                marks_type=marks_type, scsddc=scsddc)
+            class_marks.marks_mean = statistics.mean(all_marks)
+            class_marks.marks_standard_deviation = statistics.stdev(all_marks)
+            class_marks.weightage_mean = statistics.mean(all_weightage)
+            class_marks.weightage_standard_deviation = statistics.stdev(
+                all_weightage)
+            class_marks.save()
             class_marks = SectionMarks.objects.filter(
                 marks_type=marks_type, scsddc=scsddc).values()
             data = {
@@ -198,6 +230,7 @@ def update_marks(request):
                 "MarksInfo": list(class_marks)
 
             }
+            return JsonResponse(data, safe=False)
 
 
 class AssignedSections(BaseTeacherLoginView):
@@ -268,7 +301,7 @@ class AddSectionMarks(BaseTeacherLoginView):
         weightage = request.POST['weightage']
         section = request.POST['section']
 
-        if(marks_type is None or req_scsddc is None or section is None):
+        if(marks_type is None or req_scsddc is None or section is None or req_scsddc is "null"):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
 
         from rest_framework.request import Request
@@ -301,7 +334,7 @@ def generate_marks_for_student(**kwargs):
     year = semester.semester_year
     season = semester.semester_season
     if kwargs['option'] == 'create':
-        print('Received Signal For Creation Marks of Day for student')
+        print('Received Signal For Creation Marks for student')
         SCSDDC_temp = str(kwargs['scsddc'])
         section_marks = kwargs['sectionmarks']
         section = kwargs['coursesection']
@@ -314,8 +347,11 @@ def generate_marks_for_student(**kwargs):
                                  student=student_info.student, weightage=section_marks.weightage, section=section_marks.section)
             new_a.save()
             info = csection.student_info.get(student=student_info.student)
+
             info.mark_sheet.Marks.add(new_a)
-            info.mark_sheet.grand_total_marks += section_marks.total_marks
+            if info.mark_sheet.grand_total_marks == None:
+                info.mark_sheet.grand_total_marks = 0.0
+            info.mark_sheet.grand_total_marks += float(section_marks.weightage)
             info.mark_sheet.year = year
             info.mark_sheet.semester_season = season
             info.mark_sheet.save()
@@ -404,8 +440,8 @@ def generate_attendance_for_student(**kwargs):
 def marks_info(request):
     scsddc = request.POST['scsddc']
     print(scsddc)
-    if scsddc == None or scsddc == "":
-        return JsonResponse({"Failed": "Invalid Input Parameters"})
+    if scsddc == None or scsddc == "" or scsddc == "null":
+        return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
     print(scsddc)
     marks = SectionMarks.objects.filter(scsddc=scsddc).values()
     return JsonResponse(list(marks), safe=False)
@@ -430,24 +466,26 @@ def generate_grades(request):
 
     }
     gpas = {
-        1: "4.00",
-        2: "4.00",
-        3: "3.67",
-        4: "3.33",
-        5: "3.00",
-        6: "2.67",
-        7: "2.33",
-        8: "2.00",
-        9: "1.67",
-        10: "1.33",
-        11: "1.00",
-        12: "F"
+        1: 4.00,
+        2: 4.00,
+        3: 3.67,
+        4: 3.33,
+        5: 3.00,
+        6: 2.67,
+        7: 2.33,
+        8: 2.00,
+        9: 1.67,
+        10: 1.33,
+        11: 1.00,
+        12: 0.00
 
     }
 
     #grading_type = request.POST['Type']
     scheme = 0
     scsddc = request.POST['scsddc']
+    if scsddc == None or scsddc == "" or scsddc == "null":
+        return JsonResponse({"Error": "Invalid scsddc"}, status=403)
     csection = CourseSection.objects.get(scsddc=scsddc)
     for student_info in csection.student_info.all():
         info = csection.student_info.get(student=student_info.student)
@@ -488,34 +526,45 @@ def generate_grades(request):
         else:
             info.mark_sheet.grade = grades[12-scheme]
             info.mark_sheet.gpa = gpas[12-scheme]
+
+        final_status = info.mark_sheet.finalized
         info.mark_sheet.finalized = True
-        current_Sem = Semester.objects.get(current_semester=True)
+        info.mark_sheet.save()
+        current_sem = Semester.objects.get(current_semester=True)
         transcript = Transcript.objects.get(
-            student=student_info.student, Semester=current_sem)
+            student=student_info.student, semester=current_sem)
         sum = 0
         count = 0
         last_course_being_final = True
-        for sheet in transcript.course_result:
+        results = transcript.course_result.all()
+        total_cr = 0
+        for sheet in results:
             if last_course_being_final and sheet.finalized == False:
                 last_course_being_final = False
-            sum += sheet.gpa
+            sum += sheet.gpa*sheet.course.credit_hour
             count += 1
-
-        sgpa = sum/count
+            total_cr += sheet.course.credit_hour
+        print(last_course_being_final)
+        sgpa = sum/(count*total_cr)
         transcript.sgpa = sgpa
-        if weight > 49:
-            transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
-        transcript.credit_hours_attempted += info.mark_sheet.course.credit_hour
+        if final_status is False:
+            if weight > 49:
+                transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
+            transcript.credit_hours_attempted += info.mark_sheet.course.credit_hour
         transcript.save()
-        all_transcript = Transcript.objects.get(student=student_info.student)
+        all_transcript = Transcript.objects.filter(
+            student=student_info.student)
+        print(all_transcript)
         sum = 0
         count = 0
         for tr in all_transcript:
-            if last_course_being_finalized:
+            if last_course_being_final:
                 tr.last = False
             sum += tr.sgpa
             count += 1
+
         transcript.cgpa = sum/count
-        if last_course_being_finalized:
+        if last_course_being_final:
             transcript.last = True
-    return JsonResponse("Success")
+        transcript.save()
+    return JsonResponse("Success", safe=False)
