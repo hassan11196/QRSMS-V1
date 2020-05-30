@@ -23,6 +23,7 @@ class Student(models.Model):
 
         student_created = cls(user=user_created, arn=last_arn_number)
 
+        student_created.groups.add(Group.objects.get(name='student_group'))
         print("Returning created student")
         print(student_created)
 

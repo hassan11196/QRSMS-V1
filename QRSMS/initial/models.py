@@ -15,7 +15,7 @@ from .signals import attendance_sheet_for_student, mark_sheet_for_student, stude
 
 
 ACADEMIC_YEAR = 2020
-
+CURRENT_SEMESTER = 1  # Spring
 # Create your models here.
 
 
@@ -95,6 +95,17 @@ class Semester(models.Model):
         return self.semester_code
 
     def save(self, *args, **kwargs):
+        # try:
+        #     deg = Degree.objects.get(degree_short=self.degree_short)
+        #     if deg:
+        #         deg.registrations_open = True
+        #         deg.registration_semester = self
+        #         deg.save()
+        # except Degree.DoesNotExist as e:
+        #     print(e)
+        #     raise ValueError("Semester Not Created")
+        # Call the real save() method
+        super(Semester, self).save(*args, **kwargs)
         try:
             deg = Degree.objects.get(degree_short=self.degree_short)
             if deg:
@@ -104,8 +115,6 @@ class Semester(models.Model):
         except Degree.DoesNotExist as e:
             print(e)
             raise ValueError("Semester Not Created")
-        # Call the real save() method
-        super(Semester, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('initial_semester_detail', args=(self.pk,))
@@ -114,34 +123,40 @@ class Semester(models.Model):
         return reverse('initial_semester_update', args=(self.pk,))
 
     def make_semester(self):
-        rg = self.regular_course_load.all()[0]
-        for c in rg.courses.all():
-            make_classes(semester_code=self.semester_code,
-                         course_code=c.course_code, sections=['A', 'B', 'C', 'D', 'E'])
+        rg_list = self.regular_course_load.all()
+        for rg in rg_list:
+            for c in rg.courses.all():
+                make_classes(semester_code=self.semester_code,
+                             course_code=c.course_code, sections=['A', 'B', 'C', 'D', 'E'])
+        print('Core Classes Creation Complete')
 
     def make_elective_semester(self):
-        rg = self.elective_course_load.all()[0]
-        for c in rg.courses.all():
-            make_classes(semester_code=self.semester_code,
-                         course_code=c.course_code, sections=['GR1', 'GR2', 'GR3'])
+        rg_list = self.elective_course_load.all()
+        for rg in rg_list:
+            for c in rg.courses.all():
+                make_classes(semester_code=self.semester_code,
+                             course_code=c.course_code, sections=['GR1', 'GR2', 'GR3'])
+        print('elective Classes Creation Complete')
 
     def pre_offer(self):
-        for rg in self.regular_course_load.all():
-            students = Student.objects.filter(student_year=rg.student_year)
-            for s in students:
-                # One time only for student
-                of_courses = OfferedCourses(
-                    student=s, semester_code=self.semester_code)
-                of_courses.save()
+        print('Offering Courses')
+
+        students = Student.objects.filter(warning_count=0)
+        for s in students:
+            # One time only for student
+            of_courses = OfferedCourses(
+                student=s, semester_code=self.semester_code)
+            of_courses.save()
 
     def offer_core_courses(self):
-        for rg in self.regular_course_load.all():
+        for rg in self.regular_course_load.filter(semester_season=CURRENT_SEMESTER+1):
             students = Student.objects.filter(student_year=rg.student_year)
             for s in students:
                 of_courses = OfferedCourses.objects.get(
                     student=s, semester_code=self.semester_code)
 
                 for c in rg.courses.all():
+
                     course_status = CourseStatus(
                         course=c, section=s.admission_section)
                     course_status.save()
@@ -154,7 +169,7 @@ class Semester(models.Model):
                 of_courses.save()
 
     def offer_elective_courses(self):
-        for eg in self.elective_course_load.all():
+        for eg in self.elective_course_load.filter(semester_season=CURRENT_SEMESTER+1):
             students = Student.objects.filter(student_year=eg.student_year)
             for s in students:
                 of_courses = OfferedCourses.objects.get(
@@ -185,7 +200,7 @@ class StudentInfoSection(models.Model):
 
 class CourseSection(models.Model):
     class Meta:
-        ordering = ['-scsddc']
+        ordering = ['-course']
 
     semester_code = models.CharField(
         max_length=256, name='semester_code', help_text='semester code - SDDC', blank=True, null=True)
@@ -206,7 +221,7 @@ class CourseSection(models.Model):
     section_name = models.CharField(max_length=256, blank=True, null=True)
 
     student_info = models.ManyToManyField(
-        'initial.StudentInfoSection')
+        'initial.StudentInfoSection', blank=True)
 
     teacher = models.ForeignKey(
         'teacher_portal.Teacher', on_delete=models.SET_NULL, null=True)
@@ -424,7 +439,7 @@ class MarkSheet(models.Model):
 class Transcript(models.Model):
     student = models.ForeignKey(
         "student_portal.Student", on_delete=models.SET_NULL, null=True)
-    course_result = models.ManyToManyField(MarkSheet)
+    course_result = models.ManyToManyField(MarkSheet, blank=True)
     sgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
     cgpa = models.FloatField(blank=True, null=True, max_length=6, default=0.)
     credit_hours_earned = models.IntegerField(blank=True, default=0)
@@ -548,6 +563,7 @@ def make_classes(semester_code, course_code, sections):
     for section in sections:
         course_section = CourseSection(
             semester_code=semester_code, course_code=course_code, section_name=section, course=Course.objects.get(course_code=course_code))
+        course_section.scsddc = f'{section}_{course_code}_{semester_code}'
         course_section.save()
         section_list.append(course_section)
 
@@ -575,6 +591,7 @@ def make_or_delete_student_info_section_for_student(**kwargs):
     if kwargs['option'] == 'create':
         print('Received Signal For Creation Student Info Section')
         SCSDDC_temp = str(kwargs['course_section'])
+        print(SCSDDC_temp)
         scsddc_dict = split_scsddc(SCSDDC_temp)
         new_sheet_attendance = AttendanceSheet.objects.get_or_create(
             student=kwargs['student'], scsddc=SCSDDC_temp)[0]
@@ -583,15 +600,19 @@ def make_or_delete_student_info_section_for_student(**kwargs):
 
         new_sheet_marks.save()
         new_sheet_attendance.save()
+        print('Attendance and Mark Sheets Created and Saved')
 
         info = StudentInfoSection(
             student=kwargs['student'], mark_sheet=new_sheet_marks, attendance_sheet=new_sheet_attendance)
         semester = Semester.objects.get(current_semester=True)
-        transcript = Transcript.objects.get(
-            student=kwargs['student'], semester=semester)
+        transcript = Transcript.objects.get_or_create(
+            student=kwargs['student'], semester=semester)[0]
+        print(transcript)
+        print(type(transcript.course_result))
         transcript.course_result.add(new_sheet_marks)
         transcript.save()
         info.save()
+        print('Student Info Section Created')
         print(scsddc_dict)
         print("_".join(SCSDDC_temp.split('_')[2:]))
         csection = CourseSection.objects.get(

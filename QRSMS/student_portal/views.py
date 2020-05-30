@@ -30,8 +30,8 @@ from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
-from initial.models import Semester, OfferedCourses,Transcript
-from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer,TranscriptSerilazer
+from initial.models import Semester, OfferedCourses, Transcript
+from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer, TranscriptSerilazer
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
 # Create your views here.
@@ -213,11 +213,11 @@ class StudentLoginView(APIView):
         username = request.POST['username']
         password = request.POST['password']
         if username is "" or password is "":
-            return HttpResponse(content="Empty Usename or Password Field.", status=400)
+            return JsonResponse({'message': "Empty Usename or Password Field.", 'status': 'failure'}, status=401)
 
         user = authenticate(request, username=username, password=password)
         if user.is_student == False:
-            return JsonResponse({'status': "User not a Student."}, status=401)
+            return JsonResponse({'message': "User not a Student.", 'status': 'failure'}, status=401)
 
         if user is not None:
             login(request, user)
@@ -226,7 +226,7 @@ class StudentLoginView(APIView):
             dict_user.pop('password', None)
             return JsonResponse({'status': 'success', 'message': 'User Logged In', **dict_user})
         else:
-            return JsonResponse({'status': "Invalid Username of Password."}, status=403)
+            return JsonResponse({'message': "Invalid Username of Password.", 'status': 'failure'}, status=403)
 
         return HttpResponseRedirect('/home')
 
@@ -359,14 +359,16 @@ def update_challan(request):
     challan, created = FeeChallan.objects.get_or_create(
         student=student, semester=semester)
     if created == True:
-        transcript = Transcript.objects.create(student = student,semester = Semester.objects.get(current_semester=True))
+        transcript = Transcript.objects.create(
+            student=student, semester=Semester.objects.get(current_semester=True))
         challan.coActivity_charges = semester.co_circular_fee
         challan.due_date = EndDate
         challan.challan_no = ts
 
     option = request.POST['action']
     code = request.POST['code']
-    course = Course.objects.get(course_name=code)
+    print(code)
+    course = Course.objects.filter(course_name=code).first()
     credit_hour = course.credit_hour
     course_fee = semester.fee_per_CR
     if option == 'drop':
@@ -435,8 +437,8 @@ class Student_Transcript(View):
         try:
             student = Student.objects.get(uid=request.POST['id'])
             transcript = Transcript.objects.filter(student=student)
-            if len(transcript)>1:
-                json_transcript = TranscriptSerilazer(transcript,many=True)
+            if len(transcript) > 1:
+                json_transcript = TranscriptSerilazer(transcript, many=True)
                 return JsonResponse(json_transcript.data, safe=False)
 
             else:
@@ -444,6 +446,4 @@ class Student_Transcript(View):
                 json_transcript = TranscriptSerilazer(transcript)
                 return JsonResponse([json_transcript.data], safe=False)
         except:
-            return JsonResponse("No Transcript",safe=False)
-        
-
+            return JsonResponse("No Transcript", safe=False)

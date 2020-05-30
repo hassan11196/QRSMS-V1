@@ -3,6 +3,7 @@ from .forms import TeacherForm
 from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
 from initial.models import CourseSection, SectionAttendance
 import json
+from colorama import Fore
 from django.db.models import Count
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
@@ -22,7 +23,7 @@ from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
-
+from colorama import Fore, Back, Style, init
 from django.forms.models import model_to_dict
 
 
@@ -62,7 +63,7 @@ def check_if_teacher(user):
 class BaseTeacherLoginView(APIView):
     @swagger_auto_schema()
     @csrf_exempt
-    @method_decorator(login_required)
+    @method_decorator(login_required(login_url='/auth/login'))
     @method_decorator(user_passes_test(check_if_teacher))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
@@ -93,7 +94,7 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             section = query['section']  # "section":"E"
 
         except KeyError as err:
-            return JsonResponse({'status': 'Failure', 'message': 'Malformed Query', 'conditon': False, 'missing key': str(err)})
+            return JsonResponse({'status': 'Failure', 'message': 'Malformed Query', 'conditon': False, 'missing key': str(err)}, 400)
 
         sddc = get_sddc(semester_code, degree, department, campus, city)
 
@@ -130,8 +131,8 @@ class TeacherAttendanceView(BaseTeacherLoginView):
             'student_cnt': len(students),
             'attendance_cnt': len(attendance_list),
             'student_sheets': students,
-            'class_sheet': class_attendance
-
+            'class_sheet': class_attendance,
+            'section': query['section']
         }
 
         return JsonResponse({'status': 'success', 'attendance_data': attendance_data})
@@ -223,7 +224,7 @@ class StartSectionAttendance(BaseTeacherLoginView):
         section = request.POST['scsddc'].split('_')[0]
         course_code = request.POST['course_code']
         if(slot == '' or slot == 'null' or req_scsddc == '' or section == ''):
-            return JsonResponse({'message': 'Invalud Form Inputs', 'condition': False, }, status=422)
+            return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=422)
 
         from initial.serializers import SectionAttendanceSerializer
         print(request.POST)
@@ -232,7 +233,7 @@ class StartSectionAttendance(BaseTeacherLoginView):
             current_semester=True).latest()
 
         req_scsddc = f'{section}_{request.POST["course_code"]}_{current_semester.semester_code}'
-
+        print(req_scsddc)
         try:
             sec_att = SectionAttendance(
                 scsddc=req_scsddc, attendance_slot=slot, section=section)
@@ -241,6 +242,7 @@ class StartSectionAttendance(BaseTeacherLoginView):
                 StartSectionAttendance, scsddc=req_scsddc, coursesection=section, sectionattendance=sec_att, option='create')
             print(g)
         except IntegrityError as e:
+            print(Fore.RED + str(e))
             sec_att2 = SectionAttendance.objects.get(
                 scsddc=req_scsddc, attendance_slot=slot, section=section, class_date=sec_att.class_date)
 
@@ -288,7 +290,7 @@ class AddSectionMarks(BaseTeacherLoginView):
             return JsonResponse({'message': 'Marks Already Added For This Class.'}, status=200)
 
         if sec_marks is None:
-            return JsonResponse({'message': 'Teacher has no assigned courses or Invalid scsddc.', 'condition': True, 'qr_json': data}, status=200)
+            return JsonResponse({'message': 'Teacher has no assigned courses or Invalid scsddc.', 'condition': True, }, status=200)
         else:
             return JsonResponse({'message': 'Marks Open For This Section.', 'condition': True}, status=200)
 
@@ -383,6 +385,9 @@ def generate_attendance_for_student(**kwargs):
         section_attendance = kwargs['sectionattendance']
         section = kwargs['coursesection']
         scsddc_dict = split_scsddc(SCSDDC_temp)
+        print(Fore.RED + scsddc_dict['section'])
+        print(scsddc_dict['course_code'])
+        print("_".join(SCSDDC_temp.split('_')[2:]))
         csection = CourseSection.objects.get(
             section_name=scsddc_dict['section'], course_code=scsddc_dict['course_code'], semester_code="_".join(SCSDDC_temp.split('_')[2:]))
 

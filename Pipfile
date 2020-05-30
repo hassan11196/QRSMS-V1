@@ -31,7 +31,7 @@ drf-yasg = "*"
 django-filter = "*"
 pyyaml = "*"
 pinax-theme-bootstrap = "*"
-pyinquirer = "*"
+django-advanced-filters = "*"
 
 [requires]
 python_version = "3.7"

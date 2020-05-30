@@ -1,157 +1,89 @@
-Code,Course Name,CrdHrs,Type
-CL101,Introduction to Computing Lab,1,Core
-CS101,Introduction to Computing,3,Core
-EE182,Basic Electronics,3,Core
-MT101,Calculus - I,3,Core
-SL101,English Language Lab,1,Core
-SS101,English Language,3,Core
-SS111,Islamic and Religious Studies,3,Core
-SS203,Professional Ethics,3,Core
-CL103,Computer Programming Lab,1,Core
-CS103,Computer Programming,3,Core
-CS301,Theory of Automata,3,Core
-EE227,Digital Logic Design,3,Core
-EL227,Digital Logic Design - Lab,1,Core
-MT115,Calculus - II,3,Core
-SS113,Pakistan Studies,3,Core
-SS122,English Composition,3,Core
-CS201,Data Structures,3,Core
-CS211,Discrete Structures,3,Core
-EE117,Applied Physics,3,Core
-EE213,Comp. Organization and Assembly Lang.,3,Core
-EL213,Comp. Organization and Assembly Lang. Lab,1,Core
-MT104,Linear Algebra,3,Core
-SS111,Islamic and Religious Studies,3,Core
-SS113,Pakistan Studies,3,Core
-SS114,Human Ethics and Behavior,3,Core
-SS203,Professional Ethics,3,Core
-CL117,Intro to Info. and Comm. Technologies,1,Core
-MT119,Calculus and Analytical Geometry,3,Core
-SS150,English Composition and Comprehension,2,Core
-CS118,Programming Fundamentals,3,Core
-CL118,Programming Fundamentals - Lab,1,Core
-CS218,Data Structures,3,Core
-CL218,Data Structures - Lab,1,Core
-CS212,Fundamentals of Operating System,3,Elective
-MG101,Fundamentals of Management,3,Elective
-MG103,Finance and Accounting,3,Elective
-MG110,Principles of Marketing,3,Elective
-MG220,Marketing Management,3,Elective
-MG223,Fundamentals of Management,3,Elective
-SS103,Arabic Language,3,Elective
-SS104,French Language,3,Elective
-SS118,Psychology,3,Elective
-SS127,Sociology,3,Elective
-SS204,International Relations,3,Elective
-SS206,Organizational Behavior,3,Elective
-SS207,Philosophy,3,Elective
-SS220,Modern Politics and Government,3,Elective
-SS403,Chinese Language,3,Elective
-CL203,Database Systems Lab,1,Core
-CL205,Operating Systems Lab,1,Core
-CS203,Database Systems,3,Core
-CS205,Operating Systems,3,Core
-CS211,Discrete Structures,3,Core
-CS302,Design and Analysis of Algorithms,3,Core
-MG108,Fundamentals of Accounting,3,Elective
-MG211,Total Quality Management,3,Elective
-MG220,Marketing Management,3,Elective
-MG223,Fundamentals of Management,3,Elective
-MG414,Entrepreneurship,3,Elective
-MT203,Differential Equations,3,Elective
-SS104,French Language,3,Elective
-SS118,Psychology,3,Elective
-SS127,Sociology,3,Elective
-SS206,Organizational Behavior,3,Elective
-SS207,Philosophy,3,Elective
-SS217,Mass Communication,3,Elective
-SS220,Modern Politics and Government,3,Elective
-SS230,German Language,2,Elective
-SS403,Chinese Language,3,Elective
-CL307,Computer Networks Lab,1,Core
-CL309,Object Oriented Analysis and Design Lab,1,Core
-CS301,Theory of Automata,3,Core
-CS307,Computer Networks,3,Core
-CS309,Object Oriented Analysis and Design,3,Core
-MT206,Probability and Statistics,4,Core
-SS141,Technical and Business Writing,4,Core
-CS323,Computer Networks,3,Core
-CL323,Computer Networks Lab,1,Core
-SS217,Mass Communication,3,Elective
-SS204,International Relations,3,Elective
-SS127,Sociology,3,Elective
-MG414,Entrepreneurship,3,Elective
-CL102,Engineering Surveying - Lab,2,Elective
-CS317,Information Retrieval,3,Elective
-CS406,Web Programming,3,Elective
-CS408,Data Warehousing,3,Elective
-CS409,Data Warehousing and Data Mining,4,Elective
-CS413,Remote Sensing and GIS,3,Elective
-CS418,Computer Graphics,3,Elective
-CS429,Data Mining,3,Elective
-CS433,Advanced Programming,3,Elective
-CS440,Software for Mobile Devices,3,Elective
-CS460,Introduction to Bioinformatics,3,Elective
-CS495,Fundamentals of Computer Vision,3,Elective
-CS531,Machine Learning,3,Elective
-EE402,Digital Image Processing,3,Elective
-MG103,Finance and Accounting,3,Elective
-MG220,Marketing Management,3,Elective
-MG223,Fundamentals of Management,3,Elective
-MG407,International HR Management,3,Elective
-MT207,Numerical Methods,3,Elective
-MT303,Operations Research,3,Elective
-SS103,Arabic Language,3,Elective
-SS118,Psychology,3,Elective
-SS135,Micro Economics,3,Elective
-CL307,Computer Networks Lab,1,Core
-CL309,Object Oriented Analysis and Design Lab,1,Core
-CS301,Theory of Automata,3,Core
-CS307,Computer Networks,3,Core
-CS309,Object Oriented Analysis and Design,3,Core
-MT206,Probability and Statistics,4,Core
-SS141,Technical and Business Writing,4,Core
-CS323,Computer Networks,3,Core
-CL323,Computer Networks Lab,1,Core
-SS217,Mass Communication,3,Elective
-SS204,International Relations,3,Elective
-SS127,Sociology,3,Elective
-MG414,Entrepreneurship,3,Elective
-CL102,Engineering Surveying - Lab,2,Elective
-CS317,Information Retrieval,3,Elective
-CS406,Web Programming,3,Elective
-CS408,Data Warehousing,3,Elective
-CS409,Data Warehousing and Data Mining,4,Elective
-CS413,Remote Sensing and GIS,3,Elective
-CS418,Computer Graphics,3,Elective
-CS429,Data Mining,3,Elective
-CS433,Advanced Programming,3,Elective
-CS440,Software for Mobile Devices,3,Elective
-CS460,Introduction to Bioinformatics,3,Elective
-CS495,Fundamentals of Computer Vision,3,Elective
-CS531,Machine Learning,3,Elective
-EE402,Digital Image Processing,3,Elective
-MG103,Finance and Accounting,3,Elective
-MG220,Marketing Management,3,Elective
-MG223,Fundamentals of Management,3,Elective
-MG407,International HR Management,3,Elective
-MT207,Numerical Methods,3,Elective
-MT303,Operations Research,3,Elective
-SS103,Arabic Language,3,Elective
-SS118,Psychology,3,Elective
-SS135,Micro Economics,3,Elective
-CS303,Software Engineering,3,Core
-CS401,Artificial Intelligence,3,Core
-SS108,Technical and Business Writing,3,Core
-CL104,Engineering Drawing - Lab,2,Elective (X)
-CS209,Computer Programming and Data Structures,3,Elective (X)
-CS422,Human Computer Interaction,3,Core
-CS491,Project - I,3,Core
-EE204,Computer Architecture,3,Core
-CS212,Fundamentals of Operating System,3,Elective (X)
-CL104,Engineering Drawing - Lab,2,Elective (X)
-CL101,Introduction to Computing Lab,1,Core
-CL103,Computer Programming Lab,1,Core
-CS449,Professional Issues in IT,3,Core
-CS492,Project - II,3,Core
-CL102,Engineering Surveying - Lab,2,Elective (X)
+Code,Course Name,CrdHrs,Type,course_short
+CS433,Advanced Programming,3,Elective,Ad
+EE117,Applied Physics,3,Core,AP
+SS103,Arabic Language,3,Elective,Ar
+CS401,Artificial Intelligence,3,Core,Ar
+EE182,Basic Electronics,3,Core,BE
+MT101,Calculus - I,3,Core,CAL-i
+MT115,Calculus - II,3,Core,CAL-ii
+MT119,Calculus and Analytical Geometry,3,Core,CAL
+SS403,Chinese Language,3,Elective,Ch
+EE213,Comp. Organization and Assembly Lang.,3,Core,COAL
+EL213,Comp. Organization and Assembly Lang. Lab,1,Core,COAL LAB
+EE204,Computer Architecture,3,Core,CA
+CS418,Computer Graphics,3,Elective,Co
+CS307,Computer Networks,3,Core,CN
+CL307,Computer Networks Lab,1,Core,CNL
+CS103,Computer Programming,3,Core,CP
+CS209,Computer Programming and Data Structures,3,Elective (X),CCPDS
+CL103,Computer Programming Lab,1,Core,CP LAB
+CS429,Data Mining,3,Elective,Da
+CS201,Data Structures,3,Core,DS
+CL218,Data Structures - Lab,1,Core,DSL
+CS408,Data Warehousing,3,Elective,Da
+CS409,Data Warehousing and Data Mining,4,Elective,DDWDS
+CS203,Database Systems,3,Core,DB
+CL203,Database Systems Lab,1,Core,DB-LAB
+CS302,Design and Analysis of Algorithms,3,Core,ALGO
+MT203,Differential Equations,3,Elective,Di
+EE402,Digital Image Processing,3,Elective,DIP
+EE227,Digital Logic Design,3,Core,DLD
+EL227,Digital Logic Design - Lab,1,Core,DLD LAB
+CS211,Discrete Structures,3,Core,DISCRETE
+CL104,Engineering Drawing - Lab,2,Elective (X),EDL
+CL102,Engineering Surveying - Lab,2,Elective,ESL
+SS122,English Composition,3,Core,ENG COMP
+SS150,English Composition and Comprehension,2,Core,ENG-C
+SS101,English Language,3,Core,ENG
+SL101,English Language Lab,1,Core,ENGL
+MG414,Entrepreneurship,3,Elective,
+MG103,Finance and Accounting,3,Elective,FA
+SS104,French Language,3,Elective,Fr
+MG108,Fundamentals of Accounting,3,Elective,Acc
+CS495,Fundamentals of Computer Vision,3,Elective,FCV
+MG223,Fundamentals of Management,3,Elective,FM
+CS212,Fundamentals of Operating System,3,Elective,OS
+SS230,German Language,2,Elective,Ge
+CS422,Human Computer Interaction,3,Core,HCI
+SS114,Human Ethics and Behavior,3,Core,HB
+CS317,Information Retrieval,3,Elective,In
+MG407,International HR Management,3,Elective,IHRM
+SS204,International Relations,3,Elective,In
+CL117,Intro to Info. and Comm. Technologies,1,Core,IICT
+CS460,Introduction to Bioinformatics,3,Elective,Bio
+CS101,Introduction to Computing,3,Core,ITC
+CL101,Introduction to Computing Lab,1,Core,ITCL
+SS111,Islamic and Religious Studies,3,Core,IRS
+MT104,Linear Algebra,3,Core,LA
+CS531,Machine Learning,3,Elective,ML
+MG220,Marketing Management,3,Elective,MM
+SS217,Mass Communication,3,Elective,Ma
+SS135,Micro Economics,3,Elective,Mi
+SS220,Modern Politics and Government,3,Elective,MPG
+MT207,Numerical Methods,3,Elective,Nu
+CS309,Object Oriented Analysis and Design,3,Core,OOAD
+CL309,Object Oriented Analysis and Design Lab,1,Core,OOADL
+CS205,Operating Systems,3,Core,OS
+CL205,Operating Systems Lab,1,Core,OS LAB
+MT303,Operations Research,3,Elective,OR
+SS206,Organizational Behavior,3,Elective,Or
+SS113,Pakistan Studies,3,Core,PST
+SS207,Philosophy,3,Elective,
+MG110,Principles of Marketing,3,Elective,MM
+MT206,Probability and Statistics,4,Core,PROB
+SS203,Professional Ethics,3,Core,ETHICS
+CS449,Professional Issues in IT,3,Core,PIT
+CS118,Programming Fundamentals,3,Core,PF
+CL118,Programming Fundamentals - Lab,1,Core,PF-LAB
+CS491,Project - I,3,Core,PR1
+CS492,Project - II,3,Core,PR2
+SS118,Psychology,3,Elective,PSYCH
+CS413,Remote Sensing and GIS,3,Elective,RSGIS
+SS127,Sociology,3,Elective,
+CS303,Software Engineering,3,Core,SE
+CS440,Software for Mobile Devices,3,Elective,SMD
+SS141,Technical and Business Writing,4,Core,TBW
+SS108,Technical and Business Writing,3,Core,TBW
+CS301,Theory of Automata,3,Core,TOA
+MG211,Total Quality Management,3,Elective,TQM
+CS406,Web Programming,3,Elective,We

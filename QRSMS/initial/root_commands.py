@@ -7,25 +7,42 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.models import Permission
 from actor.models import User
 from initial.models import (ACADEMIC_YEAR, STUDENT_YEAR_CHOICE, Course,
-                            RegularCoreCourseLoad, Semester)
+                            RegularCoreCourseLoad, Semester, RegularElectiveCourseLoad, Semester)
 from institution.models import Degree, University, Campus, Department
 from student_portal.models import Student
 from teacher_portal.models import Teacher
 from institution.constants import DEFAULT_PASSWORD
+from faculty_portal.models import Faculty
 
 CURRENT_SEMESTER = 'Fall'  # , 0 , (1,'Fall')
 
 
 def random_func():
-    add_teachers()
+    # add_teachers()
+    add_courses()
 
 
 def setup_university():
-    add_students('Dumps/students2.json', 5)
+    add_courses()
+    add_students('Dumps/students2.json', 43)
+    add_teachers()
+    add_faculty()
     add_university()
     add_campuses()
     add_departments()
     add_degrees()
+    core_loads = insert_core_course_loads()
+    elective_loads = insert_elective_course_loads()
+    add_semesterCore()
+    latest_semester = Semester.objects.latest()
+    latest_semester.regular_course_load.set(core_loads)
+    latest_semester.elective_course_load.set(elective_loads)
+    latest_semester.make_semester()
+    latest_semester.make_elective_semester()
+    latest_semester.pre_offer()
+    latest_semester.offer_core_courses()
+    latest_semester.offer_elective_courses()
+    latest_semester.save()
 
 
 def add_students_in_department():
@@ -39,30 +56,39 @@ def add_teachers_in_department():
     pass
 
 
-def add_users_in_group():
-    for user in User.objects.all():
-        if user.is_maintainer or user.is_staff:
-            user.groups.add(Group.objects.get(name='maintainer_group'))
-            print('Added ' + str(user) + ' in ' + 'maintainer_group')
-        if user.is_student:
-            user.groups.add(Group.objects.get(name='student_group'))
-            print('Added ' + str(user) + ' in ' + 'student_group')
-        if user.is_teacher:
-            user.groups.add(Group.objects.get(name='teacher_group'))
-            print('Added ' + str(user) + ' in ' + 'teacher_group')
-        if user.is_faculty:
-            user.groups.add(Group.objects.get(name='faculty_group'))
-            print('Added ' + str(user) + ' in ' + 'faculty_group')
+# switch to adding to groups at time of creation
+# def add_users_in_group():
+#     for user in User.objects.all():
+#         if user.is_maintainer or user.is_staff:
+#             user.groups.add(Group.objects.get(name='maintainer_group'))
+#             print('Added ' + str(user) + ' in ' + 'maintainer_group')
+#         if user.is_student:
+#             user.groups.add(Group.objects.get(name='student_group'))
+#             print('Added ' + str(user) + ' in ' + 'student_group')
+#         if user.is_teacher:
+#             user.groups.add(Group.objects.get(name='teacher_group'))
+#             print('Added ' + str(user) + ' in ' + 'teacher_group')
+#         if user.is_faculty:
+#             user.groups.add(Group.objects.get(name='faculty_group'))
+#             print('Added ' + str(user) + ' in ' + 'faculty_group')
+
+def add_faculty():
+    faculty = ["abdul.saeed"]
+    for f in faculty:
+        fa = Faculty.create(username="abdul.saeed", password=DEFAULT_PASSWORD)
+        fa.save()
 
 
 def add_teachers():
 
     teachers = ["Zulfiqar.Ali.Memon", "Anum.Qureshi", "Tania.Irum", "Ammara.Yaseen", "Mohammad.Faheem", "Abdul.Rehman", "Javeria.Farooq",
-                "Syeda.Rubab.Jaffar", "M.Nadeem", "Hamza.Ahmed", "Atif.Tahir", "Zeshan.Khan", "M.Waqas", "Hasina.Khatoon", "Hassan.Jamil.Syed"]
+                "Syeda.Rubab.Jaffar", "M.Nadeem", "Hamza.Ahmed", "Atif.Tahir", "Zeshan.Khan", "M.Waqas", "Hasina.Khatoon", "Hassan.Jamil.Syed",
+                "farrukh.hassan", 'nida.pervaiz', 'sameera.sultan', 'ghufran.ahmed', 'muhammad.rafi', 'rabiya.zaidi']
 
     for teacher in teachers:
-        t = Teacher.create(nu_email=teacher+'nu.edu.pk',
+        t = Teacher.create(nu_email=teacher.lower()+'nu.edu.pk',
                            username=teacher, password=DEFAULT_PASSWORD)
+        t.save()
         print(t)
 
 
@@ -132,22 +158,34 @@ def create_super_users():
     nu.is_superuser = True
     nu.is_maintainer = True
     nu.save()
+    nu.groups.add(Group.objects.get(name='maintainer_group'))
     nu = User(username='admin3650',
               email='ahsan11196@hotmail.com', is_staff=True)
     nu.set_password('adminahsanqrsms')
     nu.is_superuser = True
     nu.is_maintainer = True
     nu.save()
+    nu.groups.add(Group.objects.get(name='maintainer_group'))
     return nu
 
 
 def insert_core_course_loads():
+    # Fall Semester Loads
+    # cloads = ["CL101 CS101 MT101 SS111 SS101 SL101 EE182",
+    #           "SS113 CS103 EE227 EL227 MT115 CL103 SS122",
+    #           "EE213 MT104 CS211 EL213 CS201",
+    #           "SS103 CL205 CS301 MT206 CS205",
+    #           "CL309 CS302 CS203 EE204 CS309 CL203"
+    #           ]
+    # Spring Semester loads
     cloads = ["CL101 CS101 MT101 SS111 SS101 SL101 EE182",
               "SS113 CS103 EE227 EL227 MT115 CL103 SS122",
               "EE213 MT104 CS211 EL213 CS201",
               "SS103 CL205 CS301 MT206 CS205",
-              "CL309 CS302 CS203 EE204 CS309 CL203"
+              "CL309 CS302 CS203 EE204 CS309 CL203",
+              "CL307 CS303 CS307 CS401 SS108"
               ]
+    core_loads = []
     deg = Degree.objects.get(degree_short='BS(CS)')
     for sem, cload in enumerate(cloads):
         clist = cload.split(" ")
@@ -155,9 +193,41 @@ def insert_core_course_loads():
             ((sem) % 2)+1), student_year=int((sem/2) + 1), credit_hour_limit=19, degree=deg)
         print(r1)
         r1.save()
+        core_loads.append(r1)
         for c in clist:
             print(Course.objects.get(course_code=c))
             r1.courses.add(Course.objects.get(course_code=c))
+    return core_loads
+
+
+def insert_elective_course_loads():
+
+    cloads = ["",
+              "",
+              "MG220 SS118 MG103",
+              "MT303 MT207",
+              "SS135 SS118 SS206",
+              "MG223 MG220 MG103 SS118",
+              "CS429 CS418 CS317"
+              ]
+    deg = Degree.objects.get(degree_short='BS(CS)')
+    elective_loads = []
+    for sem, cload in enumerate(cloads):
+        clist = cload.split(" ")
+        print(clist)
+        if sem < 2:  # No electives offered in first two semesters
+            continue
+        r1 = RegularElectiveCourseLoad(semester_season=int(
+            ((sem) % 2)+1), student_year=int((sem/2) + 1))
+        print(r1)
+        r1.save()
+        elective_loads.append(r1)
+        for c in clist:
+            print(c)
+            print(Course.objects.get(course_code=c))
+            r1.courses.add(Course.objects.get(course_code=c))
+
+    return elective_loads
 
 
 def insert_degrees():
@@ -241,12 +311,12 @@ def add_students(file_name='Dumps\Students.json', count=20):
             elif d['Department'] == 'BS(CS)':
                 d['degree_name'] = "Bachelors of Computer Science"
                 d['degree_short'] = 'BS(CS)'
-                d['department_name'] = 'Computer Science'
+                d['department_name'] = 'Computer Sciences'
 
             elif d['Department'] == 'BS(SE)':
                 d['degree_name'] = "Bachelors of Software Engineering"
                 d['degree_short'] = 'BS(SE)'
-                d['department_name'] = 'Computer Science'
+                d['department_name'] = 'Computer Sciences'
 
             elif d['Department'] == 'BS(EE)':
                 d['degree_name'] = "Bachelors of Electrical Engineering"
@@ -394,17 +464,19 @@ def add_degrees(arg_offering_department=1, arg_education_level='Bachelors', arg_
     return degree
 
 
-def add_semesterCore(semester_code, semester_season, semester_year, start_date, end_date):
+def add_semesterCore():
     # Semester.objects.all().delete()
-
+    # semester_code, semester_season, semester_year, start_date, end_date
     # temp_date = datetime.strptime(date_str, "%Y-%m-%d").date()
     s = Semester(
-        semester_code='FALL2019',
+        semester_code='Spring2020_BS(CS)_ComputerSciences_MainCampus_Karachi',
         semester_season=1,
         semester_year=2019,
-        start_date=datetime.strptime('19-08-2019', "%d-%m-%Y").date(),
-        end_date=datetime.strptime('19-12-2019', "%d-%m-%Y").date(),
+        start_date=datetime.datetime.strptime('22-01-2020', "%d-%m-%Y").date(),
+        end_date=datetime.datetime.strptime('22-06-2020', "%d-%m-%Y").date(),
         current_semester=True,
+        degree_short='BS(CS)',
+        department=Department.objects.get(department_name='Computer Sciences')
     )
     s.save()
     return s
@@ -437,6 +509,6 @@ def add_courses():
                 ctype = 3
 
             nc = Course(
-                course_code=temp[0], course_name=temp[1], credit_hour=temp[2], course_type=ctype)
+                course_code=temp[0], course_name=temp[1], credit_hour=temp[2], course_type=ctype, course_short=temp[4].strip())
             nc.save()
     return courses

@@ -12,7 +12,7 @@
       // "env": {
       //   "DJANGO_COLORS": "dark;error=yellow/blue,blink;notice=magenta;http_success=magenta"
       // },
-      "args": ["runserver", "--force-color"],
+      "args": ["runserver"],
       "django": true
       // "subProcess": true
     }

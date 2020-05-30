@@ -143,7 +143,8 @@ class EmployeeDesignation(models.Model):
     @classmethod
     def create_or_get_teacher(cls):
         te, created = cls.objects.get_or_create(designation_name='Teacher')
-
+        # print(type(te))
+        # print(created)
         return te
 
     def __str__(self):
@@ -152,16 +153,21 @@ class EmployeeDesignation(models.Model):
 
 class Employee(models.Model):
     employee_id = models.AutoField(primary_key=True)
-    employee_designation = models.ManyToManyField('actor.EmployeeDesignation')
+    employee_designation = models.ManyToManyField(
+        'actor.EmployeeDesignation')
     hire_date = models.DateField(null=True, default=datetime.date.today)
     salary = models.PositiveIntegerField(null=True)
 
     @classmethod
     def create(cls, **kwargs):
         e = cls(**kwargs)
+
         e.save()
-        ed = EmployeeDesignation.create_or_get_teacher()
-        e.employee_designation.add(ed)
+
+        # ed = EmployeeDesignation.create_or_get_teacher()
+        # ed.save()
+        # print(type(ed))
+        # e.employee_designation.add(ed)
 
         return e
 

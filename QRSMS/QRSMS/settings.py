@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_extensions',
     'django_filters',
+    'advanced_filters'
 
 
 ]
