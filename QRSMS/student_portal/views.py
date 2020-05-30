@@ -432,26 +432,26 @@ def get_challan(request):
 class Student_Transcript(View):
 
     def post(self, request):
-        # try:
-        student = Student.objects.get(uid=request.POST['id'])
-        transcript = Transcript.objects.filter(student=student)
-        if len(transcript)>1:
-            json_transcript = TranscriptSerilazer(transcript,many=True)
-            return JsonResponse(json_transcript.data, safe=False)
+        try:
+            student = Student.objects.get(uid=request.POST['id'])
+            transcript = Transcript.objects.filter(student=student)
+            if len(transcript)>1:
+                json_transcript = TranscriptSerilazer(transcript,many=True)
+                return JsonResponse(json_transcript.data, safe=False)
 
-        else:
-            transcript = Transcript.objects.get(student=student)
-            json_transcript = TranscriptSerilazer(transcript)
-            return JsonResponse([json_transcript.data], safe=False)
-        # except:
-        #     return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
+            else:
+                transcript = Transcript.objects.get(student=student)
+                json_transcript = TranscriptSerilazer(transcript)
+                return JsonResponse([json_transcript.data], safe=False)
+        except:
+            return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
         
 
 class StudentMarksView(View):
     def post(self, request):
         scsddc = request.POST['scsddc']
         id = request.POST['id']
-        if id == None or id == "null" or id == "" or scsddc == None or scsddc == "" or scsddc=="null":
+        if scsddc == None or scsddc == "" or scsddc=="null":
             return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
         else:
             student = Student.objects.get(user = request.user)
@@ -478,3 +478,12 @@ class StudentMarksView(View):
                 return JsonResponse(marks_data,safe=False, status=200)
             else:
                 return JsonResponse({"Failed": "No Marks Available"},status=403)
+
+    
+def get_registered_scsddc(request):
+    #code = request.POST['code']
+    current_semester = Semester.objects.filter(
+    current_semester=True).values()
+    student = Student.objects.get(uid=request.user)
+    # mark_sheet = MarkSheet.objects.filter()
+    return JsonResponse({"Status":"Success","Sem":list(current_semester)})

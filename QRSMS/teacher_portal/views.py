@@ -324,7 +324,7 @@ def generate_marks_for_student(**kwargs):
     year = semester.semester_year
     season = semester.semester_season
     if kwargs['option'] == 'create':
-        print('Received Signal For Creation Marks of Day for student')
+        print('Received Signal For Creation Marks for student')
         SCSDDC_temp = str(kwargs['scsddc'])
         section_marks = kwargs['sectionmarks']
         section = kwargs['coursesection']

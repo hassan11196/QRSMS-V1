@@ -34,5 +34,6 @@ urlpatterns += [
     path('getChallan/', views.get_challan, name="ChallanGenerate"),
     path('updateChallan/', views.update_challan, name="updateCHallan"),
     path('get_transcript/', views.Student_Transcript.as_view()),
-    path('get_marks/',views.StudentMarksView.as_view())  
+    path('get_marks/',views.StudentMarksView.as_view()),
+    path('get_scsddc/',views.get_registered_scsddc),  
 ]
