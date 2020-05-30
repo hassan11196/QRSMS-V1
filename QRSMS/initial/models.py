@@ -293,7 +293,10 @@ class SectionMarks(models.Model):
     SCSDDC = models.CharField(
         max_length=256, name='scsddc', null=True, blank=True)
     section = models.CharField(max_length=256, blank=True, null=True)
-
+    marks_mean = models.FloatField(null=True, blank=True,default=0.0)
+    marks_standard_deviation = models.FloatField(null=True, blank=True, default=0)
+    weightage_mean = models.FloatField(null=True, blank=True,default=0.0)
+    weightage_standard_deviation = models.FloatField(null=True, blank=True, default=0)
     class Meta:
         unique_together = ('scsddc', 'marks_type', 'section')
 
@@ -600,6 +603,7 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         for mrk in section_marks:
             stu_marks = StudentMarks.objects.create(scsddc=scsddc,student=kwargs['student'],total_marks = mrk.total_marks,weightage=mrk.weightage,marks_type=mrk.marks_type,section = mrk.section)
             new_sheet_marks.Marks.add(stu_marks)
+            new_sheet_marks.grand_total_marks=mrk.weightage
         print(scsddc_dict)
         print("_".join(SCSDDC_temp.split('_')[2:]))
         csection = CourseSection.objects.get(

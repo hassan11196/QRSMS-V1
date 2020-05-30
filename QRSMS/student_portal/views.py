@@ -447,3 +447,34 @@ class Student_Transcript(View):
             return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
         
 
+class StudentMarksView(View):
+    def post(self, request):
+        scsddc = request.POST['scsddc']
+        id = request.POST['id']
+        if id == None or id == "null" or id == "" or scsddc == None or scsddc == "" or scsddc=="null":
+            return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
+        else:
+            student = Student.objects.get(user = request.user)
+            marks_info = SectionMarks.objects.get(scsddc=scsddc)
+            
+            if(len(marks_info)>0):
+                marks_data = []
+                for mark in marks_info:
+                    marks = StudentMarks.objects.filter(student=student,scsddc =scsddc,marks_type=mark.mark_type)
+                    obj = {
+                        "marks_type" : marks.marks_type,
+                        "total_marks" : marks.total_marks,
+                        "weightage" : marks.weightage,
+                        "obtained_marks" : marks.obtained_marks,
+                        "obtained_weightage" : marks.obtained_weightage,
+                        "section":marks.section,
+                        "marks_mean":mark.marks_mean,
+                        "marks_std_dev":mark.marks_standard_deviation,
+                        "weightage_mean":mark.weightage_mean,
+                        "weightage_std_dev":mark.weightage_standard_deviation,
+                    }
+                    marks_data.append(obj)
+
+                return JsonResponse(marks_data,safe=False, status=200)
+            else:
+                return JsonResponse({"Failed": "No Marks Available"},status=403)
