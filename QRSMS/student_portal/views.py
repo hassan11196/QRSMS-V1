@@ -289,12 +289,14 @@ class StudentSectionView(StudentLoginView):
         # courses_offered__status='NR', student=student, semester_code=current_semester.semester_code)
         processed_courses = []
         for courseStatus in courses.courses_offered.all():
+            if courseStatus.status == "R":
+                processed_courses.append({
+                    'course_code': courseStatus.course.course_code,
+                    'course_name': courseStatus.course.course_name,
+                    'section': courseStatus.section,
+                    'registration_status': courseStatus.status
 
-            processed_courses.append({
-                'course_code': courseStatus.course.course_code,
-                'course_name': courseStatus.course.course_name,
-                'section': courseStatus.section
-            })
+                })
 
         # serialized_courses = OfferedCoursesSerializer(
         #     courses, many=True, context={'request': request}).data
