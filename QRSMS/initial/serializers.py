@@ -34,6 +34,10 @@ class StudentInfoSectionSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class CourseSerializer1(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = '__all__'
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
@@ -115,9 +119,10 @@ class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MarkSheetSerializer(serializers.ModelSerializer):
+    course = CourseSerializer1()
     class Meta:
         model = MarkSheet
-        fields = '__all__'
+        fields = ('course','student','scsddc','Marks','grand_total_marks','grade','obtained_marks','year','gpa','finalized','semester_season')
 
 
 class AttendanceSheetSerializer(serializers.HyperlinkedModelSerializer):

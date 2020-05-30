@@ -432,19 +432,19 @@ def get_challan(request):
 class Student_Transcript(View):
 
     def post(self, request):
-        try:
-            student = Student.objects.get(uid=request.POST['id'])
-            transcript = Transcript.objects.filter(student=student)
-            if len(transcript)>1:
-                json_transcript = TranscriptSerilazer(transcript,many=True)
-                return JsonResponse(json_transcript.data, safe=False)
+        # try:
+        student = Student.objects.get(uid=request.POST['id'])
+        transcript = Transcript.objects.filter(student=student)
+        if len(transcript)>1:
+            json_transcript = TranscriptSerilazer(transcript,many=True)
+            return JsonResponse(json_transcript.data, safe=False)
 
-            else:
-                transcript = Transcript.objects.get(student=student)
-                json_transcript = TranscriptSerilazer(transcript)
-                return JsonResponse([json_transcript.data], safe=False)
-        except:
-            return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
+        else:
+            transcript = Transcript.objects.get(student=student)
+            json_transcript = TranscriptSerilazer(transcript)
+            return JsonResponse([json_transcript.data], safe=False)
+        # except:
+        #     return JsonResponse({"Error":"No Transcript"},safe=False,status=420)
         
 
 class StudentMarksView(View):
