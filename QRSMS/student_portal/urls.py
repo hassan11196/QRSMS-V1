@@ -35,5 +35,6 @@ urlpatterns += [
     path('updateChallan/', views.update_challan, name="updateCHallan"),
     path('get_transcript/', views.Student_Transcript.as_view()),
     path('get_marks/',views.StudentMarksView.as_view()),
-    path('get_scsddc/',views.get_scsddc),  
+    path('get_scsddc/',views.get_scsddc),
+    path('get_credit_hour_info/',views.get_latest_transcript,),  
 ]

@@ -504,3 +504,9 @@ def get_scsddc(request):
     scsddc = section+"_"+code+"_"+semester.semester_code
     # mark_sheet = MarkSheet.objects.filter()
     return JsonResponse({"Status": "Success", "scsddc": scsddc})
+
+def get_latest_transcript(request):
+    student = Student.objects.get(user = request.user)
+    transcript = Transcript.objects.filter(student = student, last=True).values()
+    print(transcript)
+    return JsonResponse(list(transcript),safe=False)
