@@ -361,8 +361,8 @@ def update_challan(request):
     challan, created = FeeChallan.objects.get_or_create(
         student=student, semester=semester)
     if created == True:
-        transcript = Transcript.objects.create(
-            student=student, semester=Semester.objects.get(current_semester=True))
+        transcript = Transcript.objects.get_or_create(
+            student=student, semester=Semester.objects.get(current_semester=True))[0]
         challan.coActivity_charges = semester.co_circular_fee
         challan.due_date = EndDate
         challan.challan_no = ts
