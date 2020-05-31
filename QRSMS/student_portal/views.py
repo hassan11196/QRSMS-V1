@@ -30,7 +30,7 @@ from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
-from initial.models import Semester, OfferedCourses, Transcript,SectionMarks,StudentMarks
+from initial.models import Semester, OfferedCourses, Transcript,SectionMarks,StudentMarks,MarkSheet
 from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer, TranscriptSerilazer
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
@@ -481,8 +481,12 @@ class StudentMarksView(View):
                         "weightage_std_dev": mark.weightage_standard_deviation,
                     }
                     marks_data.append(obj)
-
-                return JsonResponse(marks_data, safe=False, status=200)
+                mark_sheet = MarkSheet.objects.get(scsddc=scsddc,student = student)
+                grand_total = {
+                "total_marks" : mark_sheet.grand_total_marks,
+                "obtained_total" : mark_sheet.obtained_marks,
+                }
+                return JsonResponse({"Status":"Succes","marks_info":marks_data,"total":[grand_total]}, safe=False, status=200)
             else:
                 return JsonResponse({"Failed": "No Marks Available"}, status=403)
 
