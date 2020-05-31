@@ -30,7 +30,7 @@ from .serializers import StudentSerializer, StudentSerializerAllData
 from rest_framework import viewsets, views, status, mixins
 from .forms import StudentForm, StudentFormValidate
 from .models import Student, FeeChallan
-from initial.models import Semester, OfferedCourses, Transcript
+from initial.models import Semester, OfferedCourses, Transcript,SectionMarks,StudentMarks
 from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer, TranscriptSerilazer
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 import datetime
@@ -452,21 +452,24 @@ class Student_Transcript(View):
 
 class StudentMarksView(View):
     def post(self, request):
-        scsddc = request.POST['scsddc']
-        id = request.POST['id']
-        if scsddc == None or scsddc == "" or scsddc == "null":
+        section = request.POST['section']
+        code = request.POST['code']
+        if section == None or section == "" or section == "null" or code == None or code == "" or code == "null":
             return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
         else:
             student = Student.objects.get(user=request.user)
-            marks_info = SectionMarks.objects.get(scsddc=scsddc)
+            semester = Semester.objects.get(current_semester=True)
+            scsddc = section+"_"+code+"_"+semester.semester_code
+            marks_info = SectionMarks.objects.filter(scsddc=scsddc)
 
             if(len(marks_info) > 0):
                 marks_data = []
                 for mark in marks_info:
-                    marks = StudentMarks.objects.filter(
-                        student=student, scsddc=scsddc, marks_type=mark.mark_type)
+                    marks = StudentMarks.objects.get(
+                        student=student, scsddc=scsddc, marks_type=mark.marks_type)
+                    
                     obj = {
-                        "marks_type": marks.marks_type,
+                        "marks_type": mark.marks_type,
                         "total_marks": marks.total_marks,
                         "weightage": marks.weightage,
                         "obtained_marks": marks.obtained_marks,
@@ -484,10 +487,16 @@ class StudentMarksView(View):
                 return JsonResponse({"Failed": "No Marks Available"}, status=403)
 
 
-def get_registered_scsddc(request):
-    #code = request.POST['code']
-    current_semester = Semester.objects.filter(
-        current_semester=True).values()
-    student = Student.objects.get(uid=request.user)
+def get_scsddc(request):
+    try:
+        section = request.POST['section']
+        code = request.POST['code']
+        if code == 'null' or section == "null" or code == "" or section =="":
+            return JsonResponse({"Failed": "Invalid Parameters"},status=403)    
+    except:
+        return JsonResponse({"Failed": "Invalid Parameters"},status=403)
+    semester = Semester.objects.get(
+        current_semester=True)
+    scsddc = section+"_"+code+"_"+semester.semester_code
     # mark_sheet = MarkSheet.objects.filter()
-    return JsonResponse({"Status": "Success", "Sem": list(current_semester)})
+    return JsonResponse({"Status": "Success", "scsddc": scsddc})
