@@ -620,18 +620,22 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         semester = Semester.objects.get(current_semester=True)
         transcript = Transcript.objects.get_or_create(
             student=kwargs['student'], semester=semester)[0]
-        print(transcript)
         print(type(transcript.course_result))
         transcript.course_result.add(new_sheet_marks)
         transcript.save()
         info.save()
         print('Student Info Section Created')
         section_marks = SectionMarks.objects.filter(scsddc=scsddc)
+        print("Section Marks Currently Assigned")
+        print(scsddc)
+        print(section_marks)
+        print("****")
         for mrk in section_marks:
             stu_marks = StudentMarks.objects.create(
                 scsddc=scsddc, student=kwargs['student'], total_marks=mrk.total_marks, weightage=mrk.weightage, marks_type=mrk.marks_type, section=mrk.section)
             new_sheet_marks.Marks.add(stu_marks)
-            new_sheet_marks.grand_total_marks = mrk.weightage
+            new_sheet_marks.grand_total_marks += mrk.weightage
+        new_sheet_marks.save()
         print(scsddc_dict)
         print("_".join(SCSDDC_temp.split('_')[2:]))
         csection = CourseSection.objects.get(

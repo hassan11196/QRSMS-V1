@@ -208,14 +208,22 @@ def update_marks(request):
                 marks_type=marks_type, scsddc=scsddc).values()
             class_marks = SectionMarks.objects.get(
                 marks_type=marks_type, scsddc=scsddc)
-            class_marks.marks_mean = statistics.mean(all_marks)
-            class_marks.marks_standard_deviation = statistics.stdev(all_marks)
-            class_marks.weightage_mean = statistics.mean(all_weightage)
-            class_marks.weightage_standard_deviation = statistics.stdev(
-                all_weightage)
+            if len(all_marks)>1:
+                class_marks.marks_mean = statistics.mean(all_marks)
+                class_marks.marks_standard_deviation = statistics.stdev(all_marks)
+                class_marks.weightage_mean = statistics.mean(all_weightage)
+                class_marks.weightage_standard_deviation = statistics.stdev(
+                    all_weightage)
+            else:
+                class_marks.marks_mean = all_marks[0]
+                class_marks.marks_standard_deviation = 0
+                class_marks.weightage_mean = all_weightage[0]
+                class_marks.weightage_standard_deviation = 0
             class_marks.save()
             class_marks = SectionMarks.objects.filter(
                 marks_type=marks_type, scsddc=scsddc).values()
+            print("Len")
+            print(len(class_marks))
             data = {
                 "Status": "Success",
                 "studentMarks": list(student_marks),
@@ -490,6 +498,7 @@ def generate_grades(request):
     for student_info in csection.student_info.all():
         info = csection.student_info.get(student=student_info.student)
         weight = info.mark_sheet.obtained_marks
+        old_gpa = info.mark_sheet.gpa
         if(weight > 90):
             info.mark_sheet.grade = grades[1-scheme]
             info.mark_sheet.gpa = gpas[1-scheme]
@@ -551,6 +560,11 @@ def generate_grades(request):
             if weight > 49:
                 transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
             transcript.credit_hours_attempted += info.mark_sheet.course.credit_hour
+        elif old_gpa==0:
+            transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
+        elif weight < 50 :
+            transcript.credit_hours_earned -= info.mark_sheet.course.credit_hour
+
         transcript.save()
         all_transcript = Transcript.objects.filter(
             student=student_info.student)
