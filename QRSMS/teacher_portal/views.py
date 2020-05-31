@@ -398,7 +398,8 @@ class TeacherLoginView(APIView):
             return Response(data="Empty Usename or Password Field.", status=400)
 
         user = authenticate(request, username=username, password=password)
-
+        if user is None:
+            return Response({'status': "Invalid Username of Password."}, status=403)
         print(user)
 
         if user is not None and user.is_teacher:

@@ -214,8 +214,11 @@ class StudentLoginView(APIView):
         password = request.POST['password']
         if username is "" or password is "":
             return JsonResponse({'message': "Empty Usename or Password Field.", 'status': 'failure'}, status=401)
-
+        
         user = authenticate(request, username=username, password=password)
+        if user is None:
+            return JsonResponse({'message': "Invalid Id Or Password", 'status': 'failure'}, status=403)    
+        
         if user.is_student == False:
             return JsonResponse({'message': "User not a Student.", 'status': 'failure'}, status=401)
 
