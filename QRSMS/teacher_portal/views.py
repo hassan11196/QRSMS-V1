@@ -1,43 +1,46 @@
-from .models import Teacher
-from .forms import TeacherForm
-from initial.serializers import StudentInfoSectionModelSerializerGetAttendance, SectionAttendanceSerializer
-from initial.models import CourseSection, SectionAttendance, Transcript
 import json
-from colorama import Fore
-from django.db.models import Count
+
+from colorama import Back, Fore, Style, init
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
+from django.db.models import Count
+from django.db.utils import IntegrityError
+from django.dispatch import receiver
+from django.forms.models import model_to_dict
 # Create your views here.
 from django.http import JsonResponse
-from django.views import View
 from django.middleware.csrf import get_token
-from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, viewsets
-from rest_framework.request import Request
-from rest_framework.response import Response
-from rest_framework.decorators import api_view, parser_classes
-from rest_framework.views import APIView
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
+from rest_framework.decorators import api_view, parser_classes
+from rest_framework.parsers import FormParser, JSONParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
-from colorama import Fore, Back, Style, init
-from django.forms.models import model_to_dict
-
-
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import user_passes_test, login_required
-from django.dispatch import receiver
-from student_portal.models import Student
-from initial.models import CourseSection, SectionAttendance, Course, StudentAttendance, SectionMarks, StudentMarks
-from .serializers import (TeacherSerializer)
-from .signals import attendance_of_day_for_student, marks_for_student
-from django.db.utils import IntegrityError
+from rest_framework.request import Request
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from actor.serializers import LoginSerializer, UserSerializer
-from initial.models import split_scsddc, Semester, MarkSheet
+from helpers.decorators import user_passes_test
+from initial.models import (Course, CourseSection, MarkSheet,
+                            SectionAttendance, SectionMarks, Semester,
+                            StudentAttendance, StudentMarks, Transcript,
+                            split_scsddc)
+from initial.serializers import (
+    SectionAttendanceSerializer,
+    StudentInfoSectionModelSerializerGetAttendance)
+from student_portal.models import Student
+
+from .forms import TeacherForm
+from .models import Teacher
+from .serializers import TeacherSerializer
+from .signals import attendance_of_day_for_student, marks_for_student
 
 
 def get_sddc(semester, degree, department, campus, city):
@@ -61,10 +64,13 @@ def check_if_teacher(user):
 
 
 class BaseTeacherLoginView(APIView):
-    @swagger_auto_schema()
-    @csrf_exempt
-    @method_decorator(login_required(login_url='/auth/login'))
-    @method_decorator(user_passes_test(check_if_teacher))
+    not_user_response = {'message': 'Login Required',
+                         'condtion': False, 'status': 'failure'}
+    not_teacher_response = {'message': 'User Logged in is Not a Teacher',
+                            'condtion': False, 'status': 'failure'}
+
+    @ method_decorator(user_passes_test(lambda u: u.is_authenticated, on_failure_json_response=JsonResponse(not_user_response, status=401)))
+    @ method_decorator(user_passes_test(check_if_teacher, on_failure_json_response=JsonResponse(not_teacher_response, status=401)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -252,9 +258,10 @@ def update_marks(request):
                 marks_type=marks_type, scsddc=scsddc).values()
             class_marks = SectionMarks.objects.get(
                 marks_type=marks_type, scsddc=scsddc)
-            if len(all_marks)>1:
+            if len(all_marks) > 1:
                 class_marks.marks_mean = statistics.mean(all_marks)
-                class_marks.marks_standard_deviation = statistics.stdev(all_marks)
+                class_marks.marks_standard_deviation = statistics.stdev(
+                    all_marks)
                 class_marks.weightage_mean = statistics.mean(all_weightage)
                 class_marks.weightage_standard_deviation = statistics.stdev(
                     all_weightage)
@@ -609,9 +616,9 @@ def generate_grades(request):
             if weight > 49:
                 transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
             transcript.credit_hours_attempted += info.mark_sheet.course.credit_hour
-        elif old_gpa==0:
+        elif old_gpa == 0:
             transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
-        elif weight < 50 :
+        elif weight < 50:
             transcript.credit_hours_earned -= info.mark_sheet.course.credit_hour
 
         transcript.save()

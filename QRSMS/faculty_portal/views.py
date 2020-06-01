@@ -1,38 +1,34 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib.auth.models import Group
-# Create your views here.
-from django.http import JsonResponse
-
-from django.middleware.csrf import get_token
-from django.shortcuts import HttpResponse, HttpResponseRedirect, render
-from rest_framework import generics, viewsets
-from rest_framework.request import Request
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import serializers
-from rest_framework.parsers import FormParser, MultiPartParser, JSONParser
-from rest_framework.permissions import IsAuthenticated
 import re
-from drf_yasg.utils import swagger_auto_schema
-
-from rest_framework.authentication import (BasicAuthentication,
-                                           SessionAuthentication)
-from rest_framework.permissions import IsAuthenticated
-from django.forms.models import model_to_dict
-from django.views.generic import DetailView, ListView, UpdateView, CreateView
-from django.utils.decorators import method_decorator
-
 
 import openpyxl
-
-from initial.root_commands import add_semesterCore
-from .serializers import FacultySerializer
-from student_portal.serializers import StudentSerializer
-from initial.serializers import SemesterSerializer
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
+from django.forms.models import model_to_dict
 # Create your views here.
+from django.http import JsonResponse
+from django.middleware.csrf import get_token
+from django.shortcuts import HttpResponse, HttpResponseRedirect, render
+from django.utils.decorators import method_decorator
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import generics, serializers, viewsets
+from rest_framework.authentication import (BasicAuthentication,
+                                           SessionAuthentication)
+from rest_framework.parsers import FormParser, JSONParser, MultiPartParser
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.request import Request
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from helpers.decorators import user_passes_test
+from initial.root_commands import add_semesterCore
+from initial.serializers import SemesterSerializer
+from student_portal.serializers import StudentSerializer
 
 from .models import Faculty
+from .serializers import FacultySerializer
+
+# Create your views here.
 
 
 def check_if_faculty(user):
@@ -40,14 +36,20 @@ def check_if_faculty(user):
 
 
 class BaseFacultyLoginView(APIView):
-    @method_decorator(login_required)
-    @method_decorator(user_passes_test(check_if_faculty, login_url='/faculty/login'))
+    not_user_response = {'message': 'Login Required',
+                         'condtion': False, 'status': 'failure'}
+    not_faculty_response = {'message': 'User Logged in is Not a Faculty',
+                            'condtion': False, 'status': 'failure'}
+
+    @ method_decorator(user_passes_test(lambda u: u.is_authenticated, on_failure_json_response=JsonResponse(not_user_response, status=401)))
+    @ method_decorator(user_passes_test(check_if_faculty, on_failure_json_response=JsonResponse(not_faculty_response, status=401)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
 
 class RegisterStudent(BaseFacultyLoginView):
     parser_classes = [JSONParser]
+
     @swagger_auto_schema(request_body=StudentSerializer, responses={200: StudentSerializer(many=True)})
     def post(self, request):
         return Response({'Created': True})
@@ -142,7 +144,7 @@ class GetStudentTimeTable(BaseFacultyLoginView):
         for col in worksheet['I']:
             if(col.value != None):
                 col.value = col.value.replace(' ', '')
-                if(('CoursePlanning:' in col.value)or('Courseplanning:' in col.value)):
+                if(('CoursePlanning:' in col.value) or ('Courseplanning:' in col.value)):
                     s = re.findall(
                         r'[A-Za-z]+:[A-Z,a-z0-9()\/]+\)', col.value)[0]
                     col.value = col.value.replace(s, '')

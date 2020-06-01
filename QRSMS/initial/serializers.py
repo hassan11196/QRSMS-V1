@@ -1,8 +1,16 @@
 
-from .models import Course, RegularCoreCourseLoad,Transcript, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
+from .models import Course, RegularCoreCourseLoad, Transcript, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
 from rest_framework import serializers
 from . import models
 from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
+
+
+def split_scsddc(scsddc):
+    scsddc_dict = {}
+    scsddc_dict['section'], scsddc_dict['course_code'], scsddc_dict['semester'], scsddc_dict[
+        'degree'], scsddc_dict['department'], scsddc_dict['campus'], scsddc_dict['city'] = scsddc.split('_')
+
+    return scsddc_dict
 
 
 class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerializer):
@@ -12,12 +20,13 @@ class StudentAttendanceSerializerMinimized(serializers.HyperlinkedModelSerialize
         fields = ('url', 'class_date', 'attendance_slot',
                   'state', 'duration_hour')
 
+
 class StudentAttendanceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = StudentAttendance
         fields = '__all__'
 
-        
+
 class StudentAttendanceSheetSerializerMinimized(serializers.HyperlinkedModelSerializer):
     attendance = StudentAttendanceSerializerMinimized(many=True)
     student = WrapperStudentSerializer('uid')
@@ -38,6 +47,8 @@ class CourseSerializer1(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = '__all__'
+
+
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
@@ -120,12 +131,23 @@ class StudentMarksSerializer(serializers.HyperlinkedModelSerializer):
 
 class MarkSheetSerializer(serializers.ModelSerializer):
     course = CourseSerializer1()
+
     class Meta:
         model = MarkSheet
-        fields = ('course','student','scsddc','Marks','grand_total_marks','grade','obtained_marks','year','gpa','finalized','semester_season')
+        fields = ('course', 'student', 'scsddc', 'Marks', 'grand_total_marks',
+                  'grade', 'obtained_marks', 'year', 'gpa', 'finalized', 'semester_season')
 
 
 class AttendanceSheetSerializer(serializers.HyperlinkedModelSerializer):
+
+    course = serializers.SerializerMethodField(
+        'course_method'
+    )
+
+    def course_method(self, att_sheet):
+        course_code = split_scsddc(att_sheet.scsddc)['course_code']
+        return CourseSerializer(Course.objects.get(course_code=course_code), context={'request': self.context['request']}).data
+
     class Meta:
         model = AttendanceSheet
         fields = '__all__'
@@ -220,11 +242,11 @@ class SemesterSerializer(serializers.ModelSerializer):
         ]
 
 
-
 class TranscriptSerilazer(serializers.ModelSerializer):
     course_result = MarkSheetSerializer(many=True)
+
     class Meta:
         model = Transcript
         #fields = ['__all__']
-        fields = ['sgpa','cgpa','credit_hours_earned','credit_hours_attempted','semester','last','course_result']
-        
+        fields = ['sgpa', 'cgpa', 'credit_hours_earned',
+                  'credit_hours_attempted', 'semester', 'last', 'course_result']
