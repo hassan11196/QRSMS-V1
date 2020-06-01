@@ -316,7 +316,8 @@ class SectionMarks(models.Model):
     weightage_mean = models.FloatField(null=True, blank=True, default=0.0)
     weightage_standard_deviation = models.FloatField(
         null=True, blank=True, default=0)
-
+    min_marks = models.FloatField(max_length=10, blank=True, default=0)
+    max_marks = models.FloatField(max_length=10, blank=True, default=0)
     class Meta:
         unique_together = ('scsddc', 'marks_type', 'section')
 

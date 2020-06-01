@@ -170,6 +170,50 @@ class TeacherMarksView(BaseTeacherLoginView):
         }
         return JsonResponse(data, safe=False)
 
+def change_marks_dist(request):
+    scsddc = request.POST['scsddc']
+    marks_type = request.POST['marks_type']
+    new_marks_type = request.POST['new_type']
+    old_weightage = request.POST['old_weightage']
+    new_weightage = request.POST['new_weightage']
+    old_marks  = request.POST['old_marks']
+    new_marks = request.POST['new_marks']
+    if scsddc == "null" or scsddc == "" or marks_type == "null" or marks_type == "" or new_marks_type == "null" or new_marks_type == "" or old_weightage == "null" or new_weightage == "null" or old_marks == "null" or new_marks == "null" or old_weightage == "" or new_weightage == "" or old_marks == "" or new_marks == "":
+        return JsonResponse({"Status":"Failed","Message Invalid Input"},status=403)
+    else:
+        check = StudentMarks.objects.get(
+            marks_type=marks_type, scsddc=scsddc).first()
+        if check.finalized:
+            return JsonResponse({"Status":"Failed","Message":"Unable To Update Marks. Transcript Has been Generated"},status=403)
+
+        section_marks = SectionMarks.objects.get(scsddc=scsddc,mark_type= mark_type)
+        section_marks.total_marks = float(new_marks)
+        section_marks.weightage = float(new_weightage)
+        section_marks.marks_type = new_marks_type
+
+        all_marks = []
+        all_weightage = []
+        student_marks = StudentMarks.objects.filter(
+            marks_type=marks_type, scsddc=scsddc)
+        for marks in student_marks:
+            marksheet = MarkSheet.objects.get(scsddc=scsddc,student = marks.student)    
+            marks.marks_type = new_marks_type
+            marks.total_marks = new_marks
+            old_weight = marks.obtained_weightage
+            old_total = marks.weightage
+            marks.weightage = new_weightage
+            marks.obtained_weightage = marks.obtained_marks/new_marks*new_weightage
+            all_weightage.append(marks.obtained_marks/new_marks*new_weightage)
+            marksheet.grand_total_marks-=old_total
+            marksheet.grand_total_marks+=new_weightage
+            marksheet.obtained_marks-=old_weight
+            marksheet.obtained_marks+=marks.obtained_marks/new_marks*new_weightage
+            marks.save()
+            marksheet.save()
+
+        section_marks.save()    
+        ######################################
+
 
 def update_marks(request):
     scsddc = request.POST['scsddc']
@@ -214,11 +258,15 @@ def update_marks(request):
                 class_marks.weightage_mean = statistics.mean(all_weightage)
                 class_marks.weightage_standard_deviation = statistics.stdev(
                     all_weightage)
+                class_marks.min_marks = min(all_marks)
+                class_marks.max_marks = max(all_marks)
             else:
                 class_marks.marks_mean = all_marks[0]
                 class_marks.marks_standard_deviation = 0
                 class_marks.weightage_mean = all_weightage[0]
                 class_marks.weightage_standard_deviation = 0
+                class_marks.min_marks = all_marks[0]
+                class_marks.max_marks = all_marks[0]
             class_marks.save()
             class_marks = SectionMarks.objects.filter(
                 marks_type=marks_type, scsddc=scsddc).values()
