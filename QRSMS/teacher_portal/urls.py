@@ -35,6 +35,7 @@ urlpatterns += (
     path('get_marks/', views.TeacherMarksView.as_view(), name="get_marks"),
     path('generate_grades/',views.generate_grades,name="Finalize Grades"),
     path('update_marks/',views.update_marks,name="Update marks"),
+    path('update_evaluation', views.change_marks_dist,name="Update Marks Info"),
     # path('create', views.TeacherCreateView.as_view(), name='initial_teacher_create'),
     # path('detail/<int:pk>/', views.TeacherDetailView.as_view(), name='initial_teacher_detail'),
     # path('update/<int:pk>/', views.TeacherUpdateView.as_view(), name='initial_teacher_update'),
