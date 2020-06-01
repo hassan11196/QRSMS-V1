@@ -1,39 +1,48 @@
+
+import datetime
+# from django.contrib.auth.decorators import user_passes_test
+import io
+import json
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from drf_yasg.utils import swagger_auto_schema
-
+from django.forms.models import model_to_dict
 # Create your views here.
 from django.http import JsonResponse
-from django.views import View
 from django.middleware.csrf import get_token
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
-from rest_framework import generics, viewsets
+from django.utils.decorators import method_decorator
+from django.views import View
+from django_filters.rest_framework import DjangoFilterBackend, OrderingFilter
+from drf_yasg.utils import swagger_auto_schema
+from rest_framework import generics, mixins, status, views, viewsets
 from rest_framework.authentication import (BasicAuthentication,
                                            SessionAuthentication)
-from rest_framework.views import APIView
 from rest_framework.mixins import ListModelMixin
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.serializers import ModelSerializer, SerializerMethodField
-from django.forms.models import model_to_dict
-from django_filters.rest_framework import DjangoFilterBackend, OrderingFilter
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import user_passes_test
-import io
-from rest_framework.request import Request
 from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.renderers import JSONRenderer
+from rest_framework.request import Request
 from rest_framework.response import Response
-from initial.models import SectionAttendance, AttendanceSheet, StudentAttendance, Course, CourseStatus
-from actor.models import CURRENT_SEMESTER, CURRENT_SEMESTER_CODE, ordered_to_dict
-from .serializers import StudentSerializer, StudentSerializerAllData
-from rest_framework import viewsets, views, status, mixins
-from .forms import StudentForm, StudentFormValidate
-from .models import Student, FeeChallan
-from initial.models import Semester, OfferedCourses, Transcript,SectionMarks,StudentMarks,MarkSheet
-from initial.serializers import OfferedCoursesSerializer, AttendanceSheetSerializer, TranscriptSerilazer
+from rest_framework.serializers import ModelSerializer, SerializerMethodField
+from rest_framework.views import APIView
+
+from actor.models import (CURRENT_SEMESTER, CURRENT_SEMESTER_CODE,
+                          ordered_to_dict)
+from helpers.decorators import user_passes_test
+from initial.models import (AttendanceSheet, Course, CourseStatus, MarkSheet,
+                            OfferedCourses, SectionAttendance, SectionMarks,
+                            Semester, StudentAttendance, StudentMarks,
+                            Transcript)
+from initial.serializers import (AttendanceSheetSerializer,
+                                 OfferedCoursesSerializer, TranscriptSerilazer)
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
-import datetime
+
+from .forms import StudentForm, StudentFormValidate
+from .models import FeeChallan, Student
+from .serializers import StudentSerializer, StudentSerializerAllData
+
 # Create your views here.
 
 
@@ -47,8 +56,13 @@ def check_if_student(user):
 
 
 class BaseStudentLoginView(APIView):
-    @method_decorator(login_required)
-    @method_decorator(user_passes_test(check_if_student, login_url='/student/login'))
+    not_user_response = {'message': 'Login Required',
+                         'condtion': False, 'status': 'failure'}
+    not_student_response = {'message': 'User Logged in is Not a Student',
+                            'condtion': False, 'status': 'failure'}
+
+    @ method_decorator(user_passes_test(lambda u: u.is_authenticated, on_failure_json_response=JsonResponse(not_user_response, status=401)))
+    @ method_decorator(user_passes_test(check_if_student, on_failure_json_response=JsonResponse(not_student_response, status=401)))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -92,15 +106,15 @@ class AttendanceView(BaseStudentLoginView):
 class PostAttendanceQR(BaseStudentLoginView):
     def post(self, request):
         print(request.POST['qr_code'])
-        import json
+
         request_data = json.loads(request.POST['qr_code'])
         print(request_data)
         print(request.user)
         try:
             att_object = StudentAttendance.objects.get(student=Student.objects.get(uid=str(
                 request.user)), scsddc=request_data['scsddc'], class_date=request_data['class_date'], attendance_slot=request_data['attendance_slot'], section=request_data['section'])
-        except StudentAttendance.DoesNotExist as e:
-            return JsonResponse({'message': 'Student is not enrolled in this Class', 'condition': False}, status=400)
+        except StudentAttendance.DoesNotExist as err:
+            return JsonResponse({'message': 'Student is not enrolled in this Class', 'condition': False, 'error': err}, status=400)
 
         if att_object.state == 'P':
             return JsonResponse({'message': 'Attendance Already Marked', 'condition': True, }, status=200)
@@ -156,7 +170,7 @@ class RegistrationCheck(BaseStudentLoginView):
 
 
 class RegistrationCourses(BaseStudentLoginView):
-    @swagger_auto_schema()
+    @ swagger_auto_schema()
     def get(self, request):
         from institution.models import Department, Degree
         try:
@@ -214,13 +228,14 @@ class StudentLoginView(APIView):
         password = request.POST['password']
         if username is "" or password is "":
             return JsonResponse({'message': "Empty Usename or Password Field.", 'status': 'failure'}, status=401)
-        
+
         user = authenticate(request, username=username, password=password)
         if user is None:
-            return JsonResponse({'message': "Invalid Id Or Password", 'status': 'failure'}, status=403)    
-        
+            return JsonResponse({'message': "Invalid Id Or Password", 'status': 'failure'}, status=403)
+
         if user.is_student == False:
-            return JsonResponse({'message': "User not a Student.", 'status': 'failure'}, status=401)
+            return JsonResponse({'message': 'User is Not a Student',
+                                 'condtion': False, 'status': 'failure'}, status=401)
 
         if user is not None:
             login(request, user)
@@ -259,7 +274,7 @@ class CustomOfferedCourseSerializer(ModelSerializer):
         # fields = '__all__'
 
 
-class StudentSectionView(StudentLoginView):
+class StudentSectionView(BaseStudentLoginView):
     serializer_class = OfferedCoursesSerializer
     renderer_classes = [JSONRenderer]
     pagination_class = None
@@ -281,7 +296,7 @@ class StudentSectionView(StudentLoginView):
     #         queryset = backend().filter_queryset(self.request, queryset, view=self)
     #     return queryset
 
-    @swagger_auto_schema()
+    @ swagger_auto_schema()
     def get(self, request, *args, **kwargs):
 
         current_semester = Semester.objects.filter(
@@ -309,7 +324,7 @@ class StudentSectionView(StudentLoginView):
         return Response(processed_courses)
 
 
-class StudentAttendanceView(StudentLoginView):
+class StudentAttendanceView(BaseStudentLoginView):
 
     def get(self, request, *args, **kwargs):
         print(kwargs['section'])
@@ -336,9 +351,18 @@ class StudentAttendanceView(StudentLoginView):
 class StudentLogoutView(View):
 
     def post(self, request):
-        logout(request)
-        return JsonResponse({'status': 'success', 'message': 'User Logged Out'})
+        if request.user.is_authenticated:
+            logout(request)
+            return JsonResponse({'status': 'success', 'message': 'User Logged Out', 'condtion': True})
+        else:
+            return JsonResponse({'status': 'success', 'message': 'No User Logged in', 'condtion': True})
 
+    def get(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+            return JsonResponse({'status': 'success', 'message': 'User Logged Out', 'condtion': True})
+        else:
+            return JsonResponse({'status': 'success', 'message': 'No User Logged in', 'condtion': True})
 
 # def generate_challan(request):
 #     student = Student.objects.get(user = request.user)
@@ -353,6 +377,7 @@ class StudentLogoutView(View):
 #     challan.Tution_fee = fee
 #     challan.total_fee = fee
 #     challan.save()
+
 
 def update_challan(request):
 
@@ -470,7 +495,7 @@ class StudentMarksView(View):
                 for mark in marks_info:
                     marks = StudentMarks.objects.get(
                         student=student, scsddc=scsddc, marks_type=mark.marks_type)
-                    
+
                     obj = {
                         "marks_type": mark.marks_type,
                         "total_marks": marks.total_marks,
@@ -484,12 +509,13 @@ class StudentMarksView(View):
                         "weightage_std_dev": mark.weightage_standard_deviation,
                     }
                     marks_data.append(obj)
-                mark_sheet = MarkSheet.objects.get(scsddc=scsddc,student = student)
+                mark_sheet = MarkSheet.objects.get(
+                    scsddc=scsddc, student=student)
                 grand_total = {
-                "total_marks" : mark_sheet.grand_total_marks,
-                "obtained_total" : mark_sheet.obtained_marks,
+                    "total_marks": mark_sheet.grand_total_marks,
+                    "obtained_total": mark_sheet.obtained_marks,
                 }
-                return JsonResponse({"Status":"Succes","marks_info":marks_data,"total":[grand_total]}, safe=False, status=200)
+                return JsonResponse({"Status": "Succes", "marks_info": marks_data, "total": [grand_total]}, safe=False, status=200)
             else:
                 return JsonResponse({"Failed": "No Marks Available"}, status=403)
 
@@ -498,18 +524,19 @@ def get_scsddc(request):
     try:
         section = request.POST['section']
         code = request.POST['code']
-        if code == 'null' or section == "null" or code == "" or section =="":
-            return JsonResponse({"Failed": "Invalid Parameters"},status=403)    
+        if code == 'null' or section == "null" or code == "" or section == "":
+            return JsonResponse({"Failed": "Invalid Parameters"}, status=403)
     except:
-        return JsonResponse({"Failed": "Invalid Parameters"},status=403)
+        return JsonResponse({"Failed": "Invalid Parameters"}, status=403)
     semester = Semester.objects.get(
         current_semester=True)
     scsddc = section+"_"+code+"_"+semester.semester_code
     # mark_sheet = MarkSheet.objects.filter()
     return JsonResponse({"Status": "Success", "scsddc": scsddc})
 
+
 def get_latest_transcript(request):
-    student = Student.objects.get(user = request.user)
-    transcript = Transcript.objects.filter(student = student, last=True).values()
+    student = Student.objects.get(user=request.user)
+    transcript = Transcript.objects.filter(student=student, last=True).values()
     print(transcript)
-    return JsonResponse(list(transcript),safe=False)
+    return JsonResponse(list(transcript), safe=False)

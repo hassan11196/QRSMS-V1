@@ -1,18 +1,21 @@
 import datetime
+
+from django.core.validators import RegexValidator, ValidationError
 from django.db import models
 from django.db.models import F, Q
-from django.core.validators import RegexValidator, ValidationError
-from django.urls import reverse
 from django.dispatch import receiver
+from django.urls import reverse
 
-from institution.models import University, Campus, Degree
+from actor.models import (BATCH_YEAR_REGEX, SEMSESTER_CHOICES,
+                          STUDENT_YEAR_CHOICE, User)
+from faculty_portal.models import Faculty
 from institution.constants import UNIVERISTY_ID_REGEX
-from actor.models import User, BATCH_YEAR_REGEX, SEMSESTER_CHOICES, STUDENT_YEAR_CHOICE
+from institution.models import Campus, Degree, University
 from student_portal.models import Student
 from teacher_portal.models import Teacher
-from faculty_portal.models import Faculty
-from .signals import attendance_sheet_for_student, mark_sheet_for_student, student_info_section_for_student
 
+from .signals import (attendance_sheet_for_student, mark_sheet_for_student,
+                      student_info_section_for_student)
 
 ACADEMIC_YEAR = 2020
 CURRENT_SEMESTER = 1  # Spring
