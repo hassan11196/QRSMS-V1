@@ -507,6 +507,8 @@ class StudentMarksView(View):
                         "marks_std_dev": mark.marks_standard_deviation,
                         "weightage_mean": mark.weightage_mean,
                         "weightage_std_dev": mark.weightage_standard_deviation,
+                        "min_marks":mark.min_marks,
+                        "max_marks":mark.max_marks,
                     }
                     marks_data.append(obj)
                 mark_sheet = MarkSheet.objects.get(

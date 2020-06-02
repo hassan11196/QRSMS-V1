@@ -7,6 +7,7 @@ from django.contrib.auth.models import Group
 from django.db.models import Count
 from django.db.utils import IntegrityError
 from django.dispatch import receiver
+import statistics
 from django.forms.models import model_to_dict
 # Create your views here.
 from django.http import JsonResponse
@@ -185,14 +186,18 @@ def change_marks_dist(request):
     old_marks  = request.POST['old_marks']
     new_marks = request.POST['new_marks']
     if scsddc == "null" or scsddc == "" or marks_type == "null" or marks_type == "" or new_marks_type == "null" or new_marks_type == "" or old_weightage == "null" or new_weightage == "null" or old_marks == "null" or new_marks == "null" or old_weightage == "" or new_weightage == "" or old_marks == "" or new_marks == "":
-        return JsonResponse({"Status":"Failed","Message Invalid Input"},status=403)
+        return JsonResponse({"Status":"Failed","Message":" Invalid Input"},status=403)
     else:
-        check = StudentMarks.objects.get(
-            marks_type=marks_type, scsddc=scsddc).first()
-        if check.finalized:
+        check = MarkSheet.objects.filter(
+             scsddc=scsddc)
+        if check[0].finalized:
             return JsonResponse({"Status":"Failed","Message":"Unable To Update Marks. Transcript Has been Generated"},status=403)
-
-        section_marks = SectionMarks.objects.get(scsddc=scsddc,mark_type= mark_type)
+        try:
+            section_marks = SectionMarks.objects.get(scsddc=scsddc,marks_type= marks_type)
+            if section_marks.max_marks>float(new_marks):
+                return JsonResponse({"Status":"Failed","Message":"Total Marks Are Less Than Max Marks Of Class"},status=403)
+        except:
+            return JsonResponse({"Status":"Failed","Message":"Marks Does Not Exist"},status=404)    
         section_marks.total_marks = float(new_marks)
         section_marks.weightage = float(new_weightage)
         section_marks.marks_type = new_marks_type
@@ -208,16 +213,26 @@ def change_marks_dist(request):
             old_weight = marks.obtained_weightage
             old_total = marks.weightage
             marks.weightage = new_weightage
-            marks.obtained_weightage = marks.obtained_marks/new_marks*new_weightage
-            all_weightage.append(marks.obtained_marks/new_marks*new_weightage)
-            marksheet.grand_total_marks-=old_total
-            marksheet.grand_total_marks+=new_weightage
+            marks.obtained_weightage = marks.obtained_marks/float(new_marks)*float(new_weightage)
+            all_weightage.append(marks.obtained_marks/float(new_marks)*float(new_weightage))
+            marksheet.grand_total_marks-=float(old_total)
+            marksheet.grand_total_marks+=float(new_weightage)
             marksheet.obtained_marks-=old_weight
-            marksheet.obtained_marks+=marks.obtained_marks/new_marks*new_weightage
+            marksheet.obtained_marks+=marks.obtained_marks/float(new_marks)*float(new_weightage)
             marks.save()
             marksheet.save()
-
-        section_marks.save()    
+        if len(all_marks) > 1:
+            section_marks.weightage_mean = statistics.mean(all_weightage)
+            section_marks.weightage_standard_deviation = statistics.stdev(
+                all_weightage)
+        
+        else:
+            
+            section_marks.weightage_mean = all_weightage[0]
+            section_marks.weightage_standard_deviation = 0
+            
+        section_marks.save()  
+        return JsonResponse({"Status":"Success","Message":"Evaluation Updated Successfully"})  
         ######################################
 
 
@@ -229,7 +244,6 @@ def update_marks(request):
         return JsonResponse({"Failed": "Invalid Input Parameters"}, status=403)
     else:
         try:
-            import statistics
             all_marks = []
             all_weightage = []
             for i in range(len(marks_data)):
