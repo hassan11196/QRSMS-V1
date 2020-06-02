@@ -195,7 +195,7 @@ def change_marks_dist(request):
         try:
             section_marks = SectionMarks.objects.get(scsddc=scsddc,marks_type= marks_type)
             if section_marks.max_marks>float(new_marks):
-                return JsonResponse({"Status":"Failed","Message":"Total Marks Are Less Than Max Marks Of Class"},status=403)
+                return JsonResponse({"Status":"Failed","Message":"Total Marks Are Less Than Max Marks Of Class"},status=200)
         except:
             return JsonResponse({"Status":"Failed","Message":"Marks Does Not Exist"},status=404)    
         section_marks.total_marks = float(new_marks)

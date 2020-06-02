@@ -517,9 +517,9 @@ class StudentMarksView(View):
                     "total_marks": mark_sheet.grand_total_marks,
                     "obtained_total": mark_sheet.obtained_marks,
                 }
-                return JsonResponse({"Status": "Succes", "marks_info": marks_data, "total": [grand_total]}, safe=False, status=200)
+                return JsonResponse({"Status": "Success", "marks_info": marks_data, "total": [grand_total]}, safe=False, status=200)
             else:
-                return JsonResponse({"Failed": "No Marks Available"}, status=403)
+                return JsonResponse({"Status":"Failed","Message":"No Marks Available"}, status=200)
 
 
 def get_scsddc(request):
