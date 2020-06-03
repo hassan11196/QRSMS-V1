@@ -140,7 +140,7 @@ class TimeTableView(BaseStudentLoginView):
         # print(url)
         # r = requests.get(url)
         # data = r.json()
-        return JsonResponse({'data': [], 'message': 'TimeTable server is down'})
+        return JsonResponse({'data': [], 'message': 'TimeTable server is down', 'success': 0})
 
 
 class RegistrationCheck(BaseStudentLoginView):
