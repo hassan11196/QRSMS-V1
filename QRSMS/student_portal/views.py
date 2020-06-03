@@ -108,6 +108,9 @@ class PostAttendanceQR(BaseStudentLoginView):
         print(request.POST['qr_code'])
 
         request_data = json.loads(request.POST['qr_code'])
+        if isinstance(request_data, int):
+            JsonResponse({'message': 'QR Not Scanned Properly. Please Try again',
+                          'status': 'QR Scan Error', 'condition': False}, status=400)
         print(request_data)
         print(request.user)
         try:
@@ -121,9 +124,9 @@ class PostAttendanceQR(BaseStudentLoginView):
         att_object.state = 'P'
         att_object.save()
         from initial.serializers import StudentAttendanceSerializer
-        from rest_framework.request import Request
+
         data = StudentAttendanceSerializer(
-            att_object, context={'request': Request(request)}).data
+            att_object, context={'request': request}).data
 
         return JsonResponse({'message': 'Attendance Marked', 'condition': True, 'attendance': data}, status=200)
 
@@ -140,7 +143,7 @@ class TimeTableView(BaseStudentLoginView):
         # print(url)
         # r = requests.get(url)
         # data = r.json()
-        return JsonResponse({'data': [], 'message': 'TimeTable server is down'})
+        return JsonResponse({'data': [], 'message': 'TimeTable server is down', 'success': 0})
 
 
 class RegistrationCheck(BaseStudentLoginView):
