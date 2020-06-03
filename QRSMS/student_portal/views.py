@@ -108,6 +108,9 @@ class PostAttendanceQR(BaseStudentLoginView):
         print(request.POST['qr_code'])
 
         request_data = json.loads(request.POST['qr_code'])
+        if isinstance(request_data, int):
+            JsonResponse({'message': 'QR Not Scanned Properly. Please Try again',
+                          'status': 'QR Scan Error', 'condition': False}, status=400)
         print(request_data)
         print(request.user)
         try:
