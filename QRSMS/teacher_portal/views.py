@@ -378,14 +378,25 @@ class AddSectionMarks(BaseTeacherLoginView):
         weightage = request.POST['weightage']
         section = request.POST['section']
 
-        if(marks_type is None or req_scsddc is None or section is None or req_scsddc is "null"):
+        if(total_marks is None or total_marks=="" or total_marks=="null" or weightage is None or weightage == ""  or weightage == "null" or req_scsddc == "null" ):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
+        if(marks_type is None or marks_type=="" or marks_type=="null" or req_scsddc is None or req_scsddc is ""  or section is None or req_scsddc == "null" ):
+            return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
+        if(marks_type is None or section=="" or section=="null" or req_scsddc is None or req_scsddc == ""  or section is None or req_scsddc == "null" ):
+            return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
+
 
         from rest_framework.request import Request
         from initial.serializers import SectionMarksSerializer
         print(request.POST)
 
         try:
+            st1 = MarkSheet.objects.filter(scsddc=req_scsddc)
+            print(len(st1))
+            if len(st1)> 0 and st1[0].grand_total_marks + float(weightage)>100.0:
+                return JsonResponse({"message": "Grand Total Can't be greater than 100"})
+            if len(st1)> 0:
+                print(st1[0].grand_total_marks+ float(weightage))
             sec_marks = SectionMarks(scsddc=req_scsddc, marks_type=marks_type,
                                      section=section, total_marks=total_marks, weightage=weightage)
             sec_marks.save()
@@ -605,7 +616,7 @@ def generate_grades(request):
         else:
             info.mark_sheet.grade = grades[12-scheme]
             info.mark_sheet.gpa = gpas[12-scheme]
-
+        print(str(info.mark_sheet.grade)+" "+str(info.mark_sheet.gpa)+" "+str(weight))
         final_status = info.mark_sheet.finalized
         info.mark_sheet.finalized = True
         info.mark_sheet.save()
@@ -624,13 +635,13 @@ def generate_grades(request):
             count += 1
             total_cr += sheet.course.credit_hour
         print(last_course_being_final)
-        sgpa = sum/(count*total_cr)
+        sgpa = sum/(total_cr)
         transcript.sgpa = sgpa
         if final_status is False:
             if weight > 49:
                 transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
             transcript.credit_hours_attempted += info.mark_sheet.course.credit_hour
-        elif old_gpa == 0:
+        elif old_gpa == 0 and weight > 49 :
             transcript.credit_hours_earned += info.mark_sheet.course.credit_hour
         elif weight < 50:
             transcript.credit_hours_earned -= info.mark_sheet.course.credit_hour
