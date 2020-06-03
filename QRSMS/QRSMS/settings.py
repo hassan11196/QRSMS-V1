@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-from sentry_sdk.integrations.django import DjangoIntegration
-import sentry_sdk
 import os
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +29,7 @@ SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 DEBUG = True
 
 ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com', 'localhost',
-                 '127.0.0.1', '172.16.71.12', '180.149.217.63', 'www.qrsms.ml']
+                 '127.0.0.1', '172.16.71.12', '180.149.217.63', 'www.qrsms.ml', 'qrsms-teacher.netlify.app', 'qrsms-student.netlify.app']
 
 
 # Application definition
