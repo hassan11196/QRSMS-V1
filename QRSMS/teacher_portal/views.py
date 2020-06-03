@@ -580,7 +580,7 @@ def generate_grades(request):
         info = csection.student_info.get(student=student_info.student)
         weight = info.mark_sheet.obtained_marks
         old_gpa = info.mark_sheet.gpa
-        if(weight > 90):
+        if(weight >= 90):
             info.mark_sheet.grade = grades[1-scheme]
             info.mark_sheet.gpa = gpas[1-scheme]
         elif(weight < 90 and weight > 85):
