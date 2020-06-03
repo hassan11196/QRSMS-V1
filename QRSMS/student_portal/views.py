@@ -121,9 +121,9 @@ class PostAttendanceQR(BaseStudentLoginView):
         att_object.state = 'P'
         att_object.save()
         from initial.serializers import StudentAttendanceSerializer
-        from rest_framework.request import Request
+
         data = StudentAttendanceSerializer(
-            att_object, context={'request': Request(request)}).data
+            att_object, context={'request': request}).data
 
         return JsonResponse({'message': 'Attendance Marked', 'condition': True, 'attendance': data}, status=200)
 
