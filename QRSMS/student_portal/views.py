@@ -82,7 +82,7 @@ class Home_json(BaseStudentLoginView):
         student_data = StudentSerializer(stud_obj, many=True).data
 
         dat = {'status': 'success',
-               'student_data': student_data, 'user_data': dict_user}
+               'student_data': student_data, 'user_data': dict_user,  'data': student_data}
 
         return JsonResponse(dat)
 
@@ -507,8 +507,8 @@ class StudentMarksView(View):
                         "marks_std_dev": mark.marks_standard_deviation,
                         "weightage_mean": mark.weightage_mean,
                         "weightage_std_dev": mark.weightage_standard_deviation,
-                        "min_marks":mark.min_marks,
-                        "max_marks":mark.max_marks,
+                        "min_marks": mark.min_marks,
+                        "max_marks": mark.max_marks,
                     }
                     marks_data.append(obj)
                 mark_sheet = MarkSheet.objects.get(
@@ -519,7 +519,7 @@ class StudentMarksView(View):
                 }
                 return JsonResponse({"Status": "Success", "marks_info": marks_data, "total": [grand_total]}, safe=False, status=200)
             else:
-                return JsonResponse({"Status":"Failed","Message":"No Marks Available"}, status=200)
+                return JsonResponse({"Status": "Failed", "Message": "No Marks Available"}, status=200)
 
 
 def get_scsddc(request):
