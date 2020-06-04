@@ -550,8 +550,8 @@ def generate_grades(request):
         9: "C-",
         10: "D+",
         11: "D",
-        12: "D-",
-        13: "F"
+        12: "F",
+        
 
     }
     gpas = {
