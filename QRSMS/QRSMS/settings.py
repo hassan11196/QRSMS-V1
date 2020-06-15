@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1=c9547+64pcf@)^=zry%y)s&4&elr=kq-mbhql+rg-pzm0dca'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['qrsms-v1.herokuapp.com', 'localhost',
 #                  '127.0.0.1', '172.16.71.12', '180.149.217.63', 'www.qrsms.ml', 'qrsms-teacher.netlify.app', 'qrsms-student.netlify.app']
@@ -71,8 +71,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'QRSMS.urls'
 
 TEMPLATES = [
@@ -169,7 +170,7 @@ USE_TZ = True
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
@@ -202,7 +203,8 @@ WEBPACK_LOADER = {
     }
 }
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, '..', 'webpack_output/static')]
+STATICFILES_DIRS = [os.path.join(
+    BASE_DIR, '..', 'webpack_output/static'), ]
 
 AUTH_USER_MODEL = 'actor.User'
 CORS_ORIGIN_ALLOW_ALL = False
