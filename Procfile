@@ -1,2 +1,2 @@
 
-web: gunicorn QRSMS/wsgi.py
+web: gunicorn QRSMS/QRSMS/wsgi.py
