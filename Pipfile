@@ -33,6 +33,7 @@ pyyaml = "*"
 pinax-theme-bootstrap = "*"
 django-advanced-filters = "*"
 colorama = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
