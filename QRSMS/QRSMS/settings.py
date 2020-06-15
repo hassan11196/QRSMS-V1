@@ -202,7 +202,7 @@ WEBPACK_LOADER = {
     }
 }
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, '..', 'webpack_output/staticfiles')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '..', 'webpack_output/static')]
 
 AUTH_USER_MODEL = 'actor.User'
 CORS_ORIGIN_ALLOW_ALL = False
