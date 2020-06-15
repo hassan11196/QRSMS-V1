@@ -71,8 +71,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'QRSMS.urls'
 
 TEMPLATES = [
@@ -169,7 +170,7 @@ USE_TZ = True
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
@@ -202,7 +203,8 @@ WEBPACK_LOADER = {
     }
 }
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, '..', 'webpack_output/static')]
+STATICFILES_DIRS = [os.path.join(
+    BASE_DIR, '..', 'webpack_output/static'), ]
 
 AUTH_USER_MODEL = 'actor.User'
 CORS_ORIGIN_ALLOW_ALL = False

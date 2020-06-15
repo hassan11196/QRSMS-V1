@@ -34,6 +34,7 @@ pinax-theme-bootstrap = "*"
 django-advanced-filters = "*"
 colorama = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"

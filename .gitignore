@@ -105,3 +105,6 @@ typings/
 .pyc
 QRSMS-Front
 
+QRSMS/QRSMS/staticfiles/
+QRSMS/staticfiles/bundles/
+QRSMS/staticfiles/

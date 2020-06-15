@@ -1,2 +1,2 @@
 
-web: python QRSMS/manage.py collectstatic --noinput; gunicorn --chdir QRSMS QRSMS.wsgi:application 
+web: gunicorn --chdir QRSMS QRSMS.wsgi:application 
