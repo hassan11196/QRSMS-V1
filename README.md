@@ -52,9 +52,9 @@ Customized Django Admin Portal for Faculty of the University to manage QRSMS.
 ## QRSMS Flutter Application: 
 [![Build Status](https://travis-ci.com/hassan11196/QRSMSApp-1.svg?token=52F5hBqAVyxvA6TSn1jQ&branch=master)](https://travis-ci.com/hassan11196/QRSMSApp-1)
 
-### Download Link: [Click here](https://github.com/hassan11196/QRSMSApp/releases)
+### Download Link: [Click here](https://github.com/hassan11196/QRSMS-Flutter-App/releases)
 
-### Repo Link: [https://github.com/hassan11196/QRSMSApp](https://github.com/hassan11196/QRSMSApp)
+### Repo Link: [https://github.com/hassan11196/QRSMSApp](https://github.com/hassan11196/QRSMS-Flutter-App)
 
 Made Possible with help of following additional contributors and mentors💓:
 
