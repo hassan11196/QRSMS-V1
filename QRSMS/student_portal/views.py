@@ -52,7 +52,7 @@ class UserNotLogged(View):
 
 
 def check_if_student(user):
-    return True if user.is_student else False
+    return bool(user.is_student)
 
 
 class BaseStudentLoginView(APIView):
