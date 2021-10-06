@@ -89,7 +89,7 @@ class Home_json(BaseStudentLoginView):
 
 class AttendanceView(BaseStudentLoginView):
     def get(self, request, course_code):
-        from initial.models import AttendanceSheet, OfferedCourses
+
         print(dir(self))
         print(dir(request.user))
         s = Student.objects.get(uid=request.user)
@@ -97,7 +97,7 @@ class AttendanceView(BaseStudentLoginView):
         at = AttendanceSheet.objects.get(
             student__uid=request.user, scsddc__endswith=csddc)
 
-        from initial.serializers import AttendanceSheetSerializer
+
         att_serialized = AttendanceSheetSerializer(at, many=True).data
 
         return JsonResponse({'message': 'Available Attendacne', 'condition': True, 'attendance': att_serialized}, status=200)
@@ -180,7 +180,7 @@ class RegistrationCourses(BaseStudentLoginView):
             s = Student.objects.get(uid=request.user)
             if s.warning_count > 0:
                 return JsonResponse({'message': 'Student in Warning. Conatact Academic Office.', 'condition': False}, status=200)
-            from initial.models import Semester, OfferedCourses
+
             # sem = Semester.objects.get(semester_code=CURRENT_SEMESTER_CODE)
             # rg_courses = sem.regular_course_load.get(semester_season=CURRENT_SEMESTER,student_year=s.student_year)
             # el_courses = sem.elective_course_load.get(semester_season=CURRENT_SEMESTER)
@@ -191,7 +191,7 @@ class RegistrationCourses(BaseStudentLoginView):
 
             # from rest_framework.request import Request
 
-            from initial.serializers import OfferedCoursesSerializer
+
             offered_courses_to_student = OfferedCoursesSerializer(
                 s, many=True, context={'request': request}).data
 
@@ -447,7 +447,6 @@ def get_challan(request):
         "due_date": challan.due_date,
         "name": request.user.first_name+request.user.last_name,
         "roll_no": student.uid,
-        "challan_no": challan.challan_no,
         "discipline": student.degree_short_enrolled,
         "semester": season+" "+str(semester.semester_year),
         "admission_fee": challan.admission_fee,

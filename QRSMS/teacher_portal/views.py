@@ -315,7 +315,7 @@ class AssignedSections(BaseTeacherLoginView):
         sections = CourseSection.objects.filter(
             teacher__user__username=str(request.user)).all()
 
-        from rest_framework.request import Request
+
         from initial.serializers import CourseSectionSerializer
 
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
@@ -336,7 +336,7 @@ class StartSectionAttendance(BaseTeacherLoginView):
         if(slot == '' or slot == 'null' or req_scsddc == '' or section == ''):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=422)
 
-        from initial.serializers import SectionAttendanceSerializer
+
         print(request.POST)
         print(section)
         current_semester = Semester.objects.filter(
@@ -386,7 +386,7 @@ class AddSectionMarks(BaseTeacherLoginView):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
 
 
-        from rest_framework.request import Request
+
         from initial.serializers import SectionMarksSerializer
         print(request.POST)
 
