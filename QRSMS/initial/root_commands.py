@@ -7,7 +7,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.models import Permission
 from actor.models import User
 from initial.models import (ACADEMIC_YEAR, STUDENT_YEAR_CHOICE, Course,
-                            RegularCoreCourseLoad, Semester, RegularElectiveCourseLoad, Semester)
+                            RegularCoreCourseLoad, Semester, RegularElectiveCourseLoad)
 from institution.models import Degree, University, Campus, Department
 from student_portal.models import Student
 from teacher_portal.models import Teacher

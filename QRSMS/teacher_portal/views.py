@@ -35,7 +35,7 @@ from initial.models import (Course, CourseSection, MarkSheet,
                             split_scsddc)
 from initial.serializers import (
     SectionAttendanceSerializer,
-    StudentInfoSectionModelSerializerGetAttendance)
+    StudentInfoSectionModelSerializerGetAttendance,CourseSectionSerializer,SectionMarksSerializer)
 from student_portal.models import Student
 
 from .forms import TeacherForm
@@ -197,7 +197,7 @@ def change_marks_dist(request):
             if section_marks.max_marks>float(new_marks):
                 return JsonResponse({"Status":"Failed","Message":"Total Marks Are Less Than Max Marks Of Class"},status=200)
         except:
-            return JsonResponse({"Status":"Failed","Message":"Marks Does Not Exist"},status=404)    
+            return JsonResponse({"Status":"Failed","Message":"Marks Does Not Exist"},status=404)
         section_marks.total_marks = float(new_marks)
         section_marks.weightage = float(new_weightage)
         section_marks.marks_type = new_marks_type
@@ -207,7 +207,7 @@ def change_marks_dist(request):
         student_marks = StudentMarks.objects.filter(
             marks_type=marks_type, scsddc=scsddc)
         for marks in student_marks:
-            marksheet = MarkSheet.objects.get(scsddc=scsddc,student = marks.student)    
+            marksheet = MarkSheet.objects.get(scsddc=scsddc,student = marks.student)
             marks.marks_type = new_marks_type
             marks.total_marks = new_marks
             old_weight = marks.obtained_weightage
@@ -225,14 +225,14 @@ def change_marks_dist(request):
             section_marks.weightage_mean = statistics.mean(all_weightage)
             section_marks.weightage_standard_deviation = statistics.stdev(
                 all_weightage)
-        
+
         else:
-            
+
             section_marks.weightage_mean = all_weightage[0]
             section_marks.weightage_standard_deviation = 0
-            
-        section_marks.save()  
-        return JsonResponse({"Status":"Success","Message":"Evaluation Updated Successfully"})  
+
+        section_marks.save()
+        return JsonResponse({"Status":"Success","Message":"Evaluation Updated Successfully"})
         ######################################
 
 
@@ -315,8 +315,8 @@ class AssignedSections(BaseTeacherLoginView):
         sections = CourseSection.objects.filter(
             teacher__user__username=str(request.user)).all()
 
-        from rest_framework.request import Request
-        from initial.serializers import CourseSectionSerializer
+
+
 
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
                                                   'request': request}).data
@@ -336,7 +336,7 @@ class StartSectionAttendance(BaseTeacherLoginView):
         if(slot == '' or slot == 'null' or req_scsddc == '' or section == ''):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=422)
 
-        from initial.serializers import SectionAttendanceSerializer
+
         print(request.POST)
         print(section)
         current_semester = Semester.objects.filter(
@@ -386,8 +386,8 @@ class AddSectionMarks(BaseTeacherLoginView):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
 
 
-        from rest_framework.request import Request
-        from initial.serializers import SectionMarksSerializer
+
+
         print(request.POST)
 
         try:
@@ -551,7 +551,7 @@ def generate_grades(request):
         10: "D+",
         11: "D",
         12: "F",
-        
+
 
     }
     gpas = {

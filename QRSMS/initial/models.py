@@ -610,7 +610,7 @@ def make_or_delete_student_info_section_for_student(**kwargs):
         scsddc_dict = split_scsddc(SCSDDC_temp)
         new_sheet_attendance = AttendanceSheet.objects.get_or_create(
             student=kwargs['student'], scsddc=SCSDDC_temp)[0]
-        import datetime
+        
         now = datetime.datetime.now()
         new_sheet_marks = MarkSheet.objects.get_or_create(
             student=kwargs['student'], scsddc=SCSDDC_temp, course=course, year=now.year)[0]
