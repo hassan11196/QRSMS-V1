@@ -49,7 +49,7 @@ def get_sddc(semester, degree, department, campus, city):
 
 
 def check_if_teacher(user):
-    return True if user.is_teacher else False
+    return bool(user.is_teacher)
 
 # Create your views here.
 
