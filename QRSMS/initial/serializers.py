@@ -1,5 +1,5 @@
 
-from .models import Course, RegularCoreCourseLoad, Transcript, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, MarkSheet, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
+from .models import Course, RegularCoreCourseLoad, Transcript, RegularElectiveCourseLoad, OfferedCourses, CourseStatus, AttendanceSheet, CourseSection, SectionAttendance, MarkSheet, StudentInfoSection, StudentAttendance, StudentMarks, SectionMarks
 from rest_framework import serializers
 from . import models
 from student_portal.serializers import StudentSerializerOnlyNameAndUid, WrapperStudentSerializer
