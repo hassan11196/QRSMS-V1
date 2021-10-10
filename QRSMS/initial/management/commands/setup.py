@@ -8,7 +8,7 @@ from django.core.management import call_command
 from pprint import pprint
 
 import os
-from ...root_commands import create_super_users, create_groups, setup_university, create_groups
+from ...root_commands import create_super_users, create_groups, setup_university
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

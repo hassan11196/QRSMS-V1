@@ -6,7 +6,7 @@ from django.contrib import admin
 from django_restful_admin import site
 from django.db import models
 from advanced_filters.admin import AdminAdvancedFiltersMixin
-from .models import Semester, Course, StudentMarks, Transcript, RegularCoreCourseLoad, RegularElectiveCourseLoad, CourseClass, CourseSection, SectionAttendance, RepeatCourseLoad, CourseSection, CourseClass, CourseStatus, OfferedCourses, AttendanceSheet, MarkSheet, StudentAttendance, StudentInfoSection, SectionMarks
+from .models import Semester, Course, StudentMarks, Transcript, RegularCoreCourseLoad, RegularElectiveCourseLoad, SectionAttendance, RepeatCourseLoad, CourseSection, CourseClass, CourseStatus, OfferedCourses, AttendanceSheet, MarkSheet, StudentAttendance, StudentInfoSection, SectionMarks
 
 
 admin.site.site_title = "UMSRA Admin Portal"

@@ -36,7 +36,7 @@ from initial.models import (AttendanceSheet, Course, CourseStatus, MarkSheet,
                             Semester, StudentAttendance, StudentMarks,
                             Transcript)
 from initial.serializers import (AttendanceSheetSerializer,
-                                 OfferedCoursesSerializer, TranscriptSerilazer)
+                                 OfferedCoursesSerializer, TranscriptSerilazer,StudentAttendanceSerializer)
 from student_portal.serializers import StudentSerializerOnlyNameAndUid
 
 from .forms import StudentForm, StudentFormValidate
@@ -52,7 +52,7 @@ class UserNotLogged(View):
 
 
 def check_if_student(user):
-    return True if user.is_student else False
+    return bool(user.is_student)
 
 
 class BaseStudentLoginView(APIView):
@@ -123,7 +123,7 @@ class PostAttendanceQR(BaseStudentLoginView):
             return JsonResponse({'message': 'Attendance Already Marked', 'condition': True, }, status=200)
         att_object.state = 'P'
         att_object.save()
-        from initial.serializers import StudentAttendanceSerializer
+
 
         data = StudentAttendanceSerializer(
             att_object, context={'request': request}).data

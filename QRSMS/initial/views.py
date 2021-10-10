@@ -44,7 +44,7 @@ def index(request):
 
 
 def check_if_admin(user):
-    return True if user.is_staff else False
+    return bool(user.is_staff) 
 
 
 class UserNotLogged(views.APIView):

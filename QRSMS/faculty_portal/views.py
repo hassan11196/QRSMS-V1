@@ -32,7 +32,7 @@ from .serializers import FacultySerializer
 
 
 def check_if_faculty(user):
-    return True if user.is_faculty else False
+    return bool(user.is_faculty)
 
 
 class BaseFacultyLoginView(APIView):
