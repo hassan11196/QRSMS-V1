@@ -317,7 +317,6 @@ class AssignedSections(BaseTeacherLoginView):
 
 
 
-
         serial_sections = CourseSectionSerializer(sections, many=True,  context={
                                                   'request': request}).data
         print(serial_sections)
@@ -384,7 +383,6 @@ class AddSectionMarks(BaseTeacherLoginView):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
         if(marks_type is None or section=="" or section=="null" or req_scsddc is None or req_scsddc == ""  or section is None or req_scsddc == "null" ):
             return JsonResponse({'message': 'Invalid Form Inputs', 'condition': False, }, status=200)
-
 
 
 

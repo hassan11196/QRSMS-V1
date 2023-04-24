@@ -447,7 +447,6 @@ def get_challan(request):
         "due_date": challan.due_date,
         "name": request.user.first_name+request.user.last_name,
         "roll_no": student.uid,
-        "challan_no": challan.challan_no,
         "discipline": student.degree_short_enrolled,
         "semester": season+" "+str(semester.semester_year),
         "admission_fee": challan.admission_fee,
