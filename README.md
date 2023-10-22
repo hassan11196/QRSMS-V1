@@ -1,4 +1,5 @@
 # QRSMS
+![logo](./images/QRSMS.png)
 
 QRSMS - QR based Student Management System. built using React, Python Django, PostgreSQL. Three Portals. One for Teachers, One for Students and One for Faculty. A Flutter App where Students can view and mark their attendance using QR-Code option.
 
